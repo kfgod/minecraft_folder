@@ -1,0 +1,242 @@
+[
+  {
+    "year": 2009,
+    "counts": {
+      "blocks": 44,
+      "items": 1,
+      "mobs": 6,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 51
+    }
+  },
+  {
+    "year": 2010,
+    "counts": {
+      "blocks": 38,
+      "items": 91,
+      "mobs": 5,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 24,
+      "mob_variants": 0,
+      "biomes": 5,
+      "total": 163
+    }
+  },
+  {
+    "year": 2011,
+    "counts": {
+      "blocks": 57,
+      "items": 77,
+      "mobs": 11,
+      "effects": 19,
+      "enchantments": 17,
+      "advancements": 0,
+      "paintings": 1,
+      "mob_variants": 0,
+      "biomes": 9,
+      "total": 191
+    }
+  },
+  {
+    "year": 2012,
+    "counts": {
+      "blocks": 43,
+      "items": 45,
+      "mobs": 8,
+      "effects": 1,
+      "enchantments": 5,
+      "advancements": 0,
+      "paintings": 1,
+      "mob_variants": 0,
+      "biomes": 2,
+      "total": 105
+    }
+  },
+  {
+    "year": 2013,
+    "counts": {
+      "blocks": 118,
+      "items": 19,
+      "mobs": 5,
+      "effects": 3,
+      "enchantments": 2,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 21,
+      "total": 168
+    }
+  },
+  {
+    "year": 2014,
+    "counts": {
+      "blocks": 53,
+      "items": 15,
+      "mobs": 4,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 73
+    }
+  },
+  {
+    "year": 2016,
+    "counts": {
+      "blocks": 36,
+      "items": 75,
+      "mobs": 8,
+      "effects": 4,
+      "enchantments": 5,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 4,
+      "total": 132
+    }
+  },
+  {
+    "year": 2017,
+    "counts": {
+      "blocks": 63,
+      "items": 2,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 4,
+      "biomes": 0,
+      "total": 70
+    }
+  },
+  {
+    "year": 2018,
+    "counts": {
+      "blocks": 72,
+      "items": 33,
+      "mobs": 8,
+      "effects": 3,
+      "enchantments": 4,
+      "advancements": 4,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 6,
+      "total": 130
+    }
+  },
+  {
+    "year": 2019,
+    "counts": {
+      "blocks": 72,
+      "items": 26,
+      "mobs": 8,
+      "effects": 2,
+      "enchantments": 3,
+      "advancements": 10,
+      "paintings": 0,
+      "mob_variants": 7,
+      "biomes": 1,
+      "total": 129
+    }
+  },
+  {
+    "year": 2020,
+    "counts": {
+      "blocks": 73,
+      "items": 20,
+      "mobs": 5,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 11,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 4,
+      "total": 114
+    }
+  },
+  {
+    "year": 2021,
+    "counts": {
+      "blocks": 110,
+      "items": 15,
+      "mobs": 3,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 15,
+      "paintings": 0,
+      "mob_variants": 4,
+      "biomes": 8,
+      "total": 155
+    }
+  },
+  {
+    "year": 2022,
+    "counts": {
+      "blocks": 37,
+      "items": 30,
+      "mobs": 4,
+      "effects": 1,
+      "enchantments": 1,
+      "advancements": 7,
+      "paintings": 4,
+      "mob_variants": 2,
+      "biomes": 2,
+      "total": 88
+    }
+  },
+  {
+    "year": 2023,
+    "counts": {
+      "blocks": 52,
+      "items": 47,
+      "mobs": 2,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 8,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 1,
+      "total": 110
+    }
+  },
+  {
+    "year": 2024,
+    "counts": {
+      "blocks": 108,
+      "items": 64,
+      "mobs": 4,
+      "effects": 6,
+      "enchantments": 3,
+      "advancements": 12,
+      "paintings": 20,
+      "mob_variants": 8,
+      "biomes": 1,
+      "total": 226
+    }
+  },
+  {
+    "year": 2025,
+    "counts": {
+      "blocks": 74,
+      "items": 58,
+      "mobs": 6,
+      "effects": 1,
+      "enchantments": 1,
+      "advancements": 3,
+      "paintings": 1,
+      "mob_variants": 7,
+      "biomes": 0,
+      "total": 151
+    }
+  }
+]

@@ -1,0 +1,56 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_trapdoor",
+                "name": "Oak Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_bush",
+                "name": "Dead Bush",
+                "wiki": "https://minecraft.wiki/w/Dead_Bush"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "short_grass",
+                "name": "Short Grass",
+                "wiki": "https://minecraft.wiki/w/Short_Grass"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "fern",
+                "name": "Fern",
+                "wiki": "https://minecraft.wiki/w/Fern"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "filled_map",
+                "name": "Map",
+                "wiki": "https://minecraft.wiki/w/Map"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "May 26, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "Beta 1.6"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Beta_1.6",
+    "type": null
+}

@@ -1,0 +1,43 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "cookie",
+                "name": "Cookie",
+                "wiki": "https://minecraft.wiki/w/Cookie"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "wolf",
+                "name": "Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 8
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "March 31, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "Beta 1.4"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Beta_1.4",
+    "type": null
+}

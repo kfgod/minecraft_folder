@@ -1,0 +1,165 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "nether_quartz_ore",
+                "name": "Nether Quartz Ore",
+                "wiki": "https://minecraft.wiki/w/Nether_Quartz_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "redstone_block",
+                "name": "Block of Redstone",
+                "wiki": "https://minecraft.wiki/w/Block_of_Redstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "daylight_detector",
+                "name": "Daylight Detector",
+                "wiki": "https://minecraft.wiki/w/Daylight_Detector"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "hopper",
+                "name": "Hopper",
+                "wiki": "https://minecraft.wiki/w/Hopper"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "comparator",
+                "name": "Redstone Comparator",
+                "wiki": "https://minecraft.wiki/w/Redstone_Comparator"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "trapped_chest",
+                "name": "Trapped Chest",
+                "wiki": "https://minecraft.wiki/w/Trapped_Chest"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_weighted_pressure_plate",
+                "name": "Light Weighted Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Light_Weighted_Pressure_Plate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "heavy_weighted_pressure_plate",
+                "name": "Heavy Weighted Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Heavy_Weighted_Pressure_Plate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "quartz_block",
+                "name": "Block of Quartz",
+                "wiki": "https://minecraft.wiki/w/Block_of_Quartz"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_quartz_block",
+                "name": "Chiseled Quartz Block",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Quartz_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "quartz_pillar",
+                "name": "Quartz Pillar",
+                "wiki": "https://minecraft.wiki/w/Quartz_Pillar"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "quartz_slab",
+                "name": "Quartz Slab",
+                "wiki": "https://minecraft.wiki/w/Quartz_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "quartz_stairs",
+                "name": "Quartz Stairs",
+                "wiki": "https://minecraft.wiki/w/Quartz_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "activator_rail",
+                "name": "Activator Rail",
+                "wiki": "https://minecraft.wiki/w/Activator_Rail"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dropper",
+                "name": "Dropper",
+                "wiki": "https://minecraft.wiki/w/Dropper"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "smooth_sandstone",
+                "name": "Smooth Sandstone",
+                "wiki": "https://minecraft.wiki/w/Smooth_Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "smooth_quartz",
+                "name": "Smooth Quartz Block",
+                "wiki": "https://minecraft.wiki/w/Smooth_Quartz_Block"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "quartz",
+                "name": "Nether Quartz",
+                "wiki": "https://minecraft.wiki/w/Nether_Quartz"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "nether_brick",
+                "name": "Nether Brick",
+                "wiki": "https://minecraft.wiki/w/Nether_Brick"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "tnt_minecart",
+                "name": "Minecart with TNT",
+                "wiki": "https://minecraft.wiki/w/Minecart_with_TNT"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "hopper_minecart",
+                "name": "Minecart with Hopper",
+                "wiki": "https://minecraft.wiki/w/Minecart_with_Hopper"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Redstone Update",
+    "release_date": "March 13, 2013",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.5"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.5",
+    "type": "major"
+}

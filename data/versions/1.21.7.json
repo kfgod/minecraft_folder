@@ -1,0 +1,50 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "dennis_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Dennis",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_lava_chicken",
+                "name": "Music Disc Lava Chicken",
+                "wiki": "https://minecraft.wiki/w/Music_Disc_Lava_Chicken"
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "dennis",
+                "name": "Dennis",
+                "display_name": "Dennis – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "June 30, 2025",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.7"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.7",
+    "type": "hotfix"
+}

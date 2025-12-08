@@ -1,0 +1,804 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "diamond_ore",
+                "name": "Diamond Ore",
+                "wiki": "https://minecraft.wiki/w/Diamond_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "torch",
+                "name": "Torch",
+                "wiki": "https://minecraft.wiki/w/Torch"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chest",
+                "name": "Chest",
+                "wiki": "https://minecraft.wiki/w/Chest"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "diamond_block",
+                "name": "Block of Diamond",
+                "wiki": "https://minecraft.wiki/w/Block_of_Diamond"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "crafting_table",
+                "name": "Crafting Table",
+                "wiki": "https://minecraft.wiki/w/Crafting_Table"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "farmland",
+                "name": "farmland",
+                "wiki": "https://minecraft.wiki/w/Farmland"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "furnace",
+                "name": "Furnace",
+                "wiki": "https://minecraft.wiki/w/Furnace"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "vegetation",
+                    "seeds"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wheat_seeds",
+                "name": "Wheat Seeds"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "food",
+                    "food/natural"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "apple",
+                "name": "Apple",
+                "wiki": "https://minecraft.wiki/w/Apple"
+            },
+            {
+                "types": [
+                    "leather/helmet"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "leather_helmet",
+                "name": "Leather Cap",
+                "wiki": "https://minecraft.wiki/w/Leather_Cap"
+            },
+            {
+                "types": [
+                    "leather/chestplate"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "leather_chestplate",
+                "name": "Leather Tunic",
+                "wiki": "https://minecraft.wiki/w/Leather_Tunic"
+            },
+            {
+                "types": [
+                    "leather/leggins"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "leather_leggings",
+                "name": "Leather Pants",
+                "wiki": "https://minecraft.wiki/w/Leather_Pants"
+            },
+            {
+                "types": [
+                    "leather/boots"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "leather_boots",
+                "name": "Leather Boots",
+                "wiki": "https://minecraft.wiki/w/Leather_Boots"
+            },
+            {
+                "types": [
+                    "chainmail/helmet"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "chainmail_helmet",
+                "name": "Chainmail Helmet",
+                "wiki": "https://minecraft.wiki/w/Chainmail_Helmet"
+            },
+            {
+                "types": [
+                    "chainmail/chestplate"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "chainmail_chestplate",
+                "name": "Chainmail Chestplate",
+                "wiki": "https://minecraft.wiki/w/Chainmail_Chestplate"
+            },
+            {
+                "types": [
+                    "chainmail/leggins"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "chainmail_leggings",
+                "name": "Chainmail Leggings",
+                "wiki": "https://minecraft.wiki/w/Chainmail_Leggings"
+            },
+            {
+                "types": [
+                    "chainmail/boots"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "chainmail_boots",
+                "name": "Chainmail Boots",
+                "wiki": "https://minecraft.wiki/w/Chainmail_Boots"
+            },
+            {
+                "types": [
+                    "iron/helmet"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_helmet",
+                "name": "Iron Helmet",
+                "wiki": "https://minecraft.wiki/w/Iron_Helmet"
+            },
+            {
+                "types": [
+                    "iron/chestplate"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_chestplate",
+                "name": "Iron Chestplate",
+                "wiki": "https://minecraft.wiki/w/Iron_Chestplate"
+            },
+            {
+                "types": [
+                    "iron/leggins"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_leggings",
+                "name": "Iron Leggings",
+                "wiki": "https://minecraft.wiki/w/Iron_Leggings"
+            },
+            {
+                "types": [
+                    "iron/boots"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_boots",
+                "name": "Iron Boots",
+                "wiki": "https://minecraft.wiki/w/Iron_Boots"
+            },
+            {
+                "types": [
+                    "gold/helmet"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_helmet",
+                "name": "Golden Helmet",
+                "wiki": "https://minecraft.wiki/w/Golden_Helmet"
+            },
+            {
+                "types": [
+                    "gold/chestplate"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_chestplate",
+                "name": "Golden Chestplate",
+                "wiki": "https://minecraft.wiki/w/Golden_Chestplate"
+            },
+            {
+                "types": [
+                    "gold/leggins"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_leggings",
+                "name": "Golden Leggings",
+                "wiki": "https://minecraft.wiki/w/Golden_Leggings"
+            },
+            {
+                "types": [
+                    "gold/boots"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_boots",
+                "name": "Golden Boots",
+                "wiki": "https://minecraft.wiki/w/Golden_Boots"
+            },
+            {
+                "types": [
+                    "diamond/helmet"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_helmet",
+                "name": "Diamond Helmet",
+                "wiki": "https://minecraft.wiki/w/Diamond_Helmet"
+            },
+            {
+                "types": [
+                    "diamond/chestplate"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_chestplate",
+                "name": "Diamond Chestplate",
+                "wiki": "https://minecraft.wiki/w/Diamond_Chestplate"
+            },
+            {
+                "types": [
+                    "diamond/leggins"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_leggings",
+                "name": "Diamond Leggings",
+                "wiki": "https://minecraft.wiki/w/Diamond_Leggings"
+            },
+            {
+                "types": [
+                    "diamond/boots"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_boots",
+                "name": "Diamond Boots",
+                "wiki": "https://minecraft.wiki/w/Diamond_Boots"
+            },
+            {
+                "types": [
+                    "coal"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "coal",
+                "name": "Coal",
+                "wiki": "https://minecraft.wiki/w/Coal"
+            },
+            {
+                "types": [
+                    "diamond"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond",
+                "name": "Diamond",
+                "wiki": "https://minecraft.wiki/w/Diamond"
+            },
+            {
+                "types": [
+                    "gold"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "gold_ingot",
+                "name": "Gold Ingot",
+                "wiki": "https://minecraft.wiki/w/Gold_Ingot"
+            },
+            {
+                "types": [
+                    "iron"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_ingot",
+                "name": "Iron Ingot",
+                "wiki": "https://minecraft.wiki/w/Iron_Ingot"
+            },
+            {
+                "types": [
+                    "iron/shovel"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_shovel",
+                "name": "Iron Shovel",
+                "wiki": "https://minecraft.wiki/w/Iron_Shovel"
+            },
+            {
+                "types": [
+                    "iron/sword"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_sword",
+                "name": "Iron Sword",
+                "wiki": "https://minecraft.wiki/w/Iron_Sword"
+            },
+            {
+                "types": [
+                    "iron/pickaxe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_pickaxe",
+                "name": "Iron Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Iron_Pickaxe"
+            },
+            {
+                "types": [
+                    "iron/axe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_axe",
+                "name": "Iron Axe",
+                "wiki": "https://minecraft.wiki/w/Iron_Axe"
+            },
+            {
+                "types": [
+                    "iron/hoe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_hoe",
+                "name": "Iron Hoe",
+                "wiki": "https://minecraft.wiki/w/Iron_Hoe"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "flint_and_steel",
+                "name": "Flint and Steel",
+                "wiki": "https://minecraft.wiki/w/Flint_and_Steel"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "bow",
+                "name": "Bow",
+                "wiki": "https://minecraft.wiki/w/Bow"
+            },
+            {
+                "types": [
+                    "wood/sword"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_sword",
+                "name": "Wooden Sword",
+                "wiki": "https://minecraft.wiki/w/Wooden_Sword"
+            },
+            {
+                "types": [
+                    "wood/axe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_axe",
+                "name": "Wooden Axe",
+                "wiki": "https://minecraft.wiki/w/Wooden_Axe"
+            },
+            {
+                "types": [
+                    "wood/pickaxe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_pickaxe",
+                "name": "Wooden Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pickaxe"
+            },
+            {
+                "types": [
+                    "wood/shovel"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_shovel",
+                "name": "Wooden Shovel",
+                "wiki": "https://minecraft.wiki/w/Wooden_Shovel"
+            },
+            {
+                "types": [
+                    "wood/hoe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_hoe",
+                "name": "Wooden Hoe",
+                "wiki": "https://minecraft.wiki/w/Wooden_Hoe"
+            },
+            {
+                "types": [
+                    "stone/sword"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stone_sword",
+                "name": "Stone Sword",
+                "wiki": "https://minecraft.wiki/w/Stone_Sword"
+            },
+            {
+                "types": [
+                    "stone/axe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stone_axe",
+                "name": "Stone Axe",
+                "wiki": "https://minecraft.wiki/w/Stone_Axe"
+            },
+            {
+                "types": [
+                    "stone/pickaxe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stone_pickaxe",
+                "name": "Stone Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Stone_Pickaxe"
+            },
+            {
+                "types": [
+                    "stone/shovel"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stone_shovel",
+                "name": "Stone Shovel",
+                "wiki": "https://minecraft.wiki/w/Stone_Shovel"
+            },
+            {
+                "types": [
+                    "stone/hoe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stone_hoe",
+                "name": "Stone Hoe",
+                "wiki": "https://minecraft.wiki/w/Stone_Hoe"
+            },
+            {
+                "types": [
+                    "diamond/sword"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_sword",
+                "name": "Diamond Sword",
+                "wiki": "https://minecraft.wiki/w/Diamond_Sword"
+            },
+            {
+                "types": [
+                    "diamond/axe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_axe",
+                "name": "Diamond Axe",
+                "wiki": "https://minecraft.wiki/w/Diamond_Axe"
+            },
+            {
+                "types": [
+                    "diamond/pickaxe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_pickaxe",
+                "name": "Diamond Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Diamond_Pickaxe"
+            },
+            {
+                "types": [
+                    "diamond/shovel"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_shovel",
+                "name": "Diamond Shovel",
+                "wiki": "https://minecraft.wiki/w/Diamond_Shovel"
+            },
+            {
+                "types": [
+                    "diamond/hoe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_hoe",
+                "name": "Diamond Hoe",
+                "wiki": "https://minecraft.wiki/w/Diamond_Hoe"
+            },
+            {
+                "types": [
+                    "gold/sword"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_sword",
+                "name": "Golden Sword",
+                "wiki": "https://minecraft.wiki/w/Golden_Sword"
+            },
+            {
+                "types": [
+                    "gold/axe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_axe",
+                "name": "Golden Axe",
+                "wiki": "https://minecraft.wiki/w/Golden_Axe"
+            },
+            {
+                "types": [
+                    "gold/pickaxe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_pickaxe",
+                "name": "Golden Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Golden_Pickaxe"
+            },
+            {
+                "types": [
+                    "gold/shovel"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_shovel",
+                "name": "Golden Shovel",
+                "wiki": "https://minecraft.wiki/w/Golden_Shovel"
+            },
+            {
+                "types": [
+                    "gold/hoe"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_hoe",
+                "name": "Golden Hoe",
+                "wiki": "https://minecraft.wiki/w/Golden_Hoe"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "bowl",
+                "name": "Bowl",
+                "wiki": "https://minecraft.wiki/w/Bowl"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "mushroom_stew",
+                "name": "Mushroom Stew",
+                "wiki": "https://minecraft.wiki/w/Mushroom_Stew"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "gunpowder",
+                "name": "Gunpowder",
+                "wiki": "https://minecraft.wiki/w/Gunpowder"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "string",
+                "name": "String",
+                "wiki": "https://minecraft.wiki/w/String"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "feather",
+                "name": "Feather",
+                "wiki": "https://minecraft.wiki/w/Feather"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "bread",
+                "name": "Bread",
+                "wiki": "https://minecraft.wiki/w/Bread"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "stick",
+                "name": "Stick",
+                "wiki": "https://minecraft.wiki/w/Stick"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "flint",
+                "name": "Flint",
+                "wiki": "https://minecraft.wiki/w/Flint"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "porkchop",
+                "name": "Raw Porkchop",
+                "wiki": "https://minecraft.wiki/w/Raw_Porkchop"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "cooked_porkchop",
+                "name": "Cooked Porkchop",
+                "wiki": "https://minecraft.wiki/w/Cooked_Porkchop"
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/4x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "pointer",
+                "name": "Pointer",
+                "display_name": "Pointer – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "fighters",
+                "name": "Fighters",
+                "display_name": "Fighters – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "match",
+                "name": "Match",
+                "display_name": "Match – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "bust",
+                "name": "Bust",
+                "display_name": "Bust – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "stage",
+                "name": "The Stage Is Set",
+                "display_name": "The Stage Is Set – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "void",
+                "name": "The void",
+                "display_name": "The void – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "skull_and_roses",
+                "name": "Skull and Roses",
+                "display_name": "Skull and Roses – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "pool",
+                "name": "The Pool",
+                "display_name": "The Pool – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "courbet",
+                "name": "Bonjour Monsieur Courbet",
+                "display_name": "Bonjour Monsieur Courbet – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "sunset",
+                "name": "sunset_dense",
+                "display_name": "sunset_dense – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "sea",
+                "name": "Seaside",
+                "display_name": "Seaside – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "wanderer",
+                "name": "Wanderer",
+                "display_name": "Wanderer – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "kebab",
+                "name": "Kebab med tre pepperoni",
+                "display_name": "Kebab med tre pepperoni – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "aztec",
+                "name": "de_aztec",
+                "display_name": "de_aztec – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "alban",
+                "name": "Albanian",
+                "display_name": "Albanian – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "aztec2",
+                "name": "de_aztec",
+                "display_name": "de_aztec – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "bomb",
+                "name": "Target Successfully Bombed",
+                "display_name": "Target Successfully Bombed – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "plant",
+                "name": "Paradisträd",
+                "display_name": "Paradisträd – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "wasteland",
+                "name": "Wasteland",
+                "display_name": "Wasteland – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "February 23, 2010",
+    "release_version": {
+        "bedrock": null,
+        "java": "Indev"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Indev",
+    "type": null
+}

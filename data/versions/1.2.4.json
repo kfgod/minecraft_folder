@@ -1,0 +1,58 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cut_sandstone",
+                "name": "Cut Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_sandstone",
+                "name": "Chiseled Sandstone"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "planks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_planks",
+                "name": "Spruce Planks",
+                "wiki": "https://minecraft.wiki/w/Planks#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "planks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_planks",
+                "name": "Birch Planks",
+                "wiki": "https://minecraft.wiki/w/Planks#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "planks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_planks",
+                "name": "Jungle Planks",
+                "wiki": "https://minecraft.wiki/w/Planks#Jungle"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "March 22, 2012",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.2.4"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.2.4",
+    "type": "minor"
+}

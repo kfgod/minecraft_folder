@@ -1,0 +1,148 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_stone_bricks",
+                "name": "Chiseled Stone Bricks",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Stone_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "redstone_lamp",
+                "name": "Redstone Lamp"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_log",
+                "name": "Jungle Log"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/jungle",
+                    "plant",
+                    "saplings"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_sapling",
+                "name": "Jungle Sapling",
+                "wiki": "https://minecraft.wiki/w/Sapling#Jungle"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/jungle",
+                    "leaves"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_leaves",
+                "name": "Jungle Leaves",
+                "wiki": "https://minecraft.wiki/w/Leaves#Jungle"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "experience_bottle",
+                "name": "Bottle o' Enchanting"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "fire_charge",
+                "name": "Fire Charge"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "ocelot_spawn_egg",
+                "name": "Ocelot Spawn Egg"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "cat",
+                "name": "Cat",
+                "wiki": "https://minecraft.wiki/w/Cat",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "cat_spawn_egg",
+                        "element_type": "item",
+                        "name": "Cat Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "ocelot",
+                "name": "Ocelot",
+                "wiki": "https://minecraft.wiki/w/Ocelot",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "ocelot_spawn_egg",
+                        "element_type": "item",
+                        "name": "Ocelot Spawn Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "iron_golem",
+                "name": "Iron Golem",
+                "wiki": "https://minecraft.wiki/w/Iron_Golem",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "iron_golem_spawn_egg",
+                        "element_type": "item",
+                        "name": "Iron Golem Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    }
+                }
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "jungle",
+                "name": "Jungle",
+                "wiki": "https://minecraft.wiki/w/Jungle"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "March 1, 2012",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.2.1"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.2.1",
+    "type": "major"
+}

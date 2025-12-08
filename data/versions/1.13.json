@@ -1,0 +1,1200 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_oak_log",
+                "name": "Stripped Oak Log"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_spruce_log",
+                "name": "Stripped Spruce Log"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_birch_log",
+                "name": "Stripped Birch Log"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_jungle_log",
+                "name": "Stripped Jungle Log"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_acacia_log",
+                "name": "Stripped Acacia Log"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_dark_oak_log",
+                "name": "Stripped Dark Oak Log"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_oak_wood",
+                "name": "Stripped Oak Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_spruce_wood",
+                "name": "Stripped Spruce Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_birch_wood",
+                "name": "Stripped Birch Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_jungle_wood",
+                "name": "Stripped Jungle Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_acacia_wood",
+                "name": "Stripped Acacia Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_dark_oak_wood",
+                "name": "Stripped Dark Oak Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_button",
+                "name": "Spruce Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_button",
+                "name": "Birch Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_button",
+                "name": "Jungle Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_button",
+                "name": "Acacia Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_button",
+                "name": "Dark Oak Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_pressure_plate",
+                "name": "Spruce Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_pressure_plate",
+                "name": "Birch Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_pressure_plate",
+                "name": "Jungle Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_pressure_plate",
+                "name": "Acacia Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_pressure_plate",
+                "name": "Dark Oak Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_trapdoor",
+                "name": "Spruce Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_trapdoor",
+                "name": "Birch Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_trapdoor",
+                "name": "Jungle Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_trapdoor",
+                "name": "Acacia Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_trapdoor",
+                "name": "Dark Oak Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Dark_Oak"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "pumpkin",
+                "name": "Pumpkin",
+                "wiki": "https://minecraft.wiki/w/Pumpkin"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "seagrass",
+                "name": "Seagrass",
+                "wiki": "https://minecraft.wiki/w/Seagrass"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dried_kelp_block",
+                "name": "Dried Kelp Block",
+                "wiki": "https://minecraft.wiki/w/Dried_Kelp_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine_stairs",
+                "name": "Prismarine Stairs",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine_slab",
+                "name": "Prismarine Slab",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine_brick_stairs",
+                "name": "Prismarine Brick Stairs",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Brick_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine_brick_slab",
+                "name": "Prismarine Brick Slab",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Brick_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dark_prismarine_stairs",
+                "name": "Dark Prismarine Stairs",
+                "wiki": "https://minecraft.wiki/w/Dark_Prismarine_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dark_prismarine_slab",
+                "name": "Dark Prismarine Slab",
+                "wiki": "https://minecraft.wiki/w/Dark_Prismarine_Slab"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "kelp",
+                "name": "Kelp",
+                "wiki": "https://minecraft.wiki/w/Kelp"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "turtle_egg",
+                "name": "Turtle Egg",
+                "wiki": "https://minecraft.wiki/w/Turtle_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "shulker_box",
+                "name": "Shulker Box",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Plain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tube_coral_block",
+                "name": "Tube Coral Block",
+                "wiki": "https://minecraft.wiki/w/Coral_Block#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brain_coral_block",
+                "name": "Brain Coral Block",
+                "wiki": "https://minecraft.wiki/w/Coral_Block#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "bubble_coral_block",
+                "name": "Bubble Coral Block",
+                "wiki": "https://minecraft.wiki/w/Coral_Block#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "fire_coral_block",
+                "name": "Fire Coral Block",
+                "wiki": "https://minecraft.wiki/w/Coral_Block#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "horn_coral_block",
+                "name": "Horn Coral Block",
+                "wiki": "https://minecraft.wiki/w/Coral_Block#Horn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tube_coral",
+                "name": "Tube Coral",
+                "wiki": "https://minecraft.wiki/w/Coral#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brain_coral",
+                "name": "Brain Coral",
+                "wiki": "https://minecraft.wiki/w/Coral#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "bubble_coral",
+                "name": "Bubble Coral",
+                "wiki": "https://minecraft.wiki/w/Coral#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "fire_coral",
+                "name": "Fire Coral",
+                "wiki": "https://minecraft.wiki/w/Coral#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "horn_coral",
+                "name": "Horn Coral",
+                "wiki": "https://minecraft.wiki/w/Coral#Horn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_tube_coral_block",
+                "name": "Dead Tube Coral Block",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Block#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_brain_coral_block",
+                "name": "Dead Brain Coral Block",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Block#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_bubble_coral_block",
+                "name": "Dead Bubble Coral Block",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Block#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_fire_coral_block",
+                "name": "Dead Fire Coral Block",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Block#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_horn_coral_block",
+                "name": "Dead Horn Coral Block",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Block#Horn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tube_coral_fan",
+                "name": "Tube Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Coral_Fan#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brain_coral_fan",
+                "name": "Brain Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Coral_Fan#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "bubble_coral_fan",
+                "name": "Bubble Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Coral_Fan#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "fire_coral_fan",
+                "name": "Fire Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Coral_Fan#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "horn_coral_fan",
+                "name": "Horn Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Coral_Fan#Horn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_tube_coral_fan",
+                "name": "Dead Tube Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Fan#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_brain_coral_fan",
+                "name": "Dead Brain Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Fan#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_bubble_coral_fan",
+                "name": "Dead Bubble Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Fan#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_fire_coral_fan",
+                "name": "Dead Fire Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Fan#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_horn_coral_fan",
+                "name": "Dead Horn Coral Fan",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral_Fan#Horn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sea_pickle",
+                "name": "Sea Pickle",
+                "wiki": "https://minecraft.wiki/w/Sea_Pickle"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "conduit",
+                "name": "Conduit",
+                "wiki": "https://minecraft.wiki/w/Conduit"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "blue_ice",
+                "name": "Blue Ice",
+                "wiki": "https://minecraft.wiki/w/Blue_Ice"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "debug_stick",
+                "name": "Debug Stick",
+                "wiki": "https://minecraft.wiki/w/Debug_Stick"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "dried_kelp",
+                "name": "Dried Kelp",
+                "wiki": "https://minecraft.wiki/w/Dried_Kelp"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "trident",
+                "name": "Trident",
+                "wiki": "https://minecraft.wiki/w/Trident"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "turtle_scute",
+                "name": "Turtle Scute",
+                "wiki": "https://minecraft.wiki/w/Turtle_Scute"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "turtle_helmet",
+                "name": "Turtle Shell",
+                "wiki": "https://minecraft.wiki/w/Turtle_Shell"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "cod_bucket",
+                "name": "Bucket of Cod",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Cod"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "salmon_bucket",
+                "name": "Bucket of Salmon",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Salmon"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "pufferfish_bucket",
+                "name": "Bucket of Pufferfish",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Pufferfish"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "tropical_fish_bucket",
+                "name": "Bucket of Tropical Fish",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Tropical_Fish"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "nautilus_shell",
+                "name": "Nautilus Shell",
+                "wiki": "https://minecraft.wiki/w/Nautilus_Shell"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "heart_of_the_sea",
+                "name": "Heart of the Sea",
+                "wiki": "https://minecraft.wiki/w/Heart_of_the_Sea"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "phantom_membrane",
+                "name": "Phantom Membrane",
+                "wiki": "https://minecraft.wiki/w/Phantom_Membrane"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "potion_of_the_turtle_master",
+                "minecraft_identifier": "potion",
+                "name": "Potion of the Turtle Master",
+                "image_identifier": "potion_of_the_turtle_master",
+                "wiki": "https://minecraft.wiki/w/Potion#Potion_of_the_Turtle_Master"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "potion_of_slow_falling",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Slow Falling",
+                "image_identifier": "potion_of_slow_falling",
+                "wiki": "https://minecraft.wiki/w/Potion#Potion_of_Slow_Falling"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "splash_potion_of_the_turtle_master",
+                "minecraft_identifier": "splash_potion",
+                "name": "Potion of the Turtle Master",
+                "image_identifier": "splash_potion_of_the_turtle_master",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "splash_potion_of_slow_falling",
+                "minecraft_identifier": "splash_potion",
+                "name": "Potion of Slow Falling",
+                "image_identifier": "splash_potion_of_slow_falling",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "cod_spawn_egg",
+                "name": "Cod Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "dolphin_spawn_egg",
+                "name": "Dolphin Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "drowned_spawn_egg",
+                "name": "Drowned Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "phantom_spawn_egg",
+                "name": "Phantom Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "pufferfish_spawn_egg",
+                "name": "Pufferfish Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "tropical_fish_spawn_egg",
+                "name": "Tropical Fish Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "salmon_spawn_egg",
+                "name": "Salmon Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "turtle_spawn_egg",
+                "name": "Turtle Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "loyalty_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Loyalty I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "riptide_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Riptide I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "impaling_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Impaling I-V",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "channeling_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Channeling",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "buried_treasure_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Buried Treasure Map",
+                "image_identifier": "buried_treasure_map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Trial_Explorer"
+            },
+            {
+                "types": [
+                    "effect/turle_master"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_the_turtle_master",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of the Turtle Master",
+                "image_identifier": "arrow_of_the_turtle_master",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/slow_falling"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_slow_falling",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of Slow Falling",
+                "image_identifier": "arrow_of_slow_falling",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/turle_master"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_the_turtle_master",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Potion of the Turtle Master",
+                "image_identifier": "lingering_potion_of_the_turtle_master",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            },
+            {
+                "types": [
+                    "effect/slow_falling"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_slow_falling",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Potion of Slow Falling",
+                "image_identifier": "lingering_potion_of_slow_falling",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "cod",
+                "name": "Cod",
+                "wiki": "https://minecraft.wiki/w/Cod",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "cod_spawn_egg",
+                        "element_type": "item",
+                        "name": "Cod Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 3
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "salmon",
+                "name": "Salmon",
+                "wiki": "https://minecraft.wiki/w/Salmon",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "salmon_spawn_egg",
+                        "element_type": "item",
+                        "name": "Salmon Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 3
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "tropical_fish",
+                "name": "Tropical Fish",
+                "wiki": "https://minecraft.wiki/w/Tropical_Fish",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "tropical_fish_spawn_egg",
+                        "element_type": "item",
+                        "name": "Tropical Fish Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 3
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "turtle",
+                "name": "Turtle",
+                "wiki": "https://minecraft.wiki/w/Turtle",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "turtle_spawn_egg",
+                        "element_type": "item",
+                        "name": "Turtle Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 30
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "dolphin",
+                "name": "Dolphin",
+                "wiki": "https://minecraft.wiki/w/Dolphin",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "dolphin_spawn_egg",
+                        "element_type": "item",
+                        "name": "Dolphin Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "drowned",
+                "name": "Drowned",
+                "wiki": "https://minecraft.wiki/w/Drowned",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "drowned_spawn_egg",
+                        "element_type": "item",
+                        "name": "Drowned Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "pufferfish",
+                "name": "Pufferfish",
+                "wiki": "https://minecraft.wiki/w/Pufferfish",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "pufferfish_spawn_egg",
+                        "element_type": "item",
+                        "name": "Pufferfish Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 3
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "phantom",
+                "name": "Phantom",
+                "wiki": "https://minecraft.wiki/w/Phantom",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "phantom_spawn_egg",
+                        "element_type": "item",
+                        "name": "Phantom Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            }
+        ],
+        "effects": [
+            {
+                "types": [
+                    "effects/movement"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "slow_falling",
+                "name": "Slow Falling",
+                "wiki": "https://minecraft.wiki/w/Slow_Falling"
+            },
+            {
+                "types": [
+                    "effects/movement"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "dolphins_grace",
+                "name": "Dolphin's Grace",
+                "wiki": "https://minecraft.wiki/w/Dolphin%27s_Grace"
+            },
+            {
+                "types": [
+                    "effects/underwater"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "conduit_power",
+                "name": "Conduit Power",
+                "wiki": "https://minecraft.wiki/w/Conduit_Power"
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/trident"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "channeling",
+                "name": "Channeling",
+                "wiki": "https://minecraft.wiki/w/Channeling"
+            },
+            {
+                "types": [
+                    "enchantments/trident"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "impaling",
+                "name": "Impaling",
+                "wiki": "https://minecraft.wiki/w/Impaling"
+            },
+            {
+                "types": [
+                    "enchantments/trident"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "loyalty",
+                "name": "Loyalty",
+                "wiki": "https://minecraft.wiki/w/Loyalty"
+            },
+            {
+                "types": [
+                    "enchantments/trident"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "riptide",
+                "name": "Riptide",
+                "wiki": "https://minecraft.wiki/w/Riptide"
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/throw_trident",
+                "name": "A Throwaway Joke",
+                "wiki": "https://minecraft.wiki/w/Advancement#A_Throwaway_Joke",
+                "meta": {
+                    "icon": {
+                        "identifier": "trident",
+                        "element_type": "item",
+                        "name": "Trident",
+                        "wiki": "https://minecraft.wiki/w/Trident"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/very_very_frightening",
+                "name": "Very Very Frightening",
+                "wiki": "https://minecraft.wiki/w/Advancement#Very_Very_Frightening",
+                "meta": {
+                    "icon": {
+                        "identifier": "trident",
+                        "element_type": "item",
+                        "name": "Trident",
+                        "wiki": "https://minecraft.wiki/w/Trident"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/fishy_business",
+                "name": "Fishy Business",
+                "wiki": "https://minecraft.wiki/w/Advancement#Fishy_Business",
+                "meta": {
+                    "icon": {
+                        "identifier": "fishing_rod",
+                        "element_type": "item",
+                        "name": "Fishing Rod",
+                        "wiki": "https://minecraft.wiki/w/Fishing_Rod"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/tactical_fishing",
+                "name": "Tactical Fishing",
+                "wiki": "https://minecraft.wiki/w/Advancement#Tactical_Fishing",
+                "meta": {
+                    "icon": {
+                        "identifier": "pufferfish_bucket",
+                        "element_type": "item",
+                        "name": "Bucket of Pufferfish",
+                        "wiki": "https://minecraft.wiki/w/Bucket_of_Pufferfish"
+                    }
+                }
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "cold_ocean",
+                "name": "Cold Ocean",
+                "wiki": "https://minecraft.wiki/w/Cold_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "deep_cold_ocean",
+                "name": "Deep Cold Ocean",
+                "wiki": "https://minecraft.wiki/w/Deep_Cold_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "deep_frozen_ocean",
+                "name": "Deep Frozen Ocean",
+                "wiki": "https://minecraft.wiki/w/Deep_Frozen_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "deep_lukewarm_ocean",
+                "name": "Deep Lukewarm Ocean",
+                "wiki": "https://minecraft.wiki/w/Deep_Lukewarm_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "lukewarm_ocean",
+                "name": "Lukewarm Ocean",
+                "wiki": "https://minecraft.wiki/w/Lukewarm_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "warm_ocean",
+                "name": "Warm Ocean",
+                "wiki": "https://minecraft.wiki/w/Warm_Ocean"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Update Aquatic",
+    "release_date": "July 18, 2018",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.13"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.13",
+    "type": "major"
+}

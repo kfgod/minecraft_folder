@@ -1,0 +1,372 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "leaf_litter",
+                "name": "Leaf Litter",
+                "wiki": "https://minecraft.wiki/w/Leaf_Litter"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "flower/tiny"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "wildflowers",
+                "name": "Wildflowers",
+                "wiki": "https://minecraft.wiki/w/Wildflowers"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "flower/other"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "cactus_flower",
+                "name": "Cactus Flower",
+                "wiki": "https://minecraft.wiki/w/Cactus_Flower"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "firefly_bush",
+                "name": "Firefly Bush",
+                "wiki": "https://minecraft.wiki/w/Firefly_Bush"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "short_dry_grass",
+                "name": "Short Dry Grass",
+                "wiki": "https://minecraft.wiki/w/Short_Dry_Grass"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tall_dry_grass",
+                "name": "Tall Dry Grass",
+                "wiki": "https://minecraft.wiki/w/Tall_Dry_Grass"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "bush",
+                "name": "Bush",
+                "wiki": "https://minecraft.wiki/w/Bush"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "test_block",
+                "name": "Test Block",
+                "wiki": "https://minecraft.wiki/w/Test_Block#Start"
+            },
+            {
+                "types": [
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "test_block_log",
+                "name": "Test Block",
+                "wiki": "https://minecraft.wiki/w/Test_Block#Log"
+            },
+            {
+                "types": [
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "test_block_fail",
+                "name": "Test Block",
+                "wiki": "https://minecraft.wiki/w/Test_Block#Fail"
+            },
+            {
+                "types": [
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "test_block_accept",
+                "name": "Test Block",
+                "wiki": "https://minecraft.wiki/w/Test_Block#Accept"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "test_instance_block",
+                "name": "Test Instance Block",
+                "wiki": "https://minecraft.wiki/w/Test_Instance_Block"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "blue_egg",
+                "name": "Blue Egg",
+                "wiki": "https://minecraft.wiki/w/Blue_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "brown_egg",
+                "name": "Brown Egg",
+                "wiki": "https://minecraft.wiki/w/Brown_Egg"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "taiga_village_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Taiga Village Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "savanna_village_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Savanna Village Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "desert_village_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Desert Village Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "plains_village_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Plains Village Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "snowy_village_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Snowy Village Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "jungle_explorer_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Jungle Explorer Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "swamp_explorer_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Swamp Explorer Map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Jungle,_Swamp_Explorer;_Village"
+            }
+        ],
+        "mob_variants": [
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/cold"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "chicken",
+                "identifier": "cold_chicken",
+                "name": "Chicken",
+                "display_name": "Cold Chicken",
+                "wiki": "https://minecraft.wiki/w/Chicken#Cold",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "chicken_spawn_egg",
+                        "element_type": "item",
+                        "name": "Chicken Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "chicken",
+                        "element_type": "mob",
+                        "name": "Chicken",
+                        "wiki": "https://minecraft.wiki/w/Chicken",
+                        "health": 4
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/warm"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "chicken",
+                "identifier": "warm_chicken",
+                "name": "Chicken",
+                "display_name": "Warm Chicken",
+                "wiki": "https://minecraft.wiki/w/Chicken#Warm",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "chicken_spawn_egg",
+                        "element_type": "item",
+                        "name": "Chicken Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "chicken",
+                        "element_type": "mob",
+                        "name": "Chicken",
+                        "wiki": "https://minecraft.wiki/w/Chicken",
+                        "health": 4
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/cold"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "cow",
+                "identifier": "cold_cow",
+                "name": "Cow",
+                "display_name": "Cold Cow",
+                "wiki": "https://minecraft.wiki/w/Cow#Cold",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "cow_spawn_egg",
+                        "element_type": "item",
+                        "name": "Cow Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "cow",
+                        "element_type": "mob",
+                        "name": "Cow",
+                        "wiki": "https://minecraft.wiki/w/Cow",
+                        "health": 10
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/warm"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "cow",
+                "identifier": "warm_cow",
+                "name": "Cow",
+                "display_name": "Warm Cow",
+                "wiki": "https://minecraft.wiki/w/Cow#Warm",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "cow_spawn_egg",
+                        "element_type": "item",
+                        "name": "Cow Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "cow",
+                        "element_type": "mob",
+                        "name": "Cow",
+                        "wiki": "https://minecraft.wiki/w/Cow",
+                        "health": 10
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/cold"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "pig",
+                "identifier": "cold_pig",
+                "name": "Pig",
+                "display_name": "Cold Pig",
+                "wiki": "https://minecraft.wiki/w/Pig#Cold",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "pig_spawn_egg",
+                        "element_type": "item",
+                        "name": "Pig Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "pig",
+                        "element_type": "mob",
+                        "name": "Pig",
+                        "wiki": "https://minecraft.wiki/w/Pig",
+                        "health": 10
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/warm"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "pig",
+                "identifier": "warm_pig",
+                "name": "Pig",
+                "display_name": "Warm Pig",
+                "wiki": "https://minecraft.wiki/w/Pig#Warm",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "pig_spawn_egg",
+                        "element_type": "item",
+                        "name": "Pig Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "pig",
+                        "element_type": "mob",
+                        "name": "Pig",
+                        "wiki": "https://minecraft.wiki/w/Pig",
+                        "health": 10
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Spring to Life",
+    "release_date": "March 25, 2025",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.5"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.5",
+    "type": "drop"
+}

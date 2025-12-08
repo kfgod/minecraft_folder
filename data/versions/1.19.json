@@ -1,0 +1,940 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_log",
+                "name": "Mangrove Log"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "stripped_logs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_mangrove_log",
+                "name": "Stripped Mangrove Log"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "flower/other",
+                    "woodset/mangrove",
+                    "saplings"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_propagule",
+                "name": "Mangrove Propagule",
+                "wiki": "https://minecraft.wiki/w/Mangrove_Propagule"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_wood",
+                "name": "Mangrove Wood",
+                "wiki": "https://minecraft.wiki/w/Wood#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "stripped_woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "stripped_mangrove_wood",
+                "name": "Stripped Mangrove Wood",
+                "wiki": "https://minecraft.wiki/w/Stripped_Wood#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "planks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_planks",
+                "name": "Mangrove Planks",
+                "wiki": "https://minecraft.wiki/w/Planks#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_stairs",
+                "name": "Mangrove Stairs",
+                "wiki": "https://minecraft.wiki/w/Wooden_Stairs#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_slab",
+                "name": "Mangrove Slab",
+                "wiki": "https://minecraft.wiki/w/Wooden_Slab#Mangrove"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/mangrove",
+                    "leaves"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_leaves",
+                "name": "Mangrove Leaves",
+                "wiki": "https://minecraft.wiki/w/Leaves#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "signs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_sign",
+                "name": "Mangrove Sign",
+                "wiki": "https://minecraft.wiki/w/Sign#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "buttons"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_button",
+                "name": "Mangrove Button",
+                "wiki": "https://minecraft.wiki/w/Wooden_Button#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_pressure_plate",
+                "name": "Mangrove Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "trapdoors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_trapdoor",
+                "name": "Mangrove Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Wooden_Trapdoor#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_door",
+                "name": "Mangrove Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_fence",
+                "name": "Mangrove Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_fence_gate",
+                "name": "Mangrove Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Mangrove"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sculk",
+                "name": "Sculk",
+                "wiki": "https://minecraft.wiki/w/Sculk"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sculk_catalyst",
+                "name": "Sculk Catalyst",
+                "wiki": "https://minecraft.wiki/w/Sculk_Catalyst"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sculk_shrieker",
+                "name": "Sculk Shrieker",
+                "wiki": "https://minecraft.wiki/w/Sculk_Shrieker"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sculk_vein",
+                "name": "Sculk Vein",
+                "wiki": "https://minecraft.wiki/w/Sculk_Vein"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_roots",
+                "name": "Mangrove Roots",
+                "wiki": "https://minecraft.wiki/w/Mangrove_Roots"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "muddy_mangrove_roots",
+                "name": "Muddy Mangrove Roots",
+                "wiki": "https://minecraft.wiki/w/Muddy_Mangrove_Roots"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "mud",
+                "name": "Mud",
+                "wiki": "https://minecraft.wiki/w/Mud"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "packed_mud",
+                "name": "Packed Mud",
+                "wiki": "https://minecraft.wiki/w/Packed_Mud"
+            },
+            {
+                "types": [
+                    "type/mud",
+                    "bricks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mud_bricks",
+                "name": "Mud Bricks",
+                "wiki": "https://minecraft.wiki/w/Mud_Bricks"
+            },
+            {
+                "types": [
+                    "type/mud",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mud_brick_slab",
+                "name": "Mud Brick Slab",
+                "wiki": "https://minecraft.wiki/w/Mud_Brick_Slab"
+            },
+            {
+                "types": [
+                    "type/mud",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mud_brick_stairs",
+                "name": "Mud Brick Stairs",
+                "wiki": "https://minecraft.wiki/w/Mud_Brick_Stairs"
+            },
+            {
+                "types": [
+                    "type/mud",
+                    "walls"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "mud_brick_wall",
+                "name": "Mud Brick Wall",
+                "wiki": "https://minecraft.wiki/w/Mud_Brick_Wall"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pearlescent_froglight",
+                "name": "Pearlescent Froglight",
+                "wiki": "https://minecraft.wiki/w/Froglight#Pearlescent"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "verdant_froglight",
+                "name": "Verdant Froglight",
+                "wiki": "https://minecraft.wiki/w/Froglight#Verdant"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "ochre_froglight",
+                "name": "Ochre Froglight",
+                "wiki": "https://minecraft.wiki/w/Froglight#Ochre"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "frogspawn",
+                "name": "Frogspawn",
+                "wiki": "https://minecraft.wiki/w/Frogspawn"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "reinforced_deepslate",
+                "name": "Reinforced Deepslate",
+                "wiki": "https://minecraft.wiki/w/Reinforced_Deepslate"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "earth_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Earth",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "wind_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Wind",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "fire_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Fire",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "water_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Water",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_5",
+                "name": "Music Disc 5"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "mangrove_boat",
+                "name": "Mangrove Boat",
+                "wiki": "https://minecraft.wiki/w/Boat#Mangrove"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "oak_chest_boat",
+                "name": "Oak Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "spruce_chest_boat",
+                "name": "Spruce Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "birch_chest_boat",
+                "name": "Birch Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "jungle_chest_boat",
+                "name": "Jungle Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "acacia_chest_boat",
+                "name": "Acacia Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "dark_oak_chest_boat",
+                "name": "Dark Oak Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/mangrove",
+                    "chest_boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "mangrove_chest_boat",
+                "name": "Mangrove Boat with Chest",
+                "wiki": "https://minecraft.wiki/w/Boat_with_Chest#Mangrove"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "tadpole_bucket",
+                "name": "Bucket of Tadpole",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Tadpole"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "tadpole_spawn_egg",
+                "name": "Tadpole Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "frog_spawn_egg",
+                "name": "Frog Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "allay_spawn_egg",
+                "name": "Allay Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "warden_spawn_egg",
+                "name": "Warden Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "disc_fragment_5",
+                "name": "Disc Fragment",
+                "extra": [
+                    {
+                        "type": "text",
+                        "value": "Music Disc - 5",
+                        "color": "#ddd"
+                    }
+                ],
+                "wiki": "https://minecraft.wiki/w/Disc_Fragment"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "echo_shard",
+                "name": "Echo Shard",
+                "wiki": "https://minecraft.wiki/w/Echo_Shard"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "recovery_compass",
+                "name": "Recovery Compass",
+                "wiki": "https://minecraft.wiki/w/Recovery_Compass"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "swift_sneak_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Swift Sneak I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "ponder_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Ponder",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "sing_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Sing",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "seek_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Seek",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "feel_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Feel",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "admire_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Admire",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "call_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Call",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "yearn_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Yearn",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            },
+            {
+                "types": [
+                    "horns"
+                ],
+                "element_type": "item",
+                "identifier": "dream_goat_horn",
+                "minecraft_identifier": "goat_horn",
+                "name": "Goat Horn",
+                "display_name": "Goat Horn – Dream",
+                "wiki": "https://minecraft.wiki/w/Goat_Horn"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "allay",
+                "name": "Allay",
+                "wiki": "https://minecraft.wiki/w/Allay",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "allay_spawn_egg",
+                        "element_type": "item",
+                        "name": "Allay Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "frog",
+                "name": "Frog",
+                "wiki": "https://minecraft.wiki/w/Frog",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "frog_spawn_egg",
+                        "element_type": "item",
+                        "name": "Frog Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "tadpole",
+                "name": "Tadpole",
+                "wiki": "https://minecraft.wiki/w/Tadpole",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "tadpole_spawn_egg",
+                        "element_type": "item",
+                        "name": "Tadpole Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 6
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "warden",
+                "name": "Warden",
+                "wiki": "https://minecraft.wiki/w/Warden",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "warden_spawn_egg",
+                        "element_type": "item",
+                        "name": "Warden Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 500
+                }
+            }
+        ],
+        "effects": [
+            {
+                "types": [
+                    "effects/visibility"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "darkness",
+                "name": "Darkness",
+                "wiki": "https://minecraft.wiki/w/Darkness"
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/armor/leggings"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "swift_sneak",
+                "name": "Swift Sneak",
+                "wiki": "https://minecraft.wiki/w/Swift_Sneak"
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/2x2",
+                    "unused"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "water",
+                "name": "Water",
+                "display_name": "Water – Unknown Artist",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2",
+                    "unused"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "fire",
+                "name": "Fire",
+                "display_name": "Fire – Unknown Artist",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2",
+                    "unused"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "wind",
+                "name": "Wind",
+                "display_name": "Wind – Unknown Artist",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2",
+                    "unused"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "earth",
+                "name": "Earth",
+                "display_name": "Earth – Unknown Artist",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/avoid_vibration",
+                "name": "Sneak 100",
+                "wiki": "https://minecraft.wiki/w/Advancement#Sneak_100",
+                "meta": {
+                    "icon": {
+                        "identifier": "sculk_sensor",
+                        "element_type": "block",
+                        "name": "Sculk Sensor",
+                        "wiki": "https://minecraft.wiki/w/Sculk_Sensor"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/kill_mob_near_sculk_catalyst",
+                "name": "It Spreads",
+                "wiki": "https://minecraft.wiki/w/Advancement#It_Spreads",
+                "meta": {
+                    "icon": {
+                        "identifier": "sculk_catalyst",
+                        "element_type": "block",
+                        "name": "Sculk Catalyst",
+                        "wiki": "https://minecraft.wiki/w/Sculk_Catalyst"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/allay_deliver_item_to_player",
+                "name": "You've Got a Friend in Me",
+                "wiki": "https://minecraft.wiki/w/Advancement#You've_Got_a_Friend_in_Me",
+                "meta": {
+                    "icon": {
+                        "identifier": "cookie",
+                        "element_type": "item",
+                        "name": "Cookie",
+                        "wiki": "https://minecraft.wiki/w/Cookie"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/tadpole_in_a_bucket",
+                "name": "Bukkit Bukkit",
+                "wiki": "https://minecraft.wiki/w/Advancement#Bukkit_Bukkit",
+                "meta": {
+                    "icon": {
+                        "identifier": "tadpole_bucket",
+                        "element_type": "item",
+                        "name": "Bucket of Tadpole",
+                        "wiki": "https://minecraft.wiki/w/Bucket_of_Tadpole"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/allay_deliver_cake_to_note_block",
+                "name": "Birthday Song",
+                "wiki": "https://minecraft.wiki/w/Advancement#Birthday_Song",
+                "meta": {
+                    "icon": {
+                        "identifier": "note_block",
+                        "element_type": "block",
+                        "name": "Note Block",
+                        "wiki": "https://minecraft.wiki/w/Note_Block"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/leash_all_frog_variants",
+                "name": "When the Squad Hops into Town",
+                "wiki": "https://minecraft.wiki/w/Advancement#When_the_Squad_Hops_into_Town",
+                "meta": {
+                    "icon": {
+                        "identifier": "lead",
+                        "element_type": "item",
+                        "name": "Lead",
+                        "wiki": "https://minecraft.wiki/w/Lead"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/froglights",
+                "name": "With Our Powers Combined!",
+                "wiki": "https://minecraft.wiki/w/Advancement#With_Our_Powers_Combined!",
+                "meta": {
+                    "icon": {
+                        "identifier": "verdant_froglight",
+                        "element_type": "block",
+                        "name": "Verdant Froglight",
+                        "wiki": "https://minecraft.wiki/w/Froglight#Verdant"
+                    }
+                }
+            }
+        ],
+        "mob_variants": [
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/cold"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "frog",
+                "identifier": "cold_frog",
+                "name": "Frog",
+                "display_name": "Cold Frog",
+                "wiki": "https://minecraft.wiki/w/Frog#Cold",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "frog_spawn_egg",
+                        "element_type": "item",
+                        "name": "Frog Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "frog",
+                        "element_type": "mob",
+                        "name": "Frog",
+                        "wiki": "https://minecraft.wiki/w/Frog",
+                        "health": 10
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive",
+                    "mob_variant/warm"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "frog",
+                "identifier": "warm_frog",
+                "name": "Frog",
+                "display_name": "Warm Frog",
+                "wiki": "https://minecraft.wiki/w/Frog#Warm",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "frog_spawn_egg",
+                        "element_type": "item",
+                        "name": "Frog Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "frog",
+                        "element_type": "mob",
+                        "name": "Frog",
+                        "wiki": "https://minecraft.wiki/w/Frog",
+                        "health": 10
+                    }
+                }
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "mangrove_swamp",
+                "name": "Mangrove Swamp",
+                "wiki": "https://minecraft.wiki/w/Mangrove_Swamp"
+            },
+            {
+                "types": [
+                    "biome/overworld",
+                    "biome/cave"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "deep_dark",
+                "name": "Deep Dark",
+                "wiki": "https://minecraft.wiki/w/Deep_Dark"
+            }
+        ]
+    },
+    "image": null,
+    "name": "The Wild Update",
+    "release_date": "June 7, 2022",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.19"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.19",
+    "type": "major"
+}

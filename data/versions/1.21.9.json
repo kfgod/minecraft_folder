@@ -1,0 +1,660 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "oak_shelf",
+                "name": "Oak Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_shelf",
+                "name": "Spruce Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Spruce"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "birch_shelf",
+                "name": "Birch Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Birch"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_shelf",
+                "name": "Jungle Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Jungle"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_shelf",
+                "name": "Acacia Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Acacia"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_shelf",
+                "name": "Dark Oak Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Dark_Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "mangrove_shelf",
+                "name": "Mangrove Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Mangrove"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cherry_shelf",
+                "name": "Cherry Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Cherry"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pale_oak_shelf",
+                "name": "Pale Oak Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Pale_Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "bamboo_shelf",
+                "name": "Bamboo Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Bamboo"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "crimson_shelf",
+                "name": "Crimson Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Crimson"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "warped_shelf",
+                "name": "Warped Shelf",
+                "wiki": "https://minecraft.wiki/w/Shelf#Warped"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_golem_statue",
+                "name": "Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_golem_statue",
+                "name": "Exposed Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_golem_statue",
+                "name": "Weathered Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_golem_statue",
+                "name": "Oxidized Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_golem_statue",
+                "name": "Waxed Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_golem_statue",
+                "name": "Waxed Exposed Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_golem_statue",
+                "name": "Waxed Weathered Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_golem_statue",
+                "name": "Waxed Oxidized Copper Golem Statue",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem_Statue#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_lightning_rod",
+                "name": "Exposed Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_lightning_rod",
+                "name": "Weathered Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_lightning_rod",
+                "name": "Oxidized Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_lightning_rod",
+                "name": "Waxed Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_lightning_rod",
+                "name": "Waxed Exposed Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_lightning_rod",
+                "name": "Waxed Weathered Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_lightning_rod",
+                "name": "Waxed Oxidized Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_chest",
+                "name": "Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_chest",
+                "name": "Exposed Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_chest",
+                "name": "Weathered Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_chest",
+                "name": "Oxidized Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_chest",
+                "name": "Waxed Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_chest",
+                "name": "Waxed Exposed Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_chest",
+                "name": "Waxed Weathered Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_chest",
+                "name": "Waxed Oxidized Copper Chest",
+                "wiki": "https://minecraft.wiki/w/Copper_Chest#Oxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "copper_lantern",
+                "name": "Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Unoxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_lantern",
+                "name": "Exposed Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Exposed"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_lantern",
+                "name": "Weathered Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Weathered"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_lantern",
+                "name": "Oxidized Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_lantern",
+                "name": "Waxed Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_lantern",
+                "name": "Waxed Exposed Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_lantern",
+                "name": "Waxed Weathered Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_lantern",
+                "name": "Waxed Oxidized Copper Lantern",
+                "wiki": "https://minecraft.wiki/w/Copper_Lantern#Oxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "copper_chain",
+                "name": "Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Unoxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_chain",
+                "name": "Exposed Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Exposed"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_chain",
+                "name": "Weathered Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Weathered"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_chain",
+                "name": "Oxidized Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_chain",
+                "name": "Waxed Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_chain",
+                "name": "Waxed Exposed Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_chain",
+                "name": "Waxed Weathered Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_chain",
+                "name": "Waxed Oxidized Copper Chain",
+                "wiki": "https://minecraft.wiki/w/Copper_Chain#Oxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "copper_bars",
+                "name": "Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Unoxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_bars",
+                "name": "Exposed Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Exposed"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_bars",
+                "name": "Weathered Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Weathered"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_bars",
+                "name": "Oxidized Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_bars",
+                "name": "Waxed Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_bars",
+                "name": "Waxed Exposed Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_bars",
+                "name": "Waxed Weathered Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_bars",
+                "name": "Waxed Oxidized Copper Bars",
+                "wiki": "https://minecraft.wiki/w/Copper_Bars#Oxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "copper_torch",
+                "name": "Copper Torch",
+                "wiki": "https://minecraft.wiki/w/Copper_Torch"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_shovel",
+                "name": "Copper Shovel",
+                "wiki": "https://minecraft.wiki/w/Copper_Shovel"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_pickaxe",
+                "name": "Copper Pickaxe",
+                "wiki": "https://minecraft.wiki/w/Copper_Pickaxe"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_axe",
+                "name": "Copper Axe",
+                "wiki": "https://minecraft.wiki/w/Copper_Axe"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_hoe",
+                "name": "Copper Hoe",
+                "wiki": "https://minecraft.wiki/w/Copper_Hoe"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_sword",
+                "name": "Copper Sword",
+                "wiki": "https://minecraft.wiki/w/Copper_Sword"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_helmet",
+                "name": "Copper Helmet",
+                "wiki": "https://minecraft.wiki/w/Copper_Helmet"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_chestplate",
+                "name": "Copper Chestplate",
+                "wiki": "https://minecraft.wiki/w/Copper_Chestplate"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_leggings",
+                "name": "Copper Leggings",
+                "wiki": "https://minecraft.wiki/w/Copper_Leggings"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_boots",
+                "name": "Copper Boots",
+                "wiki": "https://minecraft.wiki/w/Copper_Boots"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_horse_armor",
+                "name": "Copper Horse Armor",
+                "wiki": "https://minecraft.wiki/w/Copper_Horse_Armor"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_nugget",
+                "name": "Copper Nugget",
+                "wiki": "https://minecraft.wiki/w/Copper_Nugget"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_golem_spawn_egg",
+                "name": "Copper Golem Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "copper_golem",
+                "name": "Copper Golem",
+                "wiki": "https://minecraft.wiki/w/Copper_Golem",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "copper_golem_spawn_egg",
+                        "element_type": "item",
+                        "name": "Copper Golem Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 12
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "The Copper Age",
+    "release_date": "September 30, 2025",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.9"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.9",
+    "type": "drop"
+}

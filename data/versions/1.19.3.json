@@ -1,0 +1,52 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "iron_golem_spawn_egg",
+                "name": "Iron Golem Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "snow_golem_spawn_egg",
+                "name": "Snow Golem Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wither_spawn_egg",
+                "name": "Wither Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "ender_dragon_spawn_egg",
+                "name": "Ender Dragon Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "December 7, 2022",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.19.3"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.19.3",
+    "type": "minor"
+}

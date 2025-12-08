@@ -1,0 +1,563 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "pressure_plates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_pressure_plate",
+                "name": "Oak Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Wooden_Pressure_Plate#Oak"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_fence",
+                "name": "Oak Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "redstone_ore",
+                "name": "Redstone Ore",
+                "wiki": "https://minecraft.wiki/w/Redstone_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "redstone_torch",
+                "name": "Redstone Torch",
+                "wiki": "https://minecraft.wiki/w/Redstone_Torch"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "stone_pressure_plate",
+                "name": "Stone Pressure Plate",
+                "wiki": "https://minecraft.wiki/w/Stone_Pressure_Plate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "stone_button",
+                "name": "Stone Button",
+                "wiki": "https://minecraft.wiki/w/Stone_Button"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "lever",
+                "name": "Lever",
+                "wiki": "https://minecraft.wiki/w/Lever"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "iron_door",
+                "name": "Iron Door",
+                "wiki": "https://minecraft.wiki/w/Iron_Door"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "snow",
+                "name": "Snow",
+                "wiki": "https://minecraft.wiki/w/Snow"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "ice",
+                "name": "Ice",
+                "wiki": "https://minecraft.wiki/w/Ice"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "snow_block",
+                "name": "Snow Block",
+                "wiki": "https://minecraft.wiki/w/Snow_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cactus",
+                "name": "Cactus",
+                "wiki": "https://minecraft.wiki/w/Cactus"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "clay",
+                "name": "Clay",
+                "wiki": "https://minecraft.wiki/w/Clay"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "jukebox",
+                "name": "Jukebox",
+                "wiki": "https://minecraft.wiki/w/Jukebox"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "netherrack",
+                "name": "Netherrack",
+                "wiki": "https://minecraft.wiki/w/Netherrack"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "soul_sand",
+                "name": "Soul Sand",
+                "wiki": "https://minecraft.wiki/w/Soul_Sand"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "glowstone",
+                "name": "Glowstone",
+                "wiki": "https://minecraft.wiki/w/Glowstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "carved_pumpkin",
+                "name": "Carved Pumpkin",
+                "wiki": "https://minecraft.wiki/w/Carved_Pumpkin"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "jack_o_lantern",
+                "name": "Jack o'Lantern",
+                "wiki": "https://minecraft.wiki/w/Jack_o%27Lantern"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "graham_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Graham",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "creebet_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Creebet",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "kong_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Kong",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "mortal_coil_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Mortal Coil",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "pigscene_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Pigscene",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_cat",
+                "name": "Music Disc cat"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_13",
+                "name": "Music Disc 13"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "egg",
+                "name": "Egg",
+                "wiki": "https://minecraft.wiki/w/Egg"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "boats"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "oak_boat",
+                "name": "Oak Boat",
+                "wiki": "https://minecraft.wiki/w/Boat#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "sugar_cane",
+                "name": "Sugar Cane",
+                "wiki": "https://minecraft.wiki/w/Sugar_Cane"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "redstone",
+                "name": "Redstone Dust",
+                "wiki": "https://minecraft.wiki/w/Redstone_Dust"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "snowball",
+                "name": "Snowball",
+                "wiki": "https://minecraft.wiki/w/Snowball"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "leather",
+                "name": "Leather",
+                "wiki": "https://minecraft.wiki/w/Leather"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "milk_bucket",
+                "name": "Milk Bucket",
+                "wiki": "https://minecraft.wiki/w/Milk_Bucket"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "paper",
+                "name": "Paper",
+                "wiki": "https://minecraft.wiki/w/Paper"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "book",
+                "name": "Book",
+                "wiki": "https://minecraft.wiki/w/Book"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "clay_ball",
+                "name": "Clay Ball",
+                "wiki": "https://minecraft.wiki/w/Clay_Ball"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "brick",
+                "name": "Brick",
+                "wiki": "https://minecraft.wiki/w/Brick"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "slime_ball",
+                "name": "Slimeball",
+                "wiki": "https://minecraft.wiki/w/Slimeball"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "furnace_minecart",
+                "name": "Minecart with Furnace",
+                "wiki": "https://minecraft.wiki/w/Minecart_with_Furnace"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "chest_minecart",
+                "name": "Minecart with Chest",
+                "wiki": "https://minecraft.wiki/w/Minecart_with_Chest"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "compass",
+                "name": "Compass",
+                "wiki": "https://minecraft.wiki/w/Compass"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "fishing_rod",
+                "name": "Fishing Rod",
+                "wiki": "https://minecraft.wiki/w/Fishing_Rod"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "clock",
+                "name": "Clock",
+                "wiki": "https://minecraft.wiki/w/Clock"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "glowstone_dust",
+                "name": "Glowstone Dust",
+                "wiki": "https://minecraft.wiki/w/Glowstone_Dust"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "cooked_cod",
+                "name": "Cooked Cod",
+                "wiki": "https://minecraft.wiki/w/Cooked_Cod"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "cod",
+                "name": "Raw Cod",
+                "wiki": "https://minecraft.wiki/w/Raw_Cod"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "chicken",
+                "name": "Chicken",
+                "wiki": "https://minecraft.wiki/w/Chicken",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "chicken_spawn_egg",
+                        "element_type": "item",
+                        "name": "Chicken Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 4
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "cow",
+                "name": "Cow",
+                "wiki": "https://minecraft.wiki/w/Cow",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "cow_spawn_egg",
+                        "element_type": "item",
+                        "name": "Cow Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "zombified_piglin",
+                "name": "Zombified Piglin",
+                "wiki": "https://minecraft.wiki/w/Zombified_Piglin",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "zombified_piglin_spawn_egg",
+                        "element_type": "item",
+                        "name": "Zombified Piglin Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "ghast",
+                "name": "Ghast",
+                "wiki": "https://minecraft.wiki/w/Ghast",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "ghast_spawn_egg",
+                        "element_type": "item",
+                        "name": "Ghast Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "slime",
+                "name": "Slime",
+                "wiki": "https://minecraft.wiki/w/Slime",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "slime_spawn_egg",
+                        "element_type": "item",
+                        "name": "Slime Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    }
+                }
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/4x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "pigscene",
+                "name": "Pigscene",
+                "display_name": "Pigscene – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "skeleton",
+                "name": "Mortal Coil",
+                "display_name": "Mortal Coil – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "donkey_kong",
+                "name": "Kong",
+                "display_name": "Kong – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "creebet",
+                "name": "Creebet",
+                "display_name": "Creebet – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "graham",
+                "name": "Graham",
+                "display_name": "Graham – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/nether"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "nether_wastes",
+                "name": "Nether Wastes",
+                "wiki": "https://minecraft.wiki/w/Nether_Wastes"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "desert",
+                "name": "Desert",
+                "wiki": "https://minecraft.wiki/w/Desert"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "forest",
+                "name": "Forest",
+                "wiki": "https://minecraft.wiki/w/Forest"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "plains",
+                "name": "Plains",
+                "wiki": "https://minecraft.wiki/w/Plains"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "taiga",
+                "name": "Taiga",
+                "wiki": "https://minecraft.wiki/w/Taiga"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "December 3, 2010",
+    "release_version": {
+        "bedrock": null,
+        "java": "Alpha"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Alpha",
+    "type": null
+}

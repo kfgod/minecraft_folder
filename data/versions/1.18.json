@@ -1,0 +1,162 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_otherside",
+                "name": "Music Disc otherside"
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "nether/ride_strider_in_overworld_lava",
+                "name": "Feels Like Home",
+                "wiki": "https://minecraft.wiki/w/Advancement#Feels_Like_Home",
+                "meta": {
+                    "icon": {
+                        "identifier": "warped_fungus_on_a_stick",
+                        "element_type": "item",
+                        "name": "Warped Fungus on a Stick",
+                        "wiki": "https://minecraft.wiki/w/Warped_Fungus_on_a_Stick"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/fall_from_world_height",
+                "name": "Caves & Cliffs",
+                "wiki": "https://minecraft.wiki/w/Advancement#Caves_&_Cliffs",
+                "meta": {
+                    "icon": {
+                        "identifier": "water_bucket",
+                        "element_type": "item",
+                        "name": "Water Bucket",
+                        "wiki": "https://minecraft.wiki/w/Water_Bucket"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/trade_at_world_height",
+                "name": "Star Trader",
+                "wiki": "https://minecraft.wiki/w/Advancement#Star_Trader",
+                "meta": {
+                    "icon": {
+                        "identifier": "emerald",
+                        "element_type": "item",
+                        "name": "Emerald",
+                        "wiki": "https://minecraft.wiki/w/Emerald"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/play_jukebox_in_meadows",
+                "name": "Sound of Music",
+                "wiki": "https://minecraft.wiki/w/Advancement#Sound_of_Music",
+                "meta": {
+                    "icon": {
+                        "identifier": "jukebox",
+                        "element_type": "block",
+                        "name": "Jukebox",
+                        "wiki": "https://minecraft.wiki/w/Jukebox"
+                    }
+                }
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/overworld",
+                    "biome/cave"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "dripstone_caves",
+                "name": "Dripstone Caves",
+                "wiki": "https://minecraft.wiki/w/Dripstone_Caves"
+            },
+            {
+                "types": [
+                    "biome/overworld",
+                    "biome/cave"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "lush_caves",
+                "name": "Lush Caves",
+                "wiki": "https://minecraft.wiki/w/Lush_Caves"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "meadow",
+                "name": "Meadow",
+                "wiki": "https://minecraft.wiki/w/Meadow"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "grove",
+                "name": "Grove",
+                "wiki": "https://minecraft.wiki/w/Grove"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "snowy_slopes",
+                "name": "Snowy Slopes",
+                "wiki": "https://minecraft.wiki/w/Snowy_Slopes"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "jagged_peaks",
+                "name": "Jagged Peaks",
+                "wiki": "https://minecraft.wiki/w/Jagged_Peaks"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "frozen_peaks",
+                "name": "Frozen Peaks",
+                "wiki": "https://minecraft.wiki/w/Frozen_Peaks"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "stony_peaks",
+                "name": "Stony Peaks",
+                "wiki": "https://minecraft.wiki/w/Stony_Peaks"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Caves & Cliffs: Part II",
+    "release_date": "November 30, 2021",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.18"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.18",
+    "type": "major"
+}

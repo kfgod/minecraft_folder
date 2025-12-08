@@ -1,0 +1,207 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dried_ghast",
+                "name": "Dried Ghast",
+                "wiki": "https://minecraft.wiki/w/Dried_Ghast"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "white_harness",
+                "name": "White Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#White"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "light_gray_harness",
+                "name": "Light Gray Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Light_Gray"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "gray_harness",
+                "name": "Gray Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Gray"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "black_harness",
+                "name": "Black Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Black"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "brown_harness",
+                "name": "Brown Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Brown"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "red_harness",
+                "name": "Red Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Red"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "orange_harness",
+                "name": "Orange Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Orange"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "yellow_harness",
+                "name": "Yellow Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Yellow"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "lime_harness",
+                "name": "Lime Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Lime"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "green_harness",
+                "name": "Green Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Green"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "cyan_harness",
+                "name": "Cyan Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Cyan"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "light_blue_harness",
+                "name": "Light Blue Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Light_Blue"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "blue_harness",
+                "name": "Blue Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Blue"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "purple_harness",
+                "name": "Purple Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Purple"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "magenta_harness",
+                "name": "Magenta Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Magenta"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "pink_harness",
+                "name": "Pink Harness",
+                "wiki": "https://minecraft.wiki/w/Harness#Pink"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "happy_ghast_spawn_egg",
+                "name": "Happy Ghast Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_tears",
+                "name": "Music Disc - Tears",
+                "wiki": "https://minecraft.wiki/w/Music_Disc_Tears"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "happy_ghast",
+                "name": "Happy Ghast",
+                "wiki": "https://minecraft.wiki/w/Happy_Ghast#Default",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "happy_ghast_spawn_egg",
+                        "element_type": "item",
+                        "name": "Happy Ghast Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/place_dried_ghast_in_water",
+                "name": "Stay Hydrated!",
+                "wiki": "https://minecraft.wiki/w/Advancement#Stay_Hydrated!",
+                "meta": {
+                    "icon": {
+                        "identifier": "dried_ghast",
+                        "element_type": "block",
+                        "name": "Dried Ghast",
+                        "wiki": "https://minecraft.wiki/w/Dried_Ghast"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/heart_transplanter",
+                "name": "Heart Transplanter",
+                "wiki": "https://minecraft.wiki/w/Advancement#Heart_Transplanter",
+                "meta": {
+                    "icon": {
+                        "identifier": "creaking_heart",
+                        "element_type": "block",
+                        "name": "Creaking Heart",
+                        "wiki": "https://minecraft.wiki/w/Creaking_Heart"
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Chase the Skies",
+    "release_date": "June 17, 2025",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.6"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.6",
+    "type": "drop"
+}

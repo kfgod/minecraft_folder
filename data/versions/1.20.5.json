@@ -1,0 +1,331 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "armadillo_scute",
+                "name": "Armadillo Scute",
+                "wiki": "https://minecraft.wiki/w/Armadillo_Scute"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "armadillo_spawn_egg",
+                "name": "Armadillo Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "wolf_armor",
+                "name": "Wolf Armor",
+                "wiki": "https://minecraft.wiki/w/Wolf_Armor"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "armadillo",
+                "name": "Armadillo",
+                "wiki": "https://minecraft.wiki/w/Armadillo",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "armadillo_spawn_egg",
+                        "element_type": "item",
+                        "name": "Armadillo Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 12
+                }
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/brush_armadillo",
+                "name": "Isn't It Scute?",
+                "wiki": "https://minecraft.wiki/w/Advancement#Isn't_It_Scute?",
+                "meta": {
+                    "icon": {
+                        "identifier": "armadillo_scute",
+                        "element_type": "item",
+                        "name": "Armadillo Scute",
+                        "wiki": "https://minecraft.wiki/w/Armadillo_Scute"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/repair_wolf_armor",
+                "name": "Good as New",
+                "wiki": "https://minecraft.wiki/w/Advancement#Good_as_New",
+                "meta": {
+                    "icon": {
+                        "identifier": "wolf_armor",
+                        "element_type": "item",
+                        "name": "Wolf Armor",
+                        "wiki": "https://minecraft.wiki/w/Wolf_Armor"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/whole_pack",
+                "name": "The Whole Pack",
+                "wiki": "https://minecraft.wiki/w/Advancement#The_Whole_Pack",
+                "meta": {
+                    "icon": {
+                        "identifier": "bone",
+                        "element_type": "item",
+                        "name": "Bone",
+                        "wiki": "https://minecraft.wiki/w/Bone"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/remove_wolf_armor",
+                "name": "Shear Brilliance",
+                "wiki": "https://minecraft.wiki/w/Advancement#Shear_Brilliance",
+                "meta": {
+                    "icon": {
+                        "identifier": "shears",
+                        "element_type": "item",
+                        "name": "Shears",
+                        "wiki": "https://minecraft.wiki/w/Shears"
+                    }
+                }
+            }
+        ],
+        "mob_variants": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "ashen_wolf",
+                "name": "Wolf",
+                "display_name": "Ashen Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Ashen",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "black_wolf",
+                "name": "Wolf",
+                "display_name": "Black Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Black",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "chestnut_wolf",
+                "name": "Wolf",
+                "display_name": "Chestnut Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Chestnut",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "rusty_wolf",
+                "name": "Wolf",
+                "display_name": "Rusty Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Rusty",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "snowy_wolf",
+                "name": "Wolf",
+                "display_name": "Snowy Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Snowy",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "spotted_wolf",
+                "name": "Wolf",
+                "display_name": "Spotted Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Spotted",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "stripped_wolf",
+                "name": "Wolf",
+                "display_name": "Stripped Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Stripped",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "wolf",
+                "identifier": "woods_wolf",
+                "name": "Wolf",
+                "display_name": "Woods Wolf",
+                "wiki": "https://minecraft.wiki/w/Wolf#Woods",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "wolf_spawn_egg",
+                        "element_type": "item",
+                        "name": "Wolf Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "wolf",
+                        "element_type": "mob",
+                        "name": "Wolf",
+                        "wiki": "https://minecraft.wiki/w/Wolf",
+                        "health": 8
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Armored Paws",
+    "release_date": "April 23, 2024",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.20.5"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.20.5",
+    "type": "drop"
+}

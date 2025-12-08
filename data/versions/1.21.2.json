@@ -1,0 +1,178 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [
+                    "banner_pattern"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "field_masoned_banner_pattern",
+                "name": "Field Masoned Banner Pattern",
+                "wiki": "https://minecraft.wiki/w/Field_Masoned_Banner_Pattern"
+            },
+            {
+                "types": [
+                    "banner_pattern"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "bordure_indented_banner_pattern",
+                "name": "Bordure Indented Banner Pattern",
+                "wiki": "https://minecraft.wiki/w/Bordure_Indented_Banner_Pattern"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "white_bundle",
+                "name": "White Bundle",
+                "color": "white"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "orange_bundle",
+                "name": "Orange Bundle",
+                "color": "orange"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "magenta_bundle",
+                "name": "Magenta Bundle",
+                "color": "magenta"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "light_blue_bundle",
+                "name": "Light Blue Bundle",
+                "color": "light_blue"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "yellow_bundle",
+                "name": "Yellow Bundle",
+                "color": "yellow"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "lime_bundle",
+                "name": "Lime Bundle",
+                "color": "lime"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "pink_bundle",
+                "name": "Pink Bundle",
+                "color": "pink"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "gray_bundle",
+                "name": "Gray Bundle",
+                "color": "gray"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "light_gray_bundle",
+                "name": "Light Gray Bundle",
+                "color": "light_gray"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "cyan_bundle",
+                "name": "Cyan Bundle",
+                "color": "cyan"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "purple_bundle",
+                "name": "Purple Bundle",
+                "color": "purple"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "blue_bundle",
+                "name": "Blue Bundle",
+                "color": "blue"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "brown_bundle",
+                "name": "Brown Bundle",
+                "color": "brown"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "green_bundle",
+                "name": "Green Bundle",
+                "color": "green"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "red_bundle",
+                "name": "Red Bundle",
+                "color": "red"
+            },
+            {
+                "types": [
+                    "bundle"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "black_bundle",
+                "name": "Black Bundle",
+                "color": "black"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Bundles of Bravery",
+    "release_date": "October 22, 2024",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.2"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.2",
+    "type": "drop"
+}

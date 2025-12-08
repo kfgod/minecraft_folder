@@ -1,0 +1,61 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/spruce",
+                    "saplings",
+                    "plants"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_sapling",
+                "name": "Spruce Sapling",
+                "wiki": "https://minecraft.wiki/w/Sapling#Spruce"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/birch",
+                    "saplings",
+                    "plants"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_sapling",
+                "name": "Birch Sapling",
+                "wiki": "https://minecraft.wiki/w/Sapling#Birch"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "detector_rail",
+                "name": "Detector Rail",
+                "wiki": "https://minecraft.wiki/w/Detector_Rail"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "powered_rail",
+                "name": "Powered Rail",
+                "wiki": "https://minecraft.wiki/w/Powered_Rail"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobweb",
+                "name": "Cobweb",
+                "wiki": "https://minecraft.wiki/w/Cobweb"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "April 19, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "Beta 1.5"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Beta_1.5",
+    "type": null
+}

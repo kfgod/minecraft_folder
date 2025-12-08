@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Updates</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body class="no-transition">
+    <aside id="controls-panel">
+        <div class="controls-content">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search for blocks or items...">
+                <button id="search-clear-btn" class="search-clear-btn" hidden>&times;</button>
+            </div>
+            <div class="toggle-switch">
+                <div id="toggle-versions" class="toggle-switch-label active" data-view="versions">Versions</div>
+                <div id="toggle-years" class="toggle-switch-label" data-view="years">Years</div>
+            </div>
+            <div class="panel-links">
+                <button id="stats-btn" type="button" class="link-button">Statistics</button>
+                <button id="compare-btn" type="button" class="link-button">Compare</button>
+            </div>
+            <div class="panel-links">
+                <button id="time-since-btn" type="button" class="link-button">Time Since</button>
+            </div>
+            <div class="checkboxes-grid">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="remove-duplicates-checkbox" checked>
+                    <label for="remove-duplicates-checkbox">Remove Duplicates</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-blocks-checkbox" checked>
+                    <label for="show-blocks-checkbox">Blocks</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-items-checkbox" checked>
+                    <label for="show-items-checkbox">Items</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-mobs-checkbox" checked>
+                    <label for="show-mobs-checkbox">Mobs</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-mob-variants-checkbox" checked>
+                    <label for="show-mob-variants-checkbox">Mob Variants</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-effects-checkbox" checked>
+                    <label for="show-effects-checkbox">Effects</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-enchantments-checkbox" checked>
+                    <label for="show-enchantments-checkbox">Enchantments</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-advancements-checkbox" checked>
+                    <label for="show-advancements-checkbox">Advancements</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-paintings-checkbox" checked>
+                    <label for="show-paintings-checkbox">Paintings</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-biomes-checkbox" checked>
+                    <label for="show-biomes-checkbox">Biomes</label>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p class="disclaimer-text">
+                    Some images are sourced from <a href="https://minecraft.wiki" target="_blank" rel="noopener noreferrer">minecraft.wiki</a>
+                </p>
+                <p class="disclaimer-text">
+                    Not an official Minecraft website. Not approved by or associated with Mojang or Microsoft.
+                </p>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <button id="nav-toggle-btn" aria-label="Open Navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div id="content"></div>
+    </main>
+    <nav id="nav-panel">
+        <header class="nav-header">
+            <h3>Navigation</h3>
+            <a href="#" id="scroll-to-top-btn" aria-label="Scroll to top">↑</a>
+        </header>
+        <ul id="nav-list"></ul>
+    </nav>
+    <div id="overlay"></div>
+    <div id="tooltip" class="tooltip" role="tooltip"></div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

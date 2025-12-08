@@ -1,0 +1,82 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_bed",
+                "name": "Red Bed",
+                "color": "red",
+                "wiki": "https://minecraft.wiki/w/Bed#Red"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "petrified_oak_slab",
+                "name": "Petrified Oak Slab",
+                "wiki": "https://minecraft.wiki/w/Petrified_Oak_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobblestone_slab",
+                "name": "Cobblestone Slab",
+                "wiki": "https://minecraft.wiki/w/Cobblestone_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sandstone_slab",
+                "name": "Sandstone Slab",
+                "wiki": "https://minecraft.wiki/w/Sandstone_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "smooth_stone",
+                "name": "Smooth Stone",
+                "wiki": "https://minecraft.wiki/w/Smooth_Stone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "repeater",
+                "name": "Redstone Repeater",
+                "wiki": "https://minecraft.wiki/w/Redstone_Repeater"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "skull_on_fire_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Skull on Fire",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/4x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "burning_skull",
+                "name": "Skull On Fire",
+                "display_name": "Skull On Fire – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "February 22, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "Beta 1.3"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Beta_1.3",
+    "type": null
+}

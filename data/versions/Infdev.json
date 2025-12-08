@@ -1,0 +1,127 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_stairs",
+                "name": "Oak Stairs",
+                "wiki": "https://minecraft.wiki/w/Wooden_Stairs#Oak"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "signs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_sign",
+                "name": "Oak Sign",
+                "wiki": "https://minecraft.wiki/w/Sign#Oak"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_door",
+                "name": "Oak Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "ladder",
+                "name": "Ladder",
+                "wiki": "https://minecraft.wiki/w/Ladder"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "spawner",
+                "name": "Monster Spawner",
+                "wiki": "https://minecraft.wiki/w/Monster_Spawner"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobblestone_stairs",
+                "name": "Cobblestone Stairs",
+                "wiki": "https://minecraft.wiki/w/Cobblestone_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "rail",
+                "name": "Rail",
+                "wiki": "https://minecraft.wiki/w/Rail"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "food",
+                    "food/supernatural"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "golden_apple",
+                "name": "Golden Apple",
+                "wiki": "https://minecraft.wiki/w/Golden_Apple"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "bucket",
+                "name": "Bucket",
+                "wiki": "https://minecraft.wiki/w/Bucket"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "water_bucket",
+                "name": "Water Bucket",
+                "wiki": "https://minecraft.wiki/w/Water_Bucket"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "lava_bucket",
+                "name": "Lava Bucket",
+                "wiki": "https://minecraft.wiki/w/Lava_Bucket"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "saddle",
+                "name": "Saddle",
+                "wiki": "https://minecraft.wiki/w/Saddle"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "minecart",
+                "name": "Minecart",
+                "wiki": "https://minecraft.wiki/w/Minecart"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "June 30, 2010",
+    "release_version": {
+        "bedrock": null,
+        "java": "Infdev"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Minecraft_Infdev",
+    "type": null
+}

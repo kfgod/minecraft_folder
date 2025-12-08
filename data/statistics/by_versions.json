@@ -1,0 +1,835 @@
+[
+  {
+    "version": "Pre-Classic",
+    "name": null,
+    "release_date": "May 16, 2009",
+    "counts": {
+      "blocks": 6,
+      "items": 0,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 6
+    }
+  },
+  {
+    "version": "Classic",
+    "name": null,
+    "release_date": "November 10, 2009",
+    "counts": {
+      "blocks": 38,
+      "items": 1,
+      "mobs": 6,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 45
+    }
+  },
+  {
+    "version": "Indev",
+    "name": null,
+    "release_date": "February 23, 2010",
+    "counts": {
+      "blocks": 7,
+      "items": 63,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 19,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 89
+    }
+  },
+  {
+    "version": "Infdev",
+    "name": null,
+    "release_date": "June 30, 2010",
+    "counts": {
+      "blocks": 7,
+      "items": 6,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 13
+    }
+  },
+  {
+    "version": "Alpha",
+    "name": null,
+    "release_date": "December 3, 2010",
+    "counts": {
+      "blocks": 24,
+      "items": 22,
+      "mobs": 5,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 5,
+      "mob_variants": 0,
+      "biomes": 5,
+      "total": 61
+    }
+  },
+  {
+    "version": "Beta 1.2",
+    "name": null,
+    "release_date": "January 13, 2011",
+    "counts": {
+      "blocks": 10,
+      "items": 19,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 30
+    }
+  },
+  {
+    "version": "Beta 1.3",
+    "name": null,
+    "release_date": "February 22, 2011",
+    "counts": {
+      "blocks": 7,
+      "items": 0,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 1,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 8
+    }
+  },
+  {
+    "version": "Beta 1.4",
+    "name": null,
+    "release_date": "March 31, 2011",
+    "counts": {
+      "blocks": 0,
+      "items": 1,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 2
+    }
+  },
+  {
+    "version": "Beta 1.5",
+    "name": null,
+    "release_date": "April 19, 2011",
+    "counts": {
+      "blocks": 5,
+      "items": 0,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 5
+    }
+  },
+  {
+    "version": "Beta 1.6",
+    "name": null,
+    "release_date": "May 26, 2011",
+    "counts": {
+      "blocks": 4,
+      "items": 1,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 5
+    }
+  },
+  {
+    "version": "Beta 1.7",
+    "name": null,
+    "release_date": "June 30, 2011",
+    "counts": {
+      "blocks": 2,
+      "items": 1,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 3
+    }
+  },
+  {
+    "version": "Beta 1.8",
+    "name": "Adventure Update (Part 1)",
+    "release_date": "September 14, 2011",
+    "counts": {
+      "blocks": 18,
+      "items": 9,
+      "mobs": 3,
+      "effects": 19,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 4,
+      "total": 53
+    }
+  },
+  {
+    "version": "1.0.0",
+    "name": "Adventure Update (Part 2)",
+    "release_date": "November 18, 2011",
+    "counts": {
+      "blocks": 11,
+      "items": 46,
+      "mobs": 6,
+      "effects": 0,
+      "enchantments": 17,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 5,
+      "total": 85
+    }
+  },
+  {
+    "version": "1.1",
+    "name": null,
+    "release_date": "January 12, 2012",
+    "counts": {
+      "blocks": 0,
+      "items": 20,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 4,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 1,
+      "total": 25
+    }
+  },
+  {
+    "version": "1.2.1",
+    "name": null,
+    "release_date": "March 1, 2012",
+    "counts": {
+      "blocks": 5,
+      "items": 3,
+      "mobs": 3,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 1,
+      "total": 12
+    }
+  },
+  {
+    "version": "1.2.4",
+    "name": null,
+    "release_date": "March 22, 2012",
+    "counts": {
+      "blocks": 5,
+      "items": 0,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 5
+    }
+  },
+  {
+    "version": "1.3.1",
+    "name": null,
+    "release_date": "August 1, 2012",
+    "counts": {
+      "blocks": 16,
+      "items": 4,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 20
+    }
+  },
+  {
+    "version": "1.4.2",
+    "name": "Pretty Scary Update",
+    "release_date": "October 25, 2012",
+    "counts": {
+      "blocks": 16,
+      "items": 15,
+      "mobs": 5,
+      "effects": 1,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 1,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 38
+    }
+  },
+  {
+    "version": "1.4.4",
+    "name": null,
+    "release_date": "November 14, 2012",
+    "counts": {
+      "blocks": 0,
+      "items": 1,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 1
+    }
+  },
+  {
+    "version": "1.4.6",
+    "name": null,
+    "release_date": "December 20, 2012",
+    "counts": {
+      "blocks": 1,
+      "items": 2,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 4
+    }
+  },
+  {
+    "version": "1.5",
+    "name": "Redstone Update",
+    "release_date": "March 13, 2013",
+    "counts": {
+      "blocks": 17,
+      "items": 4,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 21
+    }
+  },
+  {
+    "version": "1.6.1",
+    "name": "Horse Update",
+    "release_date": "July 1, 2013",
+    "counts": {
+      "blocks": 35,
+      "items": 6,
+      "mobs": 5,
+      "effects": 3,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 49
+    }
+  },
+  {
+    "version": "1.7.2",
+    "name": "The Update that Changed the World",
+    "release_date": "October 25, 2013",
+    "counts": {
+      "blocks": 66,
+      "items": 9,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 2,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 21,
+      "total": 98
+    }
+  },
+  {
+    "version": "1.8",
+    "name": "Bountiful Update",
+    "release_date": "September 2, 2014",
+    "counts": {
+      "blocks": 53,
+      "items": 15,
+      "mobs": 4,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 73
+    }
+  },
+  {
+    "version": "1.9",
+    "name": "Combat Update",
+    "release_date": "February 29, 2016",
+    "counts": {
+      "blocks": 14,
+      "items": 53,
+      "mobs": 1,
+      "effects": 4,
+      "enchantments": 2,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 4,
+      "total": 78
+    }
+  },
+  {
+    "version": "1.10",
+    "name": "Frostburn Update",
+    "release_date": "June 8, 2016",
+    "counts": {
+      "blocks": 5,
+      "items": 1,
+      "mobs": 3,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 9
+    }
+  },
+  {
+    "version": "1.11",
+    "name": "Exploration Update",
+    "release_date": "November 14, 2016",
+    "counts": {
+      "blocks": 17,
+      "items": 19,
+      "mobs": 4,
+      "effects": 0,
+      "enchantments": 2,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 42
+    }
+  },
+  {
+    "version": "1.11.1",
+    "name": null,
+    "release_date": "December 20, 2016",
+    "counts": {
+      "blocks": 0,
+      "items": 2,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 3
+    }
+  },
+  {
+    "version": "1.12",
+    "name": "World of Color Update",
+    "release_date": "June 7, 2017",
+    "counts": {
+      "blocks": 63,
+      "items": 2,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 4,
+      "biomes": 0,
+      "total": 70
+    }
+  },
+  {
+    "version": "1.13",
+    "name": "Update Aquatic",
+    "release_date": "July 18, 2018",
+    "counts": {
+      "blocks": 67,
+      "items": 33,
+      "mobs": 8,
+      "effects": 3,
+      "enchantments": 4,
+      "advancements": 4,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 6,
+      "total": 125
+    }
+  },
+  {
+    "version": "1.13.1",
+    "name": null,
+    "release_date": "August 22, 2018",
+    "counts": {
+      "blocks": 5,
+      "items": 0,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 5
+    }
+  },
+  {
+    "version": "1.14",
+    "name": "Village & Pillage",
+    "release_date": "April 23, 2019",
+    "counts": {
+      "blocks": 68,
+      "items": 23,
+      "mobs": 7,
+      "effects": 2,
+      "enchantments": 3,
+      "advancements": 7,
+      "paintings": 0,
+      "mob_variants": 7,
+      "biomes": 1,
+      "total": 118
+    }
+  },
+  {
+    "version": "1.15",
+    "name": "Buzzy Bees",
+    "release_date": "December 10, 2019",
+    "counts": {
+      "blocks": 4,
+      "items": 3,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 3,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 11
+    }
+  },
+  {
+    "version": "1.16",
+    "name": "Nether Update",
+    "release_date": "June 23, 2020",
+    "counts": {
+      "blocks": 73,
+      "items": 19,
+      "mobs": 4,
+      "effects": 0,
+      "enchantments": 1,
+      "advancements": 11,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 4,
+      "total": 112
+    }
+  },
+  {
+    "version": "1.16.2",
+    "name": null,
+    "release_date": "August 11, 2020",
+    "counts": {
+      "blocks": 0,
+      "items": 1,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 2
+    }
+  },
+  {
+    "version": "1.17",
+    "name": "Caves & Cliffs: Part I",
+    "release_date": "June 8, 2021",
+    "counts": {
+      "blocks": 110,
+      "items": 14,
+      "mobs": 3,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 11,
+      "paintings": 0,
+      "mob_variants": 4,
+      "biomes": 0,
+      "total": 142
+    }
+  },
+  {
+    "version": "1.18",
+    "name": "Caves & Cliffs: Part II",
+    "release_date": "November 30, 2021",
+    "counts": {
+      "blocks": 0,
+      "items": 1,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 4,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 8,
+      "total": 13
+    }
+  },
+  {
+    "version": "1.19",
+    "name": "The Wild Update",
+    "release_date": "June 7, 2022",
+    "counts": {
+      "blocks": 37,
+      "items": 26,
+      "mobs": 4,
+      "effects": 1,
+      "enchantments": 1,
+      "advancements": 7,
+      "paintings": 4,
+      "mob_variants": 2,
+      "biomes": 2,
+      "total": 84
+    }
+  },
+  {
+    "version": "1.19.3",
+    "name": null,
+    "release_date": "December 7, 2022",
+    "counts": {
+      "blocks": 0,
+      "items": 4,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 4
+    }
+  },
+  {
+    "version": "1.20",
+    "name": "Trails & Tales",
+    "release_date": "June 7, 2023",
+    "counts": {
+      "blocks": 52,
+      "items": 47,
+      "mobs": 2,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 8,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 1,
+      "total": 110
+    }
+  },
+  {
+    "version": "1.20.5",
+    "name": "Armored Paws",
+    "release_date": "April 23, 2024",
+    "counts": {
+      "blocks": 0,
+      "items": 3,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 4,
+      "paintings": 0,
+      "mob_variants": 8,
+      "biomes": 0,
+      "total": 16
+    }
+  },
+  {
+    "version": "1.21",
+    "name": "Tricky Trials",
+    "release_date": "June 13, 2024",
+    "counts": {
+      "blocks": 79,
+      "items": 38,
+      "mobs": 2,
+      "effects": 6,
+      "enchantments": 3,
+      "advancements": 8,
+      "paintings": 20,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 156
+    }
+  },
+  {
+    "version": "1.21.2",
+    "name": "Bundles of Bravery",
+    "release_date": "October 22, 2024",
+    "counts": {
+      "blocks": 0,
+      "items": 18,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 18
+    }
+  },
+  {
+    "version": "1.21.4",
+    "name": "The Garden Awakens",
+    "release_date": "December 3, 2024",
+    "counts": {
+      "blocks": 29,
+      "items": 5,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 1,
+      "total": 36
+    }
+  },
+  {
+    "version": "1.21.5",
+    "name": "Spring to Life",
+    "release_date": "March 25, 2025",
+    "counts": {
+      "blocks": 12,
+      "items": 9,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 6,
+      "biomes": 0,
+      "total": 27
+    }
+  },
+  {
+    "version": "1.21.6",
+    "name": "Chase the Skies",
+    "release_date": "June 17, 2025",
+    "counts": {
+      "blocks": 1,
+      "items": 18,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 2,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 22
+    }
+  },
+  {
+    "version": "1.21.7",
+    "name": null,
+    "release_date": "June 30, 2025",
+    "counts": {
+      "blocks": 1,
+      "items": 1,
+      "mobs": 0,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 1,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 3
+    }
+  },
+  {
+    "version": "1.21.9",
+    "name": "The Copper Age",
+    "release_date": "September 30, 2025",
+    "counts": {
+      "blocks": 60,
+      "items": 12,
+      "mobs": 1,
+      "effects": 0,
+      "enchantments": 0,
+      "advancements": 0,
+      "paintings": 0,
+      "mob_variants": 0,
+      "biomes": 0,
+      "total": 73
+    }
+  },
+  {
+    "version": "1.21.11",
+    "name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "counts": {
+      "blocks": 0,
+      "items": 18,
+      "mobs": 4,
+      "effects": 1,
+      "enchantments": 1,
+      "advancements": 1,
+      "paintings": 0,
+      "mob_variants": 1,
+      "biomes": 0,
+      "total": 26
+    }
+  }
+]

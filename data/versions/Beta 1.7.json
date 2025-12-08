@@ -1,0 +1,39 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "piston",
+                "name": "Piston",
+                "wiki": "https://minecraft.wiki/w/Piston"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sticky_piston",
+                "name": "Sticky Piston",
+                "wiki": "https://minecraft.wiki/w/Sticky_Piston"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "shears",
+                "name": "Shears",
+                "wiki": "https://minecraft.wiki/w/Shears"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "June 30, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "Beta 1.7"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_Beta_1.7",
+    "type": null
+}

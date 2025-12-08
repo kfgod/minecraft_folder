@@ -1,0 +1,118 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "nether_wart_block",
+                "name": "Nether Wart Block",
+                "wiki": "https://minecraft.wiki/w/Nether_Wart_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "bone_block",
+                "name": "Bone Block",
+                "wiki": "https://minecraft.wiki/w/Bone_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "magma_block",
+                "name": "Magma Block",
+                "wiki": "https://minecraft.wiki/w/Magma_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_nether_bricks",
+                "name": "Red Nether Bricks",
+                "wiki": "https://minecraft.wiki/w/Red_Nether_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "structure_void",
+                "name": "Structure Void",
+                "wiki": "https://minecraft.wiki/w/Structure_Void"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "polar_bear_spawn_egg",
+                "name": "Polar Bear Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "polar_bear",
+                "name": "Polar Bear",
+                "wiki": "https://minecraft.wiki/w/Polar_Bear",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "polar_bear_spawn_egg",
+                        "element_type": "item",
+                        "name": "Polar Bear Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 30
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "husk",
+                "name": "Husk",
+                "wiki": "https://minecraft.wiki/w/Husk",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "husk_spawn_egg",
+                        "element_type": "item",
+                        "name": "Husk Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "stray",
+                "name": "Stray",
+                "wiki": "https://minecraft.wiki/w/Stray",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "stray_spawn_egg",
+                        "element_type": "item",
+                        "name": "Stray Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Frostburn Update",
+    "release_date": "June 8, 2016",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.10"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.10",
+    "type": "major"
+}

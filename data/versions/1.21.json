@@ -1,0 +1,1631 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_bulb",
+                "name": "Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_bulb",
+                "name": "Exposed Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_bulb",
+                "name": "Weathered Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_bulb",
+                "name": "Oxidized Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_bulb",
+                "name": "Waxed Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_bulb",
+                "name": "Waxed Exposed Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_bulb",
+                "name": "Waxed Weathered Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_bulb",
+                "name": "Waxed Oxidized Copper Bulb",
+                "wiki": "https://minecraft.wiki/w/Copper_Bulb#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_copper",
+                "name": "Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_chiseled_copper",
+                "name": "Exposed Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_chiseled_copper",
+                "name": "Weathered Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_chiseled_copper",
+                "name": "Oxidized Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_chiseled_copper",
+                "name": "Waxed Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_chiseled_copper",
+                "name": "Waxed Exposed Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_chiseled_copper",
+                "name": "Waxed Weathered Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_chiseled_copper",
+                "name": "Waxed Oxidized Chiseled Copper",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_grate",
+                "name": "Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_grate",
+                "name": "Exposed Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_grate",
+                "name": "Weathered Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_grate",
+                "name": "Oxidized Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_grate",
+                "name": "Waxed Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_grate",
+                "name": "Waxed Exposed Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_grate",
+                "name": "Waxed Weathered Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_grate",
+                "name": "Waxed Oxidized Copper Grate",
+                "wiki": "https://minecraft.wiki/w/Copper_Grate#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_door",
+                "name": "Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_door",
+                "name": "Exposed Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_door",
+                "name": "Weathered Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_door",
+                "name": "Oxidized Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_door",
+                "name": "Waxed Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_door",
+                "name": "Waxed Exposed Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_door",
+                "name": "Waxed Weathered Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_door",
+                "name": "Waxed Oxidized Copper Door",
+                "wiki": "https://minecraft.wiki/w/Copper_Door#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_trapdoor",
+                "name": "Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper_trapdoor",
+                "name": "Exposed Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper_trapdoor",
+                "name": "Weathered Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper_trapdoor",
+                "name": "Oxidized Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_trapdoor",
+                "name": "Waxed Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper_trapdoor",
+                "name": "Waxed Exposed Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper_trapdoor",
+                "name": "Waxed Weathered Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper_trapdoor",
+                "name": "Waxed Oxidized Copper Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Copper_Trapdoor#Oxidized"
+            },
+            {
+                "types": [
+                    "type/tuff",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_slab",
+                "name": "Tuff Slab",
+                "wiki": "https://minecraft.wiki/w/Tuff_Slab"
+            },
+            {
+                "types": [
+                    "type/tuff",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_stairs",
+                "name": "Tuff Stairs",
+                "wiki": "https://minecraft.wiki/w/Tuff_Stairs"
+            },
+            {
+                "types": [
+                    "type/tuff",
+                    "walls"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_wall",
+                "name": "Tuff Wall",
+                "wiki": "https://minecraft.wiki/w/Tuff_Wall"
+            },
+            {
+                "types": [
+                    "type/tuff",
+                    "chiseled"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_tuff",
+                "name": "Chiseled Tuff",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Tuff_Stairs"
+            },
+            {
+                "types": [
+                    "type/polished_tuff"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "polished_tuff",
+                "name": "Polished Tuff",
+                "wiki": "https://minecraft.wiki/w/Polished_Tuff"
+            },
+            {
+                "types": [
+                    "type/polished_tuff",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "polished_tuff_slab",
+                "name": "Polished Tuff Slab",
+                "wiki": "https://minecraft.wiki/w/Polished_Tuff_Slab"
+            },
+            {
+                "types": [
+                    "type/polished_tuff",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "polished_tuff_stairs",
+                "name": "Polished Tuff Stairs",
+                "wiki": "https://minecraft.wiki/w/Polished_Tuff_Stairs"
+            },
+            {
+                "types": [
+                    "type/polished_tuff",
+                    "walls"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "polished_tuff_wall",
+                "name": "Polished Tuff Wall",
+                "wiki": "https://minecraft.wiki/w/Polished_Tuff_Wall"
+            },
+            {
+                "types": [
+                    "type/tuff_brick"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_bricks",
+                "name": "Tuff Bricks",
+                "wiki": "https://minecraft.wiki/w/Tuff_Bricks"
+            },
+            {
+                "types": [
+                    "type/tuff_brick",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_brick_slab",
+                "name": "Tuff Brick Slab",
+                "wiki": "https://minecraft.wiki/w/Tuff_Brick_Slab"
+            },
+            {
+                "types": [
+                    "type/tuff_brick",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_brick_stairs",
+                "name": "Tuff Brick Stairs",
+                "wiki": "https://minecraft.wiki/w/Tuff_Brick_Stairs"
+            },
+            {
+                "types": [
+                    "type/tuff_brick",
+                    "walls"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "tuff_brick_wall",
+                "name": "Tuff Brick Wall",
+                "wiki": "https://minecraft.wiki/w/Tuff_Brick_Wall"
+            },
+            {
+                "types": [
+                    "type/tuff_brick",
+                    "chiseled"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_tuff_bricks",
+                "name": "Chiseled Tuff Bricks",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Tuff_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "crafter",
+                "name": "Crafter",
+                "wiki": "https://minecraft.wiki/w/Crafter"
+            },
+            {
+                "types": [
+                    "trial_spawner"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "trial_spawner",
+                "name": "Trial Spawner",
+                "wiki": "https://minecraft.wiki/w/Trial_Spawner"
+            },
+            {
+                "types": [
+                    "trial_spawner"
+                ],
+                "element_type": "block",
+                "identifier": "ominous_trial_spawner",
+                "minecraft_identifier": "trial_spawner",
+                "name": "Ominous Trial Spawner",
+                "wiki": "https://minecraft.wiki/w/Ominous_Trial_Spawner"
+            },
+            {
+                "types": [
+                    "vault"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "vault",
+                "name": "Vault",
+                "wiki": "https://minecraft.wiki/w/Vault"
+            },
+            {
+                "types": [
+                    "vault"
+                ],
+                "element_type": "block",
+                "identifier": "ominous_vault",
+                "minecraft_identifier": "vault",
+                "name": "Ominous Vault",
+                "wiki": "https://minecraft.wiki/w/Ominous_Vault"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "heavy_core",
+                "name": "Heavy Core",
+                "wiki": "https://minecraft.wiki/w/Heavy_Core"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "baroque_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Baroque",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "humble_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Humble",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "meditative_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Meditative",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "prairie_ride_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Prairie Ride",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "unpacked_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Unpacked",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "backyard_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Backyard",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "bouquet_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Bouquet",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "cavebird_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Cavebird",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "changing_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Changing",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "cotan_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Cotán",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "endboss_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Endboss",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "fern_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Fern",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "finding_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Finding",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "lowmist_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Lowmist",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "orb_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Orb",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "owlemons_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Owlemons",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "passage_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Passage",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "pond_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Pond",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "sunflowers_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Sunflowers",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings"
+                ],
+                "element_type": "block",
+                "identifier": "tides_painting",
+                "minecraft_identifier": "painting",
+                "name": "Painting",
+                "display_name": "Painting – Tides",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "banner_pattern"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "flow_banner_pattern",
+                "name": "Flow Banner Pattern",
+                "wiki": "https://minecraft.wiki/w/Flow_Banner_Pattern"
+            },
+            {
+                "types": [
+                    "banner_pattern"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "guster_banner_pattern",
+                "name": "Guster Banner Pattern",
+                "wiki": "https://minecraft.wiki/w/Guster_Banner_Pattern"
+            },
+            {
+                "types": [
+                    "pottery_sherd"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "flow_pottery_sherd",
+                "name": "Flow Pottery Sherd"
+            },
+            {
+                "types": [
+                    "pottery_sherd"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "guster_pottery_sherd",
+                "name": "Guster Pottery Sherd"
+            },
+            {
+                "types": [
+                    "pottery_sherd"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "scrape_pottery_sherd",
+                "name": "Scrape Pottery Sherd"
+            },
+            {
+                "types": [
+                    "smithing_template"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "bolt_armor_trim_smithing_template",
+                "name": "Bolt Armor Trim"
+            },
+            {
+                "types": [
+                    "smithing_template"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "flow_armor_trim_smithing_template",
+                "name": "Flow Armor Trim"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_creator",
+                "name": "Music Disc Creator"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_creator_music_box",
+                "name": "Music Disc Creator (Music Box)"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_precipice",
+                "name": "Music Disc Precipice"
+            },
+            {
+                "types": [
+                    "trial_key"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "trial_key",
+                "name": "Trial Key",
+                "wiki": "https://minecraft.wiki/w/Trial_Key"
+            },
+            {
+                "types": [
+                    "trial_key"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "ominous_trial_key",
+                "name": "Ominous Trial Key",
+                "wiki": "https://minecraft.wiki/w/Ominous_Trial_Key"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "breeze_rod",
+                "name": "Breeze Rod",
+                "wiki": "https://minecraft.wiki/w/Breeze_Rod"
+            },
+            {
+                "types": [
+                    "weapons"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "mace",
+                "name": "Mace",
+                "wiki": "https://minecraft.wiki/w/Mace"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "wind_charge",
+                "name": "Wind Charge",
+                "wiki": "https://minecraft.wiki/w/Wind_Charge"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "trial_explorer_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Trial Explorer Map",
+                "image_identifier": "trial_explorer_map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Trial_Explorer"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "bogged_spawn_egg",
+                "name": "Bogged Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "breeze_spawn_egg",
+                "name": "Breeze Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "ominous_bottle",
+                "name": "Ominous Bottle",
+                "extra": [
+                    {
+                        "type": "text",
+                        "value": "Bad Omen I-V"
+                    }
+                ],
+                "wiki": "https://minecraft.wiki/w/Ominous_Bottle"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "density_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Density I-V",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "breach_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Breach I-IV",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "wind_burst_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Wind Burst I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "effect/wind_charged"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_wind_charging",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Wind Charging",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/wind_charged"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_wind_charging",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Wind Charging",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/weaving"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_weaving",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Weaving",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/weaving"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_weaving",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Weaving",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/oozing"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_oozing",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Oozing",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/oozing"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_oozing",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Oozing",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/infested"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_infestation",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Infestation",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/infested"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_infestation",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Infestation",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/wind_charged"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_wind_charging",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of Wind Charging",
+                "image_identifier": "arrow_of_wind_charging",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/weaving"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_weaving",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of Weaving",
+                "image_identifier": "arrow_of_weaving",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/oozing"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_oozing",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of Oozing",
+                "image_identifier": "arrow_of_oozing",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/infested"
+                ],
+                "element_type": "item",
+                "identifier": "arrow_of_infestation",
+                "minecraft_identifier": "tipped_arrow",
+                "name": "Arrow of Infestation",
+                "image_identifier": "arrow_of_infestation",
+                "wiki": "https://minecraft.wiki/w/Tipped_Arrow"
+            },
+            {
+                "types": [
+                    "effect/wind_charged"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_wind_charging",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Lingering Potion of Wind Charging",
+                "image_identifier": "lingering_potion_of_wind_charging",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            },
+            {
+                "types": [
+                    "effect/weaving"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_weaving",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Lingering Potion of Weaving",
+                "image_identifier": "lingering_potion_of_weaving",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            },
+            {
+                "types": [
+                    "effect/oozing"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_oozing",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Lingering Potion of Oozing",
+                "image_identifier": "lingering_potion_of_oozing",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            },
+            {
+                "types": [
+                    "effect/infested"
+                ],
+                "element_type": "item",
+                "identifier": "lingering_potion_of_infestation",
+                "minecraft_identifier": "lingering_potion",
+                "name": "Lingering Potion of Infestation",
+                "image_identifier": "lingering_potion_of_infestation",
+                "wiki": "https://minecraft.wiki/w/Lingering_Potion"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "bogged",
+                "name": "Bogged",
+                "wiki": "https://minecraft.wiki/w/Bogged",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "bogged_spawn_egg",
+                        "element_type": "item",
+                        "name": "Bogged Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 16
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "breeze",
+                "name": "Breeze",
+                "wiki": "https://minecraft.wiki/w/Breeze",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "breeze_spawn_egg",
+                        "element_type": "item",
+                        "name": "Breeze Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 30
+                }
+            }
+        ],
+        "effects": [
+            {
+                "types": [
+                    "effects/spawns"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "infested",
+                "name": "Infested",
+                "wiki": "https://minecraft.wiki/w/Infested"
+            },
+            {
+                "types": [
+                    "effects/spawns"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "oozing",
+                "name": "Oozing",
+                "wiki": "https://minecraft.wiki/w/Oozing"
+            },
+            {
+                "types": [
+                    "effects/spawns"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "weaving",
+                "name": "Weaving",
+                "wiki": "https://minecraft.wiki/w/Weaving"
+            },
+            {
+                "types": [
+                    "effects/spawns"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "wind_charged",
+                "name": "Wind Charged",
+                "wiki": "https://minecraft.wiki/w/Wind_Charged"
+            },
+            {
+                "types": [
+                    "effects/ominous_events"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "raid_omen",
+                "name": "Raid Omen",
+                "wiki": "https://minecraft.wiki/w/Raid_Omen"
+            },
+            {
+                "types": [
+                    "effects/ominous_events"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "trial_omen",
+                "name": "Trial Omen",
+                "wiki": "https://minecraft.wiki/w/Trial_Omen"
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/melee/mace"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "breach",
+                "name": "Breach",
+                "wiki": "https://minecraft.wiki/w/Breach"
+            },
+            {
+                "types": [
+                    "enchantments/melee/mace"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "density",
+                "name": "Density",
+                "wiki": "https://minecraft.wiki/w/Density"
+            },
+            {
+                "types": [
+                    "enchantments/melee/mace"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "wind_burst",
+                "name": "Wind Burst",
+                "wiki": "https://minecraft.wiki/w/Wind_Burst"
+            }
+        ],
+        "paintings": [
+            {
+                "types": [
+                    "paintings/4x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "unpacked",
+                "name": "Unpacked",
+                "display_name": "Unpacked – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "orb",
+                "name": "Orb",
+                "display_name": "Orb – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "passage",
+                "name": "Passage",
+                "display_name": "Passage – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "lowmist",
+                "name": "Lowmist",
+                "display_name": "Lowmist – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "finding",
+                "name": "Finding",
+                "display_name": "Finding – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/4x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "changing",
+                "name": "Changing",
+                "display_name": "Changing – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "pond",
+                "name": "Pond",
+                "display_name": "Pond – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x4"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "backyard",
+                "name": "Backyard",
+                "display_name": "Backyard – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "tides",
+                "name": "Tides",
+                "display_name": "Tides – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "sunflowers",
+                "name": "Sunflowers",
+                "display_name": "Sunflowers – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "owlemons",
+                "name": "Owlemons",
+                "display_name": "Owlemons – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "fern",
+                "name": "Fern",
+                "display_name": "Fern – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "endboss",
+                "name": "Endboss",
+                "display_name": "Endboss – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "cotan",
+                "name": "Cotán",
+                "display_name": "Cotán – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "cavebird",
+                "name": "Cavebird",
+                "display_name": "Cavebird – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/3x3"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "bouquet",
+                "name": "Bouquet",
+                "display_name": "Bouquet – Kristoffer Zetterstrand",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "baroque",
+                "name": "Baroque",
+                "display_name": "Baroque – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/2x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "humble",
+                "name": "Humble",
+                "display_name": "Humble – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x2"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "prairie_ride",
+                "name": "Prairie Ride",
+                "display_name": "Prairie Ride – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            },
+            {
+                "types": [
+                    "paintings/1x1"
+                ],
+                "element_type": "painting",
+                "minecraft_identifier": "meditative",
+                "name": "Meditative",
+                "display_name": "Meditative – Sarah Boeving",
+                "wiki": "https://minecraft.wiki/w/Painting"
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/revaulting",
+                "name": "Revaulting",
+                "wiki": "https://minecraft.wiki/w/Advancement#Revaulting",
+                "meta": {
+                    "icon": {
+                        "identifier": "ominous_trial_key",
+                        "element_type": "item",
+                        "name": "Ominous Trial Key",
+                        "wiki": "https://minecraft.wiki/w/Ominous_Trial_Key"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/minecraft_trials_edition",
+                "name": "Minecraft: Trial(s) Edition",
+                "wiki": "https://minecraft.wiki/w/Advancement#Minecraft:_Trial(s)_Edition",
+                "meta": {
+                    "icon": {
+                        "identifier": "chiseled_tuff",
+                        "element_type": "block",
+                        "name": "Chiseled Tuff",
+                        "wiki": "https://minecraft.wiki/w/Chiseled_Tuff_Stairs"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/under_lock_and_key",
+                "name": "Under Lock and Key",
+                "wiki": "https://minecraft.wiki/w/Advancement#Under_Lock_and_Key",
+                "meta": {
+                    "icon": {
+                        "identifier": "trial_key",
+                        "element_type": "item",
+                        "name": "Trial Key",
+                        "wiki": "https://minecraft.wiki/w/Trial_Key"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/blowback",
+                "name": "Blowback",
+                "wiki": "https://minecraft.wiki/w/Advancement#Blowback",
+                "meta": {
+                    "icon": {
+                        "identifier": "wind_charge",
+                        "element_type": "item",
+                        "name": "Wind Charge",
+                        "wiki": "https://minecraft.wiki/w/Wind_Charge"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/who_needs_rockets",
+                "name": "Who Needs Rockets?",
+                "wiki": "https://minecraft.wiki/w/Advancement#Who_Needs_Rockets?",
+                "meta": {
+                    "icon": {
+                        "identifier": "wind_charge",
+                        "element_type": "item",
+                        "name": "Wind Charge",
+                        "wiki": "https://minecraft.wiki/w/Wind_Charge"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/crafters_crafting_crafters",
+                "name": "Crafters Crafting Crafters",
+                "wiki": "https://minecraft.wiki/w/Advancement#Crafters_Crafting_Crafters",
+                "meta": {
+                    "icon": {
+                        "identifier": "crafter",
+                        "element_type": "block",
+                        "name": "Crafter",
+                        "wiki": "https://minecraft.wiki/w/Crafter"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/lighten_up",
+                "name": "Lighten Up",
+                "wiki": "https://minecraft.wiki/w/Advancement#Lighten_Up",
+                "meta": {
+                    "icon": {
+                        "identifier": "copper_bulb",
+                        "element_type": "block",
+                        "name": "Copper Bulb",
+                        "wiki": "https://minecraft.wiki/w/Copper_Bulb#Unoxidized"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/overoverkill",
+                "name": "Over-Overkill",
+                "wiki": "https://minecraft.wiki/w/Advancement#Over-Overkill",
+                "meta": {
+                    "icon": {
+                        "identifier": "mace",
+                        "element_type": "item",
+                        "name": "Mace",
+                        "wiki": "https://minecraft.wiki/w/Mace"
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Tricky Trials",
+    "release_date": "June 13, 2024",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21",
+    "type": "major"
+}

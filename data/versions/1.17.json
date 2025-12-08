@@ -1,0 +1,1371 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "vegetation",
+                    "flower/other",
+                    "saplings",
+                    "woodset/azalea"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "flowering_azalea",
+                "name": "Flowering Azalea",
+                "wiki": "https://minecraft.wiki/w/Flowering_Azalea"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "flower/other"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spore_blossom",
+                "name": "Spore Blossom",
+                "wiki": "https://minecraft.wiki/w/Spore_Blossom"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/azalea",
+                    "leaves"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "azalea_leaves",
+                "name": "Azalea Leaves",
+                "wiki": "https://minecraft.wiki/w/Leaves#Azalea"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "flower/other",
+                    "woodset/azalea",
+                    "leaves"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "flowering_azalea_leaves",
+                "name": "Flowering Azalea Leaves",
+                "wiki": "https://minecraft.wiki/w/Leaves#Flowering_Azalea"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "white_candle",
+                "name": "White Candle",
+                "color": "white",
+                "wiki": "https://minecraft.wiki/w/Candle#White"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_gray_candle",
+                "name": "Light Gray Candle",
+                "color": "light_gray",
+                "wiki": "https://minecraft.wiki/w/Candle#Light_Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "gray_candle",
+                "name": "Gray Candle",
+                "color": "gray",
+                "wiki": "https://minecraft.wiki/w/Candle#Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "black_candle",
+                "name": "Black Candle",
+                "color": "black",
+                "wiki": "https://minecraft.wiki/w/Candle#Black"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brown_candle",
+                "name": "Brown Candle",
+                "color": "brown",
+                "wiki": "https://minecraft.wiki/w/Candle#Brown"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_candle",
+                "name": "Red Candle",
+                "color": "red",
+                "wiki": "https://minecraft.wiki/w/Candle#Red"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "orange_candle",
+                "name": "Orange Candle",
+                "color": "orange",
+                "wiki": "https://minecraft.wiki/w/Candle#Orange"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "yellow_candle",
+                "name": "Yellow Candle",
+                "color": "yellow",
+                "wiki": "https://minecraft.wiki/w/Candle#Yellow"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "lime_candle",
+                "name": "Lime Candle",
+                "color": "lime",
+                "wiki": "https://minecraft.wiki/w/Candle#Lime"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "green_candle",
+                "name": "Green Candle",
+                "color": "green",
+                "wiki": "https://minecraft.wiki/w/Candle#Green"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cyan_candle",
+                "name": "Cyan Candle",
+                "color": "cyan",
+                "wiki": "https://minecraft.wiki/w/Candle#Cyan"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_blue_candle",
+                "name": "Light Blue Candle",
+                "color": "light_blue",
+                "wiki": "https://minecraft.wiki/w/Candle#Light_Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "blue_candle",
+                "name": "Blue Candle",
+                "color": "blue",
+                "wiki": "https://minecraft.wiki/w/Candle#Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "purple_candle",
+                "name": "Purple Candle",
+                "color": "purple",
+                "wiki": "https://minecraft.wiki/w/Candle#Purple"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "magenta_candle",
+                "name": "Magenta Candle",
+                "color": "magenta",
+                "wiki": "https://minecraft.wiki/w/Candle#Magenta"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pink_candle",
+                "name": "Pink Candle",
+                "color": "pink",
+                "wiki": "https://minecraft.wiki/w/Candle#Pink"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_coal_ore",
+                "name": "Deepslate Coal Ore",
+                "wiki": "https://minecraft.wiki/w/Coal_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_iron_ore",
+                "name": "Deepslate Iron Ore",
+                "wiki": "https://minecraft.wiki/w/Iron_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_gold_ore",
+                "name": "Deepslate Gold Ore",
+                "wiki": "https://minecraft.wiki/w/Gold_Ore"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "copper_block",
+                "name": "Block of Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_copper",
+                "name": "Exposed Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_copper",
+                "name": "Weathered Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_copper",
+                "name": "Oxidized Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_copper_block",
+                "name": "Waxed Block of Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_copper",
+                "name": "Waxed Exposed Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_copper",
+                "name": "Waxed Weathered Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_copper",
+                "name": "Waxed Oxidized Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "cut_copper",
+                "name": "Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_cut_copper",
+                "name": "Exposed Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_cut_copper",
+                "name": "Weathered Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_cut_copper",
+                "name": "Oxidized Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_cut_copper",
+                "name": "Waxed Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_cut_copper",
+                "name": "Waxed Exposed Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_cut_copper",
+                "name": "Waxed Weathered Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_cut_copper",
+                "name": "Waxed Oxidized Cut Copper",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "cut_copper_slab",
+                "name": "Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_cut_copper_slab",
+                "name": "Exposed Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_cut_copper_slab",
+                "name": "Weathered Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_cut_copper_slab",
+                "name": "Oxidized Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_cut_copper_slab",
+                "name": "Waxed Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_cut_copper_slab",
+                "name": "Waxed Exposed Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_cut_copper_slab",
+                "name": "Waxed Weathered Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_cut_copper_slab",
+                "name": "Waxed Oxidized Cut Copper Slab",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Slab#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "cut_copper_stairs",
+                "name": "Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "exposed_cut_copper_stairs",
+                "name": "Exposed Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "weathered_cut_copper_stairs",
+                "name": "Weathered Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oxidized_cut_copper_stairs",
+                "name": "Oxidized Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Oxidized"
+            },
+            {
+                "types": [
+                    "copper/unoxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_cut_copper_stairs",
+                "name": "Waxed Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Unoxidized"
+            },
+            {
+                "types": [
+                    "copper/exposed",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_exposed_cut_copper_stairs",
+                "name": "Waxed Exposed Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Exposed"
+            },
+            {
+                "types": [
+                    "copper/weathered",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_weathered_cut_copper_stairs",
+                "name": "Waxed Weathered Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Weathered"
+            },
+            {
+                "types": [
+                    "copper/oxidized",
+                    "copper/waxed",
+                    "hidden"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "waxed_oxidized_cut_copper_stairs",
+                "name": "Waxed Oxidized Cut Copper Stairs",
+                "wiki": "https://minecraft.wiki/w/Cut_Copper_Stairs#Oxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "small_amethyst_bud",
+                "name": "Small Amethyst Bud",
+                "wiki": "https://minecraft.wiki/w/Amethyst_Cluster#Small_Bud"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "medium_amethyst_bud",
+                "name": "Medium Amethyst Bud",
+                "wiki": "https://minecraft.wiki/w/Amethyst_Cluster#Medium_Bud"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "large_amethyst_bud",
+                "name": "Large Amethyst Bud",
+                "wiki": "https://minecraft.wiki/w/Amethyst_Cluster#Large_Bud"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "amethyst_cluster",
+                "name": "Amethyst Cluster",
+                "wiki": "https://minecraft.wiki/w/Amethyst_Cluster#Cluster"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "calcite",
+                "name": "Calcite",
+                "wiki": "https://minecraft.wiki/w/Calcite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tuff",
+                "name": "Tuff",
+                "wiki": "https://minecraft.wiki/w/Tuff"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "copper_ore",
+                "name": "Copper Ore",
+                "wiki": "https://minecraft.wiki/w/Copper_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_copper_ore",
+                "name": "Deepslate Copper Ore",
+                "wiki": "https://minecraft.wiki/w/Copper_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "lightning_rod",
+                "name": "Lightning Rod",
+                "wiki": "https://minecraft.wiki/w/Lightning_Rod#Unoxidized"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tinted_glass",
+                "name": "Tinted Glass",
+                "wiki": "https://minecraft.wiki/w/Tinted_Glass"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "candle",
+                "name": "Candle",
+                "wiki": "https://minecraft.wiki/w/Candle#Plain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sculk_sensor",
+                "name": "Sculk Sensor",
+                "wiki": "https://minecraft.wiki/w/Sculk_Sensor"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "glow_lichen",
+                "name": "Glow Lichen",
+                "wiki": "https://minecraft.wiki/w/Glow_Lichen"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "glow_item_frame",
+                "name": "Glow Item Frame",
+                "wiki": "https://minecraft.wiki/w/Glow_Item_Frame"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dripstone_block",
+                "name": "Dripstone Block",
+                "wiki": "https://minecraft.wiki/w/Dripstone_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pointed_dripstone",
+                "name": "Pointed Dripstone",
+                "wiki": "https://minecraft.wiki/w/Pointed_Dripstone"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "small_dripleaf",
+                "name": "Small Dripleaf",
+                "wiki": "https://minecraft.wiki/w/Small_Dripleaf"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "big_dripleaf",
+                "name": "Big Dripleaf",
+                "wiki": "https://minecraft.wiki/w/Big_Dripleaf"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "hanging_roots",
+                "name": "Hanging Roots",
+                "wiki": "https://minecraft.wiki/w/Hanging_Roots"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "rooted_dirt",
+                "name": "Rooted Dirt",
+                "wiki": "https://minecraft.wiki/w/Rooted_Dirt"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "moss_block",
+                "name": "Moss Block",
+                "wiki": "https://minecraft.wiki/w/Moss_Block"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "moss_carpet",
+                "name": "Moss Carpet",
+                "wiki": "https://minecraft.wiki/w/Moss_Carpet"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "azalea",
+                "name": "Azalea",
+                "wiki": "https://minecraft.wiki/w/Azalea"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_diamond_ore",
+                "name": "Deepslate Diamond Ore",
+                "wiki": "https://minecraft.wiki/w/Diamond_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_redstone_ore",
+                "name": "Deepslate Redstone Ore",
+                "wiki": "https://minecraft.wiki/w/Redstone_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_lapis_ore",
+                "name": "Deepslate Lapis Lazuli Ore",
+                "wiki": "https://minecraft.wiki/w/Lapis_Lazuli_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_emerald_ore",
+                "name": "Deepslate Emerald Ore",
+                "wiki": "https://minecraft.wiki/w/Emerald_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light",
+                "name": "Light",
+                "wiki": "https://minecraft.wiki/w/Light_(block)"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "raw_copper_block",
+                "name": "Block of Raw Copper",
+                "wiki": "https://minecraft.wiki/w/Block_of_Raw_Copper"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "raw_gold_block",
+                "name": "Block of Raw Gold",
+                "wiki": "https://minecraft.wiki/w/Block_of_Raw_Gold"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "raw_iron_block",
+                "name": "Block of Raw Iron",
+                "wiki": "https://minecraft.wiki/w/Block_of_Raw_Iron"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate",
+                "name": "Deepslate",
+                "wiki": "https://minecraft.wiki/w/Deepslate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_deepslate",
+                "name": "Polished Deepslate",
+                "wiki": "https://minecraft.wiki/w/Polished_Deepslate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_deepslate",
+                "name": "Chiseled Deepslate",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Deepslate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_bricks",
+                "name": "Deepslate Bricks",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_tiles",
+                "name": "Deepslate Tiles",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Tiles"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobbled_deepslate_slab",
+                "name": "Cobbled Deepslate Slab",
+                "wiki": "https://minecraft.wiki/w/Cobbled_Deepslate_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_deepslate_slab",
+                "name": "Polished Deepslate Slab",
+                "wiki": "https://minecraft.wiki/w/Polished_Deepslate_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_brick_slab",
+                "name": "Deepslate Brick Slab",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Brick_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_tile_slab",
+                "name": "Deepslate Tile Slab",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Tile_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobbled_deepslate_stairs",
+                "name": "Cobbled Deepslate Stairs",
+                "wiki": "https://minecraft.wiki/w/Cobbled_Deepslate_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_deepslate_stairs",
+                "name": "Polished Deepslate Stairs",
+                "wiki": "https://minecraft.wiki/w/Polished_Deepslate_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_brick_stairs",
+                "name": "Deepslate Brick Stairs",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Brick_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_tile_stairs",
+                "name": "Deepslate Tile Stairs",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Tile_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobbled_deepslate_wall",
+                "name": "Cobbled Deepslate Wall",
+                "wiki": "https://minecraft.wiki/w/Cobbled_Deepslate_Wall"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_deepslate_wall",
+                "name": "Polished Deepslate Wall",
+                "wiki": "https://minecraft.wiki/w/Polished_Deepslate_Wall"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_brick_wall",
+                "name": "Deepslate Brick Wall",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Brick_Wall"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "deepslate_tile_wall",
+                "name": "Deepslate Tile Wall",
+                "wiki": "https://minecraft.wiki/w/Deepslate_Tile_Wall"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobbled_deepslate",
+                "name": "Cobbled Deepslate",
+                "wiki": "https://minecraft.wiki/w/Cobbled_Deepslate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "infested_deepslate",
+                "name": "Infested Deepslate",
+                "wiki": "https://minecraft.wiki/w/Infested_Block#Deepslate"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "smooth_basalt",
+                "name": "Smooth Basalt",
+                "wiki": "https://minecraft.wiki/w/Smooth_Basalt"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cracked_deepslate_bricks",
+                "name": "Cracked Deepslate Bricks",
+                "wiki": "https://minecraft.wiki/w/Cracked_Deepslate_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cracked_deepslate_tiles",
+                "name": "Cracked Deepslate Tiles",
+                "wiki": "https://minecraft.wiki/w/Cracked_Deepslate_Tiles"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "amethyst_block",
+                "name": "Block of Amethyst",
+                "wiki": "https://minecraft.wiki/w/Block_of_Amethyst"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "budding_amethyst",
+                "name": "Budding Amethyst",
+                "wiki": "https://minecraft.wiki/w/Budding_Amethyst"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "vegetation",
+                    "food",
+                    "food/natural"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "glow_berries",
+                "name": "Glow Berries"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_ingot",
+                "name": "Copper Ingot",
+                "wiki": "https://minecraft.wiki/w/Copper_Ingot"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "spyglass",
+                "name": "Spyglass",
+                "wiki": "https://minecraft.wiki/w/Spyglass"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "bundle",
+                "name": "Bundle",
+                "wiki": "https://minecraft.wiki/w/Bundle#Plain"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "axolotl_bucket",
+                "name": "Bucket of Axolotl",
+                "wiki": "https://minecraft.wiki/w/Bucket_of_Axolotl"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "glow_ink_sac",
+                "name": "Glow Ink Sac",
+                "wiki": "https://minecraft.wiki/w/Glow_Ink_Sac"
+            },
+            {
+                "types": [
+                    "buckets"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "powder_snow_bucket",
+                "name": "Powder Snow Bucket",
+                "wiki": "https://minecraft.wiki/w/Powder_Snow_Bucket"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "axolotl_spawn_egg",
+                "name": "Axolotl Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "glow_squid_spawn_egg",
+                "name": "Glow Squid Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "goat_spawn_egg",
+                "name": "Goat Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "raw_copper",
+                "name": "Raw Copper",
+                "wiki": "https://minecraft.wiki/w/Raw_Copper"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "raw_gold",
+                "name": "Raw Gold",
+                "wiki": "https://minecraft.wiki/w/Raw_Gold"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "raw_iron",
+                "name": "Raw Iron",
+                "wiki": "https://minecraft.wiki/w/Raw_Iron"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "amethyst_shard",
+                "name": "Amethyst Shard",
+                "wiki": "https://minecraft.wiki/w/Amethyst_Shard"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "axolotl",
+                "name": "Axolotl",
+                "wiki": "https://minecraft.wiki/w/Axolotl",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "axolotl_spawn_egg",
+                        "element_type": "item",
+                        "name": "Axolotl Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 14
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "glow_squid",
+                "name": "Glow Squid",
+                "wiki": "https://minecraft.wiki/w/Glow_Squid",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "glow_squid_spawn_egg",
+                        "element_type": "item",
+                        "name": "Glow Squid Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "goat",
+                "name": "Goat",
+                "wiki": "https://minecraft.wiki/w/Goat",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "goat_spawn_egg",
+                        "element_type": "item",
+                        "name": "Goat Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/spyglass_at_parrot",
+                "name": "Is It a Bird?",
+                "wiki": "https://minecraft.wiki/w/Advancement#Is_It_a_Bird?",
+                "meta": {
+                    "icon": {
+                        "identifier": "spyglass",
+                        "element_type": "item",
+                        "name": "Spyglass",
+                        "wiki": "https://minecraft.wiki/w/Spyglass"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/lightning_rod_with_villager_no_fire",
+                "name": "Surge Protector",
+                "wiki": "https://minecraft.wiki/w/Advancement#Is_It_a_Bird?",
+                "meta": {
+                    "icon": {
+                        "identifier": "lightning_rod",
+                        "element_type": "block",
+                        "name": "Lightning Rod",
+                        "wiki": "https://minecraft.wiki/w/Lightning_Rod#Unoxidized"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/spyglass_at_ghast",
+                "name": "Is It a Balloon?",
+                "wiki": "https://minecraft.wiki/w/Advancement#Is_It_a_Balloon?",
+                "meta": {
+                    "icon": {
+                        "identifier": "spyglass",
+                        "element_type": "item",
+                        "name": "Spyglass",
+                        "wiki": "https://minecraft.wiki/w/Spyglass"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/walk_on_powder_snow_with_leather_boots",
+                "name": "Light as a Rabbit",
+                "wiki": "https://minecraft.wiki/w/Advancement#Light_as_a_Rabbit",
+                "meta": {
+                    "icon": {
+                        "identifier": "leather_boots",
+                        "element_type": "item",
+                        "name": "Leather Boots",
+                        "wiki": "https://minecraft.wiki/w/Leather_Boots"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/spyglass_at_dragon",
+                "name": "Is It a Plane?",
+                "wiki": "https://minecraft.wiki/w/Advancement#Is_It_a_Plane",
+                "meta": {
+                    "icon": {
+                        "identifier": "spyglass",
+                        "element_type": "item",
+                        "name": "Spyglass",
+                        "wiki": "https://minecraft.wiki/w/Spyglass"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/ride_a_boat_with_a_goat",
+                "name": "Whatever Floats Your Goat!",
+                "wiki": "https://minecraft.wiki/w/Advancement#Whatever_Floats_Your_Goat!",
+                "meta": {
+                    "icon": {
+                        "identifier": "oak_boat",
+                        "element_type": "item",
+                        "name": "Oak Boat",
+                        "wiki": "https://minecraft.wiki/w/Boat#Oak"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/make_a_sign_glow",
+                "name": "Glow and Behold!",
+                "wiki": "https://minecraft.wiki/w/Advancement#Glow_and_Behold!",
+                "meta": {
+                    "icon": {
+                        "identifier": "glow_ink_sac",
+                        "element_type": "item",
+                        "name": "Glow Ink Sac",
+                        "wiki": "https://minecraft.wiki/w/Glow_Ink_Sac"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/wax_on",
+                "name": "Wax On",
+                "wiki": "https://minecraft.wiki/w/Advancement#Wax_On",
+                "meta": {
+                    "icon": {
+                        "identifier": "honeycomb",
+                        "element_type": "item",
+                        "name": "Honeycomb",
+                        "wiki": "https://minecraft.wiki/w/Honeycomb"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/wax_off",
+                "name": "Wax Off",
+                "wiki": "https://minecraft.wiki/w/Advancement#Wax_Off",
+                "meta": {
+                    "icon": {
+                        "identifier": "stone_axe",
+                        "element_type": "item",
+                        "name": "Stone Axe",
+                        "wiki": "https://minecraft.wiki/w/Stone_Axe"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/axolotl_in_a_bucket",
+                "name": "The Cutest Predator",
+                "wiki": "https://minecraft.wiki/w/Advancement#The_Cutest_Predator",
+                "meta": {
+                    "icon": {
+                        "identifier": "axolotl_bucket",
+                        "element_type": "item",
+                        "name": "Bucket of Axolotl",
+                        "wiki": "https://minecraft.wiki/w/Bucket_of_Axolotl"
+                    }
+                }
+            },
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "husbandry/kill_axolotl_target",
+                "name": "The Healing Power of Friendship!",
+                "wiki": "https://minecraft.wiki/w/Advancement#The_Healing_Power_of_Friendship!",
+                "meta": {
+                    "icon": {
+                        "identifier": "tropical_fish_bucket",
+                        "element_type": "item",
+                        "name": "Bucket of Tropical Fish",
+                        "wiki": "https://minecraft.wiki/w/Bucket_of_Tropical_Fish"
+                    }
+                }
+            }
+        ],
+        "mob_variants": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "axolotl",
+                "identifier": "wild_axolotl",
+                "name": "Axolotl",
+                "display_name": "Wild Axolotl",
+                "wiki": "https://minecraft.wiki/w/Axolotl#Wild",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "axolotl_spawn_egg",
+                        "element_type": "item",
+                        "name": "Axolotl Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "axolotl",
+                        "element_type": "mob",
+                        "name": "Axolotl",
+                        "wiki": "https://minecraft.wiki/w/Axolotl",
+                        "health": 14
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "axolotl",
+                "identifier": "gold_axolotl",
+                "name": "Axolotl",
+                "display_name": "Gold Axolotl",
+                "wiki": "https://minecraft.wiki/w/Axolotl#Gold",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "axolotl_spawn_egg",
+                        "element_type": "item",
+                        "name": "Axolotl Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "axolotl",
+                        "element_type": "mob",
+                        "name": "Axolotl",
+                        "wiki": "https://minecraft.wiki/w/Axolotl",
+                        "health": 14
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "axolotl",
+                "identifier": "cyan_axolotl",
+                "name": "Axolotl",
+                "display_name": "Cyan Axolotl",
+                "wiki": "https://minecraft.wiki/w/Axolotl#Cyan",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "axolotl_spawn_egg",
+                        "element_type": "item",
+                        "name": "Axolotl Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "axolotl",
+                        "element_type": "mob",
+                        "name": "Axolotl",
+                        "wiki": "https://minecraft.wiki/w/Axolotl",
+                        "health": 14
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "axolotl",
+                "identifier": "blue_axolotl",
+                "name": "Axolotl",
+                "display_name": "Blue Axolotl",
+                "wiki": "https://minecraft.wiki/w/Axolotl#Blue",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "axolotl_spawn_egg",
+                        "element_type": "item",
+                        "name": "Axolotl Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "axolotl",
+                        "element_type": "mob",
+                        "name": "Axolotl",
+                        "wiki": "https://minecraft.wiki/w/Axolotl",
+                        "health": 14
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Caves & Cliffs: Part I",
+    "release_date": "June 8, 2021",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.17"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.17",
+    "type": "major"
+}

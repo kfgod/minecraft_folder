@@ -1,0 +1,421 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "white_shulker_box",
+                "name": "White Shulker Box",
+                "color": "white",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#White"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_gray_shulker_box",
+                "name": "Light Gray Shulker Box",
+                "color": "light_gray",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Light_Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "gray_shulker_box",
+                "name": "Gray Shulker Box",
+                "color": "gray",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "black_shulker_box",
+                "name": "Black Shulker Box",
+                "color": "black",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Black"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brown_shulker_box",
+                "name": "Brown Shulker Box",
+                "color": "brown",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Brown"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_shulker_box",
+                "name": "Red Shulker Box",
+                "color": "red",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Red"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "orange_shulker_box",
+                "name": "Orange Shulker Box",
+                "color": "orange",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Orange"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "yellow_shulker_box",
+                "name": "Yellow Shulker Box",
+                "color": "yellow",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Yellow"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "lime_shulker_box",
+                "name": "Lime Shulker Box",
+                "color": "lime",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Lime"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "green_shulker_box",
+                "name": "Green Shulker Box",
+                "color": "green",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Green"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cyan_shulker_box",
+                "name": "Cyan Shulker Box",
+                "color": "cyan",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Cyan"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_blue_shulker_box",
+                "name": "Light Blue Shulker Box",
+                "color": "light_blue",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Light_Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "blue_shulker_box",
+                "name": "Blue Shulker Box",
+                "color": "blue",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "purple_shulker_box",
+                "name": "Purple Shulker Box",
+                "color": "purple",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Purple"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "magenta_shulker_box",
+                "name": "Magenta Shulker Box",
+                "color": "magenta",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Magenta"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pink_shulker_box",
+                "name": "Pink Shulker Box",
+                "color": "pink",
+                "wiki": "https://minecraft.wiki/w/Shulker_Box#Pink"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "observer",
+                "name": "Observer",
+                "wiki": "https://minecraft.wiki/w/Observer"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "curse_of_binding_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Curse of Binding",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "curse_of_vanishing_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Curse of Vanishing",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "shulker_shell",
+                "name": "Shulker Shell",
+                "wiki": "https://minecraft.wiki/w/Shulker_Shell"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "totem_of_undying",
+                "name": "Totem of Undying",
+                "wiki": "https://minecraft.wiki/w/Totem_of_Undying"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "woodland_explorer_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Woodland Explorer Map",
+                "image_identifier": "woodland_explorer_map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Woodland_Explorer"
+            },
+            {
+                "types": [
+                    "maps"
+                ],
+                "element_type": "item",
+                "identifier": "ocean_explorer_map",
+                "minecraft_identifier": "filled_map",
+                "name": "Ocean Explorer Map",
+                "image_identifier": "ocean_explorer_map",
+                "wiki": "https://minecraft.wiki/w/Explorer_Map#Ocean_Explorer"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "wither_skeleton_spawn_egg",
+                "name": "Wither Skeleton Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "stray_spawn_egg",
+                "name": "Stray Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "husk_spawn_egg",
+                "name": "Husk Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "elder_guardian_spawn_egg",
+                "name": "Elder Guardian Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "donkey_spawn_egg",
+                "name": "Donkey Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "mule_spawn_egg",
+                "name": "Mule Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "skeleton_horse_spawn_egg",
+                "name": "Skeleton Horse Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "zombie_horse_spawn_egg",
+                "name": "Zombie Horse Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "zombie_villager_spawn_egg",
+                "name": "Zombie Villager Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "evoker_spawn_egg",
+                "name": "Evoker Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "vex_spawn_egg",
+                "name": "Vex Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "vindicator_spawn_egg",
+                "name": "Vindicator Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "llama_spawn_egg",
+                "name": "Llama Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "llama",
+                "name": "Llama",
+                "wiki": "https://minecraft.wiki/w/Llama",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "llama_spawn_egg",
+                        "element_type": "item",
+                        "name": "Llama Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "evoker",
+                "name": "Evoker",
+                "wiki": "https://minecraft.wiki/w/Evoker",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "evoker_spawn_egg",
+                        "element_type": "item",
+                        "name": "Evoker Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 24
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "vex",
+                "name": "Vex",
+                "wiki": "https://minecraft.wiki/w/Vex",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "vex_spawn_egg",
+                        "element_type": "item",
+                        "name": "Vex Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 14
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "vindicator",
+                "name": "Vindicator",
+                "wiki": "https://minecraft.wiki/w/Vindicator",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "vindicator_spawn_egg",
+                        "element_type": "item",
+                        "name": "Vindicator Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 24
+                }
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/curse"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "binding_curse",
+                "name": "Curse of Binding",
+                "wiki": "https://minecraft.wiki/w/Curse_of_Binding"
+            },
+            {
+                "types": [
+                    "enchantments/curse"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "vanishing_curse",
+                "name": "Curse of Vanishing",
+                "wiki": "https://minecraft.wiki/w/Curse_of_Vanishing"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Exploration Update",
+    "release_date": "November 14, 2016",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.11"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.11",
+    "type": "major"
+}

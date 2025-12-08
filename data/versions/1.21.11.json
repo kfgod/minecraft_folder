@@ -1,0 +1,295 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "wooden_spear",
+                "name": "Wooden Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Wooden"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "stone_spear",
+                "name": "Stone Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Stone"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_spear",
+                "name": "Copper Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Copper"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "iron_spear",
+                "name": "Iron Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Iron"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "golden_spear",
+                "name": "Golden Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Golden"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_spear",
+                "name": "Diamond Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Diamond"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "netherite_spear",
+                "name": "Netherite Spear",
+                "wiki": "https://minecraft.wiki/w/Spear#Netherite"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "copper_nautilus_armor",
+                "name": "Copper Nautilus Armor",
+                "wiki": "https://minecraft.wiki/w/Copper_Nautilus_Armor"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "iron_nautilus_armor",
+                "name": "Iron Nautilus Armor",
+                "wiki": "https://minecraft.wiki/w/Iron_Nautilus_Armor"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "golden_nautilus_armor",
+                "name": "Golden Nautilus Armor",
+                "wiki": "https://minecraft.wiki/w/Golden_Nautilus_Armor"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "diamond_nautilus_armor",
+                "name": "Diamond Nautilus Armor",
+                "wiki": "https://minecraft.wiki/w/Diamond_Nautilus_Armor"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "netherite_nautilus_armor",
+                "name": "Netherite Nautilus Armor",
+                "wiki": "https://minecraft.wiki/w/Netherite_Nautilus_Armor"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "nautilus_spawn_egg",
+                "name": "Nautilus Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "zombie_nautilus_spawn_egg",
+                "name": "Zombie Nautilus Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "lunge_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Lunge I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "camel_husk_spawn_egg",
+                "name": "Camel Husk Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "parched_spawn_egg",
+                "name": "Parched Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "netherite_horse_armor",
+                "name": "Netherite Horse Armor",
+                "wiki": "https://minecraft.wiki/w/Netherite_Horse_Armor"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "nautilus",
+                "name": "Nautilus",
+                "wiki": "https://minecraft.wiki/w/Nautilus",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "nautilus_spawn_egg",
+                        "element_type": "item",
+                        "name": "Nautilus Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 15
+                }
+            },
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "zombie_nautilus",
+                "name": "Zombie Nautilus",
+                "wiki": "https://minecraft.wiki/w/Zombie_Nautilus",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "zombie_nautilus_spawn_egg",
+                        "element_type": "item",
+                        "name": "Zombie Nautilus Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 15
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "parched",
+                "name": "Parched",
+                "wiki": "https://minecraft.wiki/w/Parched",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "parched_spawn_egg",
+                        "element_type": "item",
+                        "name": "Parched Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 16
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "camel_husk",
+                "name": "Camel Husk",
+                "wiki": "https://minecraft.wiki/w/Camel_Husk",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "camel_husk_spawn_egg",
+                        "element_type": "item",
+                        "name": "Camel Husk Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 32
+                }
+            }
+        ],
+        "effects": [
+            {
+                "types": [
+                    "effects/underwater"
+                ],
+                "element_type": "effect",
+                "minecraft_identifier": "breath_of_the_nautilus",
+                "name": "Breath of the Nautilus",
+                "wiki": "https://minecraft.wiki/w/Breath_of_the_Nautilus"
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/melee/spear"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "lunge",
+                "name": "Lunge",
+                "wiki": "https://minecraft.wiki/w/Lunge"
+            }
+        ],
+        "advancements": [
+            {
+                "types": [],
+                "element_type": "advancement",
+                "minecraft_identifier": "adventure/spear_many_mobs",
+                "name": "Mob Kabob​",
+                "wiki": "https://minecraft.wiki/w/Advancement#Mob_Kabob",
+                "meta": {
+                    "icon": {
+                        "identifier": "iron_spear",
+                        "element_type": "item",
+                        "name": "Iron Spear",
+                        "wiki": "https://minecraft.wiki/w/Spear#Iron"
+                    }
+                }
+            }
+        ],
+        "mob_variants": [
+            {
+                "types": [
+                    "mobs/neutral"
+                ],
+                "element_type": "mob_variant",
+                "minecraft_identifier": "zombie_nautilus",
+                "identifier": "coral_zombie_nautilus",
+                "name": "Zombie Nautilus",
+                "display_name": "Coral Zombie Nautilus",
+                "wiki": "https://minecraft.wiki/w/Zombie_Nautilus#Coral",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "zombie_nautilus_spawn_egg",
+                        "element_type": "item",
+                        "name": "Zombie Nautilus Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "parent_mob": {
+                        "identifier": "zombie_nautilus",
+                        "element_type": "mob",
+                        "name": "Zombie Nautilus",
+                        "wiki": "https://minecraft.wiki/w/Zombie_Nautilus",
+                        "health": 15
+                    }
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.21.11"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.11",
+    "type": "drop"
+}

@@ -1,0 +1,193 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_wood",
+                "name": "Oak Wood",
+                "wiki": "https://minecraft.wiki/w/Wood#Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_wood",
+                "name": "Spruce Wood",
+                "wiki": "https://minecraft.wiki/w/Wood#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_wood",
+                "name": "Birch Wood",
+                "wiki": "https://minecraft.wiki/w/Wood#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "woods"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_wood",
+                "name": "Jungle Wood",
+                "wiki": "https://minecraft.wiki/w/Wood#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_stairs",
+                "name": "Spruce Stairs",
+                "wiki": "https://minecraft.wiki/w/Wooden_Stairs#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_stairs",
+                "name": "Birch Stairs",
+                "wiki": "https://minecraft.wiki/w/Wooden_Stairs#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_stairs",
+                "name": "Jungle Stairs",
+                "wiki": "https://minecraft.wiki/w/Wooden_Stairs#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/oak",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_slab",
+                "name": "Oak Slab",
+                "wiki": "https://minecraft.wiki/w/Wooden_Slab#Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_slab",
+                "name": "Spruce Slab",
+                "wiki": "https://minecraft.wiki/w/Wooden_Slab#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_slab",
+                "name": "Birch Slab",
+                "wiki": "https://minecraft.wiki/w/Wooden_Slab#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "slabs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_slab",
+                "name": "Jungle Slab",
+                "wiki": "https://minecraft.wiki/w/Wooden_Slab#Jungle"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "emerald_ore",
+                "name": "Emerald Ore",
+                "wiki": "https://minecraft.wiki/w/Emerald_Ore"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "ender_chest",
+                "name": "Ender Chest",
+                "wiki": "https://minecraft.wiki/w/Ender_Chest"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sandstone_stairs",
+                "name": "Sandstone Stairs",
+                "wiki": "https://minecraft.wiki/w/Sandstone_Stairs"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "tripwire_hook",
+                "name": "Tripwire Hook",
+                "wiki": "https://minecraft.wiki/w/Tripwire_Hook"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "emerald_block",
+                "name": "Block of Emerald",
+                "wiki": "https://minecraft.wiki/w/Block_of_Emerald"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "food",
+                    "food/supernatural"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "enchanted_golden_apple",
+                "name": "Enchanted Golden Apple"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "writable_book",
+                "name": "Book and Quill",
+                "wiki": "https://minecraft.wiki/w/Book_and_Quill"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "written_book",
+                "name": "Written Book",
+                "wiki": "https://minecraft.wiki/w/Written_Book"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "emerald",
+                "name": "Emerald",
+                "wiki": "https://minecraft.wiki/w/Emerald"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "August 1, 2012",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.3.1"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.3.1",
+    "type": "major"
+}

@@ -1,0 +1,808 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "brewing"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "brewing_stand",
+                "name": "Brewing Stand"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cauldron",
+                "name": "Cauldron"
+            },
+            {
+                "types": [
+                    "end"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dragon_egg",
+                "name": "Dragon Egg"
+            },
+            {
+                "types": [
+                    "enchanting"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "enchanting_table",
+                "name": "Enchanting Table"
+            },
+            {
+                "types": [
+                    "end"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "end_portal_frame",
+                "name": "End Portal Frame"
+            },
+            {
+                "types": [
+                    "end"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "end_stone",
+                "name": "End Stone"
+            },
+            {
+                "types": [
+                    "vegetation"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "lily_pad",
+                "name": "Lily Pad"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "mycelium",
+                "name": "Mycelium"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "nether_bricks",
+                "name": "Nether Bricks"
+            },
+            {
+                "types": [
+                    "stairs"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "nether_brick_stairs",
+                "name": "Nether Brick Stairs"
+            },
+            {
+                "types": [
+                    "fence"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "nether_brick_fence",
+                "name": "Nether Brick Fence"
+            }
+        ],
+        "items": [
+            {
+                "types": [
+                    "vegetation",
+                    "seeds"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "nether_wart",
+                "name": "Nether Wart"
+            },
+            {
+                "types": [
+                    "food",
+                    "food/natural"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "spider_eye",
+                "name": "Spider Eye"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_blocks",
+                "name": "Music Disc blocks"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_chirp",
+                "name": "Music Disc chirp"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_far",
+                "name": "Music Disc far"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_mall",
+                "name": "Music Disc mall"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_mellohi",
+                "name": "Music Disc mellohi"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_stal",
+                "name": "Music Disc stal"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_strad",
+                "name": "Music Disc strad"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_ward",
+                "name": "Music Disc ward"
+            },
+            {
+                "types": [
+                    "music_disc"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "music_disc_11",
+                "name": "Music Disc 11"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "blaze_powder",
+                "name": "Blaze Powder"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "blaze_rod",
+                "name": "Blaze Rod"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "ender_eye",
+                "name": "Eye of Ender"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "fermented_spider_eye",
+                "name": "Fermented Spider Eye"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "ghast_tear",
+                "name": "Ghast Tear"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "glistering_melon_slice",
+                "name": "Glistering Melon Slice"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "gold_nugget",
+                "name": "Gold Nugget"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "glass_bottle",
+                "name": "Glass Bottle",
+                "wiki": "https://minecraft.wiki/w/Glass_Bottle"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "water_bottle",
+                "minecraft_identifier": "potion",
+                "name": "Water Bottle",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "awkward_potion",
+                "minecraft_identifier": "potion",
+                "name": "Awkward potion",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "mundane_potion",
+                "minecraft_identifier": "potion",
+                "name": "Mundane Potion",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "thick_potion",
+                "minecraft_identifier": "potion",
+                "name": "Thick Potion",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/fire_resistance"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_fire_resistance",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Fire Resistance",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/harming"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_harming",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Harming",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/healing"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_healing",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Healing",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/poison"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_poison",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Poison",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/regeneration"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_regeneration",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Regeneration",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/slowness"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_slowness",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Slowness",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/strength"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_strength",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Strength",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/swiftness"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_swiftness",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Swiftness",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/weakness"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_weakness",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Weakness",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "splash_water_bottle",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Water Bottle",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "awkward_splash_potion",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Awkward potion",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "mundane_splash_potion",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Mundane Potion",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "identifier": "thick_splash_potion",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Thick Potion",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/fire_resistance"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_fire_resistance",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Fire Resistance",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/harming"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_harming",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Harming",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/healing"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_healing",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Healing",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/poison"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_poison",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Poison",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/regeneration"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_regeneration",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Regeneration",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/slowness"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_slowness",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Slowness",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/strength"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_strength",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Strength",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/swiftness"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_swiftness",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Swiftness",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [
+                    "effect/weakness"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_weakness",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Weakness",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "magma_cream",
+                "name": "Magma Cream",
+                "wiki": "https://minecraft.wiki/w/Magma_Cream"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "identifier": "red_mooshroom",
+                "minecraft_identifier": "mooshroom",
+                "name": "Red Mooshroom",
+                "wiki": "https://minecraft.wiki/w/Mooshroom#Red",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "mooshroom_spawn_egg",
+                        "element_type": "item",
+                        "name": "Mooshroom Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 10
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "snow_golem",
+                "name": "Snow Golem",
+                "wiki": "https://minecraft.wiki/w/Snow_Golem",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "snow_golem_spawn_egg",
+                        "element_type": "item",
+                        "name": "Snow Golem Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 4
+                }
+            },
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "villager",
+                "name": "Villager",
+                "wiki": "https://minecraft.wiki/w/Villager",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "villager_spawn_egg",
+                        "element_type": "item",
+                        "name": "Villager Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "blaze",
+                "name": "Blaze",
+                "wiki": "https://minecraft.wiki/w/Blaze",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "blaze_spawn_egg",
+                        "element_type": "item",
+                        "name": "Blaze Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 20
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "magma_cube",
+                "name": "Magma Cube",
+                "wiki": "https://minecraft.wiki/w/Magma_Cube",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "magma_cube_spawn_egg",
+                        "element_type": "item",
+                        "name": "Magma Cube Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    }
+                }
+            },
+            {
+                "types": [
+                    "mobs/boss"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "ender_dragon",
+                "name": "Ender Dragon",
+                "wiki": "https://minecraft.wiki/w/Ender_Dragon",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "ender_dragon_spawn_egg",
+                        "element_type": "item",
+                        "name": "Ender Dragon Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 200
+                }
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/durability"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "unbreaking",
+                "name": "Unbreaking",
+                "wiki": "https://minecraft.wiki/w/Unbreaking"
+            },
+            {
+                "types": [
+                    "enchantments/block_breaking"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "efficiency",
+                "name": "Efficiency",
+                "wiki": "https://minecraft.wiki/w/Efficiency"
+            },
+            {
+                "types": [
+                    "enchantments/block_breaking"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "fortune",
+                "name": "Fortune",
+                "wiki": "https://minecraft.wiki/w/Fortune"
+            },
+            {
+                "types": [
+                    "enchantments/block_breaking"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "silk_touch",
+                "name": "Silk Touch",
+                "wiki": "https://minecraft.wiki/w/Silk_Touch"
+            },
+            {
+                "types": [
+                    "enchantments/armor"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "blast_protection",
+                "name": "Blast Protection",
+                "wiki": "https://minecraft.wiki/w/Blast_Protection"
+            },
+            {
+                "types": [
+                    "enchantments/armor"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "fire_protection",
+                "name": "Fire Protection",
+                "wiki": "https://minecraft.wiki/w/Fire_Protection"
+            },
+            {
+                "types": [
+                    "enchantments/armor"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "projectile_protection",
+                "name": "Projectile Protection",
+                "wiki": "https://minecraft.wiki/w/Projectile_Protection"
+            },
+            {
+                "types": [
+                    "enchantments/armor"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "protection",
+                "name": "Protection",
+                "wiki": "https://minecraft.wiki/w/Protection"
+            },
+            {
+                "types": [
+                    "enchantments/armor/helmet"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "aqua_affinity",
+                "name": "Aqua Affinity",
+                "wiki": "https://minecraft.wiki/w/Aqua_Affinity"
+            },
+            {
+                "types": [
+                    "enchantments/armor/helmet"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "respiration",
+                "name": "Respiration",
+                "wiki": "https://minecraft.wiki/w/Respiration"
+            },
+            {
+                "types": [
+                    "enchantments/armor/boots"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "feather_falling",
+                "name": "Feather Falling",
+                "wiki": "https://minecraft.wiki/w/Feather_Falling"
+            },
+            {
+                "types": [
+                    "enchantments/melee"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "bane_of_arthropods",
+                "name": "Bane of Arthropods",
+                "wiki": "https://minecraft.wiki/w/Bane_of_Arthropods"
+            },
+            {
+                "types": [
+                    "enchantments/melee"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "smite",
+                "name": "Smite",
+                "wiki": "https://minecraft.wiki/w/Smite"
+            },
+            {
+                "types": [
+                    "enchantments/melee/sword",
+                    "enchantments/melee/mace",
+                    "enchantments/melee/spear"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "fire_aspect",
+                "name": "Fire Aspect",
+                "wiki": "https://minecraft.wiki/w/Fire_Aspect"
+            },
+            {
+                "types": [
+                    "enchantments/melee/sword",
+                    "enchantments/melee/spear"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "knockback",
+                "name": "Knockback",
+                "wiki": "https://minecraft.wiki/w/Knockback"
+            },
+            {
+                "types": [
+                    "enchantments/melee/sword",
+                    "enchantments/melee/spear"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "looting",
+                "name": "Looting",
+                "wiki": "https://minecraft.wiki/w/Looting"
+            },
+            {
+                "types": [
+                    "enchantments/melee/sword",
+                    "enchantments/melee/axe",
+                    "enchantments/melee/spear"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "sharpness",
+                "name": "Sharpness",
+                "wiki": "https://minecraft.wiki/w/Sharpness"
+            }
+        ],
+        "biomes": [
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "frozen_ocean",
+                "name": "Frozen Ocean",
+                "wiki": "https://minecraft.wiki/w/Frozen_Ocean"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "frozen_river",
+                "name": "Frozen River",
+                "wiki": "https://minecraft.wiki/w/Frozen_River"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "mushroom_fields",
+                "name": "Mushroom Fields",
+                "wiki": "https://minecraft.wiki/w/Mushroom_Fields"
+            },
+            {
+                "types": [
+                    "biome/overworld"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "snowy_plains",
+                "name": "Snowy Plains",
+                "wiki": "https://minecraft.wiki/w/Snowy_Plains"
+            },
+            {
+                "types": [
+                    "biome/end"
+                ],
+                "element_type": "biome",
+                "minecraft_identifier": "the_end",
+                "name": "The End",
+                "wiki": "https://minecraft.wiki/w/The_End_(biome)"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Adventure Update (Part 2)",
+    "release_date": "November 18, 2011",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.0.0"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.0.0",
+    "type": "major"
+}

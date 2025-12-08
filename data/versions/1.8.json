@@ -1,0 +1,668 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/spruce",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_door",
+                "name": "Spruce Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_door",
+                "name": "Birch Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_door",
+                "name": "Jungle Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_door",
+                "name": "Acacia Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "doors"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_door",
+                "name": "Dark Oak Door",
+                "wiki": "https://minecraft.wiki/w/Wooden_Door#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_fence",
+                "name": "Spruce Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_fence",
+                "name": "Birch Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_fence",
+                "name": "Jungle Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_fence",
+                "name": "Acacia Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "fences"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_fence",
+                "name": "Dark Oak Fence",
+                "wiki": "https://minecraft.wiki/w/Wooden_Fence#Dark_Oak"
+            },
+            {
+                "types": [
+                    "woodset/spruce",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "spruce_fence_gate",
+                "name": "Spruce Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Spruce"
+            },
+            {
+                "types": [
+                    "woodset/birch",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "birch_fence_gate",
+                "name": "Birch Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Birch"
+            },
+            {
+                "types": [
+                    "woodset/jungle",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "jungle_fence_gate",
+                "name": "Jungle Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Jungle"
+            },
+            {
+                "types": [
+                    "woodset/acacia",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "acacia_fence_gate",
+                "name": "Acacia Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Acacia"
+            },
+            {
+                "types": [
+                    "woodset/dark_oak",
+                    "gates"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "dark_oak_fence_gate",
+                "name": "Dark Oak Fence Gate",
+                "wiki": "https://minecraft.wiki/w/Fence_Gate#Dark_Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "white_banner",
+                "name": "White Banner",
+                "color": "white",
+                "wiki": "https://minecraft.wiki/w/Banner#White"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_gray_banner",
+                "name": "Light Gray Banner",
+                "color": "light_gray",
+                "wiki": "https://minecraft.wiki/w/Banner#Light_Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "gray_banner",
+                "name": "Gray Banner",
+                "color": "gray",
+                "wiki": "https://minecraft.wiki/w/Banner#Gray"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "black_banner",
+                "name": "Black Banner",
+                "color": "black",
+                "wiki": "https://minecraft.wiki/w/Banner#Black"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "brown_banner",
+                "name": "Brown Banner",
+                "color": "brown",
+                "wiki": "https://minecraft.wiki/w/Banner#Brown"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_banner",
+                "name": "Red Banner",
+                "color": "red",
+                "wiki": "https://minecraft.wiki/w/Banner#Red"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "orange_banner",
+                "name": "Orange Banner",
+                "color": "orange",
+                "wiki": "https://minecraft.wiki/w/Banner#Orange"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "yellow_banner",
+                "name": "Yellow Banner",
+                "color": "yellow",
+                "wiki": "https://minecraft.wiki/w/Banner#Yellow"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "lime_banner",
+                "name": "Lime Banner",
+                "color": "lime",
+                "wiki": "https://minecraft.wiki/w/Banner#Lime"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "green_banner",
+                "name": "Green Banner",
+                "color": "green",
+                "wiki": "https://minecraft.wiki/w/Banner#Green"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cyan_banner",
+                "name": "Cyan Banner",
+                "color": "cyan",
+                "wiki": "https://minecraft.wiki/w/Banner#Cyan"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "light_blue_banner",
+                "name": "Light Blue Banner",
+                "color": "light_blue",
+                "wiki": "https://minecraft.wiki/w/Banner#Light_Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "blue_banner",
+                "name": "Blue Banner",
+                "color": "blue",
+                "wiki": "https://minecraft.wiki/w/Banner#Blue"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "purple_banner",
+                "name": "Purple Banner",
+                "color": "purple",
+                "wiki": "https://minecraft.wiki/w/Banner#Purple"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "magenta_banner",
+                "name": "Magenta Banner",
+                "color": "magenta",
+                "wiki": "https://minecraft.wiki/w/Banner#Magenta"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "pink_banner",
+                "name": "Pink Banner",
+                "color": "pink",
+                "wiki": "https://minecraft.wiki/w/Banner#Pink"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "wet_sponge",
+                "name": "Wet Sponge",
+                "wiki": "https://minecraft.wiki/w/Sponge"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "granite",
+                "name": "Granite",
+                "wiki": "https://minecraft.wiki/w/Granite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_granite",
+                "name": "Polished Granite",
+                "wiki": "https://minecraft.wiki/w/Polished_Granite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "diorite",
+                "name": "Diorite",
+                "wiki": "https://minecraft.wiki/w/Diorite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_diorite",
+                "name": "Polished Diorite",
+                "wiki": "https://minecraft.wiki/w/Polished_Diorite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "andesite",
+                "name": "Andesite",
+                "wiki": "https://minecraft.wiki/w/Andesite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "polished_andesite",
+                "name": "Polished Andesite",
+                "wiki": "https://minecraft.wiki/w/Polished_Andesite"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "slime_block",
+                "name": "Slime Block",
+                "wiki": "https://minecraft.wiki/w/Slime_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "barrier",
+                "name": "Barrier",
+                "wiki": "https://minecraft.wiki/w/Barrier"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "iron_trapdoor",
+                "name": "Iron Trapdoor",
+                "wiki": "https://minecraft.wiki/w/Iron_Trapdoor"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "coarse_dirt",
+                "name": "Coarse Dirt",
+                "wiki": "https://minecraft.wiki/w/Coarse_Dirt"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine",
+                "name": "Prismarine",
+                "wiki": "https://minecraft.wiki/w/Prismarine"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "prismarine_bricks",
+                "name": "Prismarine Bricks",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Bricks"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dark_prismarine",
+                "name": "Dark Prismarine",
+                "wiki": "https://minecraft.wiki/w/Dark_Prismarine"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "sea_lantern",
+                "name": "Sea Lantern",
+                "wiki": "https://minecraft.wiki/w/Sea_Lantern"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "armor_stand",
+                "name": "Armor Stand",
+                "wiki": "https://minecraft.wiki/w/Armor_Stand"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_sandstone",
+                "name": "Red Sandstone",
+                "wiki": "https://minecraft.wiki/w/Red_Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cut_red_sandstone",
+                "name": "Cut Red Sandstone",
+                "wiki": "https://minecraft.wiki/w/Cut_Red_Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "chiseled_red_sandstone",
+                "name": "Chiseled Red Sandstone",
+                "wiki": "https://minecraft.wiki/w/Chiseled_Red_Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "smooth_red_sandstone",
+                "name": "Smooth Red Sandstone",
+                "wiki": "https://minecraft.wiki/w/Smooth_Red_Sandstone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_sandstone_slab",
+                "name": "Red Sandstone Slab",
+                "wiki": "https://minecraft.wiki/w/Red_Sandstone_Slab"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "red_sandstone_stairs",
+                "name": "Red Sandstone Stairs",
+                "wiki": "https://minecraft.wiki/w/Red_Sandstone_Stairs"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "prismarine_crystals",
+                "name": "Prismarine Crystals",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Crystals"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "prismarine_shard",
+                "name": "Prismarine Shard",
+                "wiki": "https://minecraft.wiki/w/Prismarine_Shard"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "mutton",
+                "name": "Raw Mutton",
+                "wiki": "https://minecraft.wiki/w/Raw_Mutton"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "cooked_mutton",
+                "name": "Cooked Mutton",
+                "wiki": "https://minecraft.wiki/w/Cooked_Mutton"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "rabbit",
+                "name": "Raw Rabbit",
+                "wiki": "https://minecraft.wiki/w/Raw_Rabbit"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "cooked_rabbit",
+                "name": "Cooked Rabbit",
+                "wiki": "https://minecraft.wiki/w/Cooked_Rabbit"
+            },
+            {
+                "types": [
+                    "food"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "rabbit_stew",
+                "name": "Rabbit Stew",
+                "wiki": "https://minecraft.wiki/w/Rabbit_Stew"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "rabbit_hide",
+                "name": "Rabbit Hide",
+                "wiki": "https://minecraft.wiki/w/Rabbit_Hide"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "rabbit_foot",
+                "name": "Rabbit's Foot",
+                "wiki": "https://minecraft.wiki/w/Rabbit%27s_Foot"
+            },
+            {
+                "types": [
+                    "enchantments"
+                ],
+                "element_type": "item",
+                "identifier": "depth_strider_enchanted_book",
+                "minecraft_identifier": "enchanted_book",
+                "name": "Enchanted Book",
+                "display_name": "Enchanted Book – Depth Strider I-III",
+                "wiki": "https://minecraft.wiki/w/Enchanted_Book"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "guardian_spawn_egg",
+                "name": "Guardian Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "rabbit_spawn_egg",
+                "name": "Rabbit Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "endermite_spawn_egg",
+                "name": "Endermite Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            },
+            {
+                "types": [
+                    "effect/leaping"
+                ],
+                "element_type": "item",
+                "identifier": "potion_of_leaping",
+                "minecraft_identifier": "potion",
+                "name": "Potion of Leaping",
+                "image_identifier": "potion_of_leaping",
+                "wiki": "https://minecraft.wiki/w/Potion"
+            },
+            {
+                "types": [
+                    "effect/leaping"
+                ],
+                "element_type": "item",
+                "identifier": "splash_potion_of_leaping",
+                "minecraft_identifier": "splash_potion",
+                "name": "Splash Potion of Leaping",
+                "image_identifier": "splash_potion_of_leaping",
+                "wiki": "https://minecraft.wiki/w/Splash_Potion"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/passive"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "rabbit",
+                "name": "Rabbit",
+                "wiki": "https://minecraft.wiki/w/Rabbit",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "rabbit_spawn_egg",
+                        "element_type": "item",
+                        "name": "Rabbit Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 3
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "endermite",
+                "name": "Endermite",
+                "wiki": "https://minecraft.wiki/w/Endermite",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "endermite_spawn_egg",
+                        "element_type": "item",
+                        "name": "Endermite Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 8
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "elder_guardian",
+                "name": "Elder Guardian",
+                "wiki": "https://minecraft.wiki/w/Elder_Guardian",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "elder_guardian_spawn_egg",
+                        "element_type": "item",
+                        "name": "Elder Guardian Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 80
+                }
+            },
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "guardian",
+                "name": "Guardian",
+                "wiki": "https://minecraft.wiki/w/Guardian",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "guardian_spawn_egg",
+                        "element_type": "item",
+                        "name": "Guardian Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 30
+                }
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/armor/boots"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "depth_strider",
+                "name": "Depth Strider",
+                "wiki": "https://minecraft.wiki/w/Depth_Strider"
+            }
+        ]
+    },
+    "image": null,
+    "name": "Bountiful Update",
+    "release_date": "September 2, 2014",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.8"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.8",
+    "type": "major"
+}

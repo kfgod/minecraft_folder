@@ -1,0 +1,45 @@
+{
+    "added": {
+        "items": [
+            {
+                "types": [
+                    "spawn_egg"
+                ],
+                "element_type": "item",
+                "minecraft_identifier": "piglin_brute_spawn_egg",
+                "name": "Piglin Brute Spawn Egg",
+                "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+            }
+        ],
+        "mobs": [
+            {
+                "types": [
+                    "mobs/hostile"
+                ],
+                "element_type": "mob",
+                "minecraft_identifier": "piglin_brute",
+                "name": "Piglin Brute",
+                "wiki": "https://minecraft.wiki/w/Piglin_Brute",
+                "meta": {
+                    "spawn_egg": {
+                        "identifier": "piglin_brute_spawn_egg",
+                        "element_type": "item",
+                        "name": "Piglin Brute Spawn Egg",
+                        "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+                    },
+                    "health": 50
+                }
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "August 11, 2020",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.16.2"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.16.2",
+    "type": "minor"
+}

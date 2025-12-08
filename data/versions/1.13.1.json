@@ -1,0 +1,51 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_tube_coral",
+                "name": "Dead Tube Coral",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral#Tube"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_brain_coral",
+                "name": "Dead Brain Coral",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral#Brain"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_bubble_coral",
+                "name": "Dead Bubble Coral",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral#Bubble"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_fire_coral",
+                "name": "Dead Fire Coral",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral#Fire"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dead_horn_coral",
+                "name": "Dead Horn Coral",
+                "wiki": "https://minecraft.wiki/w/Dead_Coral#Horn"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "August 22, 2018",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.13.1"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.13.1",
+    "type": "minor"
+}

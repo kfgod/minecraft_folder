@@ -1,0 +1,66 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [
+                    "woodset/oak",
+                    "planks"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_planks",
+                "name": "Oak Planks",
+                "wiki": "https://minecraft.wiki/w/Planks#Oak"
+            },
+            {
+                "types": [
+                    "vegetation",
+                    "woodset/oak",
+                    "saplings",
+                    "plants"
+                ],
+                "element_type": "block",
+                "minecraft_identifier": "oak_sapling",
+                "name": "Oak Sapling",
+                "wiki": "https://minecraft.wiki/w/Sapling#Oak"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "grass_block",
+                "name": "Grass Block",
+                "wiki": "https://minecraft.wiki/w/Grass_Block"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "stone",
+                "name": "Stone",
+                "wiki": "https://minecraft.wiki/w/Stone"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "dirt",
+                "name": "Dirt",
+                "wiki": "https://minecraft.wiki/w/Dirt"
+            },
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "cobblestone",
+                "name": "Cobblestone",
+                "wiki": "https://minecraft.wiki/w/Cobblestone"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "May 16, 2009",
+    "release_version": {
+        "bedrock": null,
+        "java": "Pre-Classic"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_pre-Classic",
+    "type": null
+}

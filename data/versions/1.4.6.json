@@ -1,0 +1,50 @@
+{
+    "added": {
+        "blocks": [
+            {
+                "types": [],
+                "element_type": "block",
+                "minecraft_identifier": "nether_brick_slab",
+                "name": "Nether Brick Slab",
+                "wiki": "https://minecraft.wiki/w/Nether_Brick_Slab"
+            }
+        ],
+        "items": [
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "firework_star",
+                "name": "Firework Star",
+                "wiki": "https://minecraft.wiki/w/Firework_Star"
+            },
+            {
+                "types": [],
+                "element_type": "item",
+                "minecraft_identifier": "firework_rocket",
+                "name": "Firework Rocket",
+                "wiki": "https://minecraft.wiki/w/Firework_Rocket"
+            }
+        ],
+        "enchantments": [
+            {
+                "types": [
+                    "enchantments/armor"
+                ],
+                "element_type": "enchantment",
+                "minecraft_identifier": "thorns",
+                "name": "Thorns",
+                "wiki": "https://minecraft.wiki/w/Thorns"
+            }
+        ]
+    },
+    "image": null,
+    "name": null,
+    "release_date": "December 20, 2012",
+    "release_version": {
+        "bedrock": null,
+        "java": "1.4.6"
+    },
+    "tags": [],
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.4.6",
+    "type": "minor"
+}
