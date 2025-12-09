@@ -1,10 +1,10 @@
 {
   "last_drop": {
-    "version": "1.21.9",
-    "name": "The Copper Age",
-    "release_date": "September 30, 2025",
-    "release_date_parsed": "2025-09-30T00:00:00",
-    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.9",
+    "version": "1.21.11",
+    "name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_date_parsed": "2025-12-09T00:00:00",
+    "wiki": "https://minecraft.wiki/w/Java_Edition_1.21.11",
     "type": "drop"
   },
   "last_major": {
@@ -29,59 +29,59 @@
     }
   },
   "last_item": {
-    "version": "1.21.9",
-    "version_name": "The Copper Age",
-    "release_date": "September 30, 2025",
-    "release_date_parsed": "2025-09-30T00:00:00",
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_date_parsed": "2025-12-09T00:00:00",
     "element": {
       "types": [],
       "element_type": "item",
-      "minecraft_identifier": "copper_shovel",
-      "name": "Copper Shovel",
-      "wiki": "https://minecraft.wiki/w/Copper_Shovel"
+      "minecraft_identifier": "wooden_spear",
+      "name": "Wooden Spear",
+      "wiki": "https://minecraft.wiki/w/Spear#Wooden"
     }
   },
   "last_mob": {
-    "version": "1.21.9",
-    "version_name": "The Copper Age",
-    "release_date": "September 30, 2025",
-    "release_date_parsed": "2025-09-30T00:00:00",
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_date_parsed": "2025-12-09T00:00:00",
     "element": {
       "types": [
-        "mobs/passive"
+        "mobs/neutral"
       ],
       "element_type": "mob",
-      "minecraft_identifier": "copper_golem",
-      "name": "Copper Golem",
-      "wiki": "https://minecraft.wiki/w/Copper_Golem",
+      "minecraft_identifier": "nautilus",
+      "name": "Nautilus",
+      "wiki": "https://minecraft.wiki/w/Nautilus",
       "meta": {
         "spawn_egg": {
-          "identifier": "copper_golem_spawn_egg",
+          "identifier": "nautilus_spawn_egg",
           "element_type": "item",
-          "name": "Copper Golem Spawn Egg",
+          "name": "Nautilus Spawn Egg",
           "wiki": "https://minecraft.wiki/w/Spawn_Egg"
         },
-        "health": 12
+        "health": 15
       }
     }
   },
   "last_advancement": {
-    "version": "1.21.6",
-    "version_name": "Chase the Skies",
-    "release_date": "June 17, 2025",
-    "release_date_parsed": "2025-06-17T00:00:00",
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_date_parsed": "2025-12-09T00:00:00",
     "element": {
       "types": [],
       "element_type": "advancement",
-      "minecraft_identifier": "husbandry/place_dried_ghast_in_water",
-      "name": "Stay Hydrated!",
-      "wiki": "https://minecraft.wiki/w/Advancement#Stay_Hydrated!",
+      "minecraft_identifier": "adventure/spear_many_mobs",
+      "name": "Mob Kabob​",
+      "wiki": "https://minecraft.wiki/w/Advancement#Mob_Kabob",
       "meta": {
         "icon": {
-          "identifier": "dried_ghast",
-          "element_type": "block",
-          "name": "Dried Ghast",
-          "wiki": "https://minecraft.wiki/w/Dried_Ghast"
+          "identifier": "iron_spear",
+          "element_type": "item",
+          "name": "Iron Spear",
+          "wiki": "https://minecraft.wiki/w/Spear#Iron"
         }
       }
     }
@@ -118,18 +118,18 @@
     }
   },
   "last_effect": {
-    "version": "1.21",
-    "version_name": "Tricky Trials",
-    "release_date": "June 13, 2024",
-    "release_date_parsed": "2024-06-13T00:00:00",
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "release_date_parsed": "2025-12-09T00:00:00",
     "element": {
       "types": [
-        "effects/spawns"
+        "effects/underwater"
       ],
       "element_type": "effect",
-      "minecraft_identifier": "infested",
-      "name": "Infested",
-      "wiki": "https://minecraft.wiki/w/Infested"
+      "minecraft_identifier": "breath_of_the_nautilus",
+      "name": "Breath of the Nautilus",
+      "wiki": "https://minecraft.wiki/w/Breath_of_the_Nautilus"
     }
   }
 }
