@@ -83,6 +83,7 @@ export class TimeSinceManager {
         const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
         const typeClass = `time-since-card--${type}`;
         const releaseDate = versionData.release_date;
+        const formattedDate = this.formatDate(releaseDate);
         const cardId = `time-since-${type}`;
         const wikiUrl = versionData.wiki || '';
 
@@ -95,9 +96,9 @@ export class TimeSinceManager {
                         <div class="time-since-card__version">${versionData.version}</div>
                     </div>
                     <div class="time-since-card__date">
-                        Released: ${releaseDate}
+                        Released: ${formattedDate}
                     </div>
-                    <div class="time-since-card__timer" data-release-date="${versionData.release_date_parsed}">
+                    <div class="time-since-card__timer" data-release-date="${releaseDate}">
                         <div class="time-since-timer-text">Loading...</div>
                     </div>
                 </a>
@@ -112,9 +113,9 @@ export class TimeSinceManager {
                     <div class="time-since-card__version">${versionData.version}</div>
                 </div>
                 <div class="time-since-card__date">
-                    Released: ${releaseDate}
+                    Released: ${formattedDate}
                 </div>
-                <div class="time-since-card__timer" data-release-date="${versionData.release_date_parsed}">
+                <div class="time-since-card__timer" data-release-date="${releaseDate}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
             </div>
@@ -139,7 +140,8 @@ export class TimeSinceManager {
         const versionName = data.version_name || '';
         const version = data.version || '';
         const releaseDate = data.release_date;
-        const elementName = element.display_name || element.name || 'Unknown';
+        const formattedDate = this.formatDate(releaseDate);
+        const elementName = element.name || 'Unknown';
         const elementWiki = element.wiki || '';
         const cardId = `time-since-${type}`;
 
@@ -152,9 +154,9 @@ export class TimeSinceManager {
                         ${versionName ? `<div class="time-since-card__version">${versionName} (${version})</div>` : `<div class="time-since-card__version">${version}</div>`}
                     </div>
                     <div class="time-since-card__date">
-                        Released: ${releaseDate}
+                        Released: ${formattedDate}
                     </div>
-                    <div class="time-since-card__timer" data-release-date="${data.release_date_parsed}">
+                    <div class="time-since-card__timer" data-release-date="${releaseDate}">
                         <div class="time-since-timer-text">Loading...</div>
                     </div>
                 </a>
@@ -169,13 +171,37 @@ export class TimeSinceManager {
                     ${versionName ? `<div class="time-since-card__version">${versionName} (${version})</div>` : `<div class="time-since-card__version">${version}</div>`}
                 </div>
                 <div class="time-since-card__date">
-                    Released: ${releaseDate}
+                    Released: ${formattedDate}
                 </div>
-                <div class="time-since-card__timer" data-release-date="${data.release_date_parsed}">
+                <div class="time-since-card__timer" data-release-date="${releaseDate}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
             </div>
         `;
+    }
+
+    formatDate(dateString) {
+        if (!dateString) return 'Unknown';
+        
+        try {
+            const date = new Date(dateString);
+            if (isNaN(date.getTime())) {
+                return dateString; // Return original if can't parse
+            }
+            
+            const months = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            
+            const month = months[date.getMonth()];
+            const day = date.getDate();
+            const year = date.getFullYear();
+            
+            return `${month} ${day}, ${year}`;
+        } catch (error) {
+            return dateString; // Return original on error
+        }
     }
 
     startTimerUpdates() {
