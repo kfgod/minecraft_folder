@@ -54,7 +54,7 @@ export class TimeSinceManager {
     }
 
     buildTemplate() {
-        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect } = this.state.timeSinceData || {};
+        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect, last_mob_variant } = this.state.timeSinceData || {};
 
         return `
             <div class="time-since-container">
@@ -68,6 +68,7 @@ export class TimeSinceManager {
                     ${last_block ? this.buildContentCard('block', last_block) : ''}
                     ${last_item ? this.buildContentCard('item', last_item) : ''}
                     ${last_mob ? this.buildContentCard('mob', last_mob) : ''}
+                    ${last_mob_variant ? this.buildContentCard('mob_variant', last_mob_variant) : ''}
                     ${last_advancement ? this.buildContentCard('advancement', last_advancement) : ''}
                     ${last_biome ? this.buildContentCard('biome', last_biome) : ''}
                     ${last_painting ? this.buildContentCard('painting', last_painting) : ''}
@@ -82,6 +83,25 @@ export class TimeSinceManager {
         const typeClass = `time-since-card--${type}`;
         const releaseDate = versionData.release_date;
         const cardId = `time-since-${type}`;
+        const wikiUrl = versionData.wiki || '';
+
+        if (wikiUrl) {
+            return `
+                <a href="${wikiUrl}" target="_blank" rel="noopener noreferrer" class="time-since-card ${typeClass}" id="${cardId}">
+                    <div class="time-since-card__header">
+                        <h2 class="time-since-card__title">${typeLabel}</h2>
+                        ${versionData.name ? `<div class="time-since-card__name">${versionData.name}</div>` : ''}
+                        <div class="time-since-card__version">${versionData.version}</div>
+                    </div>
+                    <div class="time-since-card__date">
+                        Released: ${releaseDate}
+                    </div>
+                    <div class="time-since-card__timer" data-release-date="${versionData.release_date_parsed}">
+                        <div class="time-since-timer-text">Loading...</div>
+                    </div>
+                </a>
+            `;
+        }
 
         return `
             <div class="time-since-card ${typeClass}" id="${cardId}">
@@ -96,7 +116,6 @@ export class TimeSinceManager {
                 <div class="time-since-card__timer" data-release-date="${versionData.release_date_parsed}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
-                ${versionData.wiki ? `<a href="${versionData.wiki}" target="_blank" rel="noopener noreferrer" class="time-since-card__wiki">View on Wiki →</a>` : ''}
             </div>
         `;
     }
@@ -106,6 +125,7 @@ export class TimeSinceManager {
             'block': 'Block',
             'item': 'Item',
             'mob': 'Mob',
+            'mob_variant': 'Mob Variant',
             'advancement': 'Advancement',
             'biome': 'Biome',
             'painting': 'Painting',
@@ -121,6 +141,24 @@ export class TimeSinceManager {
         const elementWiki = element.wiki || '';
         const cardId = `time-since-${type}`;
 
+        if (elementWiki) {
+            return `
+                <a href="${elementWiki}" target="_blank" rel="noopener noreferrer" class="time-since-card ${typeClass}" id="${cardId}">
+                    <div class="time-since-card__header">
+                        <h2 class="time-since-card__title">${typeLabel}</h2>
+                        <div class="time-since-card__name">${elementName}</div>
+                        ${versionName ? `<div class="time-since-card__version">${versionName} (${version})</div>` : `<div class="time-since-card__version">${version}</div>`}
+                    </div>
+                    <div class="time-since-card__date">
+                        Released: ${releaseDate}
+                    </div>
+                    <div class="time-since-card__timer" data-release-date="${data.release_date_parsed}">
+                        <div class="time-since-timer-text">Loading...</div>
+                    </div>
+                </a>
+            `;
+        }
+
         return `
             <div class="time-since-card ${typeClass}" id="${cardId}">
                 <div class="time-since-card__header">
@@ -134,7 +172,6 @@ export class TimeSinceManager {
                 <div class="time-since-card__timer" data-release-date="${data.release_date_parsed}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
-                ${elementWiki ? `<a href="${elementWiki}" target="_blank" rel="noopener noreferrer" class="time-since-card__wiki">View on Wiki →</a>` : ''}
             </div>
         `;
     }

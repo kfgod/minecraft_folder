@@ -65,6 +65,52 @@
     },
     "release_date_parsed": "2025-12-09T12:23:30+00:00"
   },
+  "last_effect": {
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "element": {
+      "types": [
+        "effects/underwater"
+      ],
+      "element_type": "effect",
+      "minecraft_identifier": "breath_of_the_nautilus",
+      "name": "Breath of the Nautilus",
+      "wiki": "https://minecraft.wiki/w/Breath_of_the_Nautilus"
+    },
+    "release_date_parsed": "2025-12-09T12:23:30+00:00"
+  },
+  "last_enchantment": {
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "element": {
+      "types": [
+        "enchantments/melee/spear"
+      ],
+      "element_type": "enchantment",
+      "minecraft_identifier": "lunge",
+      "name": "Lunge",
+      "wiki": "https://minecraft.wiki/w/Lunge"
+    },
+    "release_date_parsed": "2025-12-09T12:23:30+00:00"
+  },
+  "last_painting": {
+    "version": "1.21.7",
+    "version_name": null,
+    "release_date": "June 30, 2025",
+    "element": {
+      "types": [
+        "paintings/3x3"
+      ],
+      "element_type": "painting",
+      "minecraft_identifier": "dennis",
+      "name": "Dennis",
+      "display_name": "Dennis – Sarah Boeving",
+      "wiki": "https://minecraft.wiki/w/Painting"
+    },
+    "release_date_parsed": "2025-06-30T09:32:16+00:00"
+  },
   "last_advancement": {
     "version": "1.21.11",
     "version_name": "Mounts of Mayhem",
@@ -86,6 +132,38 @@
     },
     "release_date_parsed": "2025-12-09T12:23:30+00:00"
   },
+  "last_mob_variant": {
+    "version": "1.21.11",
+    "version_name": "Mounts of Mayhem",
+    "release_date": "December 9, 2025",
+    "element": {
+      "types": [
+        "mobs/neutral"
+      ],
+      "element_type": "mob_variant",
+      "minecraft_identifier": "zombie_nautilus",
+      "identifier": "coral_zombie_nautilus",
+      "name": "Zombie Nautilus",
+      "display_name": "Coral Zombie Nautilus",
+      "wiki": "https://minecraft.wiki/w/Zombie_Nautilus#Coral",
+      "meta": {
+        "spawn_egg": {
+          "identifier": "zombie_nautilus_spawn_egg",
+          "element_type": "item",
+          "name": "Zombie Nautilus Spawn Egg",
+          "wiki": "https://minecraft.wiki/w/Spawn_Egg"
+        },
+        "parent_mob": {
+          "identifier": "zombie_nautilus",
+          "element_type": "mob",
+          "name": "Zombie Nautilus",
+          "wiki": "https://minecraft.wiki/w/Zombie_Nautilus",
+          "health": 15
+        }
+      }
+    },
+    "release_date_parsed": "2025-12-09T12:23:30+00:00"
+  },
   "last_biome": {
     "version": "1.21.4",
     "version_name": "The Garden Awakens",
@@ -100,36 +178,5 @@
       "wiki": "https://minecraft.wiki/w/Pale_Garden"
     },
     "release_date_parsed": "2024-12-03T10:12:57+00:00"
-  },
-  "last_painting": {
-    "version": "1.21.7",
-    "version_name": null,
-    "release_date": "June 30, 2025",
-    "element": {
-      "types": [
-        "paintings/3x3"
-      ],
-      "element_type": "painting",
-      "minecraft_identifier": "dennis",
-      "name": "Dennis",
-      "display_name": "Dennis – Sarah Boeving",
-      "wiki": "https://minecraft.wiki/w/Painting"
-    },
-    "release_date_parsed": "2025-06-30T09:32:16+00:00"
-  },
-  "last_effect": {
-    "version": "1.21.11",
-    "version_name": "Mounts of Mayhem",
-    "release_date": "December 9, 2025",
-    "element": {
-      "types": [
-        "effects/underwater"
-      ],
-      "element_type": "effect",
-      "minecraft_identifier": "breath_of_the_nautilus",
-      "name": "Breath of the Nautilus",
-      "wiki": "https://minecraft.wiki/w/Breath_of_the_Nautilus"
-    },
-    "release_date_parsed": "2025-12-09T12:23:30+00:00"
   }
 }

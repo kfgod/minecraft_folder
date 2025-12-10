@@ -955,6 +955,20 @@ body.desktop-layout {
     min-width: 0;
 }
 
+/* Remove underline from time-since cards when they are links */
+a.time-since-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.time-since-card:hover {
+    text-decoration: none;
+}
+
+a.time-since-card:visited {
+    text-decoration: none;
+}
+
 .time-since-card__header {
     display: flex;
     flex-direction: column;
