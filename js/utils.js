@@ -1,16 +1,41 @@
 /**
  * Utility functions for the Minecraft Updates application
  */
+import { CONFIG } from './config.js';
+
 export class Utils {
     /**
+     * Build a full URL from a relative path using BASE_URL from config
+     * @param {string} path - Relative path (e.g., 'data/file.json' or 'images/block.png')
+     * @returns {string} Full URL or relative path if BASE_URL is empty
+     */
+    static buildUrl(path) {
+        if (!path) return path;
+        // If path is already a full URL (starts with http:// or https://), return as is
+        if (/^https?:\/\//.test(path)) {
+            return path;
+        }
+        // If BASE_URL is empty, return relative path
+        if (!CONFIG.BASE_URL) {
+            return path;
+        }
+        // Remove leading slash from path if present
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+        // Remove trailing slash from BASE_URL if present
+        const baseUrl = CONFIG.BASE_URL.endsWith('/') ? CONFIG.BASE_URL.slice(0, -1) : CONFIG.BASE_URL;
+        return `${baseUrl}/${cleanPath}`;
+    }
+
+    /**
      * Fetch JSON data from a URL
-     * @param {string} url - The URL to fetch from
+     * @param {string} url - The URL to fetch from (can be relative or absolute)
      * @returns {Promise<Object>} The parsed JSON data
      */
     static async fetchJSON(url) {
-        const response = await fetch(url);
+        const fullUrl = this.buildUrl(url);
+        const response = await fetch(fullUrl);
         if (!response.ok) {
-            throw new Error(`Network error: ${response.statusText} for ${url}`);
+            throw new Error(`Network error: ${response.statusText} for ${fullUrl}`);
         }
         return response.json();
     }
