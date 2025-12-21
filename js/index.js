@@ -1275,16 +1275,16 @@ class MinecraftUpdatesApp {
                     return null;
                 }
                 if (trimmed.includes('/')) {
-                    return `${CONFIG.IMAGE_BASE_PATH}/${trimmed}/latest.png`;
+                    return `${imageBasePath}/${trimmed}/latest.png`;
                 }
-                return `${CONFIG.IMAGE_BASE_PATH}/item/${trimmed}/latest.png`;
+                return `${imageBasePath}/item/${trimmed}/latest.png`;
             }
 
             const type = itemValue.element_type || 'item';
             const identifier = itemValue.identifier || itemValue.minecraft_identifier;
 
             if (identifier) {
-                return `${CONFIG.IMAGE_BASE_PATH}/${type}/${identifier}/latest.png`;
+                return `${imageBasePath}/${type}/${identifier}/latest.png`;
             }
             return null;
         };

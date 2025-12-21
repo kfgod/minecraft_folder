@@ -93,25 +93,26 @@ export class MaterialGroupsManager {
 
     buildTemplate() {
         const content = this.state.materialGroupsData?.content || [];
-        const tieredItems = content.filter(item => item.type === 'tiered');
+        // Фильтруем элементы с groups (tiered группы определяются по наличию groups)
+        const items = content.filter(item => item.groups && Array.isArray(item.groups) && item.groups.length > 0);
 
-        if (tieredItems.length === 0) {
+        if (items.length === 0) {
             return '<p class="empty-state">No material groups found.</p>';
         }
 
         let html = '<div class="material-groups-container">';
         html += '<h1 class="material-groups-title">Material Groups</h1>';
 
-        for (let i = 0; i < tieredItems.length; i++) {
-            html += this.buildTieredGroup(tieredItems[i], i);
+        for (let i = 0; i < items.length; i++) {
+            html += this.buildGroup(items[i], i);
         }
 
         html += '</div>';
         return html;
     }
 
-    buildTieredGroup(tieredItem, index) {
-        const groups = tieredItem.groups || [];
+    buildGroup(item, index) {
+        const groups = item.groups || [];
         if (groups.length === 0) {
             return '';
         }
@@ -138,7 +139,7 @@ export class MaterialGroupsManager {
 
         // Создаем уникальный идентификатор для секции
         const sectionId = `material-group-${index}`;
-        const sectionName = tieredItem.name || `Group ${index + 1}`;
+        const sectionName = item.name || `Group ${index + 1}`;
         
         // Проверяем сохраненное состояние
         const isCollapsed = this.isSectionCollapsed(sectionId);
