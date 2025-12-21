@@ -340,7 +340,8 @@ body.detail-mode {
 
 body.compare-mode #nav-panel,
 body.stats-mode #nav-panel,
-body.time-since-mode #nav-panel {
+body.time-since-mode #nav-panel,
+body.material-groups-mode #nav-panel {
     display: none;
 }
 
@@ -352,6 +353,7 @@ body.detail-mode #nav-panel {
 body.compare-mode #nav-toggle-btn,
 body.stats-mode #nav-toggle-btn,
 body.time-since-mode #nav-toggle-btn,
+body.material-groups-mode #nav-toggle-btn,
 body.detail-mode #nav-toggle-btn {
     display: none !important;
 }
@@ -377,7 +379,8 @@ body.compare-mode main {
 }
 
 body.stats-mode main,
-body.time-since-mode main {
+body.time-since-mode main,
+body.material-groups-mode main {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -390,8 +393,12 @@ body.detail-mode main {
 
 body.stats-mode #content,
 body.time-since-mode #content,
+body.material-groups-mode #content,
 body.detail-mode #content {
     display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body.stats-mode #search-bar,
@@ -1113,5 +1120,165 @@ a.time-since-card:visited {
     
     .time-since-title {
         font-size: 2rem;
+    }
+}
+
+/* Material Groups Styles */
+.material-groups-container {
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.material-groups-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.material-group-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.material-group-section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.2s ease;
+}
+
+.material-group-section-title:hover {
+    opacity: 0.8;
+}
+
+.material-group-section-title::before {
+    content: '▼';
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.material-group-section-title.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+/* Material Groups Table Styles */
+.material-group-table-container {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 10000px;
+    opacity: 1;
+}
+
+.material-group-table-container.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.material-group-table-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.material-group-table {
+    width: auto;
+    border-collapse: collapse;
+    min-width: 0;
+    border-spacing: 0;
+    table-layout: auto;
+}
+
+.material-group-table-cell {
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center;
+    border: none !important;
+    vertical-align: middle;
+    width: auto;
+}
+
+.material-group-table-cell--material {
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    background-color: var(--surface-color);
+}
+
+.material-group-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+}
+
+.material-group-element-image {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-group-element-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.material-group-element-image a {
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.material-group-element-image a:hover {
+    opacity: 0.8;
+}
+
+.material-group-empty {
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .material-groups-container {
+        padding: 15px;
+    }
+    
+    .material-groups-title {
+        font-size: 2rem;
+    }
+    
+    .material-group-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .material-group-element-image {
+        width: 48px;
+        height: 48px;
     }
 }

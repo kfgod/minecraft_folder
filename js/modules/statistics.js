@@ -30,9 +30,9 @@ export class StatisticsManager {
 
         try {
             const [versionsStats, yearsStats, namesStats] = await Promise.all([
-                Utils.fetchJSON('data/statistics/by_versions.json'),
-                Utils.fetchJSON('data/statistics/by_years.json'),
-                Utils.fetchJSON('data/statistics/names.json'),
+                Utils.fetchJSON(CONFIG.BASE_URL + '/data/statistics/by_versions.json'),
+                Utils.fetchJSON(CONFIG.BASE_URL + '/data/statistics/by_years.json'),
+                Utils.fetchJSON(CONFIG.BASE_URL + '/data/statistics/names.json'),
             ]);
             this.state.versionsStats = versionsStats;
             this.state.yearsStats = yearsStats;

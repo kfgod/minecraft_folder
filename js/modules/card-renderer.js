@@ -131,6 +131,7 @@ export class CardRenderer {
     createGridSection(items, title, sectionType) {
         const resolveIconPath = (itemValue) => {
             if (!itemValue) return null;
+            const imageBasePath = CONFIG.BASE_URL + CONFIG.IMAGE_BASE_PATH;
 
             if (typeof itemValue === 'string') {
                 const trimmed = itemValue.trim().replace(/^\/+/, '');
@@ -138,16 +139,16 @@ export class CardRenderer {
                     return null;
                 }
                 if (trimmed.includes('/')) {
-                    return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/${trimmed}/latest.png`);
+                    return `${imageBasePath}/${trimmed}/latest.png`;
                 }
-                return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/item/${trimmed}/latest.png`);
+                return `${imageBasePath}/item/${trimmed}/latest.png`;
             }
 
             const type = itemValue.element_type || 'item';
             const identifier = itemValue.identifier || itemValue.minecraft_identifier;
 
             if (identifier) {
-                return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/${type}/${identifier}/latest.png`);
+                return `${imageBasePath}/${type}/${identifier}/latest.png`;
             }
             return null;
         };

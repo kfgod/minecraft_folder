@@ -3,6 +3,7 @@
  */
 import { Utils } from '../utils.js';
 import { DOMManager } from '../dom-manager.js';
+import { CONFIG } from '../config.js';
 
 export class TimeSinceManager {
     constructor(app) {
@@ -19,7 +20,7 @@ export class TimeSinceManager {
         }
 
         try {
-            const timeSinceData = await Utils.fetchJSON('data/statistics/time_since.json');
+            const timeSinceData = await Utils.fetchJSON(CONFIG.BASE_URL + '/data/statistics/time_since.json');
             this.state.timeSinceData = timeSinceData;
         } catch (error) {
             console.error('Error loading time-since data:', error);

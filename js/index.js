@@ -10,6 +10,7 @@ import { DetailViewManager } from './modules/detail-view.js';
 import { CompareManager } from './modules/compare.js';
 import { CardRenderer } from './modules/card-renderer.js';
 import { TimeSinceManager } from './modules/time-since.js';
+import { MaterialGroupsManager } from './modules/material-groups.js';
 import { NavigationManager } from './modules/navigation.js';
 
 class MinecraftUpdatesApp {
@@ -34,6 +35,7 @@ class MinecraftUpdatesApp {
             isCompareMode: false,
             isStatsMode: false,
             isTimeSinceMode: false,
+            isMaterialGroupsMode: false,
             isDetailMode: false,
             detailTarget: null,
             detailReturnContext: 'list',
@@ -48,6 +50,7 @@ class MinecraftUpdatesApp {
         this.compareManager = new CompareManager(this);
         this.cardRenderer = new CardRenderer(this);
         this.timeSinceManager = new TimeSinceManager(this);
+        this.materialGroupsManager = new MaterialGroupsManager(this);
         this.navigationManager = new NavigationManager(this);
 
         this.yearEntriesCache = null;
@@ -129,6 +132,7 @@ class MinecraftUpdatesApp {
             statsBtn: DOMManager.getElement('#stats-btn'),
             compareBtn: DOMManager.getElement('#compare-btn'),
             timeSinceBtn: DOMManager.getElement('#time-since-btn'),
+            materialGroupsBtn: DOMManager.getElement('#material-groups-btn'),
         };
     }
 
@@ -138,8 +142,9 @@ class MinecraftUpdatesApp {
     async init() {
         this.addEventListeners();
         try {
-            const indexData = await Utils.fetchJSON(CONFIG.INDEX_FILE_PATH);
-            const fetchPromises = indexData.files.map((file) => Utils.fetchJSON(file));
+            const indexFilePath = CONFIG.BASE_URL + CONFIG.INDEX_FILE_PATH;
+            const indexData = await Utils.fetchJSON(indexFilePath);
+            const fetchPromises = indexData.files.map((file) => Utils.fetchJSON(CONFIG.BASE_URL + '/' + file));
             const updatesData = await Promise.all(fetchPromises);
 
             // Sort updates with custom logic:
@@ -185,6 +190,8 @@ class MinecraftUpdatesApp {
                 delete this._savedDetailTarget;
             } else if (this.state.isTimeSinceMode) {
                 this.timeSinceManager.render();
+            } else if (this.state.isMaterialGroupsMode) {
+                this.materialGroupsManager.render();
             } else {
                 this.render();
             }
@@ -221,6 +228,7 @@ class MinecraftUpdatesApp {
                 isCompareMode: this.state.isCompareMode,
                 isStatsMode: this.state.isStatsMode,
                 isTimeSinceMode: this.state.isTimeSinceMode,
+                isMaterialGroupsMode: this.state.isMaterialGroupsMode,
                 isDetailMode: this.state.isDetailMode,
                 detailTarget: this.state.detailTarget,
                 detailReturnContext: this.state.detailReturnContext,
@@ -252,6 +260,7 @@ class MinecraftUpdatesApp {
         this.state.isCompareMode = modeParam === 'compare';
         this.state.isStatsMode = modeParam === 'stats';
         this.state.isTimeSinceMode = modeParam === 'time-since';
+        this.state.isMaterialGroupsMode = modeParam === 'material-groups';
         this.state.isDetailMode = modeParam === 'detail';
 
         if (this.state.isDetailMode) {
@@ -263,12 +272,19 @@ class MinecraftUpdatesApp {
             this.state.isCompareMode = false;
             this.state.isStatsMode = false;
             this.state.isTimeSinceMode = false;
+            this.state.isMaterialGroupsMode = false;
         } else if (this.state.isStatsMode) {
             this.state.isCompareMode = false;
             this.state.isTimeSinceMode = false;
+            this.state.isMaterialGroupsMode = false;
         } else if (this.state.isTimeSinceMode) {
             this.state.isCompareMode = false;
             this.state.isStatsMode = false;
+            this.state.isMaterialGroupsMode = false;
+        } else if (this.state.isMaterialGroupsMode) {
+            this.state.isCompareMode = false;
+            this.state.isStatsMode = false;
+            this.state.isTimeSinceMode = false;
         }
 
         // Restore search query from URL
@@ -323,6 +339,12 @@ class MinecraftUpdatesApp {
             url.searchParams.delete('compare2');
             url.searchParams.delete('detailType');
             url.searchParams.delete('detailId');
+        } else if (this.state.isMaterialGroupsMode) {
+            url.searchParams.set('mode', 'material-groups');
+            url.searchParams.delete('compare1');
+            url.searchParams.delete('compare2');
+            url.searchParams.delete('detailType');
+            url.searchParams.delete('detailId');
         } else if (this.state.isCompareMode) {
             url.searchParams.set('mode', 'compare');
 
@@ -361,6 +383,8 @@ class MinecraftUpdatesApp {
                 ? 'stats'
                 : this.state.isTimeSinceMode
                 ? 'time-since'
+                : this.state.isMaterialGroupsMode
+                ? 'material-groups'
                 : this.state.isCompareMode
                 ? 'compare'
                 : 'list'
@@ -426,6 +450,13 @@ class MinecraftUpdatesApp {
             if (this.state.isTimeSinceMode) {
                 this.state.isCompareMode = false;
                 this.state.isStatsMode = false;
+                this.state.isMaterialGroupsMode = false;
+            }
+
+            if (this.state.isMaterialGroupsMode) {
+                this.state.isCompareMode = false;
+                this.state.isStatsMode = false;
+                this.state.isTimeSinceMode = false;
             }
 
             if (typeof saved.isDetailMode === 'boolean') {
@@ -445,6 +476,7 @@ class MinecraftUpdatesApp {
                 this.state.isStatsMode = false;
                 this.state.isCompareMode = false;
                 this.state.isTimeSinceMode = false;
+                this.state.isMaterialGroupsMode = false;
             }
 
             // Store compare version IDs temporarily (will resolve after data loads)
@@ -471,8 +503,8 @@ class MinecraftUpdatesApp {
             const target = this.elements.toggleSwitch.querySelector(`[data-view="${this.state.currentView}"]`);
             if (target) DOMManager.addClass(target, CONFIG.CSS_CLASSES.ACTIVE);
             
-            // Disable toggle switch in time-since mode
-            if (this.state.isTimeSinceMode) {
+            // Disable toggle switch in time-since or material-groups mode
+            if (this.state.isTimeSinceMode || this.state.isMaterialGroupsMode) {
                 DOMManager.addClass(this.elements.toggleSwitch, 'disabled');
             } else {
                 DOMManager.removeClass(this.elements.toggleSwitch, 'disabled');
@@ -503,6 +535,14 @@ class MinecraftUpdatesApp {
             }
         }
 
+        if (this.elements.materialGroupsBtn) {
+            if (this.state.isMaterialGroupsMode) {
+                DOMManager.addClass(this.elements.materialGroupsBtn, 'active');
+            } else {
+                DOMManager.removeClass(this.elements.materialGroupsBtn, 'active');
+            }
+        }
+
         if (this.state.isCompareMode) {
             DOMManager.addClass(this.elements.body, 'compare-mode');
         } else {
@@ -519,6 +559,12 @@ class MinecraftUpdatesApp {
             DOMManager.addClass(this.elements.body, 'time-since-mode');
         } else {
             DOMManager.removeClass(this.elements.body, 'time-since-mode');
+        }
+
+        if (this.state.isMaterialGroupsMode) {
+            DOMManager.addClass(this.elements.body, 'material-groups-mode');
+        } else {
+            DOMManager.removeClass(this.elements.body, 'material-groups-mode');
         }
 
         if (this.state.isDetailMode) {
@@ -753,10 +799,12 @@ class MinecraftUpdatesApp {
                 if (willEnable) {
                     this.state.isCompareMode = false;
                     this.state.isStatsMode = false;
+                    this.state.isMaterialGroupsMode = false;
                     this.state.isDetailMode = false;
                     this.state.detailTarget = null;
                     this.state.detailReturnContext = 'list';
                     this.statisticsManager.reset();
+                    this.materialGroupsManager.reset();
                 } else {
                     this.timeSinceManager.reset();
                 }
@@ -769,6 +817,8 @@ class MinecraftUpdatesApp {
                         console.error('Error in timeSinceManager.render():', error);
                         this.app.elements.content.innerHTML = `<p class="empty-state" style="color: red;">Error: ${error.message}</p>`;
                     });
+                } else if (this.state.isMaterialGroupsMode) {
+                    this.materialGroupsManager.render();
                 } else if (this.state.isStatsMode) {
                     this.statisticsManager.render();
                 } else if (this.state.isCompareMode) {
@@ -781,6 +831,48 @@ class MinecraftUpdatesApp {
             });
         } else {
             console.warn('Time Since button not found');
+        }
+
+        if (this.elements.materialGroupsBtn) {
+            this.elements.materialGroupsBtn.addEventListener('click', () => {
+                console.log('Material Groups button clicked');
+                const willEnable = !this.state.isMaterialGroupsMode;
+                this.state.isMaterialGroupsMode = willEnable;
+                if (willEnable) {
+                    this.state.isCompareMode = false;
+                    this.state.isStatsMode = false;
+                    this.state.isTimeSinceMode = false;
+                    this.state.isDetailMode = false;
+                    this.state.detailTarget = null;
+                    this.state.detailReturnContext = 'list';
+                    this.statisticsManager.reset();
+                    this.timeSinceManager.reset();
+                } else {
+                    this.materialGroupsManager.reset();
+                }
+                this.syncViewToggle();
+                this.updateURL(true, true);
+                this.saveState();
+                if (this.state.isMaterialGroupsMode) {
+                    console.log('Rendering material-groups mode');
+                    this.materialGroupsManager.render().catch((error) => {
+                        console.error('Error in materialGroupsManager.render():', error);
+                        this.app.elements.content.innerHTML = `<p class="empty-state" style="color: red;">Error: ${error.message}</p>`;
+                    });
+                } else if (this.state.isTimeSinceMode) {
+                    this.timeSinceManager.render();
+                } else if (this.state.isStatsMode) {
+                    this.statisticsManager.render();
+                } else if (this.state.isCompareMode) {
+                    this.compareManager.render();
+                } else {
+                    this.render();
+                }
+                this.updateLayout();
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            });
+        } else {
+            console.warn('Material Groups button not found');
         }
 
         // Attach checkbox event listeners using helper method
@@ -1016,7 +1108,7 @@ class MinecraftUpdatesApp {
      * Switches between mobile and desktop layouts dynamically
      */
     updateLayout() {
-        if (this.state.isCompareMode || this.state.isStatsMode || this.state.isTimeSinceMode || this.state.isDetailMode) {
+        if (this.state.isCompareMode || this.state.isStatsMode || this.state.isTimeSinceMode || this.state.isMaterialGroupsMode || this.state.isDetailMode) {
             DOMManager.addClass(this.elements.body, CONFIG.CSS_CLASSES.DESKTOP_LAYOUT);
             DOMManager.removeClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT);
             this.closeNav();
@@ -1081,6 +1173,11 @@ class MinecraftUpdatesApp {
 
         if (this.state.isTimeSinceMode) {
             this.timeSinceManager.render();
+            return;
+        }
+
+        if (this.state.isMaterialGroupsMode) {
+            this.materialGroupsManager.render();
             return;
         }
 
@@ -1170,6 +1267,7 @@ class MinecraftUpdatesApp {
     scrollToItem(identifier, elementType) {
         const resolveIconPath = (itemValue) => {
             if (!itemValue) return null;
+            const imageBasePath = CONFIG.BASE_URL + CONFIG.IMAGE_BASE_PATH;
 
             if (typeof itemValue === 'string') {
                 const trimmed = itemValue.trim().replace(/^\/+/, '');
@@ -1177,16 +1275,16 @@ class MinecraftUpdatesApp {
                     return null;
                 }
                 if (trimmed.includes('/')) {
-                    return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/${trimmed}/latest.png`);
+                    return `${CONFIG.IMAGE_BASE_PATH}/${trimmed}/latest.png`;
                 }
-                return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/item/${trimmed}/latest.png`);
+                return `${CONFIG.IMAGE_BASE_PATH}/item/${trimmed}/latest.png`;
             }
 
             const type = itemValue.element_type || 'item';
             const identifier = itemValue.identifier || itemValue.minecraft_identifier;
 
             if (identifier) {
-                return Utils.buildUrl(`${CONFIG.IMAGE_BASE_PATH}/${type}/${identifier}/latest.png`);
+                return `${CONFIG.IMAGE_BASE_PATH}/${type}/${identifier}/latest.png`;
             }
             return null;
         };
