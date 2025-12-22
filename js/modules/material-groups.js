@@ -19,8 +19,44 @@ export class MaterialGroupsManager {
         }
 
         try {
-            const materialGroupsData = await Utils.fetchJSON(CONFIG.BASE_URL + '/' + 'data/statistics/special.json');
-            this.state.materialGroupsData = materialGroupsData;
+            // Загружаем индекс файлов
+            const indexUrl = CONFIG.BASE_URL + '/data/special/file_index.json';
+            const fileIndex = await Utils.fetchJSON(indexUrl);
+            
+            if (!fileIndex || !fileIndex.files || fileIndex.files.length === 0) {
+                throw new Error('No files found in file index');
+            }
+            
+            // Загружаем все файлы из индекса
+            const filePromises = fileIndex.files.map(filePath => {
+                const fileUrl = CONFIG.BASE_URL + '/' + filePath;
+                return Utils.fetchJSON(fileUrl).catch(error => {
+                    console.warn(`Failed to load ${filePath}:`, error);
+                    return null; // Возвращаем null для пропущенных файлов
+                });
+            });
+            
+            const fileDataArray = await Promise.all(filePromises);
+            
+            // Объединяем содержимое всех файлов
+            // Теперь каждый файл содержит объект напрямую (с name, groups, order), а не обернутый в content
+            const combinedContent = [];
+            for (const fileData of fileDataArray) {
+                if (fileData) {
+                    // Поддерживаем оба формата для обратной совместимости
+                    if (fileData.content && Array.isArray(fileData.content)) {
+                        // Старый формат с content массивом
+                        combinedContent.push(...fileData.content);
+                    } else if (fileData.name && fileData.groups) {
+                        // Новый упрощенный формат - объект напрямую
+                        combinedContent.push(fileData);
+                    }
+                }
+            }
+            
+            this.state.materialGroupsData = {
+                content: combinedContent
+            };
         } catch (error) {
             console.error('Error loading material groups data:', error);
             throw new Error(`Failed to load material groups data: ${error.message}`);
