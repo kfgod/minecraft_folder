@@ -575,7 +575,7 @@ class MinecraftUpdatesApp {
 
         // Enable/disable search bar based on mode
         if (this.elements.searchBar) {
-            if (this.state.isTimeSinceMode || this.state.isStatsMode) {
+            if (this.state.isTimeSinceMode || this.state.isStatsMode || this.state.isMaterialGroupsMode) {
                 this.elements.searchBar.disabled = true;
                 this.elements.searchBar.placeholder = 'Search disabled';
             } else {
@@ -653,6 +653,9 @@ class MinecraftUpdatesApp {
             } else if (this.state.isTimeSinceMode) {
                 // Search disabled in time-since mode
                 return;
+            } else if (this.state.isMaterialGroupsMode) {
+                // Search disabled in material-groups mode
+                return;
             } else if (this.state.isDetailMode) {
                 this.detailViewManager.render();
             } else {
@@ -661,8 +664,8 @@ class MinecraftUpdatesApp {
         }, CONFIG.DEBOUNCE_DELAY);
         
         this.elements.searchBar.addEventListener('input', () => {
-            // Disable search in stats and time-since modes
-            if (this.state.isStatsMode || this.state.isTimeSinceMode) {
+            // Disable search in stats, time-since, and material-groups modes
+            if (this.state.isStatsMode || this.state.isTimeSinceMode || this.state.isMaterialGroupsMode) {
                 return;
             }
             const hasValue = this.elements.searchBar.value.length > 0;
@@ -737,11 +740,13 @@ class MinecraftUpdatesApp {
                 if (willEnable) {
                     this.state.isStatsMode = false;
                     this.state.isTimeSinceMode = false;
+                    this.state.isMaterialGroupsMode = false;
                     this.state.isDetailMode = false;
                     this.state.detailTarget = null;
                     this.state.detailReturnContext = 'list';
                     this.statisticsManager.reset();
                     this.timeSinceManager.reset();
+                    this.materialGroupsManager.reset();
                 }
                 this.syncViewToggle();
                 this.updateURL(true, true);
@@ -767,10 +772,12 @@ class MinecraftUpdatesApp {
                 if (willEnable) {
                     this.state.isCompareMode = false;
                     this.state.isTimeSinceMode = false;
+                    this.state.isMaterialGroupsMode = false;
                     this.state.isDetailMode = false;
                     this.state.detailTarget = null;
                     this.state.detailReturnContext = 'list';
                     this.timeSinceManager.reset();
+                    this.materialGroupsManager.reset();
                 } else {
                     this.statisticsManager.reset();
                 }

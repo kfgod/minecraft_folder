@@ -402,7 +402,8 @@ body.detail-mode #content {
 }
 
 body.stats-mode #search-bar,
-body.time-since-mode #search-bar {
+body.time-since-mode #search-bar,
+body.material-groups-mode #search-bar {
     opacity: 0.5;
     cursor: not-allowed;
 }
@@ -612,6 +613,9 @@ body.desktop-layout {
 
 .stats-chart-card {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .stats-card-header {
@@ -653,7 +657,16 @@ body.desktop-layout {
 .stats-chart-wrapper {
     position: relative;
     width: 100%;
+    max-width: 100%;
     height: 420px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.stats-chart-wrapper canvas {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
 }
 
 .stats-names-grid {
