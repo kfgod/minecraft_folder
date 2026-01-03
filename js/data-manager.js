@@ -16,6 +16,7 @@ export class DataManager {
         'advancements',
         'paintings',
         'biomes',
+        'structures',
     ];
 
     /**
@@ -101,6 +102,7 @@ export class DataManager {
      * @param {boolean} showAdvancements - Whether to display advancements
      * @param {boolean} showPaintings - Whether to display paintings
      * @param {boolean} showBiomes - Whether to display biomes
+     * @param {boolean} showStructures - Whether to display structures
      * @returns {Array} Filtered data
      */
     static getFilteredData(
@@ -116,7 +118,8 @@ export class DataManager {
         showEnchantments,
         showAdvancements,
         showPaintings,
-        showBiomes
+        showBiomes,
+        showStructures
     ) {
         // Select data source based on view
         const sourceData = currentView === CONFIG.VIEWS.VERSIONS ? allUpdates : this.groupByYear(allUpdates);
@@ -131,7 +134,8 @@ export class DataManager {
             enchantments: showEnchantments,
             advancements: showAdvancements,
             paintings: showPaintings,
-            biomes: showBiomes
+            biomes: showBiomes,
+            structures: showStructures
         };
 
         // Apply filters to all content types

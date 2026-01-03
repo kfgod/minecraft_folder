@@ -61,6 +61,7 @@ export const CONFIG = {
         SHOW_ADVANCEMENTS_CHECKBOX: '#show-advancements-checkbox',
         SHOW_PAINTINGS_CHECKBOX: '#show-paintings-checkbox',
         SHOW_BIOMES_CHECKBOX: '#show-biomes-checkbox',
+        SHOW_STRUCTURES_CHECKBOX: '#show-structures-checkbox',
         SHOW_BORDERS_CHECKBOX: '#show-borders-checkbox',
         NAV_PANEL: '#nav-panel',
         NAV_TOGGLE_BTN: '#nav-toggle-btn',

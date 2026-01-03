@@ -133,6 +133,7 @@ export class CompareManager {
                 advancements: DataManager.filterItems(version.added?.advancements, searchQuery, this.app.state.removeDuplicates),
                 paintings: DataManager.filterItems(version.added?.paintings, searchQuery, this.app.state.removeDuplicates),
                 biomes: DataManager.filterItems(version.added?.biomes, searchQuery, this.app.state.removeDuplicates),
+                structures: DataManager.filterItems(version.added?.structures, searchQuery, this.app.state.removeDuplicates),
             },
         };
     }

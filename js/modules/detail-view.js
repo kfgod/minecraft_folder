@@ -97,6 +97,7 @@ export class DetailViewManager {
                 advancements: DataManager.filterItems(targetData.added?.advancements, searchQuery, this.app.state.removeDuplicates),
                 paintings: DataManager.filterItems(targetData.added?.paintings, searchQuery, this.app.state.removeDuplicates),
                 biomes: DataManager.filterItems(targetData.added?.biomes, searchQuery, this.app.state.removeDuplicates),
+                structures: DataManager.filterItems(targetData.added?.structures, searchQuery, this.app.state.removeDuplicates),
             },
         };
 

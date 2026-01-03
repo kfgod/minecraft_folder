@@ -99,6 +99,7 @@ export class NavigationManager {
             advancements: 'showAdvancements',
             paintings: 'showPaintings',
             biomes: 'showBiomes',
+            structures: 'showStructures',
         };
 
         // Only show sections that have content and are enabled

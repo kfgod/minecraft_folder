@@ -21,7 +21,7 @@ export class Utils {
      * @returns {string} The generated card ID
      */
     static generateCardId(data) {
-        const idString = data.display_name || data.name || data.release_version?.java || `year-${new Date().getTime()}`;
+        const idString = data.name || data.release_version?.java || `year-${new Date().getTime()}`;
         const sanitized = idString.replace(/[^a-zA-Z0-9]/g, '-');
         
         // Ensure ID starts with a letter (CSS requirement)

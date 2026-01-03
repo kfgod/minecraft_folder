@@ -28,6 +28,7 @@ class MinecraftUpdatesApp {
             showAdvancements: true,
             showPaintings: true,
             showBiomes: true,
+            showStructures: true,
             showBorders: false,
             debounceTimer: null,
             collapsedSections: {},
@@ -124,6 +125,7 @@ class MinecraftUpdatesApp {
             showAdvancementsCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_ADVANCEMENTS_CHECKBOX),
             showPaintingsCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_PAINTINGS_CHECKBOX),
             showBiomesCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_BIOMES_CHECKBOX),
+            showStructuresCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_STRUCTURES_CHECKBOX),
             showBordersCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_BORDERS_CHECKBOX),
             navPanel: DOMManager.getElement(CONFIG.SELECTORS.NAV_PANEL),
             navToggleBtn: DOMManager.getElement(CONFIG.SELECTORS.NAV_TOGGLE_BTN),
@@ -224,6 +226,7 @@ class MinecraftUpdatesApp {
                 showAdvancements: this.state.showAdvancements,
                 showPaintings: this.state.showPaintings,
                 showBiomes: this.state.showBiomes,
+                showStructures: this.state.showStructures,
                 collapsedSections: this.state.collapsedSections,
                 isCompareMode: this.state.isCompareMode,
                 isStatsMode: this.state.isStatsMode,
@@ -417,7 +420,7 @@ class MinecraftUpdatesApp {
             const booleanProps = [
                 'removeDuplicates', 'showBlocks', 'showItems', 'showMobs',
                 'showMobVariants', 'showEffects', 'showEnchantments',
-                'showAdvancements', 'showPaintings', 'showBiomes'
+                'showAdvancements', 'showPaintings', 'showBiomes', 'showStructures'
             ];
             booleanProps.forEach(prop => {
                 if (typeof saved[prop] === 'boolean') {
@@ -600,6 +603,7 @@ class MinecraftUpdatesApp {
             showAdvancementsCheckbox: 'showAdvancements',
             showPaintingsCheckbox: 'showPaintings',
             showBiomesCheckbox: 'showBiomes',
+            showStructuresCheckbox: 'showStructures',
             showBordersCheckbox: 'showBorders'
         };
 
@@ -893,6 +897,7 @@ class MinecraftUpdatesApp {
         this.attachCheckboxListener('showAdvancementsCheckbox', 'showAdvancements');
         this.attachCheckboxListener('showPaintingsCheckbox', 'showPaintings');
         this.attachCheckboxListener('showBiomesCheckbox', 'showBiomes');
+        this.attachCheckboxListener('showStructuresCheckbox', 'showStructures');
 
         // Attach remaining event listeners
         this.attachContentEventListeners();
@@ -1207,7 +1212,8 @@ class MinecraftUpdatesApp {
             this.state.showEnchantments,
             this.state.showAdvancements,
             this.state.showPaintings,
-            this.state.showBiomes
+            this.state.showBiomes,
+            this.state.showStructures
         );
         this.renderNav(filteredData);
         this.renderContent(filteredData);
@@ -1426,7 +1432,8 @@ class MinecraftUpdatesApp {
             sectionType !== 'enchantments' &&
             sectionType !== 'advancements' &&
             sectionType !== 'paintings' &&
-            sectionType !== 'biomes'
+            sectionType !== 'biomes' &&
+            sectionType !== 'structures'
         ) {
             const remainder = items.length % CONFIG.COLUMNS_COUNT;
             const placeholdersNeeded = remainder === 0 ? 0 : CONFIG.COLUMNS_COUNT - remainder;

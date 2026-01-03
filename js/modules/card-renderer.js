@@ -122,6 +122,9 @@ export class CardRenderer {
         if (this.app.state.showBiomes && Array.isArray(data.added?.biomes) && data.added.biomes.length > 0) {
             contentHtml += this.createGridSection(data.added.biomes, `Biomes (${data.added.biomes.length})`, 'biomes');
         }
+        if (this.app.state.showStructures && Array.isArray(data.added?.structures) && data.added.structures.length > 0) {
+            contentHtml += this.createGridSection(data.added.structures, `Structures (${data.added.structures.length})`, 'structures');
+        }
 
         const screenshotBtn = `<button class="screenshot-btn" aria-label="Save as image"><img src="static/images/icons/save_image.svg" alt=""></button>`;
         card.innerHTML = `${screenshotBtn}${headerTag}${subtitleRow}${contentHtml}`;
@@ -264,7 +267,8 @@ export class CardRenderer {
             sectionType !== 'enchantments' &&
             sectionType !== 'advancements' &&
             sectionType !== 'paintings' &&
-            sectionType !== 'biomes'
+            sectionType !== 'biomes' &&
+            sectionType !== 'structures'
         ) {
             const remainder = items.length % CONFIG.COLUMNS_COUNT;
             const placeholdersNeeded = remainder === 0 ? 0 : CONFIG.COLUMNS_COUNT - remainder;

@@ -55,7 +55,33 @@ export class TimeSinceManager {
     }
 
     buildTemplate() {
-        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect, last_enchantment, last_mob_variant } = this.state.timeSinceData || {};
+        const { last_drop, last_major, last_block, last_item, last_mob, last_advancement, last_biome, last_painting, last_effect, last_enchantment, last_mob_variant, last_structure } = this.state.timeSinceData || {};
+
+        // Собираем все элементы контента в массив
+        const contentItems = [
+            { type: 'block', data: last_block },
+            { type: 'item', data: last_item },
+            { type: 'mob', data: last_mob },
+            { type: 'mob_variant', data: last_mob_variant },
+            { type: 'advancement', data: last_advancement },
+            { type: 'biome', data: last_biome },
+            { type: 'painting', data: last_painting },
+            { type: 'effect', data: last_effect },
+            { type: 'enchantment', data: last_enchantment },
+            { type: 'structure', data: last_structure },
+        ].filter(item => item.data); // Убираем элементы без данных
+
+        // Сортируем от нового к старому по release_date
+        contentItems.sort((a, b) => {
+            const dateA = a.data.release_date ? new Date(a.data.release_date).getTime() : 0;
+            const dateB = b.data.release_date ? new Date(b.data.release_date).getTime() : 0;
+            return dateB - dateA; // От нового к старому
+        });
+
+        // Генерируем HTML для отсортированных элементов
+        const contentCardsHtml = contentItems
+            .map(item => this.buildContentCard(item.type, item.data))
+            .join('');
 
         return `
             <div class="time-since-container">
@@ -66,15 +92,7 @@ export class TimeSinceManager {
                 </div>
                 <h2 class="time-since-subtitle">Time Since Last Content</h2>
                 <div class="time-since-cards time-since-cards--content">
-                    ${last_block ? this.buildContentCard('block', last_block) : ''}
-                    ${last_item ? this.buildContentCard('item', last_item) : ''}
-                    ${last_mob ? this.buildContentCard('mob', last_mob) : ''}
-                    ${last_mob_variant ? this.buildContentCard('mob_variant', last_mob_variant) : ''}
-                    ${last_advancement ? this.buildContentCard('advancement', last_advancement) : ''}
-                    ${last_biome ? this.buildContentCard('biome', last_biome) : ''}
-                    ${last_painting ? this.buildContentCard('painting', last_painting) : ''}
-                    ${last_effect ? this.buildContentCard('effect', last_effect) : ''}
-                    ${last_enchantment ? this.buildContentCard('enchantment', last_enchantment) : ''}
+                    ${contentCardsHtml}
                 </div>
             </div>
         `;
@@ -133,7 +151,8 @@ export class TimeSinceManager {
             'biome': 'Biome',
             'painting': 'Painting',
             'effect': 'Effect',
-            'enchantment': 'Enchantment'
+            'enchantment': 'Enchantment',
+            'structure': 'Structure'
         };
         const typeLabel = typeLabels[type] || type;
         const typeClass = `time-since-card--${type}`;

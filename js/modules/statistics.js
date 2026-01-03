@@ -195,6 +195,17 @@ export class StatisticsManager {
             return;
         }
 
+        // Проверяем, что chartData валиден
+        if (!chartData || !chartData.labels || chartData.labels.length === 0) {
+            this.destroyChart();
+            return;
+        }
+
+        // Убеждаемся, что structures данные существуют
+        if (!chartData.structures) {
+            chartData.structures = chartData.labels.map(() => 0);
+        }
+
         const allDatasets = [
             {
                 key: 'blocks',
@@ -252,6 +263,14 @@ export class StatisticsManager {
                 backgroundColor: CONFIG.CHART_COLORS.ADVANCEMENTS_BG,
                 enabled: this.app.state.showAdvancements,
             },
+            {
+                key: 'structures',
+                label: 'Structures',
+                data: chartData.structures || [],
+                borderColor: '#f59e0b',
+                backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                enabled: this.app.state.showStructures,
+            },
         ];
 
         const isBarChart = this.state.chartType === 'bar' || this.state.chartType === 'bar-absolute';
@@ -267,13 +286,19 @@ export class StatisticsManager {
                 }
                 return {
                     label: ds.label,
-                    data: ds.data,
+                    data: ds.data || [],
                     borderColor: ds.borderColor,
                     backgroundColor: bgColor,
                     fill: isBarChart,
                     tension: isBarChart ? 0 : 0.1,
                 };
             });
+
+        // Если все datasets отключены, не создаем график
+        if (filteredDatasets.length === 0) {
+            this.destroyChart();
+            return;
+        }
 
         const ctx = this.elements.chartCanvas.getContext('2d');
         this.destroyChart();
@@ -304,7 +329,7 @@ export class StatisticsManager {
         this.state.chart = new Chart(ctx, {
             type: isBarChart ? 'bar' : 'line',
             data: {
-                labels: chartData.labels,
+                labels: chartData.labels || [],
                 datasets: filteredDatasets,
             },
             options: chartOptions,
@@ -320,6 +345,7 @@ export class StatisticsManager {
         const biomeCounts = [];
         const enchantmentCounts = [];
         const advancementCounts = [];
+        const structureCounts = [];
         
         if (cumulative) {
             let totalBlocks = 0;
@@ -329,16 +355,18 @@ export class StatisticsManager {
             let totalBiomes = 0;
             let totalEnchantments = 0;
             let totalAdvancements = 0;
+            let totalStructures = 0;
 
             stats.forEach((stat) => {
                 labels.push(stat[labelKey]);
-                totalBlocks += stat.counts.blocks;
-                totalItems += stat.counts.items;
-                totalMobs += stat.counts.mobs;
-                totalEffects += stat.counts.effects;
+                totalBlocks += stat.counts.blocks || 0;
+                totalItems += stat.counts.items || 0;
+                totalMobs += stat.counts.mobs || 0;
+                totalEffects += stat.counts.effects || 0;
                 totalBiomes += stat.counts.biomes || 0;
                 totalEnchantments += stat.counts.enchantments || 0;
                 totalAdvancements += stat.counts.advancements || 0;
+                totalStructures += stat.counts.structures || 0;
                 blockCounts.push(totalBlocks);
                 itemCounts.push(totalItems);
                 mobCounts.push(totalMobs);
@@ -346,17 +374,19 @@ export class StatisticsManager {
                 biomeCounts.push(totalBiomes);
                 enchantmentCounts.push(totalEnchantments);
                 advancementCounts.push(totalAdvancements);
+                structureCounts.push(totalStructures);
             });
         } else {
             stats.forEach((stat) => {
                 labels.push(stat[labelKey]);
-                blockCounts.push(stat.counts.blocks);
-                itemCounts.push(stat.counts.items);
-                mobCounts.push(stat.counts.mobs);
-                effectCounts.push(stat.counts.effects);
+                blockCounts.push(stat.counts.blocks || 0);
+                itemCounts.push(stat.counts.items || 0);
+                mobCounts.push(stat.counts.mobs || 0);
+                effectCounts.push(stat.counts.effects || 0);
                 biomeCounts.push(stat.counts.biomes || 0);
                 enchantmentCounts.push(stat.counts.enchantments || 0);
                 advancementCounts.push(stat.counts.advancements || 0);
+                structureCounts.push(stat.counts.structures || 0);
             });
         }
 
@@ -369,6 +399,7 @@ export class StatisticsManager {
             biomes: biomeCounts,
             enchantments: enchantmentCounts,
             advancements: advancementCounts,
+            structures: structureCounts,
         };
     }
 
@@ -455,6 +486,7 @@ export class StatisticsManager {
             { key: 'enchantments', label: 'Enchantments', enabled: this.app.state.showEnchantments },
             { key: 'advancements', label: 'Advancements', enabled: this.app.state.showAdvancements },
             { key: 'biomes', label: 'Biomes', enabled: this.app.state.showBiomes },
+            { key: 'structures', label: 'Structures', enabled: this.app.state.showStructures },
         ];
 
         const filteredContentColumns = contentColumns
@@ -488,6 +520,7 @@ export class StatisticsManager {
                 enchantments: stat.counts.enchantments || 0,
                 advancements: stat.counts.advancements || 0,
                 biomes: stat.counts.biomes || 0,
+                structures: stat.counts.structures || 0,
                 total: stat.counts.total,
                 _detailId: this.getYearDetailId(stat.year),
             }));
@@ -503,6 +536,7 @@ export class StatisticsManager {
             enchantments: stat.counts.enchantments || 0,
             advancements: stat.counts.advancements || 0,
             biomes: stat.counts.biomes || 0,
+            structures: stat.counts.structures || 0,
             total: stat.counts.total,
             _original_index: index,
             _detailId: this.getVersionDetailId(stat),
