@@ -29,7 +29,7 @@ export class DataManager {
         if (!items) return [];
 
         let filtered = items.filter((item) => {
-            const displayName = item.name;
+            const displayName = item.name.toLowerCase();
             return displayName.includes(query.toLowerCase());
         });
 
@@ -234,7 +234,7 @@ export class DataManager {
     static getAllNames(updates) {
         const allNames = updates.flatMap((update) => 
             this.CONTENT_TYPES.flatMap(type => 
-                update.added?.[type]?.map(item => item.display_name || item.name) || []
+                update.added?.[type]?.map(item => item.name) || []
             )
         );
 
@@ -242,9 +242,9 @@ export class DataManager {
     }
 
     /**
-     * Get all unique names by a concrete property ('name' or 'display_name')
+     * Get all unique names by a concrete property ('name')
      * @param {Array} updates - Array of updates
-     * @param {('name'|'display_name')} property - Property to extract
+     * @param {('name')} property - Property to extract
      * @returns {Array} Array of unique names sorted by length
      */
     static getAllNamesByProperty(updates, property = 'name') {
