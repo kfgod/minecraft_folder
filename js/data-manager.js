@@ -29,7 +29,7 @@ export class DataManager {
         if (!items) return [];
 
         let filtered = items.filter((item) => {
-            const displayName = (item.display_name || item.name || '').toLowerCase();
+            const displayName = item.name;
             return displayName.includes(query.toLowerCase());
         });
 

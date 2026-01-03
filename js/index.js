@@ -1274,30 +1274,17 @@ class MinecraftUpdatesApp {
     scrollToItem(identifier, elementType) {
         const resolveIconPath = (itemValue) => {
             if (!itemValue) return null;
-            const imageBasePath = CONFIG.BASE_URL + CONFIG.IMAGE_BASE_PATH;
-
-            if (typeof itemValue === 'string') {
-                const trimmed = itemValue.trim().replace(/^\/+/, '');
-                if (!trimmed) {
-                    return null;
-                }
-                if (trimmed.includes('/')) {
-                    return `${imageBasePath}/${trimmed}/latest.png`;
-                }
-                return `${imageBasePath}/item/${trimmed}/latest.png`;
+            
+            // Если есть imagePath, используем его
+            if (itemValue.imagePath) {
+                return CONFIG.IMAGE_BASE_PATH + itemValue.imagePath;
             }
-
-            const type = itemValue.element_type || 'item';
-            const identifier = itemValue.identifier || itemValue.minecraft_identifier;
-
-            if (identifier) {
-                return `${imageBasePath}/${type}/${identifier}/latest.png`;
-            }
+            
             return null;
         };
 
         const itemsHtml = items.map((item) => {
-            const identifier = item.identifier || item.minecraft_identifier;
+            const identifier = item.identifier;
 
             // Custom rendering for mobs and mob_variants:
             // - Large mob render image
@@ -1305,8 +1292,7 @@ class MinecraftUpdatesApp {
             // - Parent mob icon (for variants only)
             // - Health information in tooltip
             if (sectionType === 'mobs' || sectionType === 'mob_variants') {
-                const name = item.display_name || item.name || identifier;
-                const mobType = item.element_type || 'mob';
+                const name = item.name;
 
                 // Build tooltip with health information if available
                 let tooltipContent = name;
@@ -1334,7 +1320,7 @@ class MinecraftUpdatesApp {
                 if (sectionType !== 'mob_variants' && item.meta && item.meta.spawn_egg) {
                     const spawnEgg = item.meta.spawn_egg;
                     const spawnEggImagePath = resolveIconPath(spawnEgg);
-                    const eggName = spawnEgg.display_name || spawnEgg.name || 'Spawn Egg';
+                    const eggName = spawnEgg.name;
                     eggTag = `<span class="tooltip-wrapper" data-tooltip="${eggName}"><a href="${spawnEgg.wiki}" target="_blank" rel="noopener noreferrer" class="mob-egg-link"><img class="inv-img mob-egg" src="${spawnEggImagePath}" loading="lazy" onerror="this.parentElement.parentElement.parentElement.remove()"></a></span>`;
                 }
 
@@ -1343,7 +1329,7 @@ class MinecraftUpdatesApp {
                 if (item.meta && item.meta.parent_mob) {
                     const parentMob = item.meta.parent_mob;
                     const parentImagePath = resolveIconPath(parentMob);
-                    const parentName = parentMob.display_name || parentMob.name;
+                    const parentName = parentMob.name;
                     const parentWiki = parentMob.wiki || '';
                     if (parentWiki) {
                         parentMobTag = `<span class="tooltip-wrapper" data-tooltip="${parentName}"><a href="${parentWiki}" target="_blank" rel="noopener noreferrer"><img class="mob-parent-icon" src="${parentImagePath}" loading="lazy"></a></span>`;
@@ -1362,12 +1348,12 @@ class MinecraftUpdatesApp {
 
                 // Use data-wiki attribute for click handling (allows nested links to work)
                 const wikiAttr = item.wiki ? ` data-wiki="${item.wiki}"` : '';
-                return `<div class="grid-item mob-cell clickable-card" data-tooltip="${tooltipContent}" data-identifier="${identifier}" data-element-type="${mobType}"${wikiAttr}>${cardInner}</div>`;
+                return `<div class="grid-item mob-cell clickable-card" data-tooltip="${tooltipContent}" data-identifier="${identifier}" ${wikiAttr}>${cardInner}</div>`;
             }
 
             // Custom rendering for enchantments: icon + text, styled cell
             if (sectionType === 'enchantments') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const enchIconTag = `<img class="inv-img ench-icon" src="${CONFIG.ENCHANTMENT_ICON}" loading="lazy">`;
                 const enchInner = `
                     <div class="ench-cell-inner">${enchIconTag}<span class="ench-name">${name}</span></div>
@@ -1375,11 +1361,11 @@ class MinecraftUpdatesApp {
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${enchInner}</a>`
                     : enchInner;
-                return `<div class="grid-item ench-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="enchantment">${wrapped}</div>`;
+                return `<div class="grid-item ench-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             if (sectionType === 'advancements') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const iconPath = resolveIconPath(item.meta?.icon);
                 const iconContent = iconPath
                     ? `<img class="advancement-icon" src="${iconPath}" loading="lazy" alt="">`
@@ -1393,24 +1379,24 @@ class MinecraftUpdatesApp {
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item advancement-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="advancement">${wrapped}</div>`;
+                return `<div class="grid-item advancement-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             // Custom rendering for paintings: title + provided external image
             if (sectionType === 'paintings') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const paintingImagePath = resolveIconPath(item);
                 const imageTag = `<img class="inv-img" src="${paintingImagePath}" loading="lazy">`;
                 const inner = `<div class="painting-cell__image">${imageTag}</div>`;
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item painting-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="painting">${wrapped}</div>`;
+                return `<div class="grid-item painting-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             // Custom rendering for biomes: wide rectangular cells with external images
             if (sectionType === 'biomes') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 // Use external image from item.image or fallback to local path
                 const imageSrc = resolveIconPath(item);
                 const imageTag = `<img class="inv-img" src="${imageSrc}" loading="lazy">`;
@@ -1418,18 +1404,17 @@ class MinecraftUpdatesApp {
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item biome-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="biome">${wrapped}</div>`;
+                return `<div class="grid-item biome-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             // Default rendering for blocks/items/effects
-            const elementType = item.element_type || 'item'; // fallback to 'item' if not specified
-            const displayName = item.display_name || item.name;
+            const displayName = item.name;
             const imagePath = resolveIconPath(item);
             const imageTag = `<img class="inv-img" src="${imagePath}" loading="lazy">`;
             const itemContent = item.wiki
                 ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${imageTag}</a>`
                 : imageTag;
-            return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}" data-element-type="${elementType}">${itemContent}</div>`;
+            return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}">${itemContent}</div>`;
         });
 
         // Add placeholder items to fill the last row for standard grid layouts
@@ -1482,10 +1467,10 @@ class MinecraftUpdatesApp {
      * @param {string} identifier - Item identifier
      * @param {string} elementType - Element type (item, mob, etc.)
      */
-    scrollToItem(identifier, elementType) {
+    scrollToItem(identifier) {
         // Find the grid item with matching identifier and type
         const targetItem = this.elements.content.querySelector(
-            `.grid-item[data-identifier="${identifier}"][data-element-type="${elementType}"]`
+            `.grid-item[data-identifier="${identifier}"]`
         );
 
         if (targetItem) {

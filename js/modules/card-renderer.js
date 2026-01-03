@@ -28,7 +28,7 @@ export class CardRenderer {
             cardTitle = [version, name].filter(Boolean).join(' — ');
             subtitle = Utils.formatDateForDisplay(data.release_date);
         } else {
-            cardTitle = data.name || data.display_name || 'Untitled';
+            cardTitle = data.name || 'Untitled';
         }
 
         const titleContent = this.app.state.isDetailMode
@@ -131,34 +131,20 @@ export class CardRenderer {
     createGridSection(items, title, sectionType) {
         const resolveIconPath = (itemValue) => {
             if (!itemValue) return null;
-            const imageBasePath = CONFIG.BASE_URL + CONFIG.IMAGE_BASE_PATH;
-
-            if (typeof itemValue === 'string') {
-                const trimmed = itemValue.trim().replace(/^\/+/, '');
-                if (!trimmed) {
-                    return null;
-                }
-                if (trimmed.includes('/')) {
-                    return `${imageBasePath}/${trimmed}/latest.png`;
-                }
-                return `${imageBasePath}/item/${trimmed}/latest.png`;
+            
+            // Если есть imagePath, используем его
+            if (itemValue.imagePath) {
+                return CONFIG.IMAGE_BASE_PATH + itemValue.imagePath;
             }
 
-            const type = itemValue.element_type || 'item';
-            const identifier = itemValue.identifier || itemValue.minecraft_identifier;
-
-            if (identifier) {
-                return `${imageBasePath}/${type}/${identifier}/latest.png`;
-            }
             return null;
         };
 
         const itemsHtml = items.map((item) => {
-            const identifier = item.identifier || item.minecraft_identifier;
+            const identifier = item.identifier;
 
             if (sectionType === 'mobs' || sectionType === 'mob_variants') {
-                const name = item.display_name || item.name || identifier;
-                const mobType = item.element_type || 'mob';
+                const name = item.name;
 
                 let tooltipContent = name;
                 let healthValue = null;
@@ -180,7 +166,7 @@ export class CardRenderer {
                 if (sectionType !== 'mob_variants' && item.meta && item.meta.spawn_egg) {
                     const spawnEgg = item.meta.spawn_egg;
                     const spawnEggImagePath = resolveIconPath(spawnEgg);
-                    const eggName = spawnEgg.display_name || spawnEgg.name || 'Spawn Egg';
+                    const eggName = spawnEgg.name;
                     eggTag = `<span class="tooltip-wrapper" data-tooltip="${eggName}"><a href="${spawnEgg.wiki}" target="_blank" rel="noopener noreferrer" class="mob-egg-link"><img class="inv-img mob-egg" src="${spawnEggImagePath}" loading="lazy" onerror="this.parentElement.parentElement.parentElement.remove()"></a></span>`;
                 }
 
@@ -188,7 +174,7 @@ export class CardRenderer {
                 if (item.meta && item.meta.parent_mob) {
                     const parentMob = item.meta.parent_mob;
                     const parentImagePath = resolveIconPath(parentMob);
-                    const parentName = parentMob.display_name || parentMob.name;
+                    const parentName = parentMob.name;
                     const parentWiki = parentMob.wiki || '';
                     if (parentWiki) {
                         parentMobTag = `<span class="tooltip-wrapper" data-tooltip="${parentName}"><a href="${parentWiki}" target="_blank" rel="noopener noreferrer"><img class="mob-parent-icon" src="${parentImagePath}" loading="lazy"></a></span>`;
@@ -206,11 +192,11 @@ export class CardRenderer {
                 `;
 
                 const wikiAttr = item.wiki ? ` data-wiki="${item.wiki}"` : '';
-                return `<div class="grid-item mob-cell clickable-card" data-tooltip="${tooltipContent}" data-identifier="${identifier}" data-element-type="${mobType}"${wikiAttr}>${cardInner}</div>`;
+                return `<div class="grid-item mob-cell clickable-card" data-tooltip="${tooltipContent}" data-identifier="${identifier}"${wikiAttr}>${cardInner}</div>`;
             }
 
             if (sectionType === 'enchantments') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const enchIconTag = `<img class="inv-img ench-icon" src="${CONFIG.ENCHANTMENT_ICON}" loading="lazy">`;
                 const enchInner = `
                     <div class="ench-cell-inner">${enchIconTag}<span class="ench-name">${name}</span></div>
@@ -218,11 +204,11 @@ export class CardRenderer {
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${enchInner}</a>`
                     : enchInner;
-                return `<div class="grid-item ench-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="enchantment">${wrapped}</div>`;
+                return `<div class="grid-item ench-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             if (sectionType === 'advancements') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const iconPath = resolveIconPath(item.meta?.icon);
                 const iconContent = iconPath
                     ? `<img class="advancement-icon" src="${iconPath}" loading="lazy" alt="">`
@@ -236,40 +222,39 @@ export class CardRenderer {
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item advancement-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="advancement">${wrapped}</div>`;
+                return `<div class="grid-item advancement-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             if (sectionType === 'paintings') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const paintingImagePath = resolveIconPath(item);
                 const imageTag = `<img class="inv-img" src="${paintingImagePath}" loading="lazy">`;
                 const inner = `<div class="painting-cell__image">${imageTag}</div>`;
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item painting-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="painting">${wrapped}</div>`;
+                return `<div class="grid-item painting-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             if (sectionType === 'biomes') {
-                const name = item.display_name || item.name || identifier;
+                const name = item.name;
                 const imageSrc = resolveIconPath(item);
                 const imageTag = `<img class="inv-img" src="${imageSrc}" loading="lazy">`;
                 const inner = `<div class="biome-cell__image">${imageTag}</div>`;
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
-                return `<div class="grid-item biome-cell" data-tooltip="${name}" data-identifier="${identifier}" data-element-type="biome">${wrapped}</div>`;
+                return `<div class="grid-item biome-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
             }
 
             // Default rendering for blocks/items/effects
-            const elementType = item.element_type || 'item';
-            const displayName = item.display_name || item.name;
+            const displayName = item.name;
             const imagePath = resolveIconPath(item);
             const imageTag = `<img class="inv-img" src="${imagePath}" loading="lazy">`;
             const itemContent = item.wiki
                 ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${imageTag}</a>`
                 : imageTag;
-            return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}" data-element-type="${elementType}">${itemContent}</div>`;
+            return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}">${itemContent}</div>`;
         });
 
         if (

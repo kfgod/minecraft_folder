@@ -16,7 +16,7 @@ export class NavigationManager {
      */
     renderListNav(data) {
         const navItems = data.map((item) => {
-            const itemDisplayName = item.display_name || item.name;
+            const itemDisplayName = item.name;
             const li = DOMManager.createElement('li');
             const a = DOMManager.createElement('a', {
                 href: `#${Utils.generateCardId(item)}`,
@@ -234,7 +234,7 @@ export class NavigationManager {
         const nameSpan = document.createElement('span');
         nameSpan.className = 'nav-version-nav-name';
         if (isYearView) {
-            nameSpan.textContent = item.name || item.display_name;
+            nameSpan.textContent = item.name;
         } else {
             const version = item.release_version?.java || '';
             const name = item.name || '';

@@ -1,12 +1,14 @@
 /**
  * Application configuration constants
  */
+
+// Example: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main' or '../minecraft_data'
+const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
+// const BASE_URL = '../minecraft_data';
 export const CONFIG = {
-    // Base URL for all data files. Set to empty string for local paths.
-    // Example: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main' or '../minecraft_data'
-    BASE_URL: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main',
+    BASE_URL: BASE_URL,
     INDEX_FILE_PATH: '/data/file_index.json',
-    IMAGE_BASE_PATH: '/images',
+    IMAGE_BASE_PATH: BASE_URL + '/images',
     PLACEHOLDER_IMAGE: 'static/images/empty_slot.png',
     ENCHANTMENT_ICON: 'static/images/enchanted_book.png',
     VIEWS: {

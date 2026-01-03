@@ -235,13 +235,12 @@ export class MaterialGroupsManager {
             return '<span class="material-group-empty">—</span>';
         }
 
-        const identifier = element.identifier || element.minecraft_identifier || '';
-        const name = element.display_name || element.name || identifier;
+        const identifier = element.identifier;
+        const name = element.name;
         const wiki = element.wiki || '';
-        const elementType = element.element_type || 'item';
 
         // Определяем путь к изображению
-        const imagePath = this.resolveImagePath(identifier, elementType);
+        const imagePath = this.resolveImagePath(element, identifier);
 
         let html = '<div class="material-group-element">';
         
@@ -260,13 +259,16 @@ export class MaterialGroupsManager {
         return html;
     }
 
-    resolveImagePath(identifier, elementType) {
+    resolveImagePath(element, identifier) {
         if (!identifier) {
             return CONFIG.PLACEHOLDER_IMAGE;
         }
-        const imageBasePath = CONFIG.BASE_URL + CONFIG.IMAGE_BASE_PATH;
-        // Формируем путь к изображению в формате проекта
-        return `${imageBasePath}/${elementType}/${identifier}/latest.png`;
+        
+        // Если есть imagePath, используем его
+        if (element && element.imagePath) {
+            return CONFIG.IMAGE_BASE_PATH + element.imagePath;
+        }
+        return null;
     }
 }
 
