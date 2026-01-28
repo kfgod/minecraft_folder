@@ -114,6 +114,10 @@ class MinecraftUpdatesApp {
             searchBar: DOMManager.getElement(CONFIG.SELECTORS.SEARCH_BAR),
             searchClearBtn: DOMManager.getElement(CONFIG.SELECTORS.SEARCH_CLEAR_BTN),
             searchContainer: document.querySelector('.search-container'),
+            mobileSearchBar: DOMManager.getElement('#mobile-search-bar'),
+            mobileSearchClearBtn: DOMManager.getElement('#mobile-search-clear-btn'),
+            filtersFab: DOMManager.getElement('#filters-fab'),
+            filtersOverlay: DOMManager.getElement('#filters-overlay'),
             toggleSwitch: DOMManager.getElement(CONFIG.SELECTORS.TOGGLE_SWITCH),
             removeDuplicatesCheckbox: DOMManager.getElement(CONFIG.SELECTORS.REMOVE_DUPLICATES_CHECKBOX),
             showBlocksCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_BLOCKS_CHECKBOX),
@@ -130,11 +134,20 @@ class MinecraftUpdatesApp {
             navPanel: DOMManager.getElement(CONFIG.SELECTORS.NAV_PANEL),
             navToggleBtn: DOMManager.getElement(CONFIG.SELECTORS.NAV_TOGGLE_BTN),
             overlay: DOMManager.getElement(CONFIG.SELECTORS.OVERLAY),
+            navOverlay: DOMManager.getElement('#nav-overlay'),
             tooltip: DOMManager.getElement(CONFIG.SELECTORS.TOOLTIP),
             statsBtn: DOMManager.getElement('#stats-btn'),
             compareBtn: DOMManager.getElement('#compare-btn'),
             timeSinceBtn: DOMManager.getElement('#time-since-btn'),
             materialGroupsBtn: DOMManager.getElement('#material-groups-btn'),
+            navFab: DOMManager.getElement('#nav-fab'),
+            filtersSelectAllBtn: DOMManager.getElement('#filters-select-all'),
+            filtersSelectNoneBtn: DOMManager.getElement('#filters-select-none'),
+            filtersPopularBlocksBtn: DOMManager.getElement('#filters-popular-blocks'),
+            filtersPopularItemsBtn: DOMManager.getElement('#filters-popular-items'),
+            filtersPopularMobsBtn: DOMManager.getElement('#filters-popular-mobs'),
+            navSearch: DOMManager.getElement('#nav-search'),
+            navJump: DOMManager.getElement('#nav-jump'),
         };
     }
 
@@ -179,6 +192,8 @@ class MinecraftUpdatesApp {
                 if (!dateB) return 1;
                 return dateB - dateA;
             });
+
+            this.updateSearchSuggestions();
 
             // Restore saved compare version selections
             this.restoreCompareVersions();
@@ -293,8 +308,7 @@ class MinecraftUpdatesApp {
         // Restore search query from URL
         const searchParam = urlParams.get('search');
         if (searchParam) {
-            this.elements.searchBar.value = searchParam;
-            DOMManager.setVisibility(this.elements.searchClearBtn, true);
+            this.setSearchQuery(searchParam);
         }
 
         // Store compare version IDs to restore after data loads
@@ -317,7 +331,7 @@ class MinecraftUpdatesApp {
         url.searchParams.set('view', this.state.currentView);
         
         // Add search query to URL if present
-        const searchQuery = this.elements.searchBar.value.trim();
+        const searchQuery = this.getSearchQuery();
         if (searchQuery) {
             url.searchParams.set('search', searchQuery);
         } else {
@@ -443,6 +457,10 @@ class MinecraftUpdatesApp {
 
             if (typeof saved.isTimeSinceMode === 'boolean') {
                 this.state.isTimeSinceMode = saved.isTimeSinceMode;
+            }
+
+            if (typeof saved.isMaterialGroupsMode === 'boolean') {
+                this.state.isMaterialGroupsMode = saved.isMaterialGroupsMode;
             }
 
             if (this.state.isStatsMode) {
@@ -583,9 +601,21 @@ class MinecraftUpdatesApp {
                 this.elements.searchBar.placeholder = 'Search disabled';
             } else {
                 this.elements.searchBar.disabled = false;
-                this.elements.searchBar.placeholder = 'Search...';
+                this.elements.searchBar.placeholder = 'Search across all content...';
             }
         }
+
+        if (this.elements.mobileSearchBar) {
+            if (this.state.isTimeSinceMode || this.state.isStatsMode || this.state.isMaterialGroupsMode) {
+                this.elements.mobileSearchBar.disabled = true;
+                this.elements.mobileSearchBar.placeholder = 'Search disabled';
+            } else {
+                this.elements.mobileSearchBar.disabled = false;
+                this.elements.mobileSearchBar.placeholder = 'Search across all content...';
+            }
+        }
+
+        this.updatePopularButtons();
     }
 
     /**
@@ -643,6 +673,170 @@ class MinecraftUpdatesApp {
     }
 
     /**
+     * Get current active mode
+     * @returns {string} Current mode name
+     */
+    getCurrentMode() {
+        if (this.state.isDetailMode) return 'detail';
+        if (this.state.isCompareMode) return 'compare';
+        if (this.state.isStatsMode) return 'stats';
+        if (this.state.isTimeSinceMode) return 'time-since';
+        if (this.state.isMaterialGroupsMode) return 'material-groups';
+        return 'list';
+    }
+
+    /**
+     * Set exclusive mode and render
+     * @param {string} mode - Mode name
+     */
+    setMode(mode) {
+        const previousMode = this.getCurrentMode();
+
+        if (previousMode === 'stats' && mode !== 'stats') {
+            this.statisticsManager.reset();
+        }
+        if (previousMode === 'time-since' && mode !== 'time-since') {
+            this.timeSinceManager.reset();
+        }
+        if (previousMode === 'material-groups' && mode !== 'material-groups') {
+            this.materialGroupsManager.reset();
+        }
+
+        this.state.isCompareMode = mode === 'compare';
+        this.state.isStatsMode = mode === 'stats';
+        this.state.isTimeSinceMode = mode === 'time-since';
+        this.state.isMaterialGroupsMode = mode === 'material-groups';
+        this.state.isDetailMode = mode === 'detail';
+
+        if (mode !== 'detail') {
+            this.state.detailTarget = null;
+            this.state.detailReturnContext = 'list';
+        }
+
+        this.syncViewToggle();
+        this.updateURL(true, true);
+        this.saveState();
+        this.render();
+        this.updateLayout();
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    /**
+     * Toggle between list mode and a specific mode
+     * @param {string} mode - Mode name to toggle
+     */
+    toggleMode(mode) {
+        const isActive = this.getCurrentMode() === mode;
+        this.setMode(isActive ? 'list' : mode);
+    }
+
+    getSearchQuery() {
+        if (this.elements.mobileSearchBar && this.elements.mobileSearchBar.value.trim()) {
+            return this.elements.mobileSearchBar.value.trim();
+        }
+        return this.elements.searchBar.value.trim();
+    }
+
+    setSearchQuery(value) {
+        if (this.elements.searchBar) {
+            this.elements.searchBar.value = value;
+        }
+        if (this.elements.mobileSearchBar) {
+            this.elements.mobileSearchBar.value = value;
+        }
+        const hasValue = value.length > 0;
+        DOMManager.setVisibility(this.elements.searchClearBtn, hasValue);
+        if (this.elements.mobileSearchClearBtn) {
+            DOMManager.setVisibility(this.elements.mobileSearchClearBtn, hasValue);
+        }
+    }
+
+    updatePopularButtons() {
+        const buttons = [
+            { el: this.elements.filtersPopularBlocksBtn, state: this.state.showBlocks },
+            { el: this.elements.filtersPopularItemsBtn, state: this.state.showItems },
+            { el: this.elements.filtersPopularMobsBtn, state: this.state.showMobs },
+        ];
+        buttons.forEach(({ el, state }) => {
+            if (!el) return;
+            if (state) {
+                DOMManager.addClass(el, 'active');
+            } else {
+                DOMManager.removeClass(el, 'active');
+            }
+        });
+    }
+
+    updateSearchSuggestions() {
+        const datalist = document.getElementById('search-suggestions');
+        if (!datalist) return;
+        const suggestions = DataManager.getNameSuggestions(this.state.allUpdates, 80);
+        datalist.innerHTML = suggestions.map((name) => `<option value="${name}"></option>`).join('');
+    }
+
+    toggleFiltersPanel(forceOpen = null) {
+        if (!this.elements.body) return;
+        const willOpen = forceOpen === null ? !this.elements.body.classList.contains('filters-open') : forceOpen;
+        if (willOpen) {
+            DOMManager.addClass(this.elements.body, 'filters-open');
+        } else {
+            DOMManager.removeClass(this.elements.body, 'filters-open');
+        }
+    }
+
+    updateActiveNavLink() {
+        if (this.state.isDetailMode) return;
+        const navLinks = this.elements.navList?.querySelectorAll('a[href^="#"]');
+        if (!navLinks || navLinks.length === 0) return;
+        const cards = this.elements.content?.querySelectorAll('.update-card');
+        if (!cards || cards.length === 0) return;
+
+        let currentId = null;
+        const offset = 120;
+        cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top <= offset && rect.bottom > offset) {
+                currentId = card.id;
+            }
+        });
+
+        navLinks.forEach((link) => {
+            const href = link.getAttribute('href') || '';
+            const isActive = currentId && href === `#${currentId}`;
+            if (isActive) {
+                link.classList.add('is-active');
+            } else {
+                link.classList.remove('is-active');
+            }
+        });
+    }
+
+    getResultsSummary(data) {
+        const query = this.getSearchQuery();
+        const entryCount = data.length;
+        let itemCount = 0;
+        const visibilityMap = {
+            blocks: this.state.showBlocks,
+            items: this.state.showItems,
+            mobs: this.state.showMobs,
+            mob_variants: this.state.showMobVariants,
+            effects: this.state.showEffects,
+            enchantments: this.state.showEnchantments,
+            advancements: this.state.showAdvancements,
+            paintings: this.state.showPaintings,
+            biomes: this.state.showBiomes,
+            structures: this.state.showStructures,
+        };
+        data.forEach((entry) => {
+            DataManager.CONTENT_TYPES.forEach((type) => {
+                if (!visibilityMap[type]) return;
+                itemCount += entry.added?.[type]?.length || 0;
+            });
+        });
+        return { query, entryCount, itemCount };
+    }
+
+    /**
      * Add event listeners to DOM elements
      */
     addEventListeners() {
@@ -666,21 +860,27 @@ class MinecraftUpdatesApp {
                 this.render();
             }
         }, CONFIG.DEBOUNCE_DELAY);
-        
-        this.elements.searchBar.addEventListener('input', () => {
-            // Disable search in stats, time-since, and material-groups modes
+
+        const handleSearchInput = (value) => {
             if (this.state.isStatsMode || this.state.isTimeSinceMode || this.state.isMaterialGroupsMode) {
                 return;
             }
-            const hasValue = this.elements.searchBar.value.length > 0;
-            DOMManager.setVisibility(this.elements.searchClearBtn, hasValue);
+            this.setSearchQuery(value);
             searchDebounce();
+        };
+
+        this.elements.searchBar.addEventListener('input', () => {
+            handleSearchInput(this.elements.searchBar.value);
         });
 
+        if (this.elements.mobileSearchBar) {
+            this.elements.mobileSearchBar.addEventListener('input', () => {
+                handleSearchInput(this.elements.mobileSearchBar.value);
+            });
+        }
+
         this.elements.searchClearBtn.addEventListener('click', () => {
-            this.elements.searchBar.value = '';
-            DOMManager.setVisibility(this.elements.searchClearBtn, false);
-            
+            this.setSearchQuery('');
             this.updateURL(false, false);
             if (this.state.isCompareMode) {
                 this.compareManager.renderCards();
@@ -693,13 +893,32 @@ class MinecraftUpdatesApp {
             } else {
                 this.render();
             }
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, behavior: 'auto' });
         });
+
+        if (this.elements.mobileSearchClearBtn) {
+            this.elements.mobileSearchClearBtn.addEventListener('click', () => {
+                this.setSearchQuery('');
+                this.updateURL(false, false);
+                if (this.state.isCompareMode) {
+                    this.compareManager.renderCards();
+                } else if (this.state.isStatsMode) {
+                    this.statisticsManager.render();
+                } else if (this.state.isTimeSinceMode) {
+                    this.timeSinceManager.render();
+                } else if (this.state.isDetailMode) {
+                    this.detailViewManager.render();
+                } else {
+                    this.render();
+                }
+                window.scrollTo({ top: 0, behavior: 'auto' });
+            });
+        }
 
         // Toggle switch for view mode
         this.elements.toggleSwitch.addEventListener('click', (e) => {
-            // Disable toggle switch in time-since mode
-            if (this.state.isTimeSinceMode) {
+            // Disable toggle switch in time-since or material-groups mode
+            if (this.state.isTimeSinceMode || this.state.isMaterialGroupsMode) {
                 return;
             }
 
@@ -737,108 +956,29 @@ class MinecraftUpdatesApp {
             }
         });
 
+        this.elements.toggleSwitch.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const target = e.target.closest('.toggle-switch-label');
+            if (!target) return;
+            e.preventDefault();
+            target.click();
+        });
+
         if (this.elements.compareBtn) {
             this.elements.compareBtn.addEventListener('click', () => {
-                const willEnable = !this.state.isCompareMode;
-                this.state.isCompareMode = willEnable;
-                if (willEnable) {
-                    this.state.isStatsMode = false;
-                    this.state.isTimeSinceMode = false;
-                    this.state.isMaterialGroupsMode = false;
-                    this.state.isDetailMode = false;
-                    this.state.detailTarget = null;
-                    this.state.detailReturnContext = 'list';
-                    this.statisticsManager.reset();
-                    this.timeSinceManager.reset();
-                    this.materialGroupsManager.reset();
-                }
-                this.syncViewToggle();
-                this.updateURL(true, true);
-                this.saveState();
-                if (this.state.isCompareMode) {
-                    this.compareManager.render();
-                } else if (this.state.isStatsMode) {
-                    this.statisticsManager.render();
-                } else if (this.state.isTimeSinceMode) {
-                    this.timeSinceManager.render();
-                } else {
-                    this.render();
-                }
-                this.updateLayout();
-                window.scrollTo({ top: 0, behavior: 'instant' });
+                this.toggleMode('compare');
             });
         }
 
         if (this.elements.statsBtn) {
             this.elements.statsBtn.addEventListener('click', () => {
-                const willEnable = !this.state.isStatsMode;
-                this.state.isStatsMode = willEnable;
-                if (willEnable) {
-                    this.state.isCompareMode = false;
-                    this.state.isTimeSinceMode = false;
-                    this.state.isMaterialGroupsMode = false;
-                    this.state.isDetailMode = false;
-                    this.state.detailTarget = null;
-                    this.state.detailReturnContext = 'list';
-                    this.timeSinceManager.reset();
-                    this.materialGroupsManager.reset();
-                } else {
-                    this.statisticsManager.reset();
-                }
-                this.syncViewToggle();
-                this.updateURL(true, true);
-                this.saveState();
-                if (this.state.isStatsMode) {
-                    this.statisticsManager.render();
-                } else if (this.state.isCompareMode) {
-                    this.compareManager.render();
-                } else if (this.state.isTimeSinceMode) {
-                    this.timeSinceManager.render();
-                } else {
-                    this.render();
-                }
-                this.updateLayout();
-                window.scrollTo({ top: 0, behavior: 'instant' });
+                this.toggleMode('stats');
             });
         }
 
         if (this.elements.timeSinceBtn) {
             this.elements.timeSinceBtn.addEventListener('click', () => {
-                console.log('Time Since button clicked');
-                const willEnable = !this.state.isTimeSinceMode;
-                this.state.isTimeSinceMode = willEnable;
-                if (willEnable) {
-                    this.state.isCompareMode = false;
-                    this.state.isStatsMode = false;
-                    this.state.isMaterialGroupsMode = false;
-                    this.state.isDetailMode = false;
-                    this.state.detailTarget = null;
-                    this.state.detailReturnContext = 'list';
-                    this.statisticsManager.reset();
-                    this.materialGroupsManager.reset();
-                } else {
-                    this.timeSinceManager.reset();
-                }
-                this.syncViewToggle();
-                this.updateURL(true, true);
-                this.saveState();
-                if (this.state.isTimeSinceMode) {
-                    console.log('Rendering time-since mode');
-                    this.timeSinceManager.render().catch((error) => {
-                        console.error('Error in timeSinceManager.render():', error);
-                        this.app.elements.content.innerHTML = `<p class="empty-state" style="color: red;">Error: ${error.message}</p>`;
-                    });
-                } else if (this.state.isMaterialGroupsMode) {
-                    this.materialGroupsManager.render();
-                } else if (this.state.isStatsMode) {
-                    this.statisticsManager.render();
-                } else if (this.state.isCompareMode) {
-                    this.compareManager.render();
-                } else {
-                    this.render();
-                }
-                this.updateLayout();
-                window.scrollTo({ top: 0, behavior: 'instant' });
+                this.toggleMode('time-since');
             });
         } else {
             console.warn('Time Since button not found');
@@ -846,41 +986,7 @@ class MinecraftUpdatesApp {
 
         if (this.elements.materialGroupsBtn) {
             this.elements.materialGroupsBtn.addEventListener('click', () => {
-                console.log('Material Groups button clicked');
-                const willEnable = !this.state.isMaterialGroupsMode;
-                this.state.isMaterialGroupsMode = willEnable;
-                if (willEnable) {
-                    this.state.isCompareMode = false;
-                    this.state.isStatsMode = false;
-                    this.state.isTimeSinceMode = false;
-                    this.state.isDetailMode = false;
-                    this.state.detailTarget = null;
-                    this.state.detailReturnContext = 'list';
-                    this.statisticsManager.reset();
-                    this.timeSinceManager.reset();
-                } else {
-                    this.materialGroupsManager.reset();
-                }
-                this.syncViewToggle();
-                this.updateURL(true, true);
-                this.saveState();
-                if (this.state.isMaterialGroupsMode) {
-                    console.log('Rendering material-groups mode');
-                    this.materialGroupsManager.render().catch((error) => {
-                        console.error('Error in materialGroupsManager.render():', error);
-                        this.app.elements.content.innerHTML = `<p class="empty-state" style="color: red;">Error: ${error.message}</p>`;
-                    });
-                } else if (this.state.isTimeSinceMode) {
-                    this.timeSinceManager.render();
-                } else if (this.state.isStatsMode) {
-                    this.statisticsManager.render();
-                } else if (this.state.isCompareMode) {
-                    this.compareManager.render();
-                } else {
-                    this.render();
-                }
-                this.updateLayout();
-                window.scrollTo({ top: 0, behavior: 'instant' });
+                this.toggleMode('material-groups');
             });
         } else {
             console.warn('Material Groups button not found');
@@ -899,12 +1005,99 @@ class MinecraftUpdatesApp {
         this.attachCheckboxListener('showBiomesCheckbox', 'showBiomes');
         this.attachCheckboxListener('showStructuresCheckbox', 'showStructures');
 
+        if (this.elements.filtersSelectAllBtn) {
+            this.elements.filtersSelectAllBtn.addEventListener('click', () => {
+                const keys = [
+                    'showBlocks',
+                    'showItems',
+                    'showMobs',
+                    'showMobVariants',
+                    'showEffects',
+                    'showEnchantments',
+                    'showAdvancements',
+                    'showPaintings',
+                    'showBiomes',
+                    'showStructures',
+                ];
+                keys.forEach((key) => {
+                    this.state[key] = true;
+                });
+                this.syncCheckboxesToState();
+                this.updatePopularButtons();
+                this.saveState();
+                this.render();
+            });
+        }
+
+        if (this.elements.filtersSelectNoneBtn) {
+            this.elements.filtersSelectNoneBtn.addEventListener('click', () => {
+                const keys = [
+                    'showBlocks',
+                    'showItems',
+                    'showMobs',
+                    'showMobVariants',
+                    'showEffects',
+                    'showEnchantments',
+                    'showAdvancements',
+                    'showPaintings',
+                    'showBiomes',
+                    'showStructures',
+                ];
+                keys.forEach((key) => {
+                    this.state[key] = false;
+                });
+                this.syncCheckboxesToState();
+                this.updatePopularButtons();
+                this.saveState();
+                this.render();
+            });
+        }
+
+        const attachPopularToggle = (element, stateKey) => {
+            if (!element) return;
+            element.addEventListener('click', () => {
+                this.state[stateKey] = !this.state[stateKey];
+                this.syncCheckboxesToState();
+                this.updatePopularButtons();
+                this.saveState();
+                this.render();
+            });
+        };
+
+        attachPopularToggle(this.elements.filtersPopularBlocksBtn, 'showBlocks');
+        attachPopularToggle(this.elements.filtersPopularItemsBtn, 'showItems');
+        attachPopularToggle(this.elements.filtersPopularMobsBtn, 'showMobs');
+
         // Attach remaining event listeners
         this.attachContentEventListeners();
         this.attachNavigationEventListeners();
         this.attachNavPanelEventListeners();
         this.attachTooltipEventListeners();
         this.attachResizeListener();
+        this.attachFiltersPanelListeners();
+    }
+
+    attachFiltersPanelListeners() {
+        if (this.elements.filtersFab) {
+            this.elements.filtersFab.addEventListener('click', () => {
+                this.toggleFiltersPanel();
+            });
+        }
+        if (this.elements.filtersOverlay) {
+            this.elements.filtersOverlay.addEventListener('click', () => {
+                this.toggleFiltersPanel(false);
+            });
+        }
+        if (this.elements.navFab) {
+            this.elements.navFab.addEventListener('click', () => {
+                this.toggleNav();
+            });
+        }
+        if (this.elements.navOverlay) {
+            this.elements.navOverlay.addEventListener('click', () => {
+                this.closeNav();
+            });
+        }
     }
 
     /**
@@ -916,6 +1109,7 @@ class MinecraftUpdatesApp {
         this.elements[elementKey].addEventListener('change', (e) => {
             this.state[stateKey] = e.target.checked;
             this.saveState();
+            this.updatePopularButtons();
             if (this.state.isCompareMode) {
                 this.compareManager.renderCards();
             } else if (this.state.isStatsMode) {
@@ -1017,14 +1211,44 @@ class MinecraftUpdatesApp {
      * Attach event listeners for navigation panel controls
      */
     attachNavigationEventListeners() {
-        this.elements.navToggleBtn.addEventListener('click', () => this.toggleNav());
-        this.elements.overlay.addEventListener('click', () => this.closeNav());
+        if (this.elements.navToggleBtn) {
+            this.elements.navToggleBtn.addEventListener('click', () => this.toggleNav());
+        }
+        if (this.elements.overlay) {
+            this.elements.overlay.addEventListener('click', () => this.closeNav());
+        }
 
         this.elements.navList.addEventListener('click', (e) => {
             if (e.target.closest('a') && DOMManager.hasClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT)) {
                 this.closeNav();
             }
         });
+
+        if (this.elements.navSearch) {
+            this.elements.navSearch.addEventListener('input', () => {
+                this.navigationManager.applyNavFilter(this.elements.navSearch.value);
+            });
+        }
+
+        if (this.elements.navJump) {
+            this.elements.navJump.addEventListener('change', (e) => {
+                const targetId = e.target.value;
+                if (!targetId) return;
+                const link = this.elements.navList.querySelector(`a[href="#${targetId}"]`);
+                if (link) {
+                    link.click();
+                } else {
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+                e.target.value = '';
+            });
+        }
+
+        const updateActive = Utils.debounce(() => this.updateActiveNavLink(), 80);
+        window.addEventListener('scroll', updateActive, { passive: true });
     }
 
     /**
@@ -1120,23 +1344,16 @@ class MinecraftUpdatesApp {
      * Switches between mobile and desktop layouts dynamically
      */
     updateLayout() {
-        if (this.state.isCompareMode || this.state.isStatsMode || this.state.isTimeSinceMode || this.state.isMaterialGroupsMode || this.state.isDetailMode) {
-            DOMManager.addClass(this.elements.body, CONFIG.CSS_CLASSES.DESKTOP_LAYOUT);
-            DOMManager.removeClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT);
-            this.closeNav();
-            return;
-        }
+        const isMobile = window.innerWidth < CONFIG.MOBILE_BREAKPOINT;
 
-        const mainRect = DOMManager.getBoundingRect(this.elements.main);
-        const availableSpace = window.innerWidth - mainRect.right;
-
-        if (Utils.shouldUseMobileLayout(availableSpace, CONFIG.NAV_PANEL_WIDTH, CONFIG.LAYOUT_GAP)) {
+        if (isMobile) {
             DOMManager.addClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT);
             DOMManager.removeClass(this.elements.body, CONFIG.CSS_CLASSES.DESKTOP_LAYOUT);
         } else {
             DOMManager.addClass(this.elements.body, CONFIG.CSS_CLASSES.DESKTOP_LAYOUT);
             DOMManager.removeClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT);
             this.closeNav();
+            this.toggleFiltersPanel(false);
         }
     }
 
@@ -1155,18 +1372,32 @@ class MinecraftUpdatesApp {
      * Open navigation panel
      */
     openNav() {
-        DOMManager.addClass(this.elements.navPanel, CONFIG.CSS_CLASSES.VISIBLE);
-        DOMManager.addClass(this.elements.overlay, CONFIG.CSS_CLASSES.VISIBLE);
-        DOMManager.setAttribute(this.elements.navToggleBtn, 'aria-expanded', 'true');
+        if (DOMManager.hasClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT)) {
+            DOMManager.addClass(this.elements.body, 'nav-open');
+            if (this.elements.navOverlay) {
+                DOMManager.addClass(this.elements.navOverlay, CONFIG.CSS_CLASSES.VISIBLE);
+            }
+        } else {
+            DOMManager.addClass(this.elements.navPanel, CONFIG.CSS_CLASSES.VISIBLE);
+            DOMManager.addClass(this.elements.overlay, CONFIG.CSS_CLASSES.VISIBLE);
+            DOMManager.setAttribute(this.elements.navToggleBtn, 'aria-expanded', 'true');
+        }
     }
 
     /**
      * Close navigation panel
      */
     closeNav() {
-        DOMManager.removeClass(this.elements.navPanel, CONFIG.CSS_CLASSES.VISIBLE);
-        DOMManager.removeClass(this.elements.overlay, CONFIG.CSS_CLASSES.VISIBLE);
-        DOMManager.setAttribute(this.elements.navToggleBtn, 'aria-expanded', 'false');
+        if (DOMManager.hasClass(this.elements.body, CONFIG.CSS_CLASSES.MOBILE_LAYOUT)) {
+            DOMManager.removeClass(this.elements.body, 'nav-open');
+            if (this.elements.navOverlay) {
+                DOMManager.removeClass(this.elements.navOverlay, CONFIG.CSS_CLASSES.VISIBLE);
+            }
+        } else {
+            DOMManager.removeClass(this.elements.navPanel, CONFIG.CSS_CLASSES.VISIBLE);
+            DOMManager.removeClass(this.elements.overlay, CONFIG.CSS_CLASSES.VISIBLE);
+            DOMManager.setAttribute(this.elements.navToggleBtn, 'aria-expanded', 'false');
+        }
     }
 
     /**
@@ -1198,7 +1429,7 @@ class MinecraftUpdatesApp {
             return;
         }
 
-        const query = this.elements.searchBar.value.toLowerCase();
+        const query = this.getSearchQuery().toLowerCase();
         const filteredData = DataManager.getFilteredData(
             this.state.allUpdates,
             this.state.currentView,
@@ -1229,6 +1460,7 @@ class MinecraftUpdatesApp {
             return;
         }
         this.navigationManager.renderListNav(data);
+        this.updateActiveNavLink();
     }
 
     /**
@@ -1237,11 +1469,19 @@ class MinecraftUpdatesApp {
      */
     renderContent(data) {
         DOMManager.clearContainer(this.elements.content);
+        const summary = this.getResultsSummary(data);
+        const safeQuery = Utils.escapeHtml(summary.query);
+        const summaryText = summary.query
+            ? `Results for "<strong>${safeQuery}</strong>": <strong>${summary.entryCount}</strong> entries, <strong>${summary.itemCount}</strong> items`
+            : `Results: <strong>${summary.entryCount}</strong> entries, <strong>${summary.itemCount}</strong> items`;
+        this.elements.content.insertAdjacentHTML(
+            'beforeend',
+            `<div class="results-summary">${summaryText}</div>`
+        );
 
         if (data.length === 0) {
-            const query = this.elements.searchBar.value.trim();
-            const emptyMessage = query ? `No results found for "${query}"` : 'No content available';
-            this.elements.content.innerHTML = `<p class="empty-state">${emptyMessage}</p>`;
+            const emptyMessage = summary.query ? `No results found for "${safeQuery}"` : 'No content available';
+            this.elements.content.insertAdjacentHTML('beforeend', `<p class="empty-state">${emptyMessage}</p>`);
             return;
         }
 
@@ -1272,208 +1512,6 @@ class MinecraftUpdatesApp {
         }
     }
 
-    /**
-     * Scroll to an item by identifier and type
-     * @param {string} identifier - Item identifier
-     * @param {string} elementType - Element type (item, mob, etc.)
-     */
-    scrollToItem(identifier, elementType) {
-        const resolveIconPath = (itemValue) => {
-            if (!itemValue) return null;
-            
-            // Если есть imagePath, используем его
-            if (itemValue.imagePath) {
-                return CONFIG.IMAGE_BASE_PATH + itemValue.imagePath;
-            }
-            
-            return null;
-        };
-
-        const itemsHtml = items.map((item) => {
-            const identifier = item.identifier;
-
-            // Custom rendering for mobs and mob_variants:
-            // - Large mob render image
-            // - Spawn egg icon (for mobs only)
-            // - Parent mob icon (for variants only)
-            // - Health information in tooltip
-            if (sectionType === 'mobs' || sectionType === 'mob_variants') {
-                const name = item.name;
-
-                // Build tooltip with health information if available
-                let tooltipContent = name;
-                let healthValue = null;
-
-                // Try to get health from meta.health first
-                if (item.meta && item.meta.health !== undefined) {
-                    healthValue = item.meta.health;
-                }
-                // For variants, try parent mob's health
-                else if (item.meta && item.meta.parent_mob && item.meta.parent_mob.health !== undefined) {
-                    healthValue = item.meta.parent_mob.health;
-                }
-
-                // Add health to tooltip if found (convert to half-hearts for display)
-                if (healthValue !== null) {
-                    const healthInHearts = healthValue / 2;
-                    tooltipContent = `${name}|health:${healthInHearts}`;
-                }
-                const mobImagePath = resolveIconPath(item);
-                const mobImageTag = `<img class="mob-render" src="${mobImagePath}" loading="lazy">`;
-
-                // Render spawn egg for mobs (not for variants)
-                let eggTag = '';
-                if (sectionType !== 'mob_variants' && item.meta && item.meta.spawn_egg) {
-                    const spawnEgg = item.meta.spawn_egg;
-                    const spawnEggImagePath = resolveIconPath(spawnEgg);
-                    const eggName = spawnEgg.name;
-                    eggTag = `<span class="tooltip-wrapper" data-tooltip="${eggName}"><a href="${spawnEgg.wiki}" target="_blank" rel="noopener noreferrer" class="mob-egg-link"><img class="inv-img mob-egg" src="${spawnEggImagePath}" loading="lazy" onerror="this.parentElement.parentElement.parentElement.remove()"></a></span>`;
-                }
-
-                // Render parent mob icon for variants
-                let parentMobTag = '';
-                if (item.meta && item.meta.parent_mob) {
-                    const parentMob = item.meta.parent_mob;
-                    const parentImagePath = resolveIconPath(parentMob);
-                    const parentName = parentMob.name;
-                    const parentWiki = parentMob.wiki || '';
-                    if (parentWiki) {
-                        parentMobTag = `<span class="tooltip-wrapper" data-tooltip="${parentName}"><a href="${parentWiki}" target="_blank" rel="noopener noreferrer"><img class="mob-parent-icon" src="${parentImagePath}" loading="lazy"></a></span>`;
-                    } else {
-                        parentMobTag = `<span class="tooltip-wrapper" data-tooltip="${parentName}"><img class="mob-parent-icon" src="${parentImagePath}" loading="lazy"></span>`;
-                    }
-                }
-
-                const cardInner = `
-                    <div class="mob-card">
-                        ${parentMobTag ? `<div class="mob-card__parent">${parentMobTag}</div>` : ''}
-                        <div class="mob-card__image">${mobImageTag}</div>
-                        <div class="mob-card__egg">${eggTag}</div>
-                    </div>
-                `;
-
-                // Use data-wiki attribute for click handling (allows nested links to work)
-                const wikiAttr = item.wiki ? ` data-wiki="${item.wiki}"` : '';
-                return `<div class="grid-item mob-cell clickable-card" data-tooltip="${tooltipContent}" data-identifier="${identifier}" ${wikiAttr}>${cardInner}</div>`;
-            }
-
-            // Custom rendering for enchantments: icon + text, styled cell
-            if (sectionType === 'enchantments') {
-                const name = item.name;
-                const enchIconTag = `<img class="inv-img ench-icon" src="${CONFIG.ENCHANTMENT_ICON}" loading="lazy">`;
-                const enchInner = `
-                    <div class="ench-cell-inner">${enchIconTag}<span class="ench-name">${name}</span></div>
-                `;
-                const wrapped = item.wiki
-                    ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${enchInner}</a>`
-                    : enchInner;
-                return `<div class="grid-item ench-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
-            }
-
-            if (sectionType === 'advancements') {
-                const name = item.name;
-                const iconPath = resolveIconPath(item.meta?.icon);
-                const iconContent = iconPath
-                    ? `<img class="advancement-icon" src="${iconPath}" loading="lazy" alt="">`
-                    : `<span class="advancement-icon advancement-icon--placeholder"></span>`;
-                const inner = `
-                    <div class="advancement-cell__content">
-                        ${iconContent}
-                        <span class="advancement-name">${name}</span>
-                    </div>
-                `;
-                const wrapped = item.wiki
-                    ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
-                    : inner;
-                return `<div class="grid-item advancement-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
-            }
-
-            // Custom rendering for paintings: title + provided external image
-            if (sectionType === 'paintings') {
-                const name = item.name;
-                const paintingImagePath = resolveIconPath(item);
-                const imageTag = `<img class="inv-img" src="${paintingImagePath}" loading="lazy">`;
-                const inner = `<div class="painting-cell__image">${imageTag}</div>`;
-                const wrapped = item.wiki
-                    ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
-                    : inner;
-                return `<div class="grid-item painting-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
-            }
-
-            // Custom rendering for biomes: wide rectangular cells with external images
-            if (sectionType === 'biomes') {
-                const name = item.name;
-                // Use external image from item.image or fallback to local path
-                const imageSrc = resolveIconPath(item);
-                const imageTag = `<img class="inv-img" src="${imageSrc}" loading="lazy">`;
-                const inner = `<div class="biome-cell__image">${imageTag}</div>`;
-                const wrapped = item.wiki
-                    ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
-                    : inner;
-                return `<div class="grid-item biome-cell" data-tooltip="${name}" data-identifier="${identifier}">${wrapped}</div>`;
-            }
-
-            // Default rendering for blocks/items/effects
-            const displayName = item.name;
-            const imagePath = resolveIconPath(item);
-            const imageTag = `<img class="inv-img" src="${imagePath}" loading="lazy">`;
-            const itemContent = item.wiki
-                ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${imageTag}</a>`
-                : imageTag;
-            return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}">${itemContent}</div>`;
-        });
-
-        // Add placeholder items to fill the last row for standard grid layouts
-        // (Skip for special layouts that don't need alignment)
-        if (
-            sectionType !== 'effects' &&
-            sectionType !== 'mobs' &&
-            sectionType !== 'mob_variants' &&
-            sectionType !== 'enchantments' &&
-            sectionType !== 'advancements' &&
-            sectionType !== 'paintings' &&
-            sectionType !== 'biomes' &&
-            sectionType !== 'structures'
-        ) {
-            const remainder = items.length % CONFIG.COLUMNS_COUNT;
-            const placeholdersNeeded = remainder === 0 ? 0 : CONFIG.COLUMNS_COUNT - remainder;
-            if (placeholdersNeeded > 0) {
-                const placeholderContent = `<img class="inv-img" src="${CONFIG.PLACEHOLDER_IMAGE}" alt="">`;
-                const placeholder = `<div class="grid-item">${placeholderContent}</div>`;
-                for (let i = 0; i < placeholdersNeeded; i++) {
-                    itemsHtml.push(placeholder);
-                }
-            }
-        }
-
-        // Apply appropriate grid class based on content type
-        let gridClass = 'element-grid';
-        if (sectionType === 'effects') {
-            gridClass = 'element-grid effects-grid';
-        } else if (sectionType === 'mobs' || sectionType === 'mob_variants') {
-            gridClass = 'element-grid mobs-grid';
-        } else if (sectionType === 'enchantments') {
-            gridClass = 'element-grid enchantments-grid';
-        } else if (sectionType === 'advancements') {
-            gridClass = 'element-grid advancements-grid';
-        } else if (sectionType === 'paintings') {
-            gridClass = 'element-grid paintings-grid';
-        } else if (sectionType === 'biomes') {
-            gridClass = 'element-grid biomes-grid';
-        }
-        return `
-            <div class="card-section" data-section="${sectionType}">
-                <div class="section-title" role="button" tabindex="0" aria-expanded="true">${title}</div>
-                <div class="${gridClass}">${itemsHtml.join('')}</div>
-            </div>
-        `;
-    }
-
-    /**
-     * Scroll to an item by identifier and type
-     * @param {string} identifier - Item identifier
-     * @param {string} elementType - Element type (item, mob, etc.)
-     */
     scrollToItem(identifier) {
         // Find the grid item with matching identifier and type
         const targetItem = this.elements.content.querySelector(

@@ -34,6 +34,18 @@ body {
     margin: 0;
 }
 
+/* Focus visibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.toggle-switch-label:focus-visible,
+.checkbox-container input:focus-visible + label,
+.checkbox-container label:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
 body.no-transition #nav-panel {
     transition: none !important;
 }
@@ -173,6 +185,60 @@ button,
 
 .link-button.active:hover {
     filter: brightness(1.05);
+}
+
+/* Utility buttons */
+.secondary-button,
+.pill-button {
+    border: 1px solid #666;
+    background: #555;
+    color: var(--text-color);
+    border-radius: var(--border-radius-lg);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: 'Minecraftia', sans-serif;
+    font-size: 0.85rem;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.secondary-button:hover,
+.pill-button:hover {
+    background-color: #666;
+    transform: translateY(-1px);
+}
+
+.pill-button.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.help-tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-color);
+    font-size: 0.75rem;
+    cursor: help;
+    user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Table Styles */

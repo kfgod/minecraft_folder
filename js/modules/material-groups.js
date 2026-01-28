@@ -268,7 +268,7 @@ export class MaterialGroupsManager {
         if (element && element.imagePath) {
             return CONFIG.IMAGE_BASE_PATH + element.imagePath;
         }
-        return null;
+        return CONFIG.PLACEHOLDER_IMAGE;
     }
 }
 

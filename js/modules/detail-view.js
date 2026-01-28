@@ -43,6 +43,7 @@ export class DetailViewManager {
         this.app.state.scrollPositionBeforeDetail = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
         this.app.state.detailTarget = { type: detailType, id: detailId };
+        this.app.state.detailSection = null;
         this.app.state.isDetailMode = true;
         this.app.state.isStatsMode = false;
         this.app.state.isCompareMode = false;
@@ -83,7 +84,7 @@ export class DetailViewManager {
         this.app.navigationManager.renderDetailNav(targetData);
 
         // Get search query from search bar
-        const searchQuery = this.app.elements.searchBar.value.toLowerCase();
+        const searchQuery = this.app.getSearchQuery().toLowerCase();
         
         const filteredData = {
             ...targetData,

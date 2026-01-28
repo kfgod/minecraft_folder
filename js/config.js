@@ -17,10 +17,11 @@ export const CONFIG = {
     },
     COLUMNS_COUNT: 9,
     NAV_PANEL_WIDTH: 280,
-    LAYOUT_GAP: 40,
+    LAYOUT_GAP: 20,
     DEBOUNCE_DELAY: 250,
     RESIZE_DEBOUNCE_DELAY: 100,
     TRANSITION_DELAY: 50,
+    MOBILE_BREAKPOINT: 900,
     CHART_COLORS: {
         BLOCKS: 'rgba(255, 99, 132, 1)',
         BLOCKS_BG: 'rgba(255, 99, 132, 0.2)',

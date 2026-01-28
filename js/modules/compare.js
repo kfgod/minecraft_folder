@@ -35,6 +35,7 @@ export class CompareManager {
                         <img src="static/images/icons/save_image.svg"> Save Comparison
                     </button>
                 </div>
+                <div id="compare-summary" class="mode-summary"></div>
                 <div class="compare-selectors">
                     <div class="compare-selector">
                         <label for="compare-version-1">${label1}</label>
@@ -92,11 +93,15 @@ export class CompareManager {
     renderCards() {
         const container = document.getElementById('compare-cards-container');
         if (!container) return;
+        const summary = document.getElementById('compare-summary');
 
         const [version1, version2] = this.app.state.compareVersions;
 
         if (!version1 && !version2) {
             container.innerHTML = '<p class="compare-empty">Select two versions to compare</p>';
+            if (summary) {
+                summary.innerHTML = 'Compare mode: select two versions to view differences.';
+            }
             return;
         }
 
@@ -116,10 +121,15 @@ export class CompareManager {
         `;
 
         this.app.applyCollapsedState();
+        if (summary) {
+            const name1 = version1 ? (version1.release_version?.java || version1.name || 'Version 1') : 'Version 1';
+            const name2 = version2 ? (version2.release_version?.java || version2.name || 'Version 2') : 'Version 2';
+            summary.innerHTML = `Comparing <strong>${name1}</strong> with <strong>${name2}</strong>.`;
+        }
     }
 
     applyFilters(version) {
-        const searchQuery = this.app.elements.searchBar.value.trim();
+        const searchQuery = this.app.getSearchQuery().trim();
         
         return {
             ...version,

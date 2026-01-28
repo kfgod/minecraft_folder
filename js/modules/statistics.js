@@ -49,6 +49,17 @@ export class StatisticsManager {
         }
     }
 
+    setChartPlaceholder(message, visible) {
+        const placeholder = document.getElementById('stats-chart-placeholder');
+        if (!placeholder) return;
+        placeholder.textContent = message;
+        if (visible) {
+            placeholder.classList.add('is-visible');
+        } else {
+            placeholder.classList.remove('is-visible');
+        }
+    }
+
     reset() {
         this.elements = null;
         this.destroyChart();
@@ -111,6 +122,7 @@ export class StatisticsManager {
 
         return `
             <section class="statistics-view">
+                <div id="stats-summary" class="mode-summary"></div>
                 <div class="statistics-card stats-chart-card">
                     <div class="stats-card-header">
                         <h2 id="stats-view-title">${heading}</h2>
@@ -121,6 +133,7 @@ export class StatisticsManager {
                         </div>
                     </div>
                     <div class="stats-chart-wrapper">
+                        <div id="stats-chart-placeholder" class="stats-chart-placeholder">No data to display.</div>
                         <canvas id="stats-growth-chart"></canvas>
                     </div>
                 </div>
@@ -167,6 +180,7 @@ export class StatisticsManager {
 
         const chartTitle = isYearView ? 'Growth by Year' : 'Growth by Version';
         const tableTitle = isYearView ? 'Content by Year' : 'Content by Version';
+        const summaryEl = document.getElementById('stats-summary');
 
         if (this.elements.viewTitle) {
             this.elements.viewTitle.textContent = chartTitle;
@@ -174,6 +188,10 @@ export class StatisticsManager {
 
         if (this.elements.tableTitle) {
             this.elements.tableTitle.textContent = tableTitle;
+        }
+        if (summaryEl) {
+            const count = isYearView ? this.state.yearsStats?.length || 0 : this.state.versionsStats?.length || 0;
+            summaryEl.innerHTML = `Statistics for <strong>${count}</strong> ${isYearView ? 'years' : 'versions'}.`;
         }
 
         this.renderChart(isYearView);
@@ -185,6 +203,7 @@ export class StatisticsManager {
         const statsData = isYearView ? this.state.yearsStats : this.state.versionsStats;
         if (!statsData || !statsData.length) {
             this.destroyChart();
+            this.setChartPlaceholder('No statistics data available.', true);
             return;
         }
         const labelKey = isYearView ? 'year' : 'version';
@@ -198,6 +217,7 @@ export class StatisticsManager {
         // Проверяем, что chartData валиден
         if (!chartData || !chartData.labels || chartData.labels.length === 0) {
             this.destroyChart();
+            this.setChartPlaceholder('No statistics data available.', true);
             return;
         }
 
@@ -297,6 +317,7 @@ export class StatisticsManager {
         // Если все datasets отключены, не создаем график
         if (filteredDatasets.length === 0) {
             this.destroyChart();
+            this.setChartPlaceholder('No content selected. Enable filters to see the chart.', true);
             return;
         }
 
@@ -334,6 +355,7 @@ export class StatisticsManager {
             },
             options: chartOptions,
         });
+        this.setChartPlaceholder('', false);
     }
 
     calculateChartData(stats, labelKey, cumulative = true) {

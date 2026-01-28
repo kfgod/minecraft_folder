@@ -15,6 +15,7 @@ export class NavigationManager {
      * @param {Array} data - Array of update/year data to create navigation items for
      */
     renderListNav(data) {
+        this.updateNavControls(data);
         const navItems = data.map((item) => {
             const itemDisplayName = item.name;
             const li = DOMManager.createElement('li');
@@ -38,6 +39,7 @@ export class NavigationManager {
         const fragment = DOMManager.createFragment(navItems);
         DOMManager.clearContainer(this.app.elements.navList);
         this.app.elements.navList.appendChild(fragment);
+        this.applyNavFilter(this.app.elements.navSearch?.value || '');
     }
 
     /**
@@ -49,6 +51,7 @@ export class NavigationManager {
         if (!detailData) return;
 
         DOMManager.clearContainer(this.app.elements.navList);
+        this.updateNavControls(null, true);
 
         // Get statistics counts
         const stats = this.getDetailStats(detailData);
@@ -64,6 +67,40 @@ export class NavigationManager {
         if (navSection) {
             this.app.elements.navList.appendChild(navSection);
         }
+    }
+
+    updateNavControls(data, isDetailMode = false) {
+        const controls = document.querySelector('.nav-controls');
+        if (controls) {
+            controls.style.display = isDetailMode ? 'none' : 'flex';
+        }
+        if (!data || isDetailMode) return;
+
+        if (this.app.elements.navJump) {
+            const options = data
+                .map((item) => {
+                    const label =
+                        this.app.state.currentView === CONFIG.VIEWS.YEARS
+                            ? item.name
+                            : item.name
+                            ? `${item.release_version?.java || item.name} — ${item.name}`
+                            : item.release_version?.java || 'Unknown';
+                    const id = Utils.generateCardId(item);
+                    return `<option value="${id}">${label}</option>`;
+                })
+                .join('');
+            this.app.elements.navJump.innerHTML = `<option value="">Jump to…</option>${options}`;
+        }
+    }
+
+    applyNavFilter(query) {
+        const items = this.app.elements.navList?.querySelectorAll('li');
+        if (!items) return;
+        const normalized = (query || '').trim().toLowerCase();
+        items.forEach((li) => {
+            const text = li.textContent?.toLowerCase() || '';
+            li.style.display = !normalized || text.includes(normalized) ? '' : 'none';
+        });
     }
 
     /**
@@ -200,13 +237,13 @@ export class NavigationManager {
 
         // Previous version
         if (prevItem) {
-            const prevButton = this.createVersionNavButton(prevItem, 'Previous', isYearView);
+            const prevButton = this.createVersionNavButton(prevItem, 'Next', isYearView);
             navList.appendChild(prevButton);
         }
 
         // Next version
         if (nextItem) {
-            const nextButton = this.createVersionNavButton(nextItem, 'Next', isYearView);
+            const nextButton = this.createVersionNavButton(nextItem, 'Previous', isYearView);
             navList.appendChild(nextButton);
         }
 

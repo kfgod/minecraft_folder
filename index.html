@@ -15,26 +15,33 @@
     <aside id="controls-panel">
         <div class="controls-content">
             <div class="search-container">
-                <input type="text" id="search-bar" placeholder="Search for blocks or items...">
-                <button id="search-clear-btn" class="search-clear-btn" hidden>&times;</button>
+                <input type="text" id="search-bar" placeholder="Search across all content..." list="search-suggestions" aria-label="Search">
+                <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" hidden>&times;</button>
             </div>
+            <datalist id="search-suggestions"></datalist>
             <div class="toggle-switch">
-                <div id="toggle-versions" class="toggle-switch-label active" data-view="versions">Versions</div>
-                <div id="toggle-years" class="toggle-switch-label" data-view="years">Years</div>
+                <div id="toggle-versions" class="toggle-switch-label active" data-view="versions" role="button" tabindex="0" aria-label="View by versions">Versions</div>
+                <div id="toggle-years" class="toggle-switch-label" data-view="years" role="button" tabindex="0" aria-label="View by years">Years</div>
             </div>
             <div class="panel-links">
-                <button id="stats-btn" type="button" class="link-button">Statistics</button>
-                <button id="compare-btn" type="button" class="link-button">Compare</button>
+                <button id="stats-btn" type="button" class="link-button" aria-label="Open statistics">Statistics</button>
+                <button id="compare-btn" type="button" class="link-button" aria-label="Open compare">Compare</button>
             </div>
             <div class="panel-links">
-                <button id="time-since-btn" type="button" class="link-button">Time Since</button>
-                <button id="material-groups-btn" type="button" class="link-button">Material Groups</button>
+                <button id="time-since-btn" type="button" class="link-button" aria-label="Open time since">Time Since</button>
+                <button id="material-groups-btn" type="button" class="link-button" aria-label="Open material groups">Material Groups</button>
+            </div>
+            <div class="filters-actions">
+                <button id="filters-select-all" type="button" class="secondary-button" aria-label="Select all filters">Select all</button>
+                <button id="filters-select-none" type="button" class="secondary-button" aria-label="Clear all filters">None</button>
+            </div>
+            <div class="filters-popular">
+                <span class="filters-popular-label">Popular:</span>
+                <button id="filters-popular-blocks" type="button" class="pill-button" aria-label="Toggle blocks">Blocks</button>
+                <button id="filters-popular-items" type="button" class="pill-button" aria-label="Toggle items">Items</button>
+                <button id="filters-popular-mobs" type="button" class="pill-button" aria-label="Toggle mobs">Mobs</button>
             </div>
             <div class="checkboxes-grid">
-                <div class="checkbox-container">
-                    <input type="checkbox" id="remove-duplicates-checkbox" checked>
-                    <label for="remove-duplicates-checkbox">Remove Duplicates</label>
-                </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="show-blocks-checkbox" checked>
                     <label for="show-blocks-checkbox">Blocks</label>
@@ -76,6 +83,16 @@
                     <label for="show-structures-checkbox">Structures</label>
                 </div>
             </div>
+            <div class="filter-block">
+                <div class="filter-block-header">
+                    <span>Remove Duplicates</span>
+                    <span class="help-tooltip" title="Hide entries marked as hidden duplicates.">?</span>
+                </div>
+                <label class="checkbox-container checkbox-container--inline" for="remove-duplicates-checkbox">
+                    <input type="checkbox" id="remove-duplicates-checkbox" checked>
+                    <span>Enabled</span>
+                </label>
+            </div>
 
             <div class="disclaimer">
                 <p class="disclaimer-text">
@@ -88,6 +105,14 @@
         </div>
     </aside>
     <main>
+        <div class="mobile-top-bar">
+            <div class="search-container mobile-search-container">
+                <input type="text" id="mobile-search-bar" placeholder="Search across all content..." list="search-suggestions" aria-label="Search">
+                <button id="mobile-search-clear-btn" class="search-clear-btn" aria-label="Clear search" hidden>&times;</button>
+            </div>
+            <button id="filters-fab" type="button" class="filters-fab" aria-label="Open filters">Filters</button>
+            <button id="nav-fab" type="button" class="nav-fab" aria-label="Open navigation">Nav</button>
+        </div>
         <button id="nav-toggle-btn" aria-label="Open Navigation" aria-expanded="false">
             <span></span>
             <span></span>
@@ -100,9 +125,17 @@
             <h3>Navigation</h3>
             <a href="#" id="scroll-to-top-btn" aria-label="Scroll to top">↑</a>
         </header>
+        <div class="nav-controls">
+            <input id="nav-search" type="text" placeholder="Filter navigation..." aria-label="Filter navigation">
+            <select id="nav-jump" aria-label="Jump to version or year">
+                <option value="">Jump to…</option>
+            </select>
+        </div>
         <ul id="nav-list"></ul>
     </nav>
     <div id="overlay"></div>
+    <div id="filters-overlay"></div>
+    <div id="nav-overlay"></div>
     <div id="tooltip" class="tooltip" role="tooltip"></div>
 
     <script type="module" src="js/index.js"></script>

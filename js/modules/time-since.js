@@ -86,6 +86,7 @@ export class TimeSinceManager {
         return `
             <div class="time-since-container">
                 <h1 class="time-since-title">Time Since Last Update</h1>
+                <div class="mode-summary">Live timers are updated every second.</div>
                 <div class="time-since-cards time-since-cards--versions">
                     ${last_drop ? this.buildCard('drop', last_drop) : ''}
                     ${last_major ? this.buildCard('major', last_major) : ''}
