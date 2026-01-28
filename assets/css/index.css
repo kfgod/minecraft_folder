@@ -6,6 +6,7 @@
     border-radius: var(--border-radius-lg);
     z-index: 1000;
     overflow-y: auto;
+    overscroll-behavior: contain;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -157,6 +158,7 @@
     z-index: 1000;
     border-radius: var(--border-radius-lg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overscroll-behavior: contain;
 }
 
 #nav-panel.is-visible {
@@ -200,6 +202,7 @@
     padding: 15px;
     margin: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 #nav-list > li {
@@ -818,6 +821,13 @@ body.mobile-layout.nav-open #nav-overlay.is-visible {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+}
+
+body.mobile-layout.nav-open,
+body.mobile-layout.filters-open {
+    overflow: hidden;
+    height: 100%;
+    overscroll-behavior: none;
 }
 
 /* Desktop Layout */

@@ -132,6 +132,7 @@ class MinecraftUpdatesApp {
             showBiomesCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_BIOMES_CHECKBOX),
             showStructuresCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_STRUCTURES_CHECKBOX),
             showBordersCheckbox: DOMManager.getElement(CONFIG.SELECTORS.SHOW_BORDERS_CHECKBOX),
+            controlsPanel: DOMManager.getElement('#controls-panel'),
             navPanel: DOMManager.getElement(CONFIG.SELECTORS.NAV_PANEL),
             navToggleBtn: DOMManager.getElement(CONFIG.SELECTORS.NAV_TOGGLE_BTN),
             overlay: DOMManager.getElement(CONFIG.SELECTORS.OVERLAY),
@@ -157,6 +158,7 @@ class MinecraftUpdatesApp {
      */
     async init() {
         this.addEventListeners();
+        this.attachPanelScrollGuards();
         try {
             const indexFilePath = CONFIG.BASE_URL + CONFIG.INDEX_FILE_PATH;
             const indexData = await Utils.fetchJSON(indexFilePath);
@@ -223,6 +225,34 @@ class MinecraftUpdatesApp {
             this.elements.content.innerHTML = `<p style="color: red;">Unable to load data. ${error.message}</p>`;
             DOMManager.removeClass(this.elements.body, CONFIG.CSS_CLASSES.NO_TRANSITION);
         }
+    }
+
+    /**
+     * Prevent scroll chaining from panels to page content
+     */
+    attachPanelScrollGuards() {
+        const scrollTargets = [this.elements.controlsPanel, this.elements.navPanel, this.elements.navList].filter(Boolean);
+        if (scrollTargets.length === 0) return;
+
+        const shouldBlockScroll = (element, deltaY) => {
+            if (element.scrollHeight <= element.clientHeight) return false;
+            const atTop = element.scrollTop <= 0;
+            const atBottom = element.scrollTop + element.clientHeight >= element.scrollHeight - 1;
+            return (deltaY < 0 && atTop) || (deltaY > 0 && atBottom);
+        };
+
+        scrollTargets.forEach((element) => {
+            element.addEventListener(
+                'wheel',
+                (event) => {
+                    if (!DOMManager.hasClass(this.elements.body, CONFIG.CSS_CLASSES.DESKTOP_LAYOUT)) return;
+                    if (shouldBlockScroll(element, event.deltaY)) {
+                        event.preventDefault();
+                    }
+                },
+                { passive: false }
+            );
+        });
     }
 
     /**
