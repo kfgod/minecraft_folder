@@ -210,7 +210,7 @@ export class MaterialGroupsManager {
         let html = `<tr>`;
         
         // Колонка с material (sticky)
-        html += `<td class="material-group-table-cell material-group-table-cell--material">`;
+        html += `<td class="material-group-table-cell material-group-table-cell-material">`;
         html += this.buildElementCell(material);
         html += `</td>`;
         
@@ -240,7 +240,7 @@ export class MaterialGroupsManager {
         const wiki = element.wiki || '';
 
         // Определяем путь к изображению
-        const imagePath = this.resolveImagePath(element, identifier);
+        const imagePath = Utils.resolveImagePath(element);
 
         let html = '<div class="material-group-element">';
         
@@ -259,16 +259,5 @@ export class MaterialGroupsManager {
         return html;
     }
 
-    resolveImagePath(element, identifier) {
-        if (!identifier) {
-            return CONFIG.PLACEHOLDER_IMAGE;
-        }
-        
-        // Если есть imagePath, используем его
-        if (element && element.imagePath) {
-            return CONFIG.IMAGE_BASE_PATH + element.imagePath;
-        }
-        return CONFIG.PLACEHOLDER_IMAGE;
-    }
 }
 

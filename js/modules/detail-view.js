@@ -88,18 +88,7 @@ export class DetailViewManager {
         
         const filteredData = {
             ...targetData,
-            added: {
-                blocks: DataManager.filterItems(targetData.added?.blocks, searchQuery, this.app.state.removeDuplicates),
-                items: DataManager.filterItems(targetData.added?.items, searchQuery, this.app.state.removeDuplicates),
-                mobs: DataManager.filterItems(targetData.added?.mobs, searchQuery, this.app.state.removeDuplicates),
-                mob_variants: DataManager.filterItems(targetData.added?.mob_variants, searchQuery, this.app.state.removeDuplicates),
-                effects: DataManager.filterItems(targetData.added?.effects, searchQuery, this.app.state.removeDuplicates),
-                enchantments: DataManager.filterItems(targetData.added?.enchantments, searchQuery, this.app.state.removeDuplicates),
-                advancements: DataManager.filterItems(targetData.added?.advancements, searchQuery, this.app.state.removeDuplicates),
-                paintings: DataManager.filterItems(targetData.added?.paintings, searchQuery, this.app.state.removeDuplicates),
-                biomes: DataManager.filterItems(targetData.added?.biomes, searchQuery, this.app.state.removeDuplicates),
-                structures: DataManager.filterItems(targetData.added?.structures, searchQuery, this.app.state.removeDuplicates),
-            },
+            added: DataManager.filterAllContentTypes(targetData, searchQuery, this.app.state.removeDuplicates),
         };
 
         DOMManager.clearContainer(this.app.elements.content);

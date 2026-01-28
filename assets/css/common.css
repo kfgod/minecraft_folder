@@ -20,6 +20,19 @@
     --hotfix-border: #ffffff;
     --drop-border: #8afcfd;
     --year-border: #4caf50;
+    --bp-sm: 480px;
+    --bp-md: 768px;
+    --bp-lg: 1200px;
+    --bp-xl: 1400px;
+    --grid-cols-default: 9;
+    --grid-cols-mobs: 5;
+    --grid-cols-enchantments: 4;
+    --grid-cols-advancements: 3;
+    --grid-cols-paintings: 6;
+    --grid-cols-biomes: 4;
+    --grid-gap-xs: 4px;
+    --grid-gap-sm: 6px;
+    --grid-gap-md: 8px;
 }
 
 html {
@@ -47,6 +60,10 @@ select:focus-visible,
 }
 
 body.no-transition #nav-panel {
+    transition: none !important;
+}
+
+body.no-transition #controls-panel {
     transition: none !important;
 }
 
@@ -314,7 +331,8 @@ body.show-borders .update-card.year {
 /* Grid Styles */
 .element-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(var(--grid-cols, var(--grid-cols-default)), 1fr);
+    gap: var(--grid-gap, 0);
     border-radius: var(--border-radius-sm);
 }
 
@@ -344,7 +362,7 @@ body.show-borders .update-card.year {
 
 /* Effects Grid Specific Styles */
 .effects-grid {
-    gap: 4px;
+    --grid-gap: var(--grid-gap-xs);
 }
 
 .effects-grid .grid-item .inv-img {
@@ -354,8 +372,8 @@ body.show-borders .update-card.year {
 
 /* Mobs Grid Specific Styles */
 .mobs-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 4px;
+    --grid-cols: var(--grid-cols-mobs);
+    --grid-gap: var(--grid-gap-xs);
 }
 
 /* Mob cells should grow vertically; don't force square and don't clip */
@@ -376,13 +394,13 @@ body.show-borders .update-card.year {
     container-type: inline-size; /* enable container queries based on width */
 }
 .enchantments-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
+    --grid-cols: var(--grid-cols-enchantments);
+    --grid-gap: var(--grid-gap-sm);
 }
 
 .advancements-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(var(--grid-cols-advancements), minmax(0, 1fr));
+    gap: var(--grid-gap-md);
 }
 
 .advancements-grid .grid-item {
@@ -392,8 +410,8 @@ body.show-borders .update-card.year {
 
 /* Paintings Grid Specific Styles */
 .paintings-grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    --grid-cols: var(--grid-cols-paintings);
+    --grid-gap: var(--grid-gap-md);
 }
 
 .paintings-grid .grid-item {
@@ -409,11 +427,11 @@ body.show-borders .update-card.year {
     display: contents;
 }
 
-.painting-cell__image {
+.painting-cell-image {
     display: contents;
 }
 
-.painting-cell__image img.inv-img {
+.painting-cell-image img.inv-img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -429,8 +447,8 @@ body.show-borders .update-card.year {
 
 /* Biomes Grid Specific Styles */
 .biomes-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    --grid-cols: var(--grid-cols-biomes);
+    --grid-gap: var(--grid-gap-md);
 }
 
 .biomes-grid .grid-item {
@@ -457,11 +475,11 @@ body.show-borders .update-card.year {
     display: contents;
 }
 
-.biome-cell__image {
+.biome-cell-image {
     display: contents;
 }
 
-.biome-cell__image img.inv-img {
+.biome-cell-image img.inv-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -521,7 +539,7 @@ body.show-borders .update-card.year {
     height: 100%;
 }
 
-.advancement-cell__content {
+.advancement-cell-content {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -534,7 +552,7 @@ body.show-borders .update-card.year {
     flex-shrink: 0;
 }
 
-.advancement-icon--placeholder {
+.advancement-icon-placeholder {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-sm);
     display: inline-block;
@@ -559,7 +577,7 @@ body.show-borders .update-card.year {
     position: relative; /* for absolute positioning of parent icon */
 }
 
-.mob-card__header {
+.mob-card-header {
     background: #1f6a40;
     color: #d9f0dc;
     text-align: center;
@@ -574,7 +592,7 @@ body.show-borders .update-card.year {
     line-height: 1.2;
 }
 
-.mob-card__image {
+.mob-card-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -582,7 +600,7 @@ body.show-borders .update-card.year {
     min-height: 0; /* allow the middle track to shrink to available height */
 }
 
-.mob-card__image a {
+.mob-card-image a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -590,7 +608,7 @@ body.show-borders .update-card.year {
     height: 100%;
 }
 
-.mob-card__image .mob-render {
+.mob-card-image .mob-render {
     max-width: 100%;
     max-height: 100%;
     width: auto; /* keep natural aspect ratio */
@@ -598,7 +616,7 @@ body.show-borders .update-card.year {
     image-rendering: pixelated;
 }
 
-.mob-card__egg {
+.mob-card-egg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -611,13 +629,13 @@ body.show-borders .update-card.year {
     justify-content: center;
 }
 
-.mob-card__egg .tooltip-wrapper {
+.mob-card-egg .tooltip-wrapper {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.mob-card__egg .scroll-to-item {
+.mob-card-egg .scroll-to-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -625,24 +643,24 @@ body.show-borders .update-card.year {
     transition: transform 0.2s ease;
 }
 
-.mob-card__egg .scroll-to-item:hover {
+.mob-card-egg .scroll-to-item:hover {
     transform: scale(1.1);
 }
 
-.mob-card__egg .mob-egg {
+.mob-card-egg .mob-egg {
     width: 48px;
     height: 48px;
     display: block;
 }
 
-.mob-card__parent {
+.mob-card-parent {
     position: absolute;
     top: 4px;
     right: 4px;
     z-index: 10;
 }
 
-.mob-card__parent .tooltip-wrapper {
+.mob-card-parent .tooltip-wrapper {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -652,11 +670,11 @@ body.show-borders .update-card.year {
     transition: transform 0.2s ease;
 }
 
-.mob-card__parent .tooltip-wrapper:hover {
+.mob-card-parent .tooltip-wrapper:hover {
     transform: scale(1.15);
 }
 
-.mob-card__parent a {
+.mob-card-parent a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -664,7 +682,7 @@ body.show-borders .update-card.year {
     height: 100%;
 }
 
-.mob-card__parent .mob-parent-icon {
+.mob-card-parent .mob-parent-icon {
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -679,12 +697,12 @@ body.show-borders .update-card.year {
     .mob-card {
         grid-template-rows: 1fr; /* only image row */
     }
-    .mob-card__header,
-    .mob-card__egg,
-    .mob-card__parent {
+    .mob-card-header,
+    .mob-card-egg,
+    .mob-card-parent {
         display: none;
     }
-    .mob-card__image {
+    .mob-card-image {
         padding: 4px;
     }
 }

@@ -1,6 +1,8 @@
 /**
  * Utility functions for the Minecraft Updates application
  */
+import { CONFIG } from './config.js';
+
 export class Utils {
     /**
      * Fetch JSON data from a URL
@@ -119,5 +121,16 @@ export class Utils {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
+    }
+
+    /**
+     * Resolve image path with placeholder fallback
+     * @param {Object} item
+     * @returns {string}
+     */
+    static resolveImagePath(item) {
+        if (!item) return CONFIG.PLACEHOLDER_IMAGE;
+        if (item.imagePath) return CONFIG.IMAGE_BASE_PATH + item.imagePath;
+        return CONFIG.PLACEHOLDER_IMAGE;
     }
 }

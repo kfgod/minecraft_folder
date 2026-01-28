@@ -87,12 +87,12 @@ export class TimeSinceManager {
             <div class="time-since-container">
                 <h1 class="time-since-title">Time Since Last Update</h1>
                 <div class="mode-summary">Live timers are updated every second.</div>
-                <div class="time-since-cards time-since-cards--versions">
+                <div class="time-since-cards time-since-cards-versions">
                     ${last_drop ? this.buildCard('drop', last_drop) : ''}
                     ${last_major ? this.buildCard('major', last_major) : ''}
                 </div>
                 <h2 class="time-since-subtitle">Time Since Last Content</h2>
-                <div class="time-since-cards time-since-cards--content">
+                <div class="time-since-cards time-since-cards-content">
                     ${contentCardsHtml}
                 </div>
             </div>
@@ -101,7 +101,7 @@ export class TimeSinceManager {
 
     buildCard(type, versionData) {
         const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
-        const typeClass = `time-since-card--${type}`;
+        const typeClass = `time-since-card-${type}`;
         const releaseDate = versionData.release_date;
         const formattedDate = this.formatDate(releaseDate);
         const cardId = `time-since-${type}`;
@@ -110,15 +110,15 @@ export class TimeSinceManager {
         if (wikiUrl) {
             return `
                 <a href="${wikiUrl}" target="_blank" rel="noopener noreferrer" class="time-since-card ${typeClass}" id="${cardId}">
-                    <div class="time-since-card__header">
-                        <h2 class="time-since-card__title">${typeLabel}</h2>
-                        ${versionData.name ? `<div class="time-since-card__name">${versionData.name}</div>` : ''}
-                        <div class="time-since-card__version">${versionData.version}</div>
+                    <div class="time-since-card-header">
+                        <h2 class="time-since-card-title">${typeLabel}</h2>
+                        ${versionData.name ? `<div class="time-since-card-name">${versionData.name}</div>` : ''}
+                        <div class="time-since-card-version">${versionData.version}</div>
                     </div>
-                    <div class="time-since-card__date">
+                    <div class="time-since-card-date">
                         Released: ${formattedDate}
                     </div>
-                    <div class="time-since-card__timer" data-release-date="${releaseDate}">
+                    <div class="time-since-card-timer" data-release-date="${releaseDate}">
                         <div class="time-since-timer-text">Loading...</div>
                     </div>
                 </a>
@@ -127,15 +127,15 @@ export class TimeSinceManager {
 
         return `
             <div class="time-since-card ${typeClass}" id="${cardId}">
-                <div class="time-since-card__header">
-                    <h2 class="time-since-card__title">${typeLabel}</h2>
-                    ${versionData.name ? `<div class="time-since-card__name">${versionData.name}</div>` : ''}
-                    <div class="time-since-card__version">${versionData.version}</div>
+                <div class="time-since-card-header">
+                    <h2 class="time-since-card-title">${typeLabel}</h2>
+                    ${versionData.name ? `<div class="time-since-card-name">${versionData.name}</div>` : ''}
+                    <div class="time-since-card-version">${versionData.version}</div>
                 </div>
-                <div class="time-since-card__date">
+                <div class="time-since-card-date">
                     Released: ${formattedDate}
                 </div>
-                <div class="time-since-card__timer" data-release-date="${releaseDate}">
+                <div class="time-since-card-timer" data-release-date="${releaseDate}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
             </div>
@@ -156,7 +156,7 @@ export class TimeSinceManager {
             'structure': 'Structure'
         };
         const typeLabel = typeLabels[type] || type;
-        const typeClass = `time-since-card--${type}`;
+        const typeClass = `time-since-card-${type}`;
         const element = data.element || {};
         const versionName = data.version_name || '';
         const version = data.version || '';
@@ -169,15 +169,15 @@ export class TimeSinceManager {
         if (elementWiki) {
             return `
                 <a href="${elementWiki}" target="_blank" rel="noopener noreferrer" class="time-since-card ${typeClass}" id="${cardId}">
-                    <div class="time-since-card__header">
-                        <h2 class="time-since-card__title">${typeLabel}</h2>
-                        <div class="time-since-card__name">${elementName}</div>
-                        ${versionName ? `<div class="time-since-card__version">${versionName} (${version})</div>` : `<div class="time-since-card__version">${version}</div>`}
+                    <div class="time-since-card-header">
+                        <h2 class="time-since-card-title">${typeLabel}</h2>
+                        <div class="time-since-card-name">${elementName}</div>
+                        ${versionName ? `<div class="time-since-card-version">${versionName} (${version})</div>` : `<div class="time-since-card-version">${version}</div>`}
                     </div>
-                    <div class="time-since-card__date">
+                    <div class="time-since-card-date">
                         Released: ${formattedDate}
                     </div>
-                    <div class="time-since-card__timer" data-release-date="${releaseDate}">
+                    <div class="time-since-card-timer" data-release-date="${releaseDate}">
                         <div class="time-since-timer-text">Loading...</div>
                     </div>
                 </a>
@@ -186,15 +186,15 @@ export class TimeSinceManager {
 
         return `
             <div class="time-since-card ${typeClass}" id="${cardId}">
-                <div class="time-since-card__header">
-                    <h2 class="time-since-card__title">${typeLabel}</h2>
-                    <div class="time-since-card__name">${elementName}</div>
-                    ${versionName ? `<div class="time-since-card__version">${versionName} (${version})</div>` : `<div class="time-since-card__version">${version}</div>`}
+                <div class="time-since-card-header">
+                    <h2 class="time-since-card-title">${typeLabel}</h2>
+                    <div class="time-since-card-name">${elementName}</div>
+                    ${versionName ? `<div class="time-since-card-version">${versionName} (${version})</div>` : `<div class="time-since-card-version">${version}</div>`}
                 </div>
-                <div class="time-since-card__date">
+                <div class="time-since-card-date">
                     Released: ${formattedDate}
                 </div>
-                <div class="time-since-card__timer" data-release-date="${releaseDate}">
+                <div class="time-since-card-timer" data-release-date="${releaseDate}">
                     <div class="time-since-timer-text">Loading...</div>
                 </div>
             </div>
@@ -236,7 +236,7 @@ export class TimeSinceManager {
     }
 
     updateTimers() {
-        const cards = document.querySelectorAll('.time-since-card__timer');
+        const cards = document.querySelectorAll('.time-since-card-timer');
         
         cards.forEach((card) => {
             const releaseDateStr = card.getAttribute('data-release-date');

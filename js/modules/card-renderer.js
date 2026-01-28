@@ -3,7 +3,9 @@
  */
 import { Utils } from '../utils.js';
 import { CONFIG } from '../config.js';
+import { DataManager } from '../data-manager.js';
 import { DOMManager } from '../dom-manager.js';
+import { SECTION_META } from '../section-config.js';
 
 export class CardRenderer {
     constructor(app) {
@@ -18,7 +20,7 @@ export class CardRenderer {
 
         let cardTitle = '';
         let subtitle = '';
-        const isYearContext = this.app.state.currentView === CONFIG.VIEWS.YEARS || data.type === 'year';
+        const isYearContext = this.app.isYearView() || data.type === 'year';
         const detailType = isYearContext ? 'year' : 'version';
         const cardId = card.id;
 
@@ -63,68 +65,15 @@ export class CardRenderer {
         const headerTag = `<div class="${headerClass}">${closeBtnHtml}${titleTag}${headerEndCap}</div>`;
 
         let contentHtml = '';
-        if (this.app.state.showBlocks && Array.isArray(data.added?.blocks) && data.added.blocks.length > 0) {
-            contentHtml += this.createGridSection(data.added.blocks, `Blocks (${data.added.blocks.length})`, 'blocks');
-        }
-        if (this.app.state.showItems && Array.isArray(data.added?.items) && data.added.items.length > 0) {
-            contentHtml += this.createGridSection(data.added.items, `Items (${data.added.items.length})`, 'items');
-        }
-        if (this.app.state.showMobs && Array.isArray(data.added?.mobs) && data.added.mobs.length > 0) {
-            contentHtml += this.createGridSection(data.added.mobs, `Mobs (${data.added.mobs.length})`, 'mobs');
-        }
-        if (
-            this.app.state.showMobVariants &&
-            Array.isArray(data.added?.mob_variants) &&
-            data.added.mob_variants.length > 0
-        ) {
-            contentHtml += this.createGridSection(
-                data.added.mob_variants,
-                `Mob Variants (${data.added.mob_variants.length})`,
-                'mob_variants'
-            );
-        }
-        if (this.app.state.showEffects && Array.isArray(data.added?.effects) && data.added.effects.length > 0) {
-            contentHtml += this.createGridSection(
-                data.added.effects,
-                `Effects (${data.added.effects.length})`,
-                'effects'
-            );
-        }
-        if (
-            this.app.state.showEnchantments &&
-            Array.isArray(data.added?.enchantments) &&
-            data.added.enchantments.length > 0
-        ) {
-            contentHtml += this.createGridSection(
-                data.added.enchantments,
-                `Enchantments (${data.added.enchantments.length})`,
-                'enchantments'
-            );
-        }
-        if (
-            this.app.state.showAdvancements &&
-            Array.isArray(data.added?.advancements) &&
-            data.added.advancements.length > 0
-        ) {
-            contentHtml += this.createGridSection(
-                data.added.advancements,
-                `Advancements (${data.added.advancements.length})`,
-                'advancements'
-            );
-        }
-        if (this.app.state.showPaintings && Array.isArray(data.added?.paintings) && data.added.paintings.length > 0) {
-            contentHtml += this.createGridSection(
-                data.added.paintings,
-                `Paintings (${data.added.paintings.length})`,
-                'paintings'
-            );
-        }
-        if (this.app.state.showBiomes && Array.isArray(data.added?.biomes) && data.added.biomes.length > 0) {
-            contentHtml += this.createGridSection(data.added.biomes, `Biomes (${data.added.biomes.length})`, 'biomes');
-        }
-        if (this.app.state.showStructures && Array.isArray(data.added?.structures) && data.added.structures.length > 0) {
-            contentHtml += this.createGridSection(data.added.structures, `Structures (${data.added.structures.length})`, 'structures');
-        }
+        DataManager.CONTENT_TYPES.forEach((type) => {
+            const meta = SECTION_META[type];
+            const stateKey = meta?.stateKey;
+            const items = data.added?.[type];
+            if (!stateKey || !this.app.state[stateKey]) return;
+            if (!Array.isArray(items) || items.length === 0) return;
+            const label = meta?.label || type;
+            contentHtml += this.createGridSection(items, `${label} (${items.length})`, type);
+        });
 
         const screenshotBtn = `<button class="screenshot-btn" aria-label="Save as image"><img src="static/images/icons/save_image.svg" alt=""></button>`;
         card.innerHTML = `${screenshotBtn}${headerTag}${subtitleRow}${contentHtml}`;
@@ -132,17 +81,6 @@ export class CardRenderer {
     }
 
     createGridSection(items, title, sectionType) {
-        const resolveIconPath = (itemValue) => {
-            if (!itemValue) return null;
-            
-            // Если есть imagePath, используем его
-            if (itemValue.imagePath) {
-                return CONFIG.IMAGE_BASE_PATH + itemValue.imagePath;
-            }
-
-            return null;
-        };
-
         const itemsHtml = items.map((item) => {
             const identifier = item.identifier;
 
@@ -162,13 +100,13 @@ export class CardRenderer {
                     const healthInHearts = healthValue / 2;
                     tooltipContent = `${name}|health:${healthInHearts}`;
                 }
-                const mobImagePath = resolveIconPath(item);
+                const mobImagePath = Utils.resolveImagePath(item);
                 const mobImageTag = `<img class="mob-render" src="${mobImagePath}" loading="lazy">`;
 
                 let eggTag = '';
                 if (sectionType !== 'mob_variants' && item.meta && item.meta.spawn_egg) {
                     const spawnEgg = item.meta.spawn_egg;
-                    const spawnEggImagePath = resolveIconPath(spawnEgg);
+                    const spawnEggImagePath = Utils.resolveImagePath(spawnEgg);
                     const eggName = spawnEgg.name;
                     eggTag = `<span class="tooltip-wrapper" data-tooltip="${eggName}"><a href="${spawnEgg.wiki}" target="_blank" rel="noopener noreferrer" class="mob-egg-link"><img class="inv-img mob-egg" src="${spawnEggImagePath}" loading="lazy" onerror="this.parentElement.parentElement.parentElement.remove()"></a></span>`;
                 }
@@ -176,7 +114,7 @@ export class CardRenderer {
                 let parentMobTag = '';
                 if (item.meta && item.meta.parent_mob) {
                     const parentMob = item.meta.parent_mob;
-                    const parentImagePath = resolveIconPath(parentMob);
+                    const parentImagePath = Utils.resolveImagePath(parentMob);
                     const parentName = parentMob.name;
                     const parentWiki = parentMob.wiki || '';
                     if (parentWiki) {
@@ -188,9 +126,9 @@ export class CardRenderer {
 
                 const cardInner = `
                     <div class="mob-card">
-                        ${parentMobTag ? `<div class="mob-card__parent">${parentMobTag}</div>` : ''}
-                        <div class="mob-card__image">${mobImageTag}</div>
-                        <div class="mob-card__egg">${eggTag}</div>
+                        ${parentMobTag ? `<div class="mob-card-parent">${parentMobTag}</div>` : ''}
+                        <div class="mob-card-image">${mobImageTag}</div>
+                        <div class="mob-card-egg">${eggTag}</div>
                     </div>
                 `;
 
@@ -212,12 +150,12 @@ export class CardRenderer {
 
             if (sectionType === 'advancements') {
                 const name = item.name;
-                const iconPath = resolveIconPath(item.meta?.icon);
+                const iconPath = Utils.resolveImagePath(item.meta?.icon);
                 const iconContent = iconPath
                     ? `<img class="advancement-icon" src="${iconPath}" loading="lazy" alt="">`
-                    : `<span class="advancement-icon advancement-icon--placeholder"></span>`;
+                    : `<span class="advancement-icon advancement-icon-placeholder"></span>`;
                 const inner = `
-                    <div class="advancement-cell__content">
+                    <div class="advancement-cell-content">
                         ${iconContent}
                         <span class="advancement-name">${name}</span>
                     </div>
@@ -230,9 +168,9 @@ export class CardRenderer {
 
             if (sectionType === 'paintings') {
                 const name = item.name;
-                const paintingImagePath = resolveIconPath(item);
+                const paintingImagePath = Utils.resolveImagePath(item);
                 const imageTag = `<img class="inv-img" src="${paintingImagePath}" loading="lazy">`;
-                const inner = `<div class="painting-cell__image">${imageTag}</div>`;
+                const inner = `<div class="painting-cell-image">${imageTag}</div>`;
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
@@ -241,9 +179,9 @@ export class CardRenderer {
 
             if (sectionType === 'biomes') {
                 const name = item.name;
-                const imageSrc = resolveIconPath(item);
+                const imageSrc = Utils.resolveImagePath(item);
                 const imageTag = `<img class="inv-img" src="${imageSrc}" loading="lazy">`;
-                const inner = `<div class="biome-cell__image">${imageTag}</div>`;
+                const inner = `<div class="biome-cell-image">${imageTag}</div>`;
                 const wrapped = item.wiki
                     ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${inner}</a>`
                     : inner;
@@ -252,7 +190,7 @@ export class CardRenderer {
 
             // Default rendering for blocks/items/effects
             const displayName = item.name;
-            const imagePath = resolveIconPath(item);
+            const imagePath = Utils.resolveImagePath(item);
             const imageTag = `<img class="inv-img" src="${imagePath}" loading="lazy">`;
             const itemContent = item.wiki
                 ? `<a href="${item.wiki}" target="_blank" rel="noopener noreferrer">${imageTag}</a>`
@@ -260,16 +198,8 @@ export class CardRenderer {
             return `<div class="grid-item" data-tooltip="${displayName}" data-identifier="${identifier}">${itemContent}</div>`;
         });
 
-        if (
-            sectionType !== 'effects' &&
-            sectionType !== 'mobs' &&
-            sectionType !== 'mob_variants' &&
-            sectionType !== 'enchantments' &&
-            sectionType !== 'advancements' &&
-            sectionType !== 'paintings' &&
-            sectionType !== 'biomes' &&
-            sectionType !== 'structures'
-        ) {
+        const meta = SECTION_META[sectionType];
+        if (meta?.usePlaceholders) {
             const remainder = items.length % CONFIG.COLUMNS_COUNT;
             const placeholdersNeeded = remainder === 0 ? 0 : CONFIG.COLUMNS_COUNT - remainder;
             if (placeholdersNeeded > 0) {
@@ -281,20 +211,7 @@ export class CardRenderer {
             }
         }
 
-        let gridClass = 'element-grid';
-        if (sectionType === 'effects') {
-            gridClass = 'element-grid effects-grid';
-        } else if (sectionType === 'mobs' || sectionType === 'mob_variants') {
-            gridClass = 'element-grid mobs-grid';
-        } else if (sectionType === 'enchantments') {
-            gridClass = 'element-grid enchantments-grid';
-        } else if (sectionType === 'advancements') {
-            gridClass = 'element-grid advancements-grid';
-        } else if (sectionType === 'paintings') {
-            gridClass = 'element-grid paintings-grid';
-        } else if (sectionType === 'biomes') {
-            gridClass = 'element-grid biomes-grid';
-        }
+        const gridClass = meta?.gridClass ? `element-grid ${meta.gridClass}` : 'element-grid';
         return `
             <div class="card-section" data-section="${sectionType}">
                 <div class="section-title" role="button" tabindex="0" aria-expanded="true">${title}</div>
@@ -315,14 +232,19 @@ export class CardRenderer {
         html2canvas(cardElement, {
             backgroundColor: null,
             useCORS: true,
-        }).then((canvas) => {
-            if (screenshotButton) DOMManager.setVisibility(screenshotButton, true);
-            const link = DOMManager.createElement('a', {
-                download: `${cardElement.id}.png`,
-                href: canvas.toDataURL('image/png'),
+        })
+            .then((canvas) => {
+                if (screenshotButton) DOMManager.setVisibility(screenshotButton, true);
+                const link = DOMManager.createElement('a', {
+                    download: `${cardElement.id}.png`,
+                    href: canvas.toDataURL('image/png'),
+                });
+                link.click();
+            })
+            .catch((error) => {
+                if (screenshotButton) DOMManager.setVisibility(screenshotButton, true);
+                console.error('Screenshot failed:', error);
             });
-            link.click();
-        });
     }
 }
 

@@ -4,6 +4,7 @@
 import { Utils } from '../utils.js';
 import { CONFIG } from '../config.js';
 import { DOMManager } from '../dom-manager.js';
+import { SECTION_META, STATS_COLUMNS_ORDER } from '../section-config.js';
 
 export class StatisticsManager {
     constructor(app) {
@@ -500,20 +501,15 @@ export class StatisticsManager {
     }
 
     getTableColumns() {
-        const contentColumns = [
-            { key: 'items', label: 'Items', enabled: this.app.state.showItems },
-            { key: 'blocks', label: 'Blocks', enabled: this.app.state.showBlocks },
-            { key: 'mobs', label: 'Mobs', enabled: this.app.state.showMobs },
-            { key: 'effects', label: 'Effects', enabled: this.app.state.showEffects },
-            { key: 'enchantments', label: 'Enchantments', enabled: this.app.state.showEnchantments },
-            { key: 'advancements', label: 'Advancements', enabled: this.app.state.showAdvancements },
-            { key: 'biomes', label: 'Biomes', enabled: this.app.state.showBiomes },
-            { key: 'structures', label: 'Structures', enabled: this.app.state.showStructures },
-        ];
-
-        const filteredContentColumns = contentColumns
-            .filter((col) => col.enabled)
-            .map((col) => ({ key: col.key, label: col.label }));
+        const filteredContentColumns = STATS_COLUMNS_ORDER
+            .map((key) => {
+                const meta = SECTION_META[key];
+                if (!meta || !meta.statsTable) return null;
+                const stateKey = meta.stateKey;
+                const enabled = stateKey ? this.app.state[stateKey] : true;
+                return enabled ? { key, label: meta.label } : null;
+            })
+            .filter(Boolean);
 
         if (this.app.state.currentView === CONFIG.VIEWS.YEARS) {
             return [

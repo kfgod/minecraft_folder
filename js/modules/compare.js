@@ -133,18 +133,7 @@ export class CompareManager {
         
         return {
             ...version,
-            added: {
-                blocks: DataManager.filterItems(version.added?.blocks, searchQuery, this.app.state.removeDuplicates),
-                items: DataManager.filterItems(version.added?.items, searchQuery, this.app.state.removeDuplicates),
-                mobs: DataManager.filterItems(version.added?.mobs, searchQuery, this.app.state.removeDuplicates),
-                mob_variants: DataManager.filterItems(version.added?.mob_variants, searchQuery, this.app.state.removeDuplicates),
-                effects: DataManager.filterItems(version.added?.effects, searchQuery, this.app.state.removeDuplicates),
-                enchantments: DataManager.filterItems(version.added?.enchantments, searchQuery, this.app.state.removeDuplicates),
-                advancements: DataManager.filterItems(version.added?.advancements, searchQuery, this.app.state.removeDuplicates),
-                paintings: DataManager.filterItems(version.added?.paintings, searchQuery, this.app.state.removeDuplicates),
-                biomes: DataManager.filterItems(version.added?.biomes, searchQuery, this.app.state.removeDuplicates),
-                structures: DataManager.filterItems(version.added?.structures, searchQuery, this.app.state.removeDuplicates),
-            },
+            added: DataManager.filterAllContentTypes(version, searchQuery, this.app.state.removeDuplicates),
         };
     }
 

@@ -4,6 +4,7 @@
 import { Utils } from '../utils.js';
 import { CONFIG } from '../config.js';
 import { DOMManager } from '../dom-manager.js';
+import { DETAIL_STATS_ORDER, SECTION_META } from '../section-config.js';
 
 export class NavigationManager {
     constructor(app) {
@@ -112,49 +113,19 @@ export class NavigationManager {
         const added = detailData.added || {};
         const stats = [];
 
-        // Map of section types to display labels
-        const sectionLabels = {
-            blocks: 'Blocks',
-            items: 'Items',
-            mobs: 'Mobs',
-            mob_variants: 'Mob Variants',
-            effects: 'Effects',
-            enchantments: 'Enchantments',
-            advancements: 'Advancements',
-            paintings: 'Paintings',
-            biomes: 'Biomes',
-        };
-
-        // Map section types to state keys
-        const stateKeyMap = {
-            blocks: 'showBlocks',
-            items: 'showItems',
-            mobs: 'showMobs',
-            mob_variants: 'showMobVariants',
-            effects: 'showEffects',
-            enchantments: 'showEnchantments',
-            advancements: 'showAdvancements',
-            paintings: 'showPaintings',
-            biomes: 'showBiomes',
-            structures: 'showStructures',
-        };
-
-        // Only show sections that have content and are enabled
-        Object.entries(sectionLabels).forEach(([sectionType, label]) => {
+        DETAIL_STATS_ORDER.forEach((sectionType) => {
+            const meta = SECTION_META[sectionType];
+            if (!meta || !meta.detailStats) return;
             const items = added[sectionType];
-            if (Array.isArray(items) && items.length > 0) {
-                // Check if this section type is enabled
-                const stateKey = stateKeyMap[sectionType];
-                const isEnabled = stateKey ? this.app.state[stateKey] !== false : true;
-                
-                if (isEnabled) {
-                    stats.push({
-                        label,
-                        count: items.length,
-                        sectionType,
-                    });
-                }
-            }
+            if (!Array.isArray(items) || items.length === 0) return;
+            const stateKey = meta.stateKey;
+            const isEnabled = stateKey ? this.app.state[stateKey] !== false : true;
+            if (!isEnabled) return;
+            stats.push({
+                label: meta.label,
+                count: items.length,
+                sectionType,
+            });
         });
 
         return stats;

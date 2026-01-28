@@ -3,21 +3,11 @@
  */
 import { Utils } from './utils.js';
 import { CONFIG } from './config.js';
+import { SECTION_TYPES } from './section-config.js';
 
 export class DataManager {
     // Content types supported by the application
-    static CONTENT_TYPES = [
-        'blocks',
-        'items',
-        'mobs',
-        'mob_variants',
-        'effects',
-        'enchantments',
-        'advancements',
-        'paintings',
-        'biomes',
-        'structures',
-    ];
+    static CONTENT_TYPES = SECTION_TYPES;
 
     /**
      * Filter items based on search query and duplicate removal settings
@@ -55,6 +45,21 @@ export class DataManager {
         }
 
         return filtered;
+    }
+
+    /**
+     * Filter all content types for a given entry
+     * @param {Object} entry
+     * @param {string} query
+     * @param {boolean} removeDuplicates
+     * @returns {Object}
+     */
+    static filterAllContentTypes(entry, query, removeDuplicates) {
+        const filteredAdded = {};
+        this.CONTENT_TYPES.forEach((type) => {
+            filteredAdded[type] = this.filterItems(entry.added?.[type], query, removeDuplicates);
+        });
+        return filteredAdded;
     }
 
     /**
@@ -200,14 +205,10 @@ export class DataManager {
         };
 
         // Apply filters to all content types
-        const mapped = sourceData.map((entry) => {
-            const filteredAdded = {};
-            this.CONTENT_TYPES.forEach(type => {
-                filteredAdded[type] = this.filterItems(entry.added?.[type], query, removeDuplicates);
-            });
-
-            return { ...entry, added: filteredAdded };
-        });
+        const mapped = sourceData.map((entry) => ({
+            ...entry,
+            added: this.filterAllContentTypes(entry, query, removeDuplicates),
+        }));
 
         // Filter out entries that have no visible content
         return mapped.filter((entry) => {

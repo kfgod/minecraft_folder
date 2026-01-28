@@ -5,6 +5,7 @@ import { Utils } from './utils.js';
 import { CONFIG } from './config.js';
 import { DOMManager } from './dom-manager.js';
 import { DataManager } from './data-manager.js';
+import { SECTION_META } from './section-config.js';
 import { StatisticsManager } from './modules/statistics.js';
 import { DetailViewManager } from './modules/detail-view.js';
 import { CompareManager } from './modules/compare.js';
@@ -730,6 +731,10 @@ class MinecraftUpdatesApp {
         this.setMode(isActive ? 'list' : mode);
     }
 
+    isYearView() {
+        return this.state.currentView === CONFIG.VIEWS.YEARS;
+    }
+
     getSearchQuery() {
         if (this.elements.mobileSearchBar && this.elements.mobileSearchBar.value.trim()) {
             return this.elements.mobileSearchBar.value.trim();
@@ -815,21 +820,11 @@ class MinecraftUpdatesApp {
         const query = this.getSearchQuery();
         const entryCount = data.length;
         let itemCount = 0;
-        const visibilityMap = {
-            blocks: this.state.showBlocks,
-            items: this.state.showItems,
-            mobs: this.state.showMobs,
-            mob_variants: this.state.showMobVariants,
-            effects: this.state.showEffects,
-            enchantments: this.state.showEnchantments,
-            advancements: this.state.showAdvancements,
-            paintings: this.state.showPaintings,
-            biomes: this.state.showBiomes,
-            structures: this.state.showStructures,
-        };
         data.forEach((entry) => {
             DataManager.CONTENT_TYPES.forEach((type) => {
-                if (!visibilityMap[type]) return;
+                const meta = SECTION_META[type];
+                const stateKey = meta?.stateKey;
+                if (stateKey && !this.state[stateKey]) return;
                 itemCount += entry.added?.[type]?.length || 0;
             });
         });
