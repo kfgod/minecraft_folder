@@ -203,8 +203,7 @@ export class CardRenderer {
             const remainder = items.length % CONFIG.COLUMNS_COUNT;
             const placeholdersNeeded = remainder === 0 ? 0 : CONFIG.COLUMNS_COUNT - remainder;
             if (placeholdersNeeded > 0) {
-                const placeholderContent = `<img class="inv-img" src="${CONFIG.PLACEHOLDER_IMAGE}" alt="">`;
-                const placeholder = `<div class="grid-item">${placeholderContent}</div>`;
+                const placeholder = `<div class="grid-item"></div>`;
                 for (let i = 0; i < placeholdersNeeded; i++) {
                     itemsHtml.push(placeholder);
                 }

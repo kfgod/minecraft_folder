@@ -248,10 +248,10 @@ export class MaterialGroupsManager {
         html += `<div class="material-group-element-image">`;
         if (wiki) {
             html += `<a href="${wiki}" target="_blank" rel="noopener noreferrer">`;
-            html += `<img src="${imagePath}" alt="${name}" loading="lazy" onerror="this.src='${CONFIG.PLACEHOLDER_IMAGE}'">`;
+            html += `<img src="${imagePath}" alt="${name}" loading="lazy">`;
             html += `</a>`;
         } else {
-            html += `<img src="${imagePath}" alt="${name}" loading="lazy" onerror="this.src='${CONFIG.PLACEHOLDER_IMAGE}'">`;
+            html += `<img src="${imagePath}" alt="${name}" loading="lazy"">`;
         }
         html += `</div>`;
         

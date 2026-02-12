@@ -129,7 +129,7 @@ export class Utils {
      * @returns {string}
      */
     static resolveImagePath(item) {
-        if (!item) return CONFIG.PLACEHOLDER_IMAGE;
+        if (!item) return null;
         if (item.imagePath) return CONFIG.IMAGE_BASE_PATH + item.imagePath;
         return null;
     }

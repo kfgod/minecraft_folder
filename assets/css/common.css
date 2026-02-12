@@ -346,6 +346,17 @@ body.show-borders .update-card.year {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Slot background only for blocks and items */
+.card-section[data-section="blocks"] .grid-item,
+.card-section[data-section="items"] .grid-item {
+    background-image: url('../../static/images/empty_slot.svg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6%;
+    box-sizing: border-box;
+}
+
 /* Highlight effect for scrolled-to items */
 .grid-item.highlight-item {
     transform: scale(1.15);

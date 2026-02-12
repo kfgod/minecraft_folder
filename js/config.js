@@ -9,7 +9,6 @@ export const CONFIG = {
     BASE_URL: BASE_URL,
     INDEX_FILE_PATH: '/data/file_index.json',
     IMAGE_BASE_PATH: BASE_URL + '/images',
-    PLACEHOLDER_IMAGE: 'static/images/empty_slot.png',
     ENCHANTMENT_ICON: BASE_URL + '/images/item/enchanted_book/latest.png',
     VIEWS: {
         VERSIONS: 'versions',
