@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: #555;
+    background-color: var(--surface-secondary);
     padding: 12px 14px;
     border-radius: var(--border-radius-lg);
 }
@@ -96,7 +96,7 @@
     padding: 8px 35px 8px 15px;
     border-radius: var(--border-radius-lg);
     border: none;
-    background-color: #555;
+    background-color: var(--surface-secondary);
     color: var(--text-color);
     font-size: 1em;
     width: 100%;
@@ -124,6 +124,10 @@
 
 .search-clear-btn[hidden] {
     display: none;
+}
+
+.search-clear-btn.is-visible {
+    display: block;
 }
 
 /* Navigation Panel */
@@ -244,7 +248,7 @@
 
 .nav-controls input,
 .nav-controls select {
-    background-color: #555;
+    background-color: var(--surface-secondary);
     border: none;
     color: var(--text-color);
     padding: 8px 10px;
@@ -290,7 +294,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 12px;
-    background-color: #555;
+    background-color: var(--surface-secondary);
     border: none;
     border-radius: var(--border-radius-sm);
     color: var(--text-color);
@@ -332,7 +336,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 12px;
-    background-color: #555;
+    background-color: var(--surface-secondary);
     border: none;
     border-radius: var(--border-radius-sm);
     color: var(--text-color);
@@ -564,130 +568,128 @@ body.mobile-layout.filters-open #controls-panel {
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    body.no-transition #controls-panel {
-        transition: none !important;
-        transform: translateY(100%);
-    }
+/* Mobile layout overrides — applied when JS sets body.mobile-layout (< 900px).
+   Previously this was @media (max-width: 768px) which caused a 769-899px gap
+   where mobile-layout class was active but these styles didn't apply. */
 
-    body.no-transition #nav-panel {
-        transition: none !important;
-        transform: translateY(100%);
-    }
+body.mobile-layout.no-transition #controls-panel {
+    transition: none !important;
+    transform: translateY(100%);
+}
 
-    .compare-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
+body.mobile-layout.no-transition #nav-panel {
+    transition: none !important;
+    transform: translateY(100%);
+}
 
-    .compare-mode-toggle {
-        justify-content: center;
-    }
+body.mobile-layout .compare-header {
+    flex-direction: column;
+    align-items: stretch;
+}
 
-    .screenshot-compare-btn {
-        justify-content: center;
-    }
+body.mobile-layout .screenshot-compare-btn {
+    justify-content: center;
+}
 
-    .compare-selectors {
-        grid-template-columns: 1fr;
-        padding: 14px;
-    }
+body.mobile-layout .compare-selectors {
+    grid-template-columns: 1fr;
+    padding: 14px;
+}
 
-    .compare-cards {
-        grid-template-columns: 1fr;
-    }
+body.mobile-layout .compare-cards {
+    grid-template-columns: 1fr;
+}
 
-    .compare-container {
-        gap: 14px;
-    }
+body.mobile-layout .compare-container {
+    gap: 14px;
+}
 
-    .compare-placeholder,
-    .compare-empty {
-        padding: 24px;
-        font-size: 1rem;
-    }
+body.mobile-layout .compare-placeholder,
+body.mobile-layout .compare-empty {
+    padding: 24px;
+    font-size: 1rem;
+}
 
-    .time-since-cards-versions,
-    .time-since-cards-content {
-        grid-template-columns: 1fr;
-    }
+body.mobile-layout .time-since-cards-versions,
+body.mobile-layout .time-since-cards-content {
+    grid-template-columns: 1fr;
+}
 
-    .time-since-timer-text {
-        font-size: 1rem;
-    }
+body.mobile-layout .time-since-timer-text {
+    font-size: 1rem;
+}
 
-    .time-since-container {
-        padding: 16px;
-    }
+body.mobile-layout .time-since-container {
+    padding: 16px;
+}
 
-    .time-since-card {
-        padding: 20px;
-    }
+body.mobile-layout .time-since-card {
+    padding: 20px;
+}
 
-    .time-since-title {
-        font-size: 1.8rem;
-    }
+body.mobile-layout .time-since-title {
+    font-size: 1.8rem;
+}
 
-    .time-since-subtitle {
-        font-size: 1.4rem;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
+body.mobile-layout .time-since-subtitle {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 
-    .advancement-name {
-        font-size: 0.75em;
-    }
+body.mobile-layout .advancement-name {
+    font-size: 0.75em;
+}
 
-    .update-card {
-        scroll-margin-top: 75px;
-    }
+body.mobile-layout .update-card {
+    scroll-margin-top: 75px;
+}
 
-    .statistics-view {
-        gap: 14px;
-    }
+body.mobile-layout .statistics-view {
+    gap: 14px;
+}
 
-    .statistics-card {
-        padding: 14px;
-    }
+body.mobile-layout .statistics-card {
+    padding: 14px;
+}
 
-    .stats-card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+body.mobile-layout .stats-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
 
-    .stats-chart-wrapper {
-        height: 300px;
-    }
+body.mobile-layout .stats-chart-wrapper {
+    height: 300px;
+}
 
-    .stats-table-wrapper {
-        max-width: 100%;
-    }
+body.mobile-layout .stats-table-wrapper {
+    max-width: 100%;
+}
 
-    .stats-table-card table {
-        font-size: 0.85rem;
-    }
+body.mobile-layout .stats-table-card table {
+    font-size: 0.85rem;
+}
 
-    .material-groups-container {
-        padding: 15px;
-    }
+body.mobile-layout .material-groups-container {
+    padding: 15px;
+}
 
-    .material-groups-title {
-        font-size: 2rem;
-    }
+body.mobile-layout .material-groups-title {
+    font-size: 2rem;
+}
 
-    .material-group-section-title {
-        font-size: 1.5rem;
-    }
+body.mobile-layout .material-group-section-title {
+    font-size: 1.5rem;
+}
 
-    .material-group-table-wrapper {
-        border-radius: var(--border-radius-sm);
-    }
+body.mobile-layout .material-group-table-wrapper {
+    border-radius: var(--border-radius-sm);
+}
 
-    .material-group-element-image {
-        width: 48px;
-        height: 48px;
-    }
+body.mobile-layout .material-group-element-image {
+    width: 48px;
+    height: 48px;
 }
 
 body.no-transition #nav-panel {
@@ -745,6 +747,7 @@ body.mobile-layout .mobile-top-bar {
 
 .mobile-search-container {
     flex: 1 1 auto;
+    min-width: 0;
 }
 
 .mobile-top-bar {
@@ -758,7 +761,7 @@ body.mobile-layout .mobile-top-bar {
 }
 
 .mobile-search-container #mobile-search-bar {
-    background-color: #4c4f52;
+    background-color: var(--surface-input);
     padding: 10px 38px 10px 14px;
     border-radius: var(--border-radius-lg);
     font-size: 0.95rem;
@@ -772,16 +775,22 @@ body.mobile-layout .mobile-top-bar {
     border-radius: var(--border-radius-lg);
     cursor: pointer;
     font-size: 0.85rem;
+    min-width: 72px;
+    flex-shrink: 0;
+    touch-action: manipulation;
 }
 
 .nav-fab {
-    background-color: #6b7280;
+    background-color: var(--surface-hover-color);
     color: var(--text-color);
     border: none;
     padding: 10px 12px;
     border-radius: var(--border-radius-lg);
     cursor: pointer;
     font-size: 0.85rem;
+    min-width: 56px;
+    flex-shrink: 0;
+    touch-action: manipulation;
 }
 
 body.mobile-layout.compare-mode .nav-fab,
@@ -854,30 +863,6 @@ body.desktop-layout {
     gap: 20px;
 }
 
-.compare-mode-toggle {
-    display: flex;
-    gap: 10px;
-}
-
-.compare-mode-btn {
-    padding: 8px 20px;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    background-color: #555;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s ease;
-}
-
-.compare-mode-btn:hover {
-    background-color: #666;
-}
-
-.compare-mode-btn.active {
-    background-color: var(--accent-color);
-}
-
 .screenshot-compare-btn {
     display: flex;
     align-items: center;
@@ -931,7 +916,7 @@ body.desktop-layout {
     padding: 10px;
     border-radius: var(--border-radius-sm);
     border: none;
-    background-color: #555;
+    background-color: var(--surface-secondary);
     color: var(--text-color);
     font-size: 1em;
     cursor: pointer;
@@ -980,6 +965,10 @@ body.desktop-layout {
     background-color: var(--surface-color);
     border-radius: var(--border-radius-lg);
     margin: 0;
+}
+
+.empty-state.is-error {
+    color: red;
 }
 
 /* Statistics View */
@@ -1229,89 +1218,6 @@ body.desktop-layout {
     display: inline-block;
 }
 
-.wiki-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: inline-block;
-    text-align: center;
-    margin-top: 4px;
-}
-
-.detail-header .wiki-link {
-    margin-top: 0;
-    justify-self: end;
-}
-
-.wiki-link:hover {
-    text-decoration: underline;
-}
-
-.detail-meta-card {
-    background-color: var(--surface-color);
-    border-radius: var(--border-radius-lg);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.detail-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-}
-
-.detail-meta dt {
-    margin: 0;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.detail-meta dd {
-    margin: 0;
-    font-weight: 600;
-}
-
-.detail-counts-card {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.detail-counts {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-}
-
-.detail-counts li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #555;
-    padding: 14px 16px;
-    border-radius: var(--border-radius-sm);
-    gap: 6px;
-}
-
-.detail-counts li span {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.detail-counts li strong {
-    font-size: 1.4rem;
-    color: var(--text-color);
-}
-
 /* Time Since Mode Styles */
 .time-since-container {
     padding: 20px 60px;
@@ -1478,24 +1384,6 @@ a.time-since-card:visited {
     text-align: center;
     line-height: 1.6;
     word-wrap: break-word;
-}
-
-.time-since-card-wiki {
-    display: inline-block;
-    text-align: center;
-    padding: 12px 24px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-sm);
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s;
-    margin-top: auto;
-}
-
-.time-since-card-wiki:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    text-decoration: none;
 }
 
 @media (max-width: 1400px) {
@@ -1687,3 +1575,21 @@ a.time-since-card:visited {
     font-style: italic;
 }
 
+/* Load error + retry (static site) */
+.app-error-panel {
+    padding: 1.5rem;
+    max-width: 32rem;
+    margin: 2rem auto;
+    background: var(--surface-color, #2a2a2a);
+    border-radius: var(--border-radius-lg, 8px);
+    text-align: center;
+}
+
+.app-error-text {
+    margin: 0 0 1rem;
+    color: #f87171;
+}
+
+.app-error-retry {
+    min-width: 8rem;
+}

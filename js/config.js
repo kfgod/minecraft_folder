@@ -3,8 +3,8 @@
  */
 
 // Example: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main' or '../minecraft_data'
-const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
-// const BASE_URL = '../minecraft_data';
+// const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
+const BASE_URL = '../minecraft_data';
 export const CONFIG = {
     BASE_URL: BASE_URL,
     INDEX_FILE_PATH: '/data/file_index.json',
@@ -21,6 +21,8 @@ export const CONFIG = {
     RESIZE_DEBOUNCE_DELAY: 100,
     TRANSITION_DELAY: 50,
     MOBILE_BREAKPOINT: 900,
+    /** Batch card DOM inserts above this count to avoid long main-thread blocks */
+    LIST_RENDER_CHUNK_SIZE: 48,
     CHART_COLORS: {
         BLOCKS: 'rgba(255, 99, 132, 1)',
         BLOCKS_BG: 'rgba(255, 99, 132, 0.2)',
@@ -63,6 +65,7 @@ export const CONFIG = {
         SHOW_BIOMES_CHECKBOX: '#show-biomes-checkbox',
         SHOW_STRUCTURES_CHECKBOX: '#show-structures-checkbox',
         SHOW_BORDERS_CHECKBOX: '#show-borders-checkbox',
+        SHOW_NOTABLE_CHANGES_CHECKBOX: '#show-notable-changes-checkbox',
         NAV_PANEL: '#nav-panel',
         NAV_TOGGLE_BTN: '#nav-toggle-btn',
         OVERLAY: '#overlay',

@@ -54,17 +54,6 @@ export class Utils {
     }
 
     /**
-     * Check if the current layout should be mobile
-     * @param {number} availableSpace - Available space for navigation panel
-     * @param {number} navPanelWidth - Width of navigation panel
-     * @param {number} layoutGap - Gap between main content and nav panel
-     * @returns {boolean} True if should be mobile layout
-     */
-    static shouldUseMobileLayout(availableSpace, navPanelWidth, layoutGap) {
-        return availableSpace < navPanelWidth + layoutGap;
-    }
-
-    /**
      * Parse a date string, handling cases where only year is provided
      * @param {string} dateString - The date string to parse
      * @returns {Date} The parsed date object

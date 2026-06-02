@@ -1,8 +1,6 @@
 /**
  * DOM management utilities
  */
-import { CONFIG } from './config.js';
-
 export class DOMManager {
     /**
      * Get DOM element by selector
@@ -35,8 +33,6 @@ export class DOMManager {
         Object.entries(attributes).forEach(([key, value]) => {
             if (key === 'className') {
                 element.className = value;
-            } else if (key === 'innerHTML') {
-                element.innerHTML = value;
             } else {
                 element.setAttribute(key, value);
             }
@@ -125,12 +121,15 @@ export class DOMManager {
     }
 
     /**
-     * Set element visibility
+     * Set element visibility by toggling inline display style.
+     * When showing (visible=true) the inline style is cleared so the element's
+     * CSS-defined display value takes effect (e.g. flex, inline-block, etc.).
      * @param {HTMLElement} element - Target element
      * @param {boolean} visible - Whether to show or hide
      */
     static setVisibility(element, visible) {
-        element.style.display = visible ? 'block' : 'none';
+        if (!element) return;
+        element.style.display = visible ? '' : 'none';
     }
 
     /**
@@ -193,65 +192,4 @@ export class DOMManager {
         });
     }
 
-    /**
-     * Show tooltip at element position with smart positioning
-     * Automatically positions tooltip above or below target based on available space
-     * @param {HTMLElement} tooltip - Tooltip element to show
-     * @param {HTMLElement} target - Target element to position tooltip near
-     * @param {string} text - Tooltip text (can include health data in format "name|health:value")
-     */
-    static showTooltip(tooltip, target, text) {
-        if (!tooltip || !target || !text) return;
-
-        // Parse tooltip text for health information (special format for mobs)
-        if (text.includes('|health:')) {
-            const [name, healthPart] = text.split('|health:');
-            const healthValue = healthPart;
-            tooltip.innerHTML = `${name}<br><span class="tooltip-health-text"><img src="static/images/icons/health_icon.png" alt="Health" class="tooltip-health-icon">×${healthValue}</span>`;
-        } else {
-            tooltip.textContent = text;
-        }
-        tooltip.style.display = 'block';
-
-        // Get element positions
-        const targetRect = target.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
-
-        // Calculate horizontal position (centered above/below target)
-        let left = targetRect.left + targetRect.width / 2 - tooltipRect.width / 2;
-
-        // Keep tooltip within viewport horizontally
-        const padding = 10;
-        if (left < padding) {
-            left = padding;
-        } else if (left + tooltipRect.width > window.innerWidth - padding) {
-            left = window.innerWidth - tooltipRect.width - padding;
-        }
-
-        // Calculate vertical position (prefer above target)
-        let top = targetRect.top - tooltipRect.height - 8;
-
-        // If tooltip would go above viewport, show it below target instead
-        if (top < padding) {
-            top = targetRect.bottom + 8;
-            tooltip.classList.add('tooltip-below');
-        } else {
-            tooltip.classList.remove('tooltip-below');
-        }
-
-        // Apply calculated position
-        tooltip.style.left = `${left}px`;
-        tooltip.style.top = `${top}px`;
-        tooltip.classList.add('visible');
-    }
-
-    /**
-     * Hide tooltip
-     * @param {HTMLElement} tooltip - Tooltip element
-     */
-    static hideTooltip(tooltip) {
-        if (!tooltip) return;
-        tooltip.classList.remove('visible', 'tooltip-below');
-        tooltip.style.display = 'none';
-    }
 }

@@ -15,6 +15,7 @@ export const SECTION_META = {
     blocks: {
         label: 'Blocks',
         stateKey: 'showBlocks',
+        checkboxElementKey: 'showBlocksCheckbox',
         gridClass: null,
         usePlaceholders: true,
         detailStats: true,
@@ -23,6 +24,7 @@ export const SECTION_META = {
     items: {
         label: 'Items',
         stateKey: 'showItems',
+        checkboxElementKey: 'showItemsCheckbox',
         gridClass: null,
         usePlaceholders: true,
         detailStats: true,
@@ -31,6 +33,7 @@ export const SECTION_META = {
     mobs: {
         label: 'Mobs',
         stateKey: 'showMobs',
+        checkboxElementKey: 'showMobsCheckbox',
         gridClass: 'mobs-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -39,6 +42,7 @@ export const SECTION_META = {
     mob_variants: {
         label: 'Mob Variants',
         stateKey: 'showMobVariants',
+        checkboxElementKey: 'showMobVariantsCheckbox',
         gridClass: 'mobs-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -47,6 +51,7 @@ export const SECTION_META = {
     effects: {
         label: 'Effects',
         stateKey: 'showEffects',
+        checkboxElementKey: 'showEffectsCheckbox',
         gridClass: 'effects-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -55,6 +60,7 @@ export const SECTION_META = {
     enchantments: {
         label: 'Enchantments',
         stateKey: 'showEnchantments',
+        checkboxElementKey: 'showEnchantmentsCheckbox',
         gridClass: 'enchantments-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -63,6 +69,7 @@ export const SECTION_META = {
     advancements: {
         label: 'Advancements',
         stateKey: 'showAdvancements',
+        checkboxElementKey: 'showAdvancementsCheckbox',
         gridClass: 'advancements-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -71,6 +78,7 @@ export const SECTION_META = {
     paintings: {
         label: 'Paintings',
         stateKey: 'showPaintings',
+        checkboxElementKey: 'showPaintingsCheckbox',
         gridClass: 'paintings-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -79,6 +87,7 @@ export const SECTION_META = {
     biomes: {
         label: 'Biomes',
         stateKey: 'showBiomes',
+        checkboxElementKey: 'showBiomesCheckbox',
         gridClass: 'biomes-grid',
         usePlaceholders: false,
         detailStats: true,
@@ -87,6 +96,7 @@ export const SECTION_META = {
     structures: {
         label: 'Structures',
         stateKey: 'showStructures',
+        checkboxElementKey: 'showStructuresCheckbox',
         gridClass: null,
         usePlaceholders: false,
         detailStats: false,
