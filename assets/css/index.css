@@ -1548,6 +1548,47 @@ a.time-since-card:visited {
     table-layout: auto;
 }
 
+.material-group-table-header-cell {
+    height: 28px;
+    min-width: var(--material-group-cell-size);
+    max-width: var(--material-group-cell-size);
+    padding: 0 6px !important;
+    text-align: center;
+    vertical-align: middle;
+    border: none !important;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: default;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.material-group-table-header-cell-material {
+    position: sticky;
+    left: 0;
+    z-index: 6;
+    width: var(--material-group-cell-size);
+    min-width: var(--material-group-cell-size);
+    max-width: var(--material-group-cell-size);
+    background-color: var(--surface-color);
+}
+
+.material-group-table-header-cell-group {
+    background-color: var(--card-header-bg);
+    color: var(--card-text-color);
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.material-group-table-header-cell-form {
+    background-color: var(--material-group-row-even);
+    color: var(--muted-text-color);
+    font-size: 0.58rem;
+    font-weight: 600;
+}
+
 .material-group-table-cell {
     padding: 0 !important;
     margin: 0 !important;

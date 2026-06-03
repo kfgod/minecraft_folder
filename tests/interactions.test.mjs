@@ -102,6 +102,48 @@ test('material groups interaction: keeps empty cells without synthetic fill cell
     assert.equal(findByClass(root, 'material-group-table-cell-fill'), null);
 });
 
+test('material groups interaction: renders generated family headers', () => {
+    installDomStub();
+    const root = document.createElement('div');
+    renderMaterialGroupsView(root, {
+        content: [{
+            name: 'Generated Families',
+            generated: 'families',
+            groups: [{
+                material: { name: 'Demo', identifier: 'demo' },
+                items: {
+                    initial_stairs: null,
+                    initial_slab: { name: 'Demo Slab', identifier: 'demo_slab' },
+                    polished_base: { name: 'Polished Demo', identifier: 'polished_demo' },
+                    polished_stairs: { name: 'Polished Demo Stairs', identifier: 'polished_demo_stairs' },
+                    special_button: { name: 'Demo Button', identifier: 'demo_button' },
+                },
+            }, {
+                material: { name: 'Other', identifier: 'other' },
+                items: {
+                    mossy_base: { name: 'Mossy Other', identifier: 'mossy_other' },
+                    mossy_stairs: { name: 'Mossy Other Stairs', identifier: 'mossy_other_stairs' },
+                },
+            }],
+        }],
+    }, { isSectionCollapsed: () => false });
+
+    const headerRows = findAll(root, (node) => node.tagName === 'thead')[0].children;
+    const familyTypeCells = headerRows[0].children.filter((node) => node.tagName === 'th');
+    const formCells = headerRows[1].children.filter((node) => node.tagName === 'th');
+
+    assert.equal(familyTypeCells[0].textContent, 'Family');
+    assert.equal(familyTypeCells[1].textContent, 'Initial');
+    assert.equal(familyTypeCells[1].colSpan, 2);
+    assert.equal(familyTypeCells[2].textContent, 'Polished');
+    assert.equal(familyTypeCells[2].colSpan, 2);
+    assert.equal(familyTypeCells[3].textContent, 'Mossy');
+    assert.equal(familyTypeCells[3].colSpan, 2);
+    assert.equal(familyTypeCells[4].textContent, 'Special');
+    assert.equal(familyTypeCells[4].colSpan, 1);
+    assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button']);
+});
+
 test('statistics interaction: header click calls sort handler with column key', () => {
     installDomStub();
     const thead = document.createElement('thead');

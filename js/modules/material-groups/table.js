@@ -1,11 +1,25 @@
 import { Utils } from '../../utils.js';
 import { MATERIAL_GROUPS_CLASSES, MATERIAL_GROUPS_DATA } from './constants.js';
 
+const GENERATED_FAMILIES_KIND = 'families';
+const GENERATED_FAMILY_TYPE_ORDER = ['initial', 'polished', 'brick', 'mossy', 'special'];
+const GENERATED_FORM_ORDER = ['base', 'stairs', 'slab', 'wall', 'cracked', 'button', 'pressure_plate', 'chiseled'];
+const GENERATED_FORM_SUFFIXES = [
+    'pressure_plate',
+    'base',
+    'stairs',
+    'slab',
+    'wall',
+    'button',
+    'cracked',
+    'chiseled',
+];
+
 export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     const groups = item.groups || [];
     if (groups.length === 0) return null;
 
-    const itemKeysOrder = getItemKeysOrder(groups);
+    const itemKeysOrder = getItemKeysOrder(groups, { sortGeneratedFamilies: isGeneratedFamiliesGroup(item) });
     if (itemKeysOrder.length === 0) return null;
 
     const sectionId = `material-group-${index}`;
@@ -35,6 +49,9 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
 
     const table = document.createElement('table');
     table.className = MATERIAL_GROUPS_CLASSES.TABLE;
+    if (isGeneratedFamiliesGroup(item)) {
+        table.appendChild(createGeneratedFamiliesHeader(itemKeysOrder));
+    }
 
     const tbody = document.createElement('tbody');
     groups.forEach((group) => {
@@ -48,7 +65,91 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     return section;
 }
 
-function getItemKeysOrder(groups) {
+function isGeneratedFamiliesGroup(item) {
+    return item?.generated === GENERATED_FAMILIES_KIND;
+}
+
+function createGeneratedFamiliesHeader(itemKeysOrder) {
+    const header = document.createElement('thead');
+    const familyTypeRow = document.createElement('tr');
+    const formRow = document.createElement('tr');
+
+    const materialHeader = document.createElement('th');
+    materialHeader.className = [
+        MATERIAL_GROUPS_CLASSES.HEADER_CELL,
+        MATERIAL_GROUPS_CLASSES.HEADER_CELL_MATERIAL,
+    ].join(' ');
+    materialHeader.rowSpan = 2;
+    materialHeader.textContent = 'Family';
+    familyTypeRow.appendChild(materialHeader);
+
+    getFamilyTypeSpans(itemKeysOrder).forEach((span) => {
+        const cell = document.createElement('th');
+        cell.className = [
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL,
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL_GROUP,
+        ].join(' ');
+        cell.colSpan = span.count;
+        cell.textContent = formatGeneratedLabel(span.familyType);
+        familyTypeRow.appendChild(cell);
+    });
+
+    itemKeysOrder.forEach((itemKey) => {
+        const cell = document.createElement('th');
+        const { form } = parseGeneratedItemKey(itemKey);
+        cell.className = [
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL,
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL_FORM,
+        ].join(' ');
+        cell.textContent = formatGeneratedLabel(form);
+        formRow.appendChild(cell);
+    });
+
+    header.append(familyTypeRow, formRow);
+    return header;
+}
+
+function getFamilyTypeSpans(itemKeysOrder) {
+    const spans = [];
+    itemKeysOrder.forEach((itemKey) => {
+        const { familyType } = parseGeneratedItemKey(itemKey);
+        const lastSpan = spans.at(-1);
+        if (lastSpan?.familyType === familyType) {
+            lastSpan.count += 1;
+            return;
+        }
+        spans.push({ familyType, count: 1 });
+    });
+    return spans;
+}
+
+function parseGeneratedItemKey(itemKey) {
+    const normalizedKey = String(itemKey || '');
+    const suffix = GENERATED_FORM_SUFFIXES.find((form) => normalizedKey.endsWith(`_${form}`));
+    if (suffix) {
+        return {
+            familyType: normalizedKey.slice(0, -(suffix.length + 1)) || 'initial',
+            form: suffix,
+        };
+    }
+
+    const lastSeparatorIndex = normalizedKey.lastIndexOf('_');
+    if (lastSeparatorIndex === -1) {
+        return { familyType: 'initial', form: normalizedKey };
+    }
+    return {
+        familyType: normalizedKey.slice(0, lastSeparatorIndex) || 'initial',
+        form: normalizedKey.slice(lastSeparatorIndex + 1),
+    };
+}
+
+function formatGeneratedLabel(value) {
+    return String(value || '')
+        .replace(/_/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function getItemKeysOrder(groups, { sortGeneratedFamilies = false } = {}) {
     const itemKeysOrder = [];
     const seenKeys = new Set();
 
@@ -61,7 +162,28 @@ function getItemKeysOrder(groups) {
         });
     });
 
-    return itemKeysOrder;
+    if (!sortGeneratedFamilies) return itemKeysOrder;
+    return itemKeysOrder.sort(compareGeneratedFamilyKeys);
+}
+
+function compareGeneratedFamilyKeys(leftKey, rightKey) {
+    const left = parseGeneratedItemKey(leftKey);
+    const right = parseGeneratedItemKey(rightKey);
+    return (
+        compareByOrder(left.familyType, right.familyType, GENERATED_FAMILY_TYPE_ORDER)
+        || compareByOrder(left.form, right.form, GENERATED_FORM_ORDER)
+        || leftKey.localeCompare(rightKey, undefined, { numeric: true, sensitivity: 'base' })
+    );
+}
+
+function compareByOrder(left, right, order) {
+    const leftIndex = order.indexOf(left);
+    const rightIndex = order.indexOf(right);
+    const normalizedLeftIndex = leftIndex === -1 ? order.length : leftIndex;
+    const normalizedRightIndex = rightIndex === -1 ? order.length : rightIndex;
+    if (normalizedLeftIndex !== normalizedRightIndex) return normalizedLeftIndex - normalizedRightIndex;
+    if (leftIndex !== -1 && rightIndex !== -1) return 0;
+    return String(left).localeCompare(String(right), undefined, { numeric: true, sensitivity: 'base' });
 }
 
 function createGroupRow(group, allItemKeys) {
