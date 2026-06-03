@@ -14,7 +14,10 @@ export async function renderStatisticsChart({
     await ensureChartJs();
     const Chart = globalThis.Chart;
 
-    const statsData = isYearView ? statisticsState.yearsStats : statisticsState.versionsStats;
+    const statsData = getChartStatsData(
+        isYearView ? statisticsState.yearsStats : statisticsState.versionsStats,
+        isYearView,
+    );
     if (!statsData || !statsData.length) {
         destroyChart();
         setPlaceholder('No statistics data available.', true);
@@ -59,7 +62,29 @@ export async function renderStatisticsChart({
     setPlaceholder('', false);
 }
 
-function calculateChartData(stats, labelKey, cumulative = true) {
+export function getChartStatsData(stats, isYearView) {
+    const source = Array.isArray(stats) ? stats.slice() : [];
+    if (isYearView) {
+        return source.sort((a, b) => Number(a.year) - Number(b.year));
+    }
+
+    return source.sort((a, b) => {
+        const dateA = Date.parse(a.release_date || '');
+        const dateB = Date.parse(b.release_date || '');
+        const hasDateA = Number.isFinite(dateA);
+        const hasDateB = Number.isFinite(dateB);
+
+        if (hasDateA && hasDateB) {
+            return dateA - dateB;
+        }
+        if (hasDateA !== hasDateB) {
+            return hasDateA ? -1 : 1;
+        }
+        return 0;
+    });
+}
+
+export function calculateChartData(stats, labelKey, cumulative = true) {
     const labels = [];
     const seriesData = Object.fromEntries(CHART_SERIES.map(({ key }) => [key, []]));
 
