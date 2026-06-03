@@ -143,6 +143,8 @@ function normalizeBackgroundColor(backgroundColor, isBarChart) {
 }
 
 function buildChartOptions(isBarChart) {
+    const themeColors = getChartThemeColors();
+
     return {
         responsive: true,
         maintainAspectRatio: false,
@@ -150,19 +152,27 @@ function buildChartOptions(isBarChart) {
             y: {
                 beginAtZero: true,
                 stacked: isBarChart,
-                ticks: { color: CONFIG.CHART_COLORS.TEXT },
-                grid: { color: CONFIG.CHART_COLORS.GRID },
+                ticks: { color: themeColors.text },
+                grid: { color: themeColors.grid },
             },
             x: {
                 stacked: isBarChart,
-                ticks: { color: CONFIG.CHART_COLORS.TEXT },
-                grid: { color: CONFIG.CHART_COLORS.GRID },
+                ticks: { color: themeColors.text },
+                grid: { color: themeColors.grid },
             },
         },
         plugins: {
             legend: {
-                labels: { color: CONFIG.CHART_COLORS.TEXT },
+                labels: { color: themeColors.text },
             },
         },
+    };
+}
+
+function getChartThemeColors() {
+    const styles = getComputedStyle(document.body);
+    return {
+        text: styles.getPropertyValue('--chart-text-color').trim() || CONFIG.CHART_COLORS.TEXT,
+        grid: styles.getPropertyValue('--chart-grid-color').trim() || CONFIG.CHART_COLORS.GRID,
     };
 }

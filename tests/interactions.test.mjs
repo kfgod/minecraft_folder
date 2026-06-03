@@ -1,12 +1,15 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { CONFIG } from '../js/config.js';
+import { APP_MODES } from '../js/app-modes.js';
+import { AppActions } from '../js/app/actions.js';
 import { attachContentController } from '../js/controllers/content-controller.js';
 import { attachCompareHandlers } from '../js/modules/compare/controller.js';
 import { renderCompareShell, getCompareElements } from '../js/modules/compare/view.js';
 import { attachMaterialGroupToggleHandlers } from '../js/modules/material-groups/controller.js';
 import { renderMaterialGroupsView } from '../js/modules/material-groups/view.js';
 import { renderStatisticsContentTable } from '../js/modules/statistics/content-table.js';
+import { syncThemeUi } from '../js/ui/mode-ui.js';
 import { showTooltip } from '../js/ui/tooltip.js';
 import { findAll, findByClass, flattenText, installDomStub } from './helpers/dom-stub.mjs';
 
@@ -66,6 +69,37 @@ test('material groups interaction: click toggles collapsed state', () => {
     assert.equal(stored.collapsed, true);
     assert.equal(title.classList.contains('collapsed'), true);
     assert.equal(table.classList.contains('collapsed'), true);
+});
+
+test('material groups interaction: keeps empty cells without synthetic fill cell', () => {
+    installDomStub();
+    const root = document.createElement('div');
+    renderMaterialGroupsView(root, {
+        content: [{
+            name: 'Tiered Materials',
+            groups: [
+                {
+                    material: { name: 'Wood', identifier: 'wood' },
+                    items: {
+                        axe: { name: 'Wooden Axe', identifier: 'wooden_axe' },
+                        sword: { name: 'Wooden Sword', identifier: 'wooden_sword' },
+                    },
+                },
+                {
+                    material: { name: 'Leather', identifier: 'leather' },
+                    items: {
+                        boots: { name: 'Leather Boots', identifier: 'leather_boots' },
+                    },
+                },
+            ],
+        }],
+    }, { isSectionCollapsed: () => false });
+
+    const rows = findAll(root, (node) => node.tagName === 'tr');
+    const firstRowCells = rows[0].children.filter((node) => node.tagName === 'td');
+
+    assert.equal(firstRowCells.length, 4);
+    assert.equal(findByClass(root, 'material-group-table-cell-fill'), null);
 });
 
 test('statistics interaction: header click calls sort handler with column key', () => {
@@ -154,4 +188,61 @@ test('tooltip interaction: health tooltip renders icon text and below state', ()
     assert.ok(findByClass(tooltip, 'tooltip-health-icon'));
     assert.equal(tooltip.classList.contains('tooltip-below'), true);
     assert.equal(tooltip.classList.contains('visible'), true);
+});
+
+test('theme interaction: syncs body class and button pressed state', () => {
+    installDomStub();
+    const body = document.createElement('body');
+    const dark = document.createElement('button');
+    const light = document.createElement('button');
+    const app = {
+        state: { theme: 'light' },
+        elements: {
+            body,
+            themeDarkBtn: dark,
+            themeLightBtn: light,
+        },
+    };
+
+    syncThemeUi(app);
+
+    assert.equal(body.classList.contains('theme-light'), true);
+    assert.equal(body.classList.contains('theme-dark'), false);
+    assert.equal(dark.attributes['aria-pressed'], 'false');
+    assert.equal(light.attributes['aria-pressed'], 'true');
+    assert.equal(light.classList.contains('active'), true);
+});
+
+test('theme interaction: refreshes statistics chart colors when theme changes', async () => {
+    let chartRenderView = null;
+    let synced = false;
+    let saved = false;
+
+    const app = {
+        state: {
+            theme: 'dark',
+            activeMode: APP_MODES.STATS,
+            currentView: CONFIG.VIEWS.VERSIONS,
+        },
+        syncViewToggle() {
+            synced = true;
+        },
+        saveState() {
+            saved = true;
+        },
+        async ensureStatisticsManager() {
+            return {
+                async renderChart(isYearView) {
+                    chartRenderView = isYearView;
+                },
+            };
+        },
+    };
+
+    await new AppActions(app).setTheme('light');
+
+    assert.equal(app.state.theme, 'light');
+    assert.equal(synced, true);
+    assert.equal(saved, true);
+    assert.equal(chartRenderView, false);
 });

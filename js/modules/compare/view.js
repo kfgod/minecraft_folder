@@ -12,12 +12,6 @@ export function renderCompareEmpty(container, summary, { isYearView = false } = 
     empty.className = COMPARE_CLASSES.EMPTY;
     empty.textContent = isYearView ? 'Select two years to compare' : 'Select two versions to compare';
     container.replaceChildren(empty);
-
-    if (summary) {
-        summary.textContent = isYearView
-            ? 'Compare mode: select two years to view differences.'
-            : 'Compare mode: select two versions to view differences.';
-    }
 }
 
 export function renderCompareCards(container, card1, card2) {
@@ -29,12 +23,7 @@ export function renderCompareCards(container, card1, card2) {
 
 export function renderCompareSummary(summary, name1, name2) {
     if (!summary) return;
-
-    const first = document.createElement('strong');
-    first.textContent = name1;
-    const second = document.createElement('strong');
-    second.textContent = name2;
-    summary.replaceChildren('Comparing ', first, ' with ', second, '.');
+    summary.replaceChildren();
 }
 
 export function getCompareElements(root = document) {
@@ -79,10 +68,6 @@ function createCompareShell({ dataSource, selections, isYearView }) {
     screenshotButton.append(icon, ' Save Comparison');
     header.append(title, screenshotButton);
 
-    const summary = document.createElement('div');
-    summary.id = COMPARE_DOM.SUMMARY_ID;
-    summary.className = COMPARE_CLASSES.SUMMARY;
-
     const selectors = document.createElement('div');
     selectors.className = COMPARE_CLASSES.SELECTORS;
     selectors.append(
@@ -94,7 +79,7 @@ function createCompareShell({ dataSource, selections, isYearView }) {
     cards.className = COMPARE_CLASSES.CARDS;
     cards.id = COMPARE_DOM.CONTAINER_ID;
 
-    root.append(header, summary, selectors, cards);
+    root.append(header, selectors, cards);
     return root;
 }
 

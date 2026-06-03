@@ -43,6 +43,8 @@ const ELEMENT_SELECTORS = {
     filtersPopularBlocksBtn: '#filters-popular-blocks',
     filtersPopularItemsBtn: '#filters-popular-items',
     filtersPopularMobsBtn: '#filters-popular-mobs',
+    themeDarkBtn: '#theme-dark-btn',
+    themeLightBtn: '#theme-light-btn',
     navSearch: '#nav-search',
     navJump: '#nav-jump',
 };

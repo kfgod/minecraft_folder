@@ -13,6 +13,7 @@ export const MODE_UI_CONFIG = [
 
 export function syncModeUi(app) {
     const mode = app.state.activeMode;
+    syncThemeUi(app);
 
     if (app.elements.toggleSwitch) {
         const activeElement = app.elements.toggleSwitch.querySelector(`.${CONFIG.CSS_CLASSES.ACTIVE}`);
@@ -37,6 +38,23 @@ export function syncModeUi(app) {
     });
 
     syncPopularButtons(app);
+}
+
+export function syncThemeUi(app) {
+    const theme = app.state.theme === 'light' ? 'light' : 'dark';
+    app.state.theme = theme;
+    app.elements.body.classList.toggle('theme-light', theme === 'light');
+    app.elements.body.classList.toggle('theme-dark', theme === 'dark');
+
+    [
+        [app.elements.themeDarkBtn, 'dark'],
+        [app.elements.themeLightBtn, 'light'],
+    ].forEach(([button, buttonTheme]) => {
+        if (!button) return;
+        const active = theme === buttonTheme;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+    });
 }
 
 export function syncCheckboxes(app) {

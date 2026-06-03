@@ -4,15 +4,25 @@
 }
 
 :root {
-    --bg-color: #3c3f41;
+    --bg-color: #0f0f12;
     --text-color: #f4f4f9;
-    --surface-color: #4a4d4f;
-    --surface-hover-color: #5f6366;
-    --surface-secondary: #555;
-    --surface-elevated: #666;
-    --surface-row-alt: #4f5254;
-    --surface-input: #4c4f52;
-    --accent-color: #007bff;
+    --muted-text-color: rgba(244, 244, 249, 0.68);
+    --panel-border-color: rgba(235, 238, 245, 0.14);
+    --surface-color: #18191d;
+    --surface-hover-color: #2a2c32;
+    --surface-secondary: #121317;
+    --surface-elevated: #32343b;
+    --surface-row-alt: #1d1e23;
+    --surface-input: #141519;
+    --accent-color: #2f7cff;
+    --active-control-text-color: #ffffff;
+    --chart-text-color: #f4f4f9;
+    --chart-grid-color: rgba(255, 255, 255, 0.12);
+    --material-group-row-odd: #17181d;
+    --material-group-row-even: #202127;
+    --link-button-bg: rgba(255, 255, 255, 0.04);
+    --link-button-hover-bg: rgba(47, 124, 255, 0.16);
+    --panel-shadow: 0 18px 40px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.035);
     --card-bg-color: #c6c6c6;
     --card-text-color: #3f3f3f;
     --card-header-bg: #8b8b8b;
@@ -37,6 +47,28 @@
     --grid-gap-xs: 4px;
     --grid-gap-sm: 6px;
     --grid-gap-md: 8px;
+}
+
+body.theme-light {
+    --bg-color: #edf2f7;
+    --text-color: #1d2735;
+    --muted-text-color: rgba(29, 39, 53, 0.68);
+    --panel-border-color: rgba(61, 82, 108, 0.18);
+    --surface-color: #ffffff;
+    --surface-hover-color: #dfe8f3;
+    --surface-secondary: #f3f6fa;
+    --surface-elevated: #d6e0ec;
+    --surface-row-alt: #f7f9fc;
+    --surface-input: #ffffff;
+    --accent-color: #1f68d5;
+    --active-control-text-color: #ffffff;
+    --chart-text-color: #243244;
+    --chart-grid-color: rgba(31, 45, 61, 0.16);
+    --material-group-row-odd: #edf4fb;
+    --material-group-row-even: #dce8f5;
+    --link-button-bg: #ffffff;
+    --link-button-hover-bg: #e9f1ff;
+    --panel-shadow: 0 18px 36px rgba(38, 57, 77, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 html {
@@ -105,6 +137,7 @@ button,
 
 .toggle-switch-label.active {
     background-color: var(--accent-color);
+    color: var(--active-control-text-color);
 }
 
 .toggle-switch.disabled {
@@ -183,14 +216,14 @@ button,
     cursor: pointer;
     font-family: 'Minecraftia', sans-serif;
     box-shadow: none;
-    background-color: #fff;
+    background-color: var(--link-button-bg);
     color: var(--accent-color);
     transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .link-button.active {
     background-color: var(--accent-color);
-    color: var(--text-color);
+    color: var(--active-control-text-color);
     border-color: var(--accent-color);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
 }
@@ -198,7 +231,7 @@ button,
 .link-button:not(.active):hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    background-color: #f3f6ff;
+    background-color: var(--link-button-hover-bg);
 }
 
 .link-button.active:hover {
@@ -228,6 +261,7 @@ button,
 .pill-button.active {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+    color: var(--active-control-text-color);
 }
 
 .help-tooltip {

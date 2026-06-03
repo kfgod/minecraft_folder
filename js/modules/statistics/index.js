@@ -110,18 +110,12 @@ export class StatisticsManager {
 
         const chartTitle = isYearView ? 'Growth by Year' : 'Growth by Version';
         const tableTitle = isYearView ? 'Content by Year' : 'Content by Version';
-        const summaryEl = document.getElementById('stats-summary');
-
         if (this.elements.viewTitle) {
             this.elements.viewTitle.textContent = chartTitle;
         }
 
         if (this.elements.tableTitle) {
             this.elements.tableTitle.textContent = tableTitle;
-        }
-        if (summaryEl) {
-            const count = isYearView ? this.state.yearsStats?.length || 0 : this.state.versionsStats?.length || 0;
-            renderStatsSummary(summaryEl, count, isYearView);
         }
 
         await this.renderChart(isYearView);
@@ -189,10 +183,4 @@ export class StatisticsManager {
         if (!yearValue) return null;
         return Utils.generateCardId({ name: String(yearValue) });
     }
-}
-
-function renderStatsSummary(summaryEl, count, isYearView) {
-    const countEl = document.createElement('strong');
-    countEl.textContent = count;
-    summaryEl.replaceChildren('Statistics for ', countEl, ` ${isYearView ? 'years' : 'versions'}.`);
 }

@@ -28,10 +28,6 @@ function createTimeSinceView(data) {
     title.className = 'time-since-title';
     title.textContent = 'Time Since Last Update';
 
-    const summary = document.createElement('div');
-    summary.className = 'mode-summary';
-    summary.textContent = 'Live timers are updated every second.';
-
     const versionCards = document.createElement('div');
     versionCards.className = 'time-since-cards time-since-cards-versions';
     if (last_drop) versionCards.appendChild(createVersionCard('drop', last_drop));
@@ -47,7 +43,7 @@ function createTimeSinceView(data) {
         contentCards.appendChild(createContentCard(item.type, item.data));
     });
 
-    root.append(title, summary, versionCards, contentTitle, contentCards);
+    root.append(title, versionCards, contentTitle, contentCards);
     return root;
 }
 

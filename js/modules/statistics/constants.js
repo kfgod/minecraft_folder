@@ -1,5 +1,4 @@
 export const STATISTICS_DOM = Object.freeze({
-    SUMMARY_ID: 'stats-summary',
     VIEW_TITLE_ID: 'stats-view-title',
     CHART_PLACEHOLDER_ID: 'stats-chart-placeholder',
     CHART_ID: 'stats-growth-chart',
@@ -11,7 +10,6 @@ export const STATISTICS_DOM = Object.freeze({
 
 export const STATISTICS_CLASSES = Object.freeze({
     VIEW: 'statistics-view',
-    SUMMARY: 'mode-summary',
     CARD: 'statistics-card',
     CHART_CARD: 'stats-chart-card',
     TABLE_CARD: 'stats-table-card',

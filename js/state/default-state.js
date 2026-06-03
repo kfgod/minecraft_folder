@@ -15,6 +15,7 @@ export function createDefaultState() {
         ...contentVisibility,
         showBorders: false,
         showNotableChanges: true,
+        theme: 'dark',
         debounceTimer: null,
         collapsedSections: {},
         compareVersions: [null, null],

@@ -76,6 +76,17 @@ export function attachFiltersController(app) {
         });
     }
 
+    [
+        app.elements.themeDarkBtn,
+        app.elements.themeLightBtn,
+    ].forEach((button) => {
+        if (!button) return;
+        button.addEventListener('click', () => {
+            const theme = button.dataset.theme;
+            void app.actions.setTheme(theme);
+        });
+    });
+
     const attachPopularToggle = (element, stateKey) => {
         if (!element) return;
         element.addEventListener('click', () => {

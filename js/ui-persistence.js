@@ -7,7 +7,7 @@ import { APP_MODES } from './app-modes.js';
 import { CONTENT_FILTER_STATE_KEYS } from './constants/filter-config.js';
 
 const STORAGE_KEY = 'minecraft_updates_ui_state';
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 const BOOLEAN_STATE_KEYS = [
     'removeDuplicates',
     ...CONTENT_FILTER_STATE_KEYS,
@@ -69,6 +69,10 @@ export function restorePersistedUIState(app) {
             app.state.collapsedSections = saved.collapsedSections;
         }
 
+        if (saved.theme === 'light' || saved.theme === 'dark') {
+            app.state.theme = saved.theme;
+        }
+
         const rawMode =
             saved.schemaVersion >= SCHEMA_VERSION && typeof saved.activeMode === 'string'
                 ? saved.activeMode
@@ -105,6 +109,7 @@ export function persistUIState(app) {
             activeMode: app.state.activeMode,
             currentView: app.state.currentView,
             ...Object.fromEntries(BOOLEAN_STATE_KEYS.map((key) => [key, app.state[key]])),
+            theme: app.state.theme,
             collapsedSections: app.state.collapsedSections,
             detailTarget: app.state.detailTarget,
             detailReturnContext: app.state.detailReturnContext,

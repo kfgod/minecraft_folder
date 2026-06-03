@@ -27,12 +27,7 @@ function createStatisticsView({ isYearView, chartType }) {
     const section = document.createElement('section');
     section.className = STATISTICS_CLASSES.VIEW;
 
-    const summary = document.createElement('div');
-    summary.id = STATISTICS_DOM.SUMMARY_ID;
-    summary.className = STATISTICS_CLASSES.SUMMARY;
-
     section.append(
-        summary,
         createStatisticsChartCard(heading, chartType),
         createStatisticsNameTablesGrid(),
         createStatisticsContentTableCard(tableHeading),

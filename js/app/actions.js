@@ -123,6 +123,21 @@ export class AppActions {
         await app.render();
     }
 
+    async setTheme(theme) {
+        const app = this.app;
+        if (theme !== 'dark' && theme !== 'light') return;
+        if (app.state.theme === theme) return;
+
+        app.state.theme = theme;
+        app.syncViewToggle();
+        app.saveState();
+
+        if (app.state.activeMode === APP_MODES.STATS) {
+            const statisticsManager = await app.ensureStatisticsManager();
+            await statisticsManager.renderChart(app.state.currentView === CONFIG.VIEWS.YEARS);
+        }
+    }
+
     async refreshForFilterChange() {
         const app = this.app;
 

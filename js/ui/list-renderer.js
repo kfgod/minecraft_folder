@@ -18,30 +18,6 @@ export function getResultsSummary(app, data) {
 
 export function renderResultsSummary(app, data) {
     const summary = getResultsSummary(app, data);
-    const summaryElement = document.createElement('div');
-    summaryElement.className = 'results-summary';
-
-    if (summary.query) {
-        summaryElement.append(
-            'Results for "',
-            createStrong(summary.query),
-            '": ',
-            createStrong(summary.entryCount),
-            ' entries, ',
-            createStrong(summary.itemCount),
-            ' items',
-        );
-    } else {
-        summaryElement.append(
-            'Results: ',
-            createStrong(summary.entryCount),
-            ' entries, ',
-            createStrong(summary.itemCount),
-            ' items',
-        );
-    }
-
-    app.elements.content.appendChild(summaryElement);
     return { ...summary, safeQuery: summary.query };
 }
 
@@ -77,10 +53,4 @@ export function renderCardsInChunks({ app, data, cardRenderer, afterRender }) {
         }
     };
     requestAnimationFrame(appendChunk);
-}
-
-function createStrong(value) {
-    const strong = document.createElement('strong');
-    strong.textContent = value;
-    return strong;
 }
