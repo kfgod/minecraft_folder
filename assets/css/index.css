@@ -1623,6 +1623,19 @@ a.time-since-card:visited {
     background-color: var(--material-group-row-even);
 }
 
+.material-group-table-cell-color-header {
+    color: #fff;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+        var(--material-group-color) !important;
+    font-size: 0.58rem;
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    padding: 4px !important;
+}
+
 .material-group-element {
     display: flex;
     align-items: center;

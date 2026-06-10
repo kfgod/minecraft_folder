@@ -2,6 +2,7 @@ import { Utils } from '../../utils.js';
 import { MATERIAL_GROUPS_CLASSES, MATERIAL_GROUPS_DATA } from './constants.js';
 
 const GENERATED_FAMILIES_KIND = 'families';
+const GENERATED_COLORS_KIND = 'colors';
 const GENERATED_FORM_SUFFIXES = [
     'pressure_plate',
     'base',
@@ -12,6 +13,24 @@ const GENERATED_FORM_SUFFIXES = [
     'cracked',
     'chiseled',
 ];
+const COLOR_SWATCHES = Object.freeze({
+    white: '#f9fffe',
+    light_gray: '#9d9d97',
+    gray: '#474f52',
+    black: '#1d1d21',
+    brown: '#835432',
+    red: '#b02e26',
+    orange: '#f9801d',
+    yellow: '#fed83d',
+    lime: '#80c71f',
+    green: '#5e7c16',
+    cyan: '#169c9c',
+    light_blue: '#3ab3da',
+    blue: '#3c44aa',
+    purple: '#8932b8',
+    magenta: '#c74ebd',
+    pink: '#f38baa',
+});
 
 export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     const groups = item.groups || [];
@@ -53,7 +72,10 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
 
     const tbody = document.createElement('tbody');
     groups.forEach((group) => {
-        tbody.appendChild(createGroupRow(group, itemKeysOrder, { includeMaterialCell: !isGeneratedFamiliesGroup(item) }));
+        tbody.appendChild(createGroupRow(group, itemKeysOrder, {
+            includeMaterialCell: !isGeneratedFamiliesGroup(item),
+            useColorHeader: isGeneratedColorsGroup(item),
+        }));
     });
 
     table.appendChild(tbody);
@@ -65,6 +87,10 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
 
 function isGeneratedFamiliesGroup(item) {
     return item?.generated === GENERATED_FAMILIES_KIND;
+}
+
+function isGeneratedColorsGroup(item) {
+    return item?.generated === GENERATED_COLORS_KIND;
 }
 
 function createGeneratedFamiliesHeader(itemKeysOrder) {
@@ -83,19 +109,33 @@ function createGeneratedFamiliesHeader(itemKeysOrder) {
         familyTypeRow.appendChild(cell);
     });
 
-    itemKeysOrder.forEach((itemKey) => {
+    getFormSpans(itemKeysOrder).forEach((span) => {
         const cell = document.createElement('th');
-        const { form } = parseGeneratedItemKey(itemKey);
         cell.className = [
             MATERIAL_GROUPS_CLASSES.HEADER_CELL,
             MATERIAL_GROUPS_CLASSES.HEADER_CELL_FORM,
         ].join(' ');
-        cell.textContent = formatGeneratedLabel(form);
+        cell.colSpan = span.count;
+        cell.textContent = formatGeneratedLabel(span.form);
         formRow.appendChild(cell);
     });
 
     header.append(familyTypeRow, formRow);
     return header;
+}
+
+function getFormSpans(itemKeysOrder) {
+    const spans = [];
+    itemKeysOrder.forEach((itemKey) => {
+        const { familyType, form } = parseGeneratedItemKey(itemKey);
+        const lastSpan = spans.at(-1);
+        if (lastSpan?.familyType === familyType && lastSpan.form === form) {
+            lastSpan.count += 1;
+            return;
+        }
+        spans.push({ familyType, form, count: 1 });
+    });
+    return spans;
 }
 
 function getFamilyTypeSpans(itemKeysOrder) {
@@ -167,9 +207,11 @@ function getItemKeysOrder(groups, { columnsOrder = null } = {}) {
     return orderedKeys;
 }
 
-function createGroupRow(group, allItemKeys, { includeMaterialCell = true } = {}) {
+function createGroupRow(group, allItemKeys, { includeMaterialCell = true, useColorHeader = false } = {}) {
     const row = document.createElement('tr');
-    if (includeMaterialCell) {
+    if (useColorHeader) {
+        row.appendChild(createColorHeaderCell(group));
+    } else if (includeMaterialCell) {
         row.appendChild(createTableCell(group.material || {}, true));
     }
 
@@ -179,6 +221,20 @@ function createGroupRow(group, allItemKeys, { includeMaterialCell = true } = {})
     });
 
     return row;
+}
+
+function createColorHeaderCell(group) {
+    const colorKey = group.group || '';
+    const color = COLOR_SWATCHES[colorKey] || '#888';
+    const cell = document.createElement('td');
+    cell.className = [
+        MATERIAL_GROUPS_CLASSES.CELL,
+        MATERIAL_GROUPS_CLASSES.MATERIAL_CELL,
+        MATERIAL_GROUPS_CLASSES.COLOR_HEADER_CELL,
+    ].join(' ');
+    cell.style.setProperty('--material-group-color', color);
+    cell.textContent = group.group_name || formatGeneratedLabel(colorKey);
+    return cell;
 }
 
 function createTableCell(element, isMaterial) {

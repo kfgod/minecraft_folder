@@ -19,7 +19,11 @@ export class TestElement {
         this.id = '';
         this.selected = false;
         this.value = '';
-        this.style = {};
+        this.style = {
+            setProperty(name, value) {
+                this[name] = String(value);
+            },
+        };
         this.parentElement = null;
         this.eventListeners = {};
         this.classList = createClassList(this);

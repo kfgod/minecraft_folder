@@ -12,6 +12,7 @@ export const MATERIAL_GROUPS_CLASSES = Object.freeze({
     HEADER_CELL_FORM: 'material-group-table-header-cell-form',
     CELL: 'material-group-table-cell',
     MATERIAL_CELL: 'material-group-table-cell-material',
+    COLOR_HEADER_CELL: 'material-group-table-cell-color-header',
     ELEMENT: 'material-group-element',
     ELEMENT_IMAGE: 'material-group-element-image',
     EMPTY: 'material-group-empty',

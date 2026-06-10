@@ -153,7 +153,35 @@ test('material groups interaction: renders generated family headers', () => {
     assert.equal(familyTypeCells[2].colSpan, 2);
     assert.equal(familyTypeCells[3].textContent, 'Special');
     assert.equal(familyTypeCells[3].colSpan, 3);
-    assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button', 'Chiseled', 'Chiseled']);
+    assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button', 'Chiseled']);
+    assert.equal(formCells[7].colSpan, 2);
+});
+
+test('material groups interaction: renders generated color row headers', () => {
+    installDomStub();
+    const root = document.createElement('div');
+    renderMaterialGroupsView(root, {
+        content: [{
+            name: 'Colors',
+            generated: 'colors',
+            columns_order: ['dye', 'wool', 'terracotta'],
+            groups: [{
+                group: 'red',
+                group_name: 'Red',
+                material: { name: 'Red Dye', identifier: 'red_dye' },
+                items: {
+                    dye: { name: 'Red Dye', identifier: 'red_dye' },
+                    wool: { name: 'Red Wool', identifier: 'red_wool' },
+                    terracotta: { name: 'Red Terracotta', identifier: 'red_terracotta' },
+                },
+            }],
+        }],
+    }, { isSectionCollapsed: () => false });
+
+    const colorHeader = findByClass(root, 'material-group-table-cell-color-header');
+    assert.equal(colorHeader.textContent, 'Red');
+    assert.equal(colorHeader.style['--material-group-color'], '#b02e26');
+    assert.equal(findAll(root, (node) => node.tagName === 'img')[0].alt, 'Red Dye');
 });
 
 test('statistics interaction: header click calls sort handler with column key', () => {
