@@ -3,8 +3,8 @@
  */
 
 // Example: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main' or '../minecraft_data'
-// const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
-const BASE_URL = '../minecraft_data';
+const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
+// const BASE_URL = '../minecraft_data';
 export const CONFIG = {
     BASE_URL: BASE_URL,
     INDEX_FILE_PATH: '/data/file_index.json',

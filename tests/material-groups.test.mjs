@@ -19,7 +19,7 @@ test('material groups: preserves file_index order from generated data', async ()
             ],
         }],
         ['../minecraft_data/data/special/generated.json', {
-            content: [{ name: 'Generated Families', groups: [{}] }],
+            content: [{ name: 'Block Forms', groups: [{}] }],
         }],
         ['../minecraft_data/data/special/manual.json', {
             name: 'Manual Groups',
@@ -30,7 +30,7 @@ test('material groups: preserves file_index order from generated data', async ()
     Utils.fetchJSON = async (url) => responses.get(url);
     try {
         const data = await loadMaterialGroupsData();
-        assert.deepEqual(data.content.map((item) => item.name), ['Generated Families', 'Manual Groups']);
+        assert.deepEqual(data.content.map((item) => item.name), ['Block Forms', 'Manual Groups']);
     } finally {
         Utils.fetchJSON = originalFetchJSON;
     }

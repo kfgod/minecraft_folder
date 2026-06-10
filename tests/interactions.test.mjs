@@ -107,8 +107,19 @@ test('material groups interaction: renders generated family headers', () => {
     const root = document.createElement('div');
     renderMaterialGroupsView(root, {
         content: [{
-            name: 'Generated Families',
+            name: 'Block Forms',
             generated: 'families',
+            columns_order: [
+                'initial_stairs',
+                'initial_slab',
+                'polished_base',
+                'polished_stairs',
+                'mossy_base',
+                'mossy_stairs',
+                'special_button',
+                'special_chiseled',
+                'special_chiseled_2',
+            ],
             groups: [{
                 material: { name: 'Demo', identifier: 'demo' },
                 items: {
@@ -123,6 +134,8 @@ test('material groups interaction: renders generated family headers', () => {
                 items: {
                     mossy_base: { name: 'Mossy Other', identifier: 'mossy_other' },
                     mossy_stairs: { name: 'Mossy Other Stairs', identifier: 'mossy_other_stairs' },
+                    special_chiseled: { name: 'Chiseled Other', identifier: 'chiseled_other' },
+                    special_chiseled_2: { name: 'Other Chiseled Other', identifier: 'other_chiseled_other' },
                 },
             }],
         }],
@@ -132,16 +145,15 @@ test('material groups interaction: renders generated family headers', () => {
     const familyTypeCells = headerRows[0].children.filter((node) => node.tagName === 'th');
     const formCells = headerRows[1].children.filter((node) => node.tagName === 'th');
 
-    assert.equal(familyTypeCells[0].textContent, 'Family');
-    assert.equal(familyTypeCells[1].textContent, 'Initial');
+    assert.equal(familyTypeCells[0].textContent, 'Initial');
+    assert.equal(familyTypeCells[0].colSpan, 2);
+    assert.equal(familyTypeCells[1].textContent, 'Polished');
     assert.equal(familyTypeCells[1].colSpan, 2);
-    assert.equal(familyTypeCells[2].textContent, 'Polished');
+    assert.equal(familyTypeCells[2].textContent, 'Mossy');
     assert.equal(familyTypeCells[2].colSpan, 2);
-    assert.equal(familyTypeCells[3].textContent, 'Mossy');
-    assert.equal(familyTypeCells[3].colSpan, 2);
-    assert.equal(familyTypeCells[4].textContent, 'Special');
-    assert.equal(familyTypeCells[4].colSpan, 1);
-    assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button']);
+    assert.equal(familyTypeCells[3].textContent, 'Special');
+    assert.equal(familyTypeCells[3].colSpan, 3);
+    assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button', 'Chiseled', 'Chiseled']);
 });
 
 test('statistics interaction: header click calls sort handler with column key', () => {

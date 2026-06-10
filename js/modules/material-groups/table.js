@@ -2,8 +2,6 @@ import { Utils } from '../../utils.js';
 import { MATERIAL_GROUPS_CLASSES, MATERIAL_GROUPS_DATA } from './constants.js';
 
 const GENERATED_FAMILIES_KIND = 'families';
-const GENERATED_FAMILY_TYPE_ORDER = ['initial', 'polished', 'brick', 'mossy', 'special'];
-const GENERATED_FORM_ORDER = ['base', 'stairs', 'slab', 'wall', 'cracked', 'button', 'pressure_plate', 'chiseled'];
 const GENERATED_FORM_SUFFIXES = [
     'pressure_plate',
     'base',
@@ -19,7 +17,7 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     const groups = item.groups || [];
     if (groups.length === 0) return null;
 
-    const itemKeysOrder = getItemKeysOrder(groups, { sortGeneratedFamilies: isGeneratedFamiliesGroup(item) });
+    const itemKeysOrder = getItemKeysOrder(groups, { columnsOrder: item.columns_order });
     if (itemKeysOrder.length === 0) return null;
 
     const sectionId = `material-group-${index}`;
@@ -55,7 +53,7 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
 
     const tbody = document.createElement('tbody');
     groups.forEach((group) => {
-        tbody.appendChild(createGroupRow(group, itemKeysOrder));
+        tbody.appendChild(createGroupRow(group, itemKeysOrder, { includeMaterialCell: !isGeneratedFamiliesGroup(item) }));
     });
 
     table.appendChild(tbody);
@@ -73,15 +71,6 @@ function createGeneratedFamiliesHeader(itemKeysOrder) {
     const header = document.createElement('thead');
     const familyTypeRow = document.createElement('tr');
     const formRow = document.createElement('tr');
-
-    const materialHeader = document.createElement('th');
-    materialHeader.className = [
-        MATERIAL_GROUPS_CLASSES.HEADER_CELL,
-        MATERIAL_GROUPS_CLASSES.HEADER_CELL_MATERIAL,
-    ].join(' ');
-    materialHeader.rowSpan = 2;
-    materialHeader.textContent = 'Family';
-    familyTypeRow.appendChild(materialHeader);
 
     getFamilyTypeSpans(itemKeysOrder).forEach((span) => {
         const cell = document.createElement('th');
@@ -125,21 +114,26 @@ function getFamilyTypeSpans(itemKeysOrder) {
 
 function parseGeneratedItemKey(itemKey) {
     const normalizedKey = String(itemKey || '');
-    const suffix = GENERATED_FORM_SUFFIXES.find((form) => normalizedKey.endsWith(`_${form}`));
+    const duplicateMatch = normalizedKey.match(/^(.*)_([2-9]\d*)$/);
+    const keyWithoutDuplicateIndex = duplicateMatch ? duplicateMatch[1] : normalizedKey;
+    const duplicateIndex = duplicateMatch ? Number(duplicateMatch[2]) : 1;
+    const suffix = GENERATED_FORM_SUFFIXES.find((form) => keyWithoutDuplicateIndex.endsWith(`_${form}`));
     if (suffix) {
         return {
-            familyType: normalizedKey.slice(0, -(suffix.length + 1)) || 'initial',
+            familyType: keyWithoutDuplicateIndex.slice(0, -(suffix.length + 1)) || 'initial',
             form: suffix,
+            duplicateIndex,
         };
     }
 
-    const lastSeparatorIndex = normalizedKey.lastIndexOf('_');
+    const lastSeparatorIndex = keyWithoutDuplicateIndex.lastIndexOf('_');
     if (lastSeparatorIndex === -1) {
-        return { familyType: 'initial', form: normalizedKey };
+        return { familyType: 'initial', form: keyWithoutDuplicateIndex, duplicateIndex };
     }
     return {
-        familyType: normalizedKey.slice(0, lastSeparatorIndex) || 'initial',
-        form: normalizedKey.slice(lastSeparatorIndex + 1),
+        familyType: keyWithoutDuplicateIndex.slice(0, lastSeparatorIndex) || 'initial',
+        form: keyWithoutDuplicateIndex.slice(lastSeparatorIndex + 1),
+        duplicateIndex,
     };
 }
 
@@ -149,12 +143,14 @@ function formatGeneratedLabel(value) {
         .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-function getItemKeysOrder(groups, { sortGeneratedFamilies = false } = {}) {
+function getItemKeysOrder(groups, { columnsOrder = null } = {}) {
     const itemKeysOrder = [];
     const seenKeys = new Set();
+    const existingKeys = new Set();
 
     groups.forEach((group) => {
         Object.keys(group.items || {}).forEach((key) => {
+            existingKeys.add(key);
             if (!seenKeys.has(key)) {
                 itemKeysOrder.push(key);
                 seenKeys.add(key);
@@ -162,33 +158,20 @@ function getItemKeysOrder(groups, { sortGeneratedFamilies = false } = {}) {
         });
     });
 
-    if (!sortGeneratedFamilies) return itemKeysOrder;
-    return itemKeysOrder.sort(compareGeneratedFamilyKeys);
+    if (!Array.isArray(columnsOrder) || columnsOrder.length === 0) return itemKeysOrder;
+
+    const orderedKeys = columnsOrder.filter((key) => existingKeys.has(key));
+    itemKeysOrder.forEach((key) => {
+        if (!orderedKeys.includes(key)) orderedKeys.push(key);
+    });
+    return orderedKeys;
 }
 
-function compareGeneratedFamilyKeys(leftKey, rightKey) {
-    const left = parseGeneratedItemKey(leftKey);
-    const right = parseGeneratedItemKey(rightKey);
-    return (
-        compareByOrder(left.familyType, right.familyType, GENERATED_FAMILY_TYPE_ORDER)
-        || compareByOrder(left.form, right.form, GENERATED_FORM_ORDER)
-        || leftKey.localeCompare(rightKey, undefined, { numeric: true, sensitivity: 'base' })
-    );
-}
-
-function compareByOrder(left, right, order) {
-    const leftIndex = order.indexOf(left);
-    const rightIndex = order.indexOf(right);
-    const normalizedLeftIndex = leftIndex === -1 ? order.length : leftIndex;
-    const normalizedRightIndex = rightIndex === -1 ? order.length : rightIndex;
-    if (normalizedLeftIndex !== normalizedRightIndex) return normalizedLeftIndex - normalizedRightIndex;
-    if (leftIndex !== -1 && rightIndex !== -1) return 0;
-    return String(left).localeCompare(String(right), undefined, { numeric: true, sensitivity: 'base' });
-}
-
-function createGroupRow(group, allItemKeys) {
+function createGroupRow(group, allItemKeys, { includeMaterialCell = true } = {}) {
     const row = document.createElement('tr');
-    row.appendChild(createTableCell(group.material || {}, true));
+    if (includeMaterialCell) {
+        row.appendChild(createTableCell(group.material || {}, true));
+    }
 
     const items = group.items || {};
     allItemKeys.forEach((itemKey) => {
