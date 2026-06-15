@@ -615,11 +615,11 @@ body.show-borders .update-card.year {
 
 .mob-card {
     display: grid;
-    grid-template-rows: 1fr auto; /* mob image takes remaining space, egg sticks to bottom */
+    grid-template-rows: 1fr auto;
     width: 100%;
     height: 100%;
     gap: 8px;
-    position: relative; /* for absolute positioning of parent icon */
+    position: relative;
 }
 
 .mob-card-image {
@@ -646,11 +646,21 @@ body.show-borders .update-card.year {
     image-rendering: pixelated;
 }
 
-.mob-card-egg {
+.mob-card-spawn-egg {
+    position: absolute;
+    top: 4px;
+    z-index: 11;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 8px;
+}
+
+.mob-card-spawn-egg-left {
+    left: 4px;
+}
+
+.mob-card-spawn-egg-right {
+    right: 4px;
 }
 
 .tooltip-wrapper {
@@ -659,19 +669,13 @@ body.show-borders .update-card.year {
     justify-content: center;
 }
 
-.mob-card-egg .tooltip-wrapper {
+.mob-card-spawn-egg .mob-egg-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.mob-card-egg .mob-egg-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mob-card-egg .scroll-to-item {
+.mob-card-spawn-egg .scroll-to-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -679,23 +683,51 @@ body.show-borders .update-card.year {
     transition: transform 0.2s ease;
 }
 
-.mob-card-egg .scroll-to-item:hover {
+.mob-card-spawn-egg .scroll-to-item:hover {
     transform: scale(1.1);
 }
 
-.mob-card-egg .mob-egg {
-    width: 48px;
-    height: 48px;
+.mob-card-spawn-egg .mob-egg {
+    width: 28px;
+    height: 28px;
     max-width: 100%;
     max-height: 100%;
     display: block;
 }
 
+.mob-card-baby {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.mob-card-baby .tooltip-wrapper {
+    width: 48px;
+    height: 48px;
+}
+
+.mob-card-baby .mob-baby-render {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
 .mob-card-parent {
     position: absolute;
     top: 4px;
-    right: 4px;
     z-index: 10;
+}
+
+.mob-card-parent-left {
+    left: 4px;
+}
+
+.mob-card-parent-right {
+    right: 4px;
 }
 
 .mob-card-parent .tooltip-wrapper {
@@ -735,7 +767,8 @@ body.show-borders .update-card.year {
     .mob-card {
         grid-template-rows: 1fr; /* only image row */
     }
-    .mob-card-egg,
+    .mob-card-spawn-egg,
+    .mob-card-baby,
     .mob-card-parent {
         display: none;
     }

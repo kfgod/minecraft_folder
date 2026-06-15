@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { APP_MODES } from '../js/app-modes.js';
 import { CONFIG } from '../js/config.js';
 import { createCardSubtitleElement, createGridItemElement, getCardViewModel } from '../js/modules/card/exports.js';
-import { findByClass, installDomStub } from './helpers/dom-stub.mjs';
+import { findAll, findByClass, installDomStub } from './helpers/dom-stub.mjs';
 
 test('card view model: builds version and year variants', () => {
     installDomStub();
@@ -40,4 +40,46 @@ test('grid item renderer: renders specialized item types', () => {
     );
     assert.equal(mob.dataset.tooltip, 'Zombie|health:10');
     assert.match(mob.className, /clickable-card/);
+});
+
+test('grid item renderer: renders mob egg overlays and baby variant image', () => {
+    installDomStub();
+
+    const mob = createGridItemElement(
+        {
+            name: 'Pig',
+            identifier: 'pig',
+            meta: {
+                babyImagePath: '/mob/pig/baby/latest.png',
+                spawn_egg: {
+                    name: 'Pig Spawn Egg',
+                    imagePath: '/item/pig_spawn_egg/latest.png',
+                },
+            },
+        },
+        'mobs'
+    );
+    const variant = createGridItemElement(
+        {
+            name: 'Cold Pig',
+            identifier: 'cold_pig',
+            meta: {
+                parent_mob: {
+                    name: 'Pig',
+                    imagePath: '/mob/pig/latest.png',
+                },
+                spawn_egg: {
+                    name: 'Pig Spawn Egg',
+                    imagePath: '/item/pig_spawn_egg/latest.png',
+                },
+            },
+        },
+        'mob_variants'
+    );
+
+    assert.ok(findByClass(mob, 'mob-card-spawn-egg-right'));
+    assert.ok(findByClass(variant, 'mob-card-spawn-egg-right'));
+    assert.ok(findByClass(variant, 'mob-card-parent-left'));
+    assert.equal(findByClass(mob, 'mob-baby-render').src, `${CONFIG.IMAGE_BASE_PATH}/mob/pig/baby/latest.png`);
+    assert.equal(findAll(variant, (node) => node.classList?.contains('mob-egg')).length, 1);
 });

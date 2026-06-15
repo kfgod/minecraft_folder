@@ -36,11 +36,12 @@ function createMobItem(item, sectionType) {
 
     const card = document.createElement('div');
     card.className = 'mob-card';
+    const isVariant = sectionType === 'mob_variants';
 
     const parentMob = createParentMob(item.meta?.parent_mob);
     if (parentMob) {
         const parent = document.createElement('div');
-        parent.className = 'mob-card-parent';
+        parent.className = `mob-card-parent ${isVariant ? 'mob-card-parent-left' : 'mob-card-parent-right'}`;
         parent.appendChild(parentMob);
         card.appendChild(parent);
     }
@@ -53,13 +54,19 @@ function createMobItem(item, sectionType) {
     }));
 
     const eggContainer = document.createElement('div');
-    eggContainer.className = 'mob-card-egg';
-    const egg = sectionType !== 'mob_variants' ? createSpawnEgg(item.meta?.spawn_egg) : null;
+    eggContainer.className = 'mob-card-spawn-egg mob-card-spawn-egg-right';
+    const egg = createSpawnEgg(item.meta?.spawn_egg);
     if (egg) {
         eggContainer.appendChild(egg);
+        card.appendChild(eggContainer);
     }
 
-    card.append(imageContainer, eggContainer);
+    const babyContainer = createBabyMob(item);
+
+    card.appendChild(imageContainer);
+    if (babyContainer) {
+        card.appendChild(babyContainer);
+    }
     root.appendChild(card);
     return root;
 }
@@ -86,6 +93,24 @@ function createSpawnEgg(spawnEgg) {
 
     link.appendChild(image);
     wrapper.appendChild(link);
+    return wrapper;
+}
+
+function createBabyMob(item) {
+    const babyImagePath = item?.meta?.babyImagePath;
+    if (!babyImagePath) return null;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mob-card-baby';
+    const tooltip = createTooltipWrapper(`Baby ${item.name || ''}`.trim());
+    const image = createImage({
+        className: 'mob-baby-render',
+        src: Utils.resolveImagePath({ imagePath: babyImagePath }),
+    });
+    image.addEventListener('error', () => wrapper.remove());
+
+    tooltip.appendChild(image);
+    wrapper.appendChild(tooltip);
     return wrapper;
 }
 
