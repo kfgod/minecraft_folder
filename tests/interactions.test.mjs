@@ -184,6 +184,37 @@ test('material groups interaction: renders generated color row headers', () => {
     assert.equal(findAll(root, (node) => node.tagName === 'img')[0].alt, 'Red Dye');
 });
 
+test('material groups interaction: renders generated wood headers without material column', () => {
+    installDomStub();
+    const root = document.createElement('div');
+    renderMaterialGroupsView(root, {
+        content: [{
+            name: 'Wood Forms',
+            generated: 'woodsets',
+            columns_order: ['log', 'stripped_log', 'leaves', 'leaves_2'],
+            groups: [{
+                group: 'oak',
+                group_name: 'Oak',
+                items: {
+                    log: { name: 'Oak Log', identifier: 'oak_log' },
+                    stripped_log: { name: 'Stripped Oak Log', identifier: 'stripped_oak_log' },
+                    leaves: { name: 'Oak Leaves', identifier: 'oak_leaves' },
+                    leaves_2: { name: 'Flowering Oak Leaves', identifier: 'flowering_oak_leaves' },
+                },
+            }],
+        }],
+    }, { isSectionCollapsed: () => false });
+
+    const headerCells = findAll(root, (node) => node.tagName === 'th');
+    const bodyCells = findAll(root, (node) => node.tagName === 'td');
+
+    assert.deepEqual(headerCells.map((cell) => cell.textContent), ['Log', 'Stripped Log', 'Leaves']);
+    assert.equal(headerCells[2].colSpan, 2);
+    assert.equal(bodyCells.length, 4);
+    assert.equal(findByClass(root, 'material-group-table-cell-material'), null);
+    assert.equal(findAll(root, (node) => node.tagName === 'img')[0].alt, 'Oak Log');
+});
+
 test('statistics interaction: header click calls sort handler with column key', () => {
     installDomStub();
     const thead = document.createElement('thead');

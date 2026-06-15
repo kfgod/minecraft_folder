@@ -3,6 +3,7 @@ import { MATERIAL_GROUPS_CLASSES, MATERIAL_GROUPS_DATA } from './constants.js';
 
 const GENERATED_FAMILIES_KIND = 'families';
 const GENERATED_COLORS_KIND = 'colors';
+const GENERATED_WOODSETS_KIND = 'woodsets';
 const GENERATED_FORM_SUFFIXES = [
     'pressure_plate',
     'base',
@@ -68,12 +69,14 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     table.className = MATERIAL_GROUPS_CLASSES.TABLE;
     if (isGeneratedFamiliesGroup(item)) {
         table.appendChild(createGeneratedFamiliesHeader(itemKeysOrder));
+    } else if (isGeneratedWoodsetsGroup(item)) {
+        table.appendChild(createGeneratedWoodsetsHeader(itemKeysOrder));
     }
 
     const tbody = document.createElement('tbody');
     groups.forEach((group) => {
         tbody.appendChild(createGroupRow(group, itemKeysOrder, {
-            includeMaterialCell: !isGeneratedFamiliesGroup(item),
+            includeMaterialCell: !isGeneratedFamiliesGroup(item) && !isGeneratedWoodsetsGroup(item),
             useColorHeader: isGeneratedColorsGroup(item),
         }));
     });
@@ -91,6 +94,10 @@ function isGeneratedFamiliesGroup(item) {
 
 function isGeneratedColorsGroup(item) {
     return item?.generated === GENERATED_COLORS_KIND;
+}
+
+function isGeneratedWoodsetsGroup(item) {
+    return item?.generated === GENERATED_WOODSETS_KIND;
 }
 
 function createGeneratedFamiliesHeader(itemKeysOrder) {
@@ -124,6 +131,25 @@ function createGeneratedFamiliesHeader(itemKeysOrder) {
     return header;
 }
 
+function createGeneratedWoodsetsHeader(itemKeysOrder) {
+    const header = document.createElement('thead');
+    const formRow = document.createElement('tr');
+
+    getWoodFormSpans(itemKeysOrder).forEach((span) => {
+        const cell = document.createElement('th');
+        cell.className = [
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL,
+            MATERIAL_GROUPS_CLASSES.HEADER_CELL_FORM,
+        ].join(' ');
+        cell.colSpan = span.count;
+        cell.textContent = formatGeneratedLabel(span.form);
+        formRow.appendChild(cell);
+    });
+
+    header.appendChild(formRow);
+    return header;
+}
+
 function getFormSpans(itemKeysOrder) {
     const spans = [];
     itemKeysOrder.forEach((itemKey) => {
@@ -134,6 +160,20 @@ function getFormSpans(itemKeysOrder) {
             return;
         }
         spans.push({ familyType, form, count: 1 });
+    });
+    return spans;
+}
+
+function getWoodFormSpans(itemKeysOrder) {
+    const spans = [];
+    itemKeysOrder.forEach((itemKey) => {
+        const form = stripDuplicateIndex(itemKey);
+        const lastSpan = spans.at(-1);
+        if (lastSpan?.form === form) {
+            lastSpan.count += 1;
+            return;
+        }
+        spans.push({ form, count: 1 });
     });
     return spans;
 }
@@ -150,6 +190,10 @@ function getFamilyTypeSpans(itemKeysOrder) {
         spans.push({ familyType, count: 1 });
     });
     return spans;
+}
+
+function stripDuplicateIndex(itemKey) {
+    return String(itemKey || '').replace(/_([2-9]\d*)$/, '');
 }
 
 function parseGeneratedItemKey(itemKey) {
