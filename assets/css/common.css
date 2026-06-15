@@ -347,6 +347,33 @@ tr:nth-child(even) {
     position: relative;
 }
 
+.card-status-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 5px 9px;
+    border: 1px solid rgba(27, 31, 36, 0.18);
+    border-radius: 2px;
+    background: rgba(17, 24, 39, 0.88);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.card-status-badge-upcoming {
+    border-color: rgba(180, 83, 9, 0.45);
+    background: #b45309;
+}
+
+.card-status-badge-announced {
+    border-color: rgba(37, 99, 235, 0.45);
+    background: #2563eb;
+}
+
 body.show-borders .update-card.major {
     border-left-color: var(--major-border);
 }

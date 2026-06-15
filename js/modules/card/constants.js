@@ -1,5 +1,6 @@
 export const CARD_CLASSES = Object.freeze({
     HEADER_ROW: 'card-header-row',
+    STATUS_BADGE: 'card-status-badge',
     DETAIL_HEADER: 'detail-header',
     DETAIL_LINK: 'detail-link',
     DETAIL_CLOSE_BUTTON: 'detail-close-btn',

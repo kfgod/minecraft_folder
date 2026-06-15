@@ -33,6 +33,18 @@ export function createCardHeaderElement(model) {
     return header;
 }
 
+export function createCardStatusBadgeElement(model) {
+    if (!model.statusBadge) return null;
+
+    const badge = document.createElement('div');
+    badge.className = [
+        CARD_CLASSES.STATUS_BADGE,
+        model.statusBadgeType ? `${CARD_CLASSES.STATUS_BADGE}-${model.statusBadgeType}` : '',
+    ].filter(Boolean).join(' ');
+    badge.textContent = model.statusBadge;
+    return badge;
+}
+
 export function createCardSubtitleElement(model) {
     const parts = [];
     if (model.subtitle) {

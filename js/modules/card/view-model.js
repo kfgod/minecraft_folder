@@ -7,7 +7,8 @@ export function getCardViewModel(data, { isYearView, activeMode }) {
     const title = isYearContext
         ? data.name || 'Untitled'
         : [data.release_version?.java || '', data.name || ''].filter(Boolean).join(' — ');
-    const subtitle = isYearContext ? '' : Utils.formatDateForDisplay(data.release_date);
+    const subtitle = isYearContext ? '' : getReleaseDateSubtitle(data.release_date);
+    const statusBadge = isYearContext ? null : getReleaseStatusBadge(data.release_date);
 
     return {
         id: Utils.generateCardId(data),
@@ -16,7 +17,27 @@ export function getCardViewModel(data, { isYearView, activeMode }) {
         subtitle,
         detailType,
         showClose: activeMode === APP_MODES.DETAIL,
+        statusBadge: statusBadge?.label || '',
+        statusBadgeType: statusBadge?.type || '',
         typeLabel: !isYearContext && data.type ? data.type : '',
         wiki: data.wiki || '',
     };
+}
+
+function getReleaseDateSubtitle(releaseDate) {
+    if (!releaseDate) return 'no date';
+    return Utils.formatDateForDisplay(releaseDate);
+}
+
+function getReleaseStatusBadge(releaseDate) {
+    if (!releaseDate) return { label: 'announced', type: 'announced' };
+
+    const parsedDate = Utils.parseDate(releaseDate);
+    if (!parsedDate) return null;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return parsedDate.getTime() > today.getTime()
+        ? { label: 'Upcoming', type: 'upcoming' }
+        : null;
 }

@@ -6,7 +6,7 @@ import { SECTION_META, SECTION_TYPES } from '../../section-config.js';
 import { APP_MODES } from '../../app-modes.js';
 import { DOM_CLASSES } from '../../constants/dom-classes.js';
 import { createGridSectionElement, createNotableChangesSectionElement } from './sections.js';
-import { createCardHeaderElement, createCardSubtitleElement } from './header.js';
+import { createCardHeaderElement, createCardStatusBadgeElement, createCardSubtitleElement } from './header.js';
 import { getCardViewModel } from './view-model.js';
 import { takeElementScreenshot } from '../shared/screenshot-service.js';
 
@@ -26,7 +26,9 @@ export class CardRenderer {
         });
 
         const subtitle = createCardSubtitleElement(model);
+        const badge = createCardStatusBadgeElement(model);
         card.append(
+            ...(badge ? [badge] : []),
             createScreenshotButton(),
             createCardHeaderElement(model),
             ...(subtitle ? [subtitle] : []),

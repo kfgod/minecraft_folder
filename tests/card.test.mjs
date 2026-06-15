@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { APP_MODES } from '../js/app-modes.js';
 import { CONFIG } from '../js/config.js';
-import { createCardSubtitleElement, createGridItemElement, getCardViewModel } from '../js/modules/card/exports.js';
+import { createCardStatusBadgeElement, createCardSubtitleElement, createGridItemElement, getCardViewModel } from '../js/modules/card/exports.js';
 import { findAll, findByClass, installDomStub } from './helpers/dom-stub.mjs';
 
 test('card view model: builds version and year variants', () => {
@@ -25,6 +25,33 @@ test('card view model: builds version and year variants', () => {
     assert.equal(yearModel.title, '2024');
     assert.equal(yearModel.detailType, 'year');
     assert.equal(yearModel.showClose, true);
+});
+
+test('card view model: builds release status badges and missing-date subtitle', () => {
+    installDomStub();
+
+    const upcomingModel = getCardViewModel(
+        { name: 'Future Drop', release_date: '2999-01-01', release_version: { java: '99w01a' } },
+        { isYearView: false, activeMode: APP_MODES.LIST }
+    );
+    const announcedModel = getCardViewModel(
+        { name: 'Announced Drop', release_version: { java: '99w02a' } },
+        { isYearView: false, activeMode: APP_MODES.LIST }
+    );
+    const yearModel = getCardViewModel(
+        { name: '2999', type: 'year' },
+        { isYearView: true, activeMode: APP_MODES.LIST }
+    );
+
+    const upcomingBadge = createCardStatusBadgeElement(upcomingModel);
+    const announcedBadge = createCardStatusBadgeElement(announcedModel);
+
+    assert.equal(upcomingBadge.textContent, 'Upcoming');
+    assert.equal(upcomingBadge.classList.contains('card-status-badge-upcoming'), true);
+    assert.equal(announcedBadge.textContent, 'announced');
+    assert.equal(announcedBadge.classList.contains('card-status-badge-announced'), true);
+    assert.equal(announcedModel.subtitle, 'no date');
+    assert.equal(createCardStatusBadgeElement(yearModel), null);
 });
 
 test('grid item renderer: renders specialized item types', () => {
