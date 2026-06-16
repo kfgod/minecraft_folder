@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kfgod.github.io/minecraft_folder/sitemap.xml

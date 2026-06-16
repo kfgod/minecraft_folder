@@ -16,6 +16,10 @@ test('browser smoke: static shell and core mode renderers', async () => {
     const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
     assert.match(html, /js\/index\.js/);
     assert.match(html, /id="content"/);
+    assert.match(html, /<meta name="description"/);
+    assert.match(html, /rel="canonical" href="https:\/\/kfgod\.github\.io\/minecraft_folder\/"/);
+    assert.match(html, /property="og:title" content="Minecraft Updates Explorer"/);
+    assert.match(html, /application\/ld\+json/);
 
     const content = document.createElement('main');
     const navList = document.createElement('ul');
