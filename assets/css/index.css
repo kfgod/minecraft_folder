@@ -548,6 +548,25 @@ body.material-groups-mode #search-bar {
     gap: 20px;
 }
 
+.version-gap-divider {
+    display: grid;
+    grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+    align-items: center;
+    gap: 12px;
+    color: var(--muted-text-color);
+    font-size: 0.82rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.version-gap-divider::before,
+.version-gap-divider::after {
+    content: '';
+    height: 1px;
+    background: currentColor;
+    opacity: 0.36;
+}
+
 body.compare-mode #content,
 body.stats-mode #content,
 body.time-since-mode #content,
@@ -680,6 +699,12 @@ body.mobile-layout .advancement-name {
 
 body.mobile-layout .update-card {
     scroll-margin-top: 75px;
+}
+
+body.mobile-layout .version-gap-divider {
+    grid-template-columns: minmax(12px, 1fr) auto minmax(12px, 1fr);
+    gap: 8px;
+    font-size: 0.76rem;
 }
 
 body.mobile-layout .statistics-view {
