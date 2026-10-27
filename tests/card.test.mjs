@@ -110,3 +110,12 @@ test('grid item renderer: renders mob egg overlays and baby variant image', () =
     assert.equal(findByClass(mob, 'mob-baby-render').src, `${CONFIG.IMAGE_BASE_PATH}/mob/pig/baby/latest.png`);
     assert.equal(findAll(variant, (node) => node.classList?.contains('mob-egg')).length, 1);
 });
+
+test('grid item renderer: missing image path uses the missing texture', () => {
+    installDomStub();
+
+    const block = createGridItemElement({ name: 'Mystery Block', identifier: 'mystery' }, 'blocks');
+    const image = findAll(block, (node) => node.tagName === 'IMG' || node.tagName === 'img')[0];
+    assert.equal(image.src, CONFIG.MISSING_TEXTURE);
+    assert.equal(image.alt, 'Mystery Block');
+});

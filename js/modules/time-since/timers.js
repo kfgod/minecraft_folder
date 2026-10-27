@@ -1,3 +1,5 @@
+import { Utils } from '../../utils.js';
+
 export function startTimeSinceTimers(root = document) {
     updateTimers(root);
     return setInterval(() => {
@@ -12,7 +14,8 @@ export function updateTimers(root = document) {
         const releaseDateStr = card.getAttribute('data-release-date');
         if (!releaseDateStr) return;
 
-        const releaseDate = new Date(releaseDateStr);
+        const releaseDate = Utils.parseDate(releaseDateStr);
+        if (!releaseDate) return;
         const diff = new Date() - releaseDate;
 
         if (diff < 0) {

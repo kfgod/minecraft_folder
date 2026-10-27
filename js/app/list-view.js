@@ -2,7 +2,7 @@ import { APP_MODES } from '../app-modes.js';
 import { DOMManager } from '../dom-manager.js';
 import { groupByYear } from '../data/aggregation.js';
 import { SECTION_TYPES } from '../section-config.js';
-import { renderCardsInChunks, renderEmptyState, renderResultsSummary } from '../ui/list-renderer.js';
+import { cancelPendingListRender, renderCardsInChunks, renderEmptyState, renderResultsSummary } from '../ui/list-renderer.js';
 import { renderSearchSuggestions } from '../ui/search-suggestions.js';
 
 export function renderAppNav(app, data) {
@@ -14,6 +14,7 @@ export function renderAppNav(app, data) {
 }
 
 export function renderAppContent(app, data) {
+    cancelPendingListRender(app);
     DOMManager.clearContainer(app.elements.content);
     const summary = renderResultsSummary(app, data);
 

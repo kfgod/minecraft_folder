@@ -32,6 +32,9 @@ function createMobItem(item, sectionType) {
     root.dataset[CARD_DATA.TOOLTIP] = getMobTooltip(item) || item.name || '';
     if (item.wiki) {
         root.dataset[CARD_DATA.WIKI] = item.wiki;
+        root.tabIndex = 0;
+        root.setAttribute('role', 'link');
+        root.setAttribute('aria-label', item.name || item.identifier || '');
     }
 
     const card = document.createElement('div');
@@ -51,6 +54,7 @@ function createMobItem(item, sectionType) {
     imageContainer.appendChild(createImage({
         className: 'mob-render',
         src: Utils.resolveImagePath(item),
+        alt: item.name,
     }));
 
     const eggContainer = document.createElement('div');
@@ -88,6 +92,8 @@ function createSpawnEgg(spawnEgg) {
     const image = createImage({
         className: 'inv-img mob-egg',
         src: Utils.resolveImagePath(spawnEgg),
+        alt: spawnEgg.name,
+        fallback: false,
     });
     image.addEventListener('error', () => wrapper.remove());
 
@@ -106,6 +112,8 @@ function createBabyMob(item) {
     const image = createImage({
         className: 'mob-baby-render',
         src: Utils.resolveImagePath({ imagePath: babyImagePath }),
+        alt: `Baby ${item.name || ''}`.trim(),
+        fallback: false,
     });
     image.addEventListener('error', () => wrapper.remove());
 
@@ -121,6 +129,7 @@ function createParentMob(parentMob) {
     const image = createImage({
         className: 'mob-parent-icon',
         src: Utils.resolveImagePath(parentMob),
+        alt: parentMob.name,
     });
 
     if (parentMob.wiki) {
@@ -143,6 +152,7 @@ function createEnchantmentItem(item) {
         createImage({
             className: 'inv-img ench-icon',
             src: CONFIG.ENCHANTMENT_ICON,
+            alt: '',
         }),
         createTextElement('span', 'ench-name', item.name || ''),
     );
@@ -173,6 +183,7 @@ function createImageCell(item, cellClass, imageClass) {
     inner.appendChild(createImage({
         className: 'inv-img',
         src: Utils.resolveImagePath(item),
+        alt: item.name,
     }));
 
     root.appendChild(wrapWithOptionalLink(inner, item.wiki));
@@ -184,6 +195,7 @@ function createDefaultItem(item) {
     const image = createImage({
         className: 'inv-img',
         src: Utils.resolveImagePath(item),
+        alt: item.name,
     });
 
     root.appendChild(wrapWithOptionalLink(image, item.wiki));
@@ -198,14 +210,20 @@ function createGridItem(item, extraClass = '') {
     return root;
 }
 
-function createImage({ className, src, alt, loading = 'lazy' }) {
+/**
+ * fallback: swap in the missing texture for absent/broken images. Optional
+ * overlays (spawn egg, baby) pass false and remove themselves on error instead.
+ */
+function createImage({ className, src, alt = '', loading = 'lazy', fallback = true }) {
     const image = document.createElement('img');
     image.className = className;
-    image.src = src;
-    image.loading = loading;
-    if (alt !== undefined) {
-        image.alt = alt;
+    if (fallback) {
+        Utils.setImageWithFallback(image, src);
+    } else {
+        image.src = src;
     }
+    image.loading = loading;
+    image.alt = alt || '';
     return image;
 }
 

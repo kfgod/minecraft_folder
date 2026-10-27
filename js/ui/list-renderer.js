@@ -32,8 +32,19 @@ export function renderEmptyState(app, summary) {
     app.elements.content.appendChild(emptyElement);
 }
 
+/**
+ * Invalidates chunks still queued from an earlier list render, so they do not
+ * append stale cards after the content was cleared or replaced by another mode.
+ * @returns {number} the new render token
+ */
+export function cancelPendingListRender(app) {
+    app.listRenderToken = (app.listRenderToken || 0) + 1;
+    return app.listRenderToken;
+}
+
 export function renderCardsInChunks({ app, data, cardRenderer, afterRender }) {
     const chunkSize = CONFIG.LIST_RENDER_CHUNK_SIZE;
+    const renderToken = cancelPendingListRender(app);
     const renderContext = createCardListRenderContext(app, data);
     if (data.length <= chunkSize) {
         const cards = createCardListNodes(data, cardRenderer, renderContext, 0);
@@ -44,6 +55,7 @@ export function renderCardsInChunks({ app, data, cardRenderer, afterRender }) {
 
     let index = 0;
     const appendChunk = () => {
+        if (app.listRenderToken !== renderToken) return;
         const end = Math.min(index + chunkSize, data.length);
         const batch = [];
         for (; index < end; index++) {

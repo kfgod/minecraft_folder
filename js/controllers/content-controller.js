@@ -47,6 +47,13 @@ export function attachContentController(app) {
 
     app.elements.content.addEventListener('keydown', (e) => {
         if (e.key !== 'Enter' && e.key !== ' ') return;
+        const clickableCard = e.target.closest && e.target.closest('.clickable-card');
+        if (clickableCard === e.target && clickableCard.dataset.wiki) {
+            e.preventDefault();
+            window.open(clickableCard.dataset.wiki, '_blank', 'noopener,noreferrer');
+            return;
+        }
+
         const header = e.target.closest && e.target.closest('.section-title');
         if (!header) return;
 

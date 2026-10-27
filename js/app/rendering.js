@@ -1,7 +1,11 @@
 import { APP_MODES } from '../app-modes.js';
+import { CONFIG } from '../config.js';
 import { getFilteredDataFromState } from '../data/filtering.js';
+import { SECTION_TYPES } from '../section-config.js';
+import { cancelPendingListRender } from '../ui/list-renderer.js';
 
 export async function renderCurrentView(app) {
+    cancelPendingListRender(app);
     switch (app.state.activeMode) {
         case APP_MODES.DETAIL:
             app.detailViewManager.render();
@@ -32,6 +36,7 @@ export async function renderCurrentView(app) {
 }
 
 export async function renderActiveModeView(app) {
+    cancelPendingListRender(app);
     const pendingDetailTarget = app.pendingRestore.detailTarget;
     if (app.state.activeMode === APP_MODES.DETAIL && pendingDetailTarget) {
         app.detailViewManager.open(pendingDetailTarget.type, pendingDetailTarget.id, {
@@ -58,12 +63,15 @@ export async function renderActiveModeView(app) {
 }
 
 function renderListView(app) {
-    const query = app.getSearchQuery().toLowerCase();
+    const query = app.getSearchQuery();
+    const yearEntries = app.state.currentView === CONFIG.VIEWS.YEARS ? app.getYearEntries() : null;
     const filteredData = getFilteredDataFromState(
         app.state.allUpdates,
         app.state.currentView,
         query,
-        app.state
+        app.state,
+        SECTION_TYPES,
+        yearEntries
     );
     app.renderNav(filteredData);
     app.renderContent(filteredData);

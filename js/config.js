@@ -10,6 +10,8 @@ export const CONFIG = {
     INDEX_FILE_PATH: '/data/file_index.json',
     IMAGE_BASE_PATH: BASE_URL + '/images',
     ENCHANTMENT_ICON: BASE_URL + '/images/item/enchanted_book/latest.png',
+    /** Shown when an element has no image or its image fails to load */
+    MISSING_TEXTURE: 'https://minecraft.wiki/images/Missing_Texture_JE4.png?71c27',
     VIEWS: {
         VERSIONS: 'versions',
         YEARS: 'years',

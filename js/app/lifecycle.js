@@ -1,11 +1,19 @@
 import { CONFIG } from '../config.js';
 import { DOMManager } from '../dom-manager.js';
 import { loadSortedUpdates } from '../data-loader.js';
-import { showLoadError } from '../error-ui.js';
+import { clearPartialLoadWarning, showLoadError, showPartialLoadWarning } from '../error-ui.js';
 
 export async function loadUpdatesAndRender(app) {
     try {
-        app.state.allUpdates = await loadSortedUpdates();
+        const { updates, failedFiles } = await loadSortedUpdates();
+        app.state.allUpdates = updates;
+        if (failedFiles.length) {
+            showPartialLoadWarning(app.elements.content, failedFiles, () => {
+                void loadUpdatesAndRender(app);
+            });
+        } else {
+            clearPartialLoadWarning();
+        }
 
         app.updateSearchSuggestions();
         app.restoreCompareVersions();

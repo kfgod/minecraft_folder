@@ -1,3 +1,5 @@
+import { Utils } from '../../utils.js';
+
 const CONTENT_LABELS = {
     block: 'Block',
     item: 'Item',
@@ -123,8 +125,8 @@ function createDateLine(releaseDate) {
 export function formatDate(dateString) {
     if (!dateString) return 'Unknown';
 
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return dateString;
+    const date = Utils.parseDate(dateString);
+    if (!date) return dateString;
 
     const months = [
         'January', 'February', 'March', 'April', 'May', 'June',

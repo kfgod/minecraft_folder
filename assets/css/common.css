@@ -640,6 +640,13 @@ body.show-borders .update-card.year {
     cursor: pointer;
 }
 
+.grid-item a:focus-visible,
+.grid-item.clickable-card:focus-visible,
+.tooltip-wrapper a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
 .mob-card {
     display: grid;
     grid-template-rows: 1fr auto;

@@ -6,7 +6,9 @@ import { CONFIG } from './config.js';
 import { validateFileIndex, validateUpdateChunk } from './validate-data.js';
 
 /**
- * @returns {Promise<Array<object>>}
+ * Loads every chunk listed in the index. A chunk that fails to download or
+ * validate is skipped and reported, so one bad file does not hide the others.
+ * @returns {Promise<{ updates: Array<object>, failedFiles: Array<{ file: string, error: string }> }>}
  */
 export async function loadSortedUpdates() {
     const indexFilePath = CONFIG.BASE_URL + CONFIG.INDEX_FILE_PATH;
@@ -15,15 +17,39 @@ export async function loadSortedUpdates() {
     if (!indexCheck.ok) {
         throw new Error(indexCheck.error || 'Invalid file index');
     }
-    const fetchPromises = indexData.files.map((file) => Utils.fetchJSON(CONFIG.BASE_URL + '/' + file));
-    const updatesData = await Promise.all(fetchPromises);
-    updatesData.forEach((chunk, i) => {
-        const chunkCheck = validateUpdateChunk(chunk, i);
-        if (!chunkCheck.ok) {
-            throw new Error(chunkCheck.error || 'Invalid update chunk');
+    const results = await Promise.allSettled(
+        indexData.files.map((file) => Utils.fetchJSON(CONFIG.BASE_URL + '/' + file))
+    );
+
+    const updates = [];
+    const failedFiles = [];
+    results.forEach((result, i) => {
+        const file = indexData.files[i];
+        if (result.status === 'rejected') {
+            failedFiles.push({ file, error: result.reason?.message || String(result.reason) });
+            return;
         }
+        const chunkCheck = validateUpdateChunk(result.value, i);
+        if (!chunkCheck.ok) {
+            failedFiles.push({ file, error: chunkCheck.error || 'Invalid update chunk' });
+            return;
+        }
+        updates.push(result.value);
     });
 
+    if (!updates.length && failedFiles.length) {
+        throw new Error(`All ${failedFiles.length} data files failed to load (first: ${failedFiles[0].error})`);
+    }
+    failedFiles.forEach(({ file, error }) => console.warn(`Skipped ${file}: ${error}`));
+
+    return { updates: sortUpdates(updates), failedFiles };
+}
+
+/**
+ * Newest first; undated (announced) entries on top, then year-only dates.
+ * @param {Array<object>} updatesData
+ */
+export function sortUpdates(updatesData) {
     return updatesData.sort((a, b) => {
         if (a.release_date === null && b.release_date !== null) return -1;
         if (a.release_date !== null && b.release_date === null) return 1;

@@ -24,6 +24,21 @@ export function attachTooltipController(app) {
         }
     });
 
+    // Keyboard users get the same name/health tooltip on focus.
+    app.elements.content.addEventListener('focusin', (e) => {
+        const tooltipItem = e.target.closest('.grid-item, .tooltip-wrapper');
+        const tooltipText = tooltipItem?.dataset.tooltip;
+        if (!tooltipText) return;
+        currentTooltipItem = tooltipItem;
+        showTooltip(app.elements.tooltip, tooltipItem, tooltipText);
+    });
+
+    app.elements.content.addEventListener('focusout', (e) => {
+        if (!currentTooltipItem || currentTooltipItem.contains(e.relatedTarget)) return;
+        currentTooltipItem = null;
+        hideTooltip(app.elements.tooltip);
+    });
+
     window.addEventListener(
         'scroll',
         () => {

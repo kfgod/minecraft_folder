@@ -695,6 +695,28 @@ body.mobile-layout .time-since-subtitle {
 
 body.mobile-layout .advancement-name {
     font-size: 0.75em;
+    overflow-wrap: anywhere;
+}
+
+body.mobile-layout {
+    --grid-cols-advancements: 2;
+}
+
+/* Badge sits in flow on narrow screens so it never covers the version title */
+body.mobile-layout .update-card .card-status-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Keep the centered title clear of the absolutely positioned screenshot button */
+body.mobile-layout .update-card .card-header-row:not(.detail-header) h1 {
+    padding: 0 36px;
+    box-sizing: border-box;
+}
+
+body.mobile-layout .update-card .card-header-row:not(.detail-header) .detail-link {
+    text-align: center;
 }
 
 body.mobile-layout .update-card {
@@ -818,10 +840,14 @@ body.mobile-layout .mobile-top-bar {
 }
 
 .mobile-search-container #mobile-search-bar {
+    border: none;
+    color: var(--text-color);
     background-color: var(--surface-input);
     padding: 10px 38px 10px 14px;
     border-radius: var(--border-radius-lg);
     font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .filters-fab {
@@ -1733,4 +1759,26 @@ body.mobile-layout .material-group-table-wrapper {
 
 .app-error-retry {
     min-width: 8rem;
+}
+
+.app-warning-panel {
+    max-width: none;
+    margin: 0 0 16px;
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    text-align: left;
+    border-left: 4px solid #b45309;
+}
+
+.app-warning-panel .app-error-text {
+    margin: 0;
+    flex: 1 1 240px;
+}
+
+/* alt text is for screen readers; keep it from painting over a cell if an image fails */
+#content .grid-item img {
+    color: transparent;
 }

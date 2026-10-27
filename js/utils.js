@@ -3,6 +3,11 @@
  */
 import { CONFIG } from './config.js';
 
+const MONTHS = [
+    'january', 'february', 'march', 'april', 'may', 'june',
+    'july', 'august', 'september', 'october', 'november', 'december',
+];
+
 export class Utils {
     /**
      * Fetch JSON data from a URL
@@ -23,7 +28,7 @@ export class Utils {
      * @returns {string} The generated card ID
      */
     static generateCardId(data) {
-        const idString = data.name || data.release_version?.java || `year-${new Date().getTime()}`;
+        const idString = data.name || data.release_version?.java || 'entry-unknown';
         const sanitized = idString.replace(/[^a-zA-Z0-9]/g, '-');
         
         // Ensure ID starts with a letter (CSS requirement)
@@ -67,7 +72,23 @@ export class Utils {
             return new Date(parseInt(dateString), 11, 31);
         }
 
-        // Otherwise, try to parse as normal date
+        // ISO dates (YYYY-MM-DD) as local midnight, consistent with every other format;
+        // new Date('YYYY-MM-DD') would be UTC and can shift the day/year west of Greenwich
+        const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateString.trim());
+        if (iso) {
+            return new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
+        }
+
+        // "June 7, 2023" — the format used by the data files; parsed explicitly
+        // because non-ISO strings in the Date constructor are engine-dependent
+        const long = /^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/.exec(dateString.trim());
+        if (long) {
+            const month = MONTHS.indexOf(long[1].toLowerCase());
+            if (month !== -1) {
+                return new Date(Number(long[3]), month, Number(long[2]));
+            }
+        }
+
         const parsed = new Date(dateString);
         return isNaN(parsed.getTime()) ? null : parsed;
     }
@@ -78,15 +99,7 @@ export class Utils {
      * @returns {string} The formatted date string
      */
     static formatDateForDisplay(dateString) {
-        if (!dateString) return 'upcoming';
-
-        // If the string is only a year, return it as is
-        if (/^\d{4}$/.test(dateString.trim())) {
-            return dateString;
-        }
-
-        // Otherwise, return the original string
-        return dateString;
+        return dateString || 'upcoming';
     }
 
     /**
@@ -110,6 +123,20 @@ export class Utils {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
+    }
+
+    /**
+     * Set an <img> source, falling back to the missing texture when the path
+     * is empty or the file fails to load
+     * @param {HTMLImageElement} image
+     * @param {string | null} src
+     */
+    static setImageWithFallback(image, src) {
+        image.addEventListener('error', function useMissingTexture() {
+            image.removeEventListener('error', useMissingTexture);
+            image.src = CONFIG.MISSING_TEXTURE;
+        });
+        image.src = src || CONFIG.MISSING_TEXTURE;
     }
 
     /**

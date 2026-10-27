@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { renderCardsInChunks, getVersionGapLabel } from '../js/ui/list-renderer.js';
+import { cancelPendingListRender, renderCardsInChunks, getVersionGapLabel } from '../js/ui/list-renderer.js';
 import { CONFIG } from '../js/config.js';
 import { SECTION_TYPES } from '../js/section-config.js';
 import { findAll, installDomStub, TestElement } from './helpers/dom-stub.mjs';
@@ -95,6 +95,41 @@ test('card list renderer inserts version gap dividers only during list filtering
     const dayOnlyDividers = findAll(contentFilteredWithoutSearch, hasVersionGapClass);
     assert.equal(dayOnlyDividers.length, 1);
     assert.equal(dayOnlyDividers[0].textContent, '42 days between');
+});
+
+test('card list renderer drops queued chunks of a superseded render', () => {
+    installDomStub();
+    globalThis.DocumentFragment = class DocumentFragment extends TestElement {
+        constructor() {
+            super('#document-fragment');
+        }
+    };
+    const frames = [];
+    const originalRaf = globalThis.requestAnimationFrame;
+    globalThis.requestAnimationFrame = (callback) => frames.push(callback);
+    try {
+        const allUpdates = Array.from({ length: CONFIG.LIST_RENDER_CHUNK_SIZE + 5 }, (_, i) =>
+            createUpdate(`1.${i}`, '2024-01-01')
+        );
+        const content = document.createElement('div');
+        const app = createApp({ allUpdates, content, query: '' });
+        const cardRenderer = {
+            createCard() {
+                const card = document.createElement('div');
+                card.className = 'update-card';
+                return card;
+            },
+        };
+        let finished = 0;
+        renderCardsInChunks({ app, data: allUpdates, cardRenderer, afterRender: () => finished++ });
+        cancelPendingListRender(app);
+        while (frames.length) frames.shift()();
+
+        assert.equal(findAll(content, (node) => node.className === 'update-card').length, 0);
+        assert.equal(finished, 0);
+    } finally {
+        globalThis.requestAnimationFrame = originalRaf;
+    }
 });
 
 function createApp({ allUpdates, content, query, showItems = true }) {

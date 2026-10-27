@@ -1,3 +1,4 @@
+import { Utils } from '../../utils.js';
 import { createContentCard, createVersionCard } from './cards.js';
 
 const CONTENT_TYPES = [
@@ -52,8 +53,8 @@ function getSortedContentItems(data) {
         .map(([type, key]) => ({ type, data: data?.[key] }))
         .filter((item) => item.data)
         .sort((a, b) => {
-            const dateA = a.data.release_date ? new Date(a.data.release_date).getTime() : 0;
-            const dateB = b.data.release_date ? new Date(b.data.release_date).getTime() : 0;
+            const dateA = Utils.parseDate(a.data.release_date)?.getTime() ?? 0;
+            const dateB = Utils.parseDate(b.data.release_date)?.getTime() ?? 0;
             return dateB - dateA;
     });
 }

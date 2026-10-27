@@ -1,5 +1,6 @@
 import { CONFIG } from '../../config.js';
 import { SECTION_META } from '../../section-config.js';
+import { Utils } from '../../utils.js';
 import { CARD_CLASSES, CARD_DATA } from './constants.js';
 import { createGridItemElement, createPlaceholderGridItem } from './grid-item-renderer.js';
 
@@ -88,7 +89,7 @@ function createNotableEntry(entry) {
     if (entry.imagePath) {
         const image = document.createElement('img');
         image.className = CARD_CLASSES.NOTABLE_ENTRY_IMAGE;
-        image.src = `${CONFIG.IMAGE_BASE_PATH}${entry.imagePath}`;
+        Utils.setImageWithFallback(image, `${CONFIG.IMAGE_BASE_PATH}${entry.imagePath}`);
         image.alt = '';
         image.loading = 'lazy';
         item.appendChild(image);

@@ -298,7 +298,7 @@ function createElementCell(element) {
 
     const imagePath = Utils.resolveImagePath(element);
     const image = document.createElement('img');
-    image.src = imagePath;
+    Utils.setImageWithFallback(image, imagePath);
     image.alt = element.name || '';
     image.loading = 'lazy';
 
