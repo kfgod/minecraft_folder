@@ -1756,9 +1756,15 @@ a.time-since-card:hover {
     color: inherit;
 }
 
-a.time-since-card:hover {
+a.time-since-card:hover,
+.time-since-card-action:hover,
+.time-since-card-action:focus-visible {
     border-color: var(--since-accent);
     background-color: var(--surface-hover-color);
+}
+
+.time-since-card-action {
+    cursor: pointer;
 }
 
 .time-since-card-drop { --since-color: #4caf50; }
@@ -1773,6 +1779,16 @@ a.time-since-card:hover {
 .time-since-card-effect { --since-color: #00bcd4; }
 .time-since-card-enchantment { --since-color: #7e57c2; }
 .time-since-card-structure { --since-color: #8d6e63; }
+.time-since-card-food { --since-color: #8bc34a; }
+.time-since-card-smithing_template { --since-color: #607d8b; }
+.time-since-card-weapon { --since-color: #e53935; }
+.time-since-card-tool { --since-color: #795548; }
+.time-since-card-armor { --since-color: #90a4ae; }
+.time-since-card-pottery_sherd { --since-color: #d7835a; }
+.time-since-card-banner_pattern { --since-color: #ab47bc; }
+.time-since-card-dye { --since-color: #f06292; }
+.time-since-card-seeds { --since-color: #7cb342; }
+.time-since-card-music_disc { --since-color: #26a69a; }
 
 .time-since-card-summary {
     display: flex;

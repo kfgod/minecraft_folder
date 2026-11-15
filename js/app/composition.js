@@ -15,6 +15,7 @@ export function createAppDependencies(app) {
         },
         actions: {
             setSearchQuery: (value) => app.setSearchQuery(value),
+            openFilteredList: (options) => app.actions.openFilteredList(options),
             render: () => app.render(),
             updateURL: (clearHash, pushHistory) => app.updateURL(clearHash, pushHistory),
             saveState: () => app.saveState(),

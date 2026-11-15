@@ -1,26 +1,50 @@
 import { Utils } from '../../utils.js';
+import { SECTION_META } from '../../section-config.js';
 import { createContentCard, createVersionCard } from './cards.js';
 
+/**
+ * Content cards in display order. A tap opens the list:
+ * - `section` cards show only that section;
+ * - `tag` cards search for `#tag` in the given sections.
+ */
 const CONTENT_TYPES = [
-    ['block', 'last_block'],
-    ['item', 'last_item'],
-    ['mob', 'last_mob'],
-    ['mob_variant', 'last_mob_variant'],
-    ['advancement', 'last_advancement'],
-    ['biome', 'last_biome'],
-    ['painting', 'last_painting'],
-    ['effect', 'last_effect'],
-    ['enchantment', 'last_enchantment'],
-    ['structure', 'last_structure'],
-    ['food', 'last_food'],
+    { type: 'block', key: 'last_block', section: 'blocks' },
+    { type: 'item', key: 'last_item', section: 'items' },
+    { type: 'mob', key: 'last_mob', section: 'mobs' },
+    { type: 'mob_variant', key: 'last_mob_variant', section: 'mob_variants' },
+    { type: 'advancement', key: 'last_advancement', section: 'advancements' },
+    { type: 'biome', key: 'last_biome', section: 'biomes' },
+    { type: 'painting', key: 'last_painting', section: 'paintings' },
+    { type: 'effect', key: 'last_effect', section: 'effects' },
+    { type: 'enchantment', key: 'last_enchantment', section: 'enchantments' },
+    { type: 'structure', key: 'last_structure', section: 'structures' },
+    { type: 'food', key: 'last_food', tag: 'food', sections: ['blocks', 'items'] },
+    { type: 'smithing_template', key: 'last_smithing_template', tag: 'smithing_template', sections: ['blocks', 'items'] },
+    { type: 'weapon', key: 'last_weapon', tag: 'weapon', sections: ['blocks', 'items'] },
+    { type: 'tool', key: 'last_tool', tag: 'tool', sections: ['blocks', 'items'] },
+    { type: 'armor', key: 'last_armor', tag: 'armor', sections: ['blocks', 'items'] },
+    { type: 'pottery_sherd', key: 'last_pottery_sherd', tag: 'pottery_sherd', sections: ['blocks', 'items'] },
+    { type: 'banner_pattern', key: 'last_banner_pattern', tag: 'banner_pattern', sections: ['blocks', 'items'] },
+    { type: 'dye', key: 'last_dye', tag: 'dye', sections: ['blocks', 'items'] },
+    { type: 'seeds', key: 'last_seeds', tag: 'seeds', sections: ['blocks', 'items'] },
+    { type: 'music_disc', key: 'last_music_disc', tag: 'music_disc', sections: ['blocks', 'items'] },
 ];
 
-export function renderTimeSinceView(container, data) {
-    if (!container) return;
-    container.replaceChildren(createTimeSinceView(data));
+/** List options a card opens: a search query plus the content state keys left visible. */
+export function getListTarget(entry) {
+    const sections = entry.tag ? entry.sections : [entry.section];
+    return {
+        search: entry.tag ? `#${entry.tag}` : '',
+        sections: sections.map((section) => SECTION_META[section]?.stateKey).filter(Boolean),
+    };
 }
 
-function createTimeSinceView(data) {
+export function renderTimeSinceView(container, data, { onOpenList } = {}) {
+    if (!container) return;
+    container.replaceChildren(createTimeSinceView(data, onOpenList));
+}
+
+function createTimeSinceView(data, onOpenList) {
     const { last_drop, last_major } = data || {};
 
     const root = document.createElement('div');
@@ -42,7 +66,9 @@ function createTimeSinceView(data) {
     const contentCards = document.createElement('div');
     contentCards.className = 'time-since-cards time-since-cards-content';
     getSortedContentItems(data).forEach((item) => {
-        contentCards.appendChild(createContentCard(item.type, item.data));
+        const target = getListTarget(item.entry);
+        const onOpen = onOpenList ? () => onOpenList(target) : null;
+        contentCards.appendChild(createContentCard(item.entry.type, item.data, { onOpen }));
     });
 
     root.append(title, versionCards, contentTitle, contentCards);
@@ -51,11 +77,11 @@ function createTimeSinceView(data) {
 
 function getSortedContentItems(data) {
     return CONTENT_TYPES
-        .map(([type, key]) => ({ type, data: data?.[key] }))
+        .map((entry) => ({ entry, data: data?.[entry.key] }))
         .filter((item) => item.data)
         .sort((a, b) => {
             const dateA = Utils.parseDate(a.data.release_date)?.getTime() ?? 0;
             const dateB = Utils.parseDate(b.data.release_date)?.getTime() ?? 0;
             return dateB - dateA;
-    });
+        });
 }

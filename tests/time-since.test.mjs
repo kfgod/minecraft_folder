@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { formatDate } from '../js/modules/time-since/cards.js';
-import { renderTimeSinceView } from '../js/modules/time-since/view.js';
+import { getListTarget, renderTimeSinceView } from '../js/modules/time-since/view.js';
 import { getElapsedParts } from '../js/modules/time-since/timers.js';
 import { flattenText, installDomStub } from './helpers/dom-stub.mjs';
 
@@ -41,6 +41,14 @@ test('time since view: renders food card', () => {
     const text = flattenText(container);
     assert.ok(text.includes('Food'));
     assert.ok(text.includes('Glow Berries'));
+});
+
+test('time since view: content cards open the list with a tag or a single section', () => {
+    assert.deepEqual(
+        getListTarget({ tag: 'smithing_template', sections: ['blocks', 'items'] }),
+        { search: '#smithing_template', sections: ['showBlocks', 'showItems'] },
+    );
+    assert.deepEqual(getListTarget({ section: 'mobs' }), { search: '', sections: ['showMobs'] });
 });
 
 test('time since timer: elapsed parts follow the calendar', () => {

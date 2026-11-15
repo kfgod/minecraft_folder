@@ -13,9 +13,18 @@ const CONTENT_LABELS = {
     enchantment: 'Enchantment',
     structure: 'Structure',
     food: 'Food',
+    smithing_template: 'Smithing Template',
+    weapon: 'Weapon',
+    tool: 'Tool',
+    armor: 'Armor',
+    pottery_sherd: 'Pottery Sherd',
+    banner_pattern: 'Banner Pattern',
+    dye: 'Dye',
+    seeds: 'Seeds',
+    music_disc: 'Music Disc',
 };
 
-const SLOT_TYPES = new Set(['block', 'item', 'food']);
+const SLOT_TYPES = new Set(['block', 'item', 'food', 'smithing_template', 'weapon', 'tool', 'armor', 'pottery_sherd', 'banner_pattern', 'dye', 'seeds', 'music_disc']);
 
 export function createVersionCard(type, versionData) {
     const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
@@ -36,15 +45,23 @@ export function createVersionCard(type, versionData) {
     return card;
 }
 
-export function createContentCard(type, data) {
+export function createContentCard(type, data, { onOpen = null } = {}) {
     const element = data.element || {};
     const elementName = element.name || 'Unknown';
 
-    const card = createCardContainer({
-        href: element.wiki || '',
-        className: `time-since-card-content time-since-card-${type}`,
-        id: `time-since-${type}`,
-    });
+    // With onOpen the card opens the filtered list in-app; otherwise it links to the wiki.
+    const card = onOpen
+        ? createActionCard({
+            onOpen,
+            label: `Show all: ${CONTENT_LABELS[type] || type}`,
+            className: `time-since-card-content time-since-card-${type}`,
+            id: `time-since-${type}`,
+        })
+        : createCardContainer({
+            href: element.wiki || '',
+            className: `time-since-card-content time-since-card-${type}`,
+            id: `time-since-${type}`,
+        });
 
     const header = createCardHeader([
         createCardTitle(CONTENT_LABELS[type] || type),
@@ -94,6 +111,22 @@ function createCardContainer({ href, className, id }) {
     }
     card.className = `time-since-card ${className}`;
     card.id = id;
+    return card;
+}
+
+function createActionCard({ onOpen, label, className, id }) {
+    const card = document.createElement('div');
+    card.className = `time-since-card time-since-card-action ${className}`;
+    card.id = id;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.title = label;
+    card.addEventListener('click', onOpen);
+    card.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        onOpen();
+    });
     return card;
 }
 

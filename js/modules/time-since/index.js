@@ -36,7 +36,9 @@ export class TimeSinceManager {
 
         try {
             await this.ensureData();
-            renderTimeSinceView(this.ctx.elements.content, this.state.timeSinceData);
+            renderTimeSinceView(this.ctx.elements.content, this.state.timeSinceData, {
+                onOpenList: (options) => this.ctx.actions.openFilteredList(options),
+            });
             this.restartTimerUpdates();
         } catch (error) {
             console.error('Error rendering time-since:', error);

@@ -1,5 +1,6 @@
 import { CONFIG } from '../config.js';
 import { APP_MODES } from '../app-modes.js';
+import { CONTENT_FILTER_STATE_KEYS } from '../constants/filter-config.js';
 
 export class AppActions {
     constructor(app) {
@@ -110,6 +111,21 @@ export class AppActions {
     async toggleFilter(stateKey) {
         await this.setFilter(stateKey, !this.app.state[stateKey]);
         this.app.syncCheckboxesToState();
+    }
+
+    /**
+     * Opens the list with a prepared search and only the given content sections shown.
+     * @param {{ search?: string, sections?: string[] }} options - sections are state keys (showBlocks…)
+     */
+    openFilteredList({ search = '', sections = CONTENT_FILTER_STATE_KEYS } = {}) {
+        const app = this.app;
+        const visible = new Set(sections);
+        CONTENT_FILTER_STATE_KEYS.forEach((key) => {
+            app.state[key] = visible.has(key);
+        });
+        app.syncCheckboxesToState();
+        app.setSearchQuery(search);
+        app.setMode(APP_MODES.LIST);
     }
 
     async setContentFilters(stateKeys, enabled) {
