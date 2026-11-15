@@ -5,6 +5,8 @@ import { DOMManager } from '../../dom-manager.js';
 import { renderStatusMessage } from '../../ui/status-view.js';
 import { loadMaterialGroupsData } from './data.js';
 import { renderMaterialGroupsView } from './view.js';
+import { attachStickyTableHeaders } from '../../ui/sticky-table-header.js';
+import { MATERIAL_GROUPS_CLASSES } from './constants.js';
 import { attachMaterialGroupToggleHandlers } from './controller.js';
 
 export class MaterialGroupsManager {
@@ -13,6 +15,7 @@ export class MaterialGroupsManager {
         this.state = {
             materialGroupsData: null,
         };
+        this.detachStickyHeaders = null;
     }
 
     async ensureData() {
@@ -23,6 +26,8 @@ export class MaterialGroupsManager {
 
     reset() {
         this.state.materialGroupsData = null;
+        this.detachStickyHeaders?.();
+        this.detachStickyHeaders = null;
     }
 
     async render() {
@@ -37,6 +42,8 @@ export class MaterialGroupsManager {
             attachMaterialGroupToggleHandlers(this.ctx.elements.content, {
                 setSectionCollapsed: (sectionId, collapsed) => this.setSectionCollapsed(sectionId, collapsed),
             });
+            this.detachStickyHeaders?.();
+            this.detachStickyHeaders = attachStickyTableHeaders(this.ctx.elements.content, `.${MATERIAL_GROUPS_CLASSES.TABLE_WRAPPER}`);
         } catch (error) {
             console.error('Error rendering material groups:', error);
             renderStatusMessage(this.ctx.elements.content, `Error loading material groups data: ${error.message}`, { error: true });

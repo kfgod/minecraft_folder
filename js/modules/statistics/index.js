@@ -10,6 +10,12 @@ import { collectStatisticsElements, renderStatisticsView } from './view.js';
 import { renderStatisticsChart } from './chart-renderer.js';
 import { renderStatisticsNameTables } from './name-tables.js';
 import { renderStatisticsContentTable } from './content-table.js';
+import { attachStickyTableHeaders } from '../../ui/sticky-table-header.js';
+import { STATISTICS_CLASSES } from './constants.js';
+import { getChartStatsData } from './chart-renderer.js';
+import { renderReleaseGapChart } from './chart-gaps.js';
+import { getStatisticsSummary, getUpdateTypeSummary } from './insights.js';
+import { renderStatisticsTiles, renderUpdateTypes } from './insights-view.js';
 
 export class StatisticsManager {
     constructor(ctx) {
@@ -19,7 +25,9 @@ export class StatisticsManager {
             yearsStats: null,
             namesStats: null,
             chart: null,
+            gapChart: null,
             chartType: 'line',
+            logScale: false,
             sortState: {
                 column: 'total',
                 direction: 'desc',
@@ -27,6 +35,7 @@ export class StatisticsManager {
             lastView: ctx.state.currentView,
         };
         this.elements = null;
+        this.detachStickyHeaders = null;
     }
 
     async ensureData() {
@@ -44,6 +53,11 @@ export class StatisticsManager {
         }
     }
 
+    destroyGapChart() {
+        this.state.gapChart?.destroy();
+        this.state.gapChart = null;
+    }
+
     setChartPlaceholder(message, visible) {
         const placeholder = document.getElementById('stats-chart-placeholder');
         if (!placeholder) return;
@@ -58,6 +72,9 @@ export class StatisticsManager {
     reset() {
         this.elements = null;
         this.destroyChart();
+        this.destroyGapChart();
+        this.detachStickyHeaders?.();
+        this.detachStickyHeaders = null;
     }
 
     async render() {
@@ -79,6 +96,7 @@ export class StatisticsManager {
             renderStatisticsView(this.ctx.elements.content, {
                 isYearView: this.ctx.state.currentView === CONFIG.VIEWS.YEARS,
                 chartType: this.state.chartType,
+                logScale: this.state.logScale,
             });
 
             this.elements = collectStatisticsElements();
@@ -91,13 +109,21 @@ export class StatisticsManager {
                         this.state.chartType = chartType;
                         this.elements.chartTypeButtons.forEach((b) => b.classList.remove('active'));
                         btn.classList.add('active');
+                        if (this.elements.logToggle) this.elements.logToggle.hidden = chartType !== 'line';
                         const isYearView = this.ctx.state.currentView === CONFIG.VIEWS.YEARS;
-                        void this.renderChart(isYearView);
+                        void this.renderGrowthChart(isYearView);
                     });
                 });
             }
 
+            this.elements.logToggle?.querySelector('input').addEventListener('change', (event) => {
+                this.state.logScale = event.target.checked;
+                void this.renderGrowthChart(this.ctx.state.currentView === CONFIG.VIEWS.YEARS);
+            });
+
             await this.updateDisplay();
+            this.detachStickyHeaders?.();
+            this.detachStickyHeaders = attachStickyTableHeaders(this.ctx.elements.content, `.${STATISTICS_CLASSES.TABLE_WRAPPER}`);
         } catch (error) {
             console.error(error);
             renderStatusMessage(this.ctx.elements.content, `Unable to load statistics. ${error.message}`, { error: true });
@@ -118,12 +144,29 @@ export class StatisticsManager {
             this.elements.tableTitle.textContent = tableTitle;
         }
 
+        const versions = getChartStatsData(this.state.versionsStats, false);
+        renderStatisticsTiles(this.elements.tiles, getStatisticsSummary(versions, this.state.yearsStats));
+        renderUpdateTypes(this.elements.updateTypes, getUpdateTypeSummary(versions, this.ctx.state.allUpdates));
+
         await this.renderChart(isYearView);
         this.renderNameTables();
         this.renderContentTable();
     }
 
+    /** Both charts: also the entry point for repainting on a theme change. */
     async renderChart(isYearView) {
+        await this.renderGrowthChart(isYearView);
+        await renderReleaseGapChart({
+            canvas: this.elements?.gapChartCanvas,
+            versions: getChartStatsData(this.state.versionsStats, false),
+            destroyChart: () => this.destroyGapChart(),
+            setChart: (chart) => {
+                this.state.gapChart = chart;
+            },
+        });
+    }
+
+    async renderGrowthChart(isYearView) {
         await renderStatisticsChart({
             elements: this.elements,
             statisticsState: this.state,

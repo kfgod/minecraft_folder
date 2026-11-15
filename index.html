@@ -45,106 +45,75 @@
             <p>Browse Minecraft Java updates by version or year, including blocks, items, mobs, mob variants, effects, enchantments, advancements, paintings, biomes, structures, statistics, comparisons, time-since data, and material groups.</p>
         </section>
     </noscript>
-    <aside id="controls-panel">
+    <aside id="controls-panel" aria-label="Controls">
         <div class="controls-content">
+            <div class="side-brand">
+                <span class="side-brand-mark" aria-hidden="true"></span>
+                <span>Minecraft Updates</span>
+            </div>
             <div class="search-container">
                 <input type="text" id="search-bar" placeholder="Search across all content..." list="search-suggestions" aria-label="Search">
                 <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" hidden>&times;</button>
             </div>
             <datalist id="search-suggestions"></datalist>
-            <div class="toggle-switch">
+            <div class="toggle-switch side-segmented">
                 <div id="toggle-versions" class="toggle-switch-label active" data-view="versions" role="button" tabindex="0" aria-label="View by versions">Versions</div>
                 <div id="toggle-years" class="toggle-switch-label" data-view="years" role="button" tabindex="0" aria-label="View by years">Years</div>
             </div>
-            <div class="panel-links">
-                <button id="stats-btn" type="button" class="link-button" aria-label="Open statistics">Statistics</button>
-                <button id="compare-btn" type="button" class="link-button" aria-label="Open compare">Compare</button>
-            </div>
-            <div class="panel-links">
-                <button id="time-since-btn" type="button" class="link-button" aria-label="Open time since">Time Since</button>
-                <button id="material-groups-btn" type="button" class="link-button" aria-label="Open material groups">Material Groups</button>
-            </div>
-            <div class="filters-actions">
-                <button id="filters-select-all" type="button" class="secondary-button" aria-label="Select all filters">Select all</button>
-                <button id="filters-select-none" type="button" class="secondary-button" aria-label="Clear all filters">None</button>
-            </div>
-            <div class="theme-toggle" role="group" aria-label="Color theme">
-                <button id="theme-dark-btn" type="button" class="theme-toggle-btn active" data-theme="dark" aria-pressed="true">Dark</button>
-                <button id="theme-light-btn" type="button" class="theme-toggle-btn" data-theme="light" aria-pressed="false">Light</button>
-            </div>
-            <div class="filters-popular">
-                <span class="filters-popular-label">Popular:</span>
-                <button id="filters-popular-blocks" type="button" class="pill-button" aria-label="Toggle blocks">Blocks</button>
-                <button id="filters-popular-items" type="button" class="pill-button" aria-label="Toggle items">Items</button>
-                <button id="filters-popular-mobs" type="button" class="pill-button" aria-label="Toggle mobs">Mobs</button>
-            </div>
-            <div class="checkboxes-grid">
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-blocks-checkbox" checked>
-                    <label for="show-blocks-checkbox">Blocks</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-items-checkbox" checked>
-                    <label for="show-items-checkbox">Items</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-mobs-checkbox" checked>
-                    <label for="show-mobs-checkbox">Mobs</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-mob-variants-checkbox" checked>
-                    <label for="show-mob-variants-checkbox">Mob Variants</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-effects-checkbox" checked>
-                    <label for="show-effects-checkbox">Effects</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-enchantments-checkbox" checked>
-                    <label for="show-enchantments-checkbox">Enchantments</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-advancements-checkbox" checked>
-                    <label for="show-advancements-checkbox">Advancements</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-paintings-checkbox" checked>
-                    <label for="show-paintings-checkbox">Paintings</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-biomes-checkbox" checked>
-                    <label for="show-biomes-checkbox">Biomes</label>
-                </div>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="show-structures-checkbox" checked>
-                    <label for="show-structures-checkbox">Structures</label>
-                </div>
-            </div>
-            <div class="filter-block">
-                <div class="filter-block-header">
-                    <span>Remove Duplicates</span>
-                    <span class="help-tooltip" title="Hide entries marked as hidden duplicates.">?</span>
-                </div>
-                <label class="checkbox-container checkbox-container-inline" for="remove-duplicates-checkbox">
-                    <input type="checkbox" id="remove-duplicates-checkbox" checked>
-                    <span>Enabled</span>
-                </label>
-            </div>
-            <div class="filter-block">
-                <label class="checkbox-container checkbox-container-inline" for="show-notable-changes-checkbox">
-                    <input type="checkbox" id="show-notable-changes-checkbox" checked>
-                    <span>Notable changes (in list)</span>
-                </label>
-            </div>
 
-            <div class="disclaimer">
+            <nav class="side-section" aria-label="Pages">
+                <button id="explore-btn" type="button" class="side-link">Explore</button>
+                <button id="stats-btn" type="button" class="side-link">Statistics</button>
+                <button id="compare-btn" type="button" class="side-link">Compare</button>
+                <button id="time-since-btn" type="button" class="side-link">Time Since</button>
+                <button id="biome-content-btn" type="button" class="side-link">Biome Content</button>
+                <button id="material-groups-btn" type="button" class="side-link">Material Groups</button>
+            </nav>
+
+            <section class="side-section" aria-labelledby="side-show-heading">
+                <div class="side-heading-row">
+                    <h2 class="side-heading" id="side-show-heading">Show</h2>
+                    <span class="side-heading-actions">
+                        <button id="filters-select-all" type="button" class="side-text-button" aria-label="Select all filters">All</button>
+                        <button id="filters-select-none" type="button" class="side-text-button" aria-label="Clear all filters">None</button>
+                    </span>
+                </div>
+                <div class="filter-chips">
+                    <label class="filter-chip"><input type="checkbox" id="show-blocks-checkbox" checked><span>Blocks</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-items-checkbox" checked><span>Items</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-mobs-checkbox" checked><span>Mobs</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-mob-variants-checkbox" checked><span>Mob Variants</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-effects-checkbox" checked><span>Effects</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-enchantments-checkbox" checked><span>Enchantments</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-advancements-checkbox" checked><span>Advancements</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-paintings-checkbox" checked><span>Paintings</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-biomes-checkbox" checked><span>Biomes</span></label>
+                    <label class="filter-chip"><input type="checkbox" id="show-structures-checkbox" checked><span>Structures</span></label>
+                </div>
+            </section>
+
+            <section class="side-section" aria-labelledby="side-options-heading">
+                <h2 class="side-heading" id="side-options-heading">Options</h2>
+                <label class="side-switch" title="Hide entries marked as hidden duplicates.">
+                    <input type="checkbox" id="remove-duplicates-checkbox" role="switch" checked>
+                    <span>Remove duplicates</span>
+                </label>
+                <label class="side-switch">
+                    <input type="checkbox" id="show-notable-changes-checkbox" role="switch" checked>
+                    <span>Notable changes in list</span>
+                </label>
+            </section>
+
+            <footer class="side-footer">
+                <div class="theme-toggle" role="group" aria-label="Color theme">
+                    <button id="theme-dark-btn" type="button" class="theme-toggle-btn active" data-theme="dark" aria-pressed="true">Dark</button>
+                    <button id="theme-light-btn" type="button" class="theme-toggle-btn" data-theme="light" aria-pressed="false">Light</button>
+                </div>
                 <p class="disclaimer-text">
-                    Some images are sourced from <a href="https://minecraft.wiki" target="_blank" rel="noopener noreferrer">minecraft.wiki</a>
-                </p>
-                <p class="disclaimer-text">
+                    Some images are sourced from <a href="https://minecraft.wiki" target="_blank" rel="noopener noreferrer">minecraft.wiki</a>.
                     Not an official Minecraft website. Not approved by or associated with Mojang or Microsoft.
                 </p>
-            </div>
+            </footer>
         </div>
     </aside>
     <main>

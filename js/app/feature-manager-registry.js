@@ -1,6 +1,20 @@
 import { APP_MODES } from '../app-modes.js';
 
 const FEATURE_DEFINITIONS = {
+    itemPage: {
+        mode: APP_MODES.ITEM,
+        load: async () => {
+            const { ItemPageManager } = await import('../modules/item-info/index.js');
+            return ItemPageManager;
+        },
+    },
+    biomeContent: {
+        mode: APP_MODES.BIOME_CONTENT,
+        load: async () => {
+            const { BiomeContentManager } = await import('../modules/biome-content/index.js');
+            return BiomeContentManager;
+        },
+    },
     statistics: {
         mode: APP_MODES.STATS,
         load: async () => {

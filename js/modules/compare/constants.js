@@ -11,6 +11,7 @@ export const COMPARE_CLASSES = Object.freeze({
     TITLE: 'compare-title',
     SELECTORS: 'compare-selectors',
     SELECTOR: 'compare-selector',
+    VERSUS: 'compare-versus',
     VERSION_SELECT: 'version-select',
     CARDS: 'compare-cards',
     CARD_WRAPPER: 'compare-card-wrapper',

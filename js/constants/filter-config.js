@@ -14,8 +14,3 @@ export const ALL_FILTER_CHECKBOX_PAIRS = [
     ['showNotableChangesCheckbox', 'showNotableChanges'],
 ];
 
-export const POPULAR_FILTERS = [
-    { elementKey: 'filtersPopularBlocksBtn', stateKey: 'showBlocks' },
-    { elementKey: 'filtersPopularItemsBtn', stateKey: 'showItems' },
-    { elementKey: 'filtersPopularMobsBtn', stateKey: 'showMobs' },
-];

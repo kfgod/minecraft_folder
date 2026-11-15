@@ -12,6 +12,7 @@ const CONTENT_TYPES = [
     ['effect', 'last_effect'],
     ['enchantment', 'last_enchantment'],
     ['structure', 'last_structure'],
+    ['food', 'last_food'],
 ];
 
 export function renderTimeSinceView(container, data) {

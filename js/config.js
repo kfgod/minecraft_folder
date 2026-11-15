@@ -3,8 +3,8 @@
  */
 
 // Example: 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main' or '../minecraft_data'
-const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
-// const BASE_URL = '../minecraft_data';
+// const BASE_URL = 'https://raw.githubusercontent.com/kfgod/minecraft_folder_data/main';
+const BASE_URL = '../minecraft_data';
 export const CONFIG = {
     BASE_URL: BASE_URL,
     INDEX_FILE_PATH: '/data/file_index.json',
@@ -23,19 +23,14 @@ export const CONFIG = {
     RESIZE_DEBOUNCE_DELAY: 100,
     TRANSITION_DELAY: 50,
     MOBILE_BREAKPOINT: 900,
+    /** Features that are built but not released yet */
+    FEATURES: {
+        /** Item page (recipes and tags) on block/item click; off: the click opens the Wiki */
+        ITEM_PAGE: false,
+    },
     /** Batch card DOM inserts above this count to avoid long main-thread blocks */
     LIST_RENDER_CHUNK_SIZE: 48,
     CHART_COLORS: {
-        BLOCKS: 'rgba(255, 99, 132, 1)',
-        BLOCKS_BG: 'rgba(255, 99, 132, 0.2)',
-        ITEMS: 'rgba(54, 162, 235, 1)',
-        ITEMS_BG: 'rgba(54, 162, 235, 0.2)',
-        MOBS: 'rgba(255, 206, 86, 1)',
-        MOBS_BG: 'rgba(255, 206, 86, 0.2)',
-        EFFECTS: 'rgba(75, 192, 192, 1)',
-        EFFECTS_BG: 'rgba(75, 192, 192, 0.2)',
-        ADVANCEMENTS: 'rgba(255, 159, 64, 1)',
-        ADVANCEMENTS_BG: 'rgba(255, 159, 64, 0.2)',
         GRID: 'rgba(255, 255, 255, 0.1)',
         TEXT: 'white',
     },

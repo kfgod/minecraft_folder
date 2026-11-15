@@ -1,3 +1,4 @@
+import { CONFIG } from '../../config.js';
 import { Utils } from '../../utils.js';
 
 const CONTENT_LABELS = {
@@ -11,25 +12,25 @@ const CONTENT_LABELS = {
     effect: 'Effect',
     enchantment: 'Enchantment',
     structure: 'Structure',
+    food: 'Food',
 };
+
+const SLOT_TYPES = new Set(['block', 'item', 'food']);
 
 export function createVersionCard(type, versionData) {
     const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
     const card = createCardContainer({
         href: versionData.wiki || '',
-        className: `time-since-card-${type}`,
+        className: `time-since-card-update time-since-card-${type}`,
         id: `time-since-${type}`,
     });
 
-    const header = createCardHeader([
-        createCardTitle(typeLabel),
-        versionData.name ? createCardName(versionData.name) : null,
-        createCardVersion(versionData.version),
-    ]);
-
     card.append(
-        header,
-        createDateLine(versionData.release_date),
+        createCardHeader([
+            createCardTitle(typeLabel),
+            versionData.name ? createCardName(versionData.name) : null,
+            createCardMeta([versionData.version, formatDate(versionData.release_date)]),
+        ]),
         createTimer(versionData.release_date),
     );
     return card;
@@ -37,41 +38,50 @@ export function createVersionCard(type, versionData) {
 
 export function createContentCard(type, data) {
     const element = data.element || {};
-    const versionName = data.version_name || '';
-    const version = data.version || '';
     const elementName = element.name || 'Unknown';
 
     const card = createCardContainer({
         href: element.wiki || '',
-        className: `time-since-card-${type}`,
+        className: `time-since-card-content time-since-card-${type}`,
         id: `time-since-${type}`,
     });
 
-    const versionLabel = versionName ? `${versionName} (${version})` : version;
     const header = createCardHeader([
         createCardTitle(CONTENT_LABELS[type] || type),
         createCardName(elementName),
-        createCardVersion(versionLabel),
+        createCardMeta([data.version_name, data.version, formatDate(data.release_date)]),
     ]);
 
-    card.append(
-        header,
-        createDateLine(data.release_date),
-        createTimer(data.release_date),
-    );
+    const summary = document.createElement('div');
+    summary.className = 'time-since-card-summary';
+    const icon = createCardIcon(type, element);
+    if (icon) summary.appendChild(icon);
+    summary.appendChild(header);
+
+    card.append(summary, createTimer(data.release_date, { compact: true }));
     return card;
 }
 
-function createTimer(releaseDate) {
+function createCardIcon(type, element) {
+    const src = type === 'enchantment' ? CONFIG.ENCHANTMENT_ICON : Utils.resolveImagePath(element);
+    if (!src) return null;
+    const wrapper = document.createElement('div');
+    // Blocks and items sit in the same inventory slot as in the update cards.
+    wrapper.className = `time-since-card-icon${SLOT_TYPES.has(type) ? ' slot-cell' : ''}`;
+    const image = document.createElement('img');
+    image.alt = '';
+    image.loading = 'lazy';
+    image.addEventListener('error', () => wrapper.remove());
+    image.src = src;
+    wrapper.appendChild(image);
+    return wrapper;
+}
+
+function createTimer(releaseDate, { compact = false } = {}) {
     const timer = document.createElement('div');
     timer.className = 'time-since-card-timer';
     timer.dataset.releaseDate = releaseDate || '';
-
-    const text = document.createElement('div');
-    text.className = 'time-since-timer-text';
-    text.textContent = 'Loading...';
-
-    timer.appendChild(text);
+    if (compact) timer.dataset.compact = '';
     return timer;
 }
 
@@ -108,18 +118,11 @@ function createCardName(value) {
     return name;
 }
 
-function createCardVersion(value) {
-    const version = document.createElement('div');
-    version.className = 'time-since-card-version';
-    version.textContent = value;
-    return version;
-}
-
-function createDateLine(releaseDate) {
-    const line = document.createElement('div');
-    line.className = 'time-since-card-date';
-    line.textContent = `Released: ${formatDate(releaseDate)}`;
-    return line;
+function createCardMeta(parts) {
+    const meta = document.createElement('div');
+    meta.className = 'time-since-card-meta';
+    meta.textContent = parts.filter(Boolean).join(' · ');
+    return meta;
 }
 
 export function formatDate(dateString) {

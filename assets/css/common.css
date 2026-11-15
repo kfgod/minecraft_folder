@@ -88,9 +88,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
-.toggle-switch-label:focus-visible,
-.checkbox-container input:focus-visible + label,
-.checkbox-container label:focus-visible {
+.toggle-switch-label:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
@@ -105,9 +103,7 @@ body.no-transition #controls-panel {
 
 input,
 button,
-.toggle-switch-label,
-.checkbox-container label,
-#search-bar::placeholder {
+.toggle-switch-label {
     font-family: 'Minecraftia', sans-serif;
 }
 
@@ -150,97 +146,8 @@ button,
     cursor: not-allowed;
 }
 
-/* Checkboxes Grid */
-.checkboxes-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: start;
-}
-
-/* Checkbox Container */
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--surface-secondary);
-    padding: 10px 15px;
-    border-radius: var(--border-radius-lg);
-    cursor: pointer;
-    user-select: none;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.checkbox-container label {
-    font-size: 0.85rem;
-}
-
-/* Link Styles */
-.panel-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-}
-
-.panel-links > * {
-    flex: 1 1 0;
-    text-align: center;
-}
-
-.home-link,
-.panel-links a {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: var(--border-radius-lg);
-    transition: background-color 0.2s;
-    font-size: 0.95rem;
-}
-
-.home-link:hover,
-.panel-links a:hover {
-    background-color: #0056b3;
-}
-
-.panel-links .link-button {
-    display: inline-block;
-    padding: 10px 15px;
-}
-
-.link-button {
-    border: 1px solid var(--accent-color);
-    border-radius: var(--border-radius-lg);
-    cursor: pointer;
-    font-family: 'Minecraftia', sans-serif;
-    box-shadow: none;
-    background-color: var(--link-button-bg);
-    color: var(--accent-color);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-.link-button.active {
-    background-color: var(--accent-color);
-    color: var(--active-control-text-color);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
-}
-
-.link-button:not(.active):hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    background-color: var(--link-button-hover-bg);
-}
-
-.link-button.active:hover {
-    filter: brightness(1.05);
-}
-
 /* Utility buttons */
-.secondary-button,
-.pill-button {
+.secondary-button {
     border: 1px solid var(--surface-elevated);
     background: var(--surface-secondary);
     color: var(--text-color);
@@ -252,30 +159,9 @@ button,
     transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-.secondary-button:hover,
-.pill-button:hover {
+.secondary-button:hover {
     background-color: var(--surface-elevated);
     transform: translateY(-1px);
-}
-
-.pill-button.active {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: var(--active-control-text-color);
-}
-
-.help-tooltip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--text-color);
-    font-size: 0.75rem;
-    cursor: help;
-    user-select: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

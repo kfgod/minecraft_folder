@@ -1,6 +1,6 @@
 import { CONFIG } from '../config.js';
 import { renderActiveModeView as renderActiveModeViewForApp, renderCurrentView } from './rendering.js';
-import { setAppMode, toggleAppMode } from './modes.js';
+import { openAppItem, selectAppMode, setAppMode } from './modes.js';
 import { handlePopStateNavigation } from './popstate.js';
 import { getAppYearEntries, renderAppContent, renderAppNav, updateAppSearchSuggestions } from './list-view.js';
 import {
@@ -23,7 +23,6 @@ import {
     syncAppViewToggle,
     toggleAppFiltersPanel,
     updateAppActiveNavLink,
-    updateAppPopularButtons,
     updateAppShellLayout,
     updateAppURL,
 } from './shell.js';
@@ -107,8 +106,12 @@ export function installAppMethods(proto) {
             setAppMode(this, mode);
         },
 
-        toggleMode(mode) {
-            toggleAppMode(this, mode);
+        selectMode(mode) {
+            selectAppMode(this, mode);
+        },
+
+        openItem(identifier) {
+            openAppItem(this, identifier);
         },
 
         isYearView() {
@@ -121,10 +124,6 @@ export function installAppMethods(proto) {
 
         setSearchQuery(value) {
             setAppSearchQuery(this, value);
-        },
-
-        updatePopularButtons() {
-            updateAppPopularButtons(this);
         },
 
         updateSearchSuggestions() {

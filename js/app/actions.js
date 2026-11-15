@@ -22,6 +22,7 @@ export class AppActions {
             case APP_MODES.STATS:
             case APP_MODES.TIME_SINCE:
             case APP_MODES.MATERIAL_GROUPS:
+            case APP_MODES.BIOME_CONTENT:
                 break;
             default:
                 await app.render();
@@ -103,7 +104,6 @@ export class AppActions {
         const app = this.app;
         app.state[stateKey] = enabled;
         app.saveState();
-        app.updatePopularButtons();
         await this.refreshForFilterChange();
     }
 
@@ -118,7 +118,6 @@ export class AppActions {
             app.state[key] = enabled;
         });
         app.syncCheckboxesToState();
-        app.updatePopularButtons();
         app.saveState();
         await app.render();
     }

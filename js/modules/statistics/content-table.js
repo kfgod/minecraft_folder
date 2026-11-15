@@ -26,7 +26,7 @@ export function renderStatisticsContentTable({
 
     if (!thead || !tbody) return;
 
-    renderTableHead(thead, columns);
+    renderTableHead(thead, columns, statisticsState.sortState);
 
     thead.querySelectorAll('th').forEach((th) => {
         th.addEventListener('click', () => {
@@ -41,15 +41,41 @@ export function renderStatisticsContentTable({
         isYearView: appState.currentView === CONFIG.VIEWS.YEARS,
         getYearDetailId,
     });
+    renderTableTotals(elements.contentTableFoot, columns, data);
 }
 
-function renderTableHead(thead, columns) {
+function isNumberColumn(column) {
+    return !['name', 'version', 'year'].includes(column.key);
+}
+
+function renderTableTotals(tfoot, columns, data) {
+    if (!tfoot) return;
+    DOMManager.clearContainer(tfoot);
+    const row = document.createElement('tr');
+    columns.forEach((col, index) => {
+        const cell = document.createElement('td');
+        if (isNumberColumn(col)) {
+            cell.className = STATISTICS_CLASSES.CELL_NUMBER;
+            cell.textContent = data.reduce((sum, item) => sum + (item[col.key] || 0), 0);
+        } else if (index === 0) {
+            cell.textContent = 'All';
+        }
+        row.appendChild(cell);
+    });
+    tfoot.appendChild(row);
+}
+
+function renderTableHead(thead, columns, sortState) {
     DOMManager.clearContainer(thead);
     const row = document.createElement('tr');
     columns.forEach((col) => {
         const cell = document.createElement('th');
         cell.dataset.sort = col.key;
         cell.textContent = col.label;
+        if (isNumberColumn(col)) cell.className = STATISTICS_CLASSES.CELL_NUMBER;
+        if (sortState?.column === col.key) {
+            cell.setAttribute('aria-sort', sortState.direction === 'asc' ? 'ascending' : 'descending');
+        }
         row.appendChild(cell);
     });
     thead.appendChild(row);
@@ -81,35 +107,25 @@ export function getTableColumns(appState) {
     ];
 }
 
+function getContentCounts(stat) {
+    const counts = Object.fromEntries(STATS_COLUMNS_ORDER.map((key) => [key, stat.counts[key] || 0]));
+    return { ...counts, total: stat.counts.total };
+}
+
 export function getTableData({ appState, statisticsState, getVersionDetailId, getYearDetailId }) {
     if (appState.currentView === CONFIG.VIEWS.YEARS) {
         return statisticsState.yearsStats.map((stat) => ({
             year: stat.year,
-            items: stat.counts.items,
-            blocks: stat.counts.blocks,
-            mobs: stat.counts.mobs,
-            effects: stat.counts.effects,
-            enchantments: stat.counts.enchantments || 0,
-            advancements: stat.counts.advancements || 0,
-            biomes: stat.counts.biomes || 0,
-            structures: stat.counts.structures || 0,
-            total: stat.counts.total,
+            ...getContentCounts(stat),
             _detailId: getYearDetailId(stat.year),
         }));
     }
 
     return statisticsState.versionsStats.map((stat, index) => ({
-        name: stat.name || 'N/A',
+        // Early versions have no name; the pinned column must still identify the row.
+        name: stat.name || stat.version || 'N/A',
         version: stat.version || 'N/A',
-        items: stat.counts.items,
-        blocks: stat.counts.blocks,
-        mobs: stat.counts.mobs,
-        effects: stat.counts.effects,
-        enchantments: stat.counts.enchantments || 0,
-        advancements: stat.counts.advancements || 0,
-        biomes: stat.counts.biomes || 0,
-        structures: stat.counts.structures || 0,
-        total: stat.counts.total,
+        ...getContentCounts(stat),
         _original_index: index,
         _detailId: getVersionDetailId(stat),
     }));
@@ -161,6 +177,9 @@ function renderTableRows({ tbody, columns, sortedData, isYearView, getYearDetail
                 renderYearDetailCell(cell, displayValue, getYearDetailId(item.year));
             } else {
                 cell.textContent = displayValue;
+                if (isNumberColumn(col)) {
+                    cell.className = `${STATISTICS_CLASSES.CELL_NUMBER}${value === 0 ? ` ${STATISTICS_CLASSES.CELL_ZERO}` : ''}`;
+                }
             }
         });
     });
@@ -185,5 +204,6 @@ function createDetailButton(detailType, detailId, displayValue) {
     button.dataset.detailType = detailType;
     button.dataset.detailId = detailId;
     button.textContent = displayValue;
+    button.title = displayValue;
     return button;
 }

@@ -46,7 +46,7 @@ export const SECTION_META = {
         gridClass: 'mobs-grid',
         usePlaceholders: false,
         detailStats: true,
-        statsTable: false,
+        statsTable: true,
     },
     effects: {
         label: 'Effects',
@@ -82,7 +82,7 @@ export const SECTION_META = {
         gridClass: 'paintings-grid',
         usePlaceholders: false,
         detailStats: true,
-        statsTable: false,
+        statsTable: true,
     },
     biomes: {
         label: 'Biomes',
@@ -117,12 +117,14 @@ export const DETAIL_STATS_ORDER = [
 ];
 
 export const STATS_COLUMNS_ORDER = [
-    'items',
     'blocks',
+    'items',
     'mobs',
+    'mob_variants',
     'effects',
     'enchantments',
     'advancements',
+    'paintings',
     'biomes',
     'structures',
 ];

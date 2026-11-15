@@ -42,8 +42,8 @@ function getById(root, id) {
 }
 
 function createCompareShell({ dataSource, selections, isYearView }) {
-    const label1 = isYearView ? 'Year 1:' : 'Version 1:';
-    const label2 = isYearView ? 'Year 2:' : 'Version 2:';
+    const label1 = isYearView ? 'Year 1' : 'Version 1';
+    const label2 = isYearView ? 'Year 2' : 'Version 2';
     const placeholder = isYearView ? 'Select a year...' : 'Select a version...';
     const compareTitle = isYearView ? 'Compare Years' : 'Compare Versions';
 
@@ -53,7 +53,7 @@ function createCompareShell({ dataSource, selections, isYearView }) {
     const header = document.createElement('div');
     header.className = COMPARE_CLASSES.HEADER;
 
-    const title = document.createElement('h3');
+    const title = document.createElement('h1');
     title.className = COMPARE_CLASSES.TITLE;
     title.textContent = compareTitle;
 
@@ -65,13 +65,19 @@ function createCompareShell({ dataSource, selections, isYearView }) {
     const icon = document.createElement('img');
     icon.src = 'static/images/icons/save_image.svg';
     icon.alt = '';
-    screenshotButton.append(icon, ' Save Comparison');
+    screenshotButton.type = 'button';
+    screenshotButton.append(icon, ' Save image');
     header.append(title, screenshotButton);
 
     const selectors = document.createElement('div');
     selectors.className = COMPARE_CLASSES.SELECTORS;
+    const versus = document.createElement('span');
+    versus.className = COMPARE_CLASSES.VERSUS;
+    versus.textContent = 'vs';
+    versus.setAttribute('aria-hidden', 'true');
     selectors.append(
         createSelector({ id: COMPARE_DOM.SELECT_1_ID, label: label1, placeholder, dataSource, selectedItem: selections[0], isYearView }),
+        versus,
         createSelector({ id: COMPARE_DOM.SELECT_2_ID, label: label2, placeholder, dataSource, selectedItem: selections[1], isYearView }),
     );
 

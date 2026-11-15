@@ -20,6 +20,16 @@ export async function renderCurrentView(app) {
             await timeSinceManager.render();
             return;
         }
+        case APP_MODES.ITEM: {
+            const itemPage = await app.featureManagers.ensure('itemPage');
+            await itemPage.render();
+            return;
+        }
+        case APP_MODES.BIOME_CONTENT: {
+            const manager = await app.featureManagers.ensure('biomeContent');
+            await manager.render();
+            return;
+        }
         case APP_MODES.MATERIAL_GROUPS: {
             const materialGroupsManager = await app.ensureMaterialGroupsManager();
             await materialGroupsManager.render();

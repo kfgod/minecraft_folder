@@ -1,7 +1,7 @@
 import { updateURL as syncLocationWithState } from '../url-state.js';
 import { persistUIState } from '../ui-persistence.js';
 import { attachAppControllers } from '../controllers/index.js';
-import { syncCheckboxes, syncModeUi, syncPopularButtons } from '../ui/mode-ui.js';
+import { syncCheckboxes, syncModeUi } from '../ui/mode-ui.js';
 import { attachPanelScrollGuards, toggleFiltersPanel as setFiltersPanelState } from '../ui/panels.js';
 import { closeNav as closeNavPanel, isNavOpen as isNavPanelOpen, openNav as openNavPanel } from '../ui/nav-panel.js';
 import { applyCollapsedSections, rememberCollapsedSection } from '../ui/collapsible-sections.js';
@@ -57,10 +57,6 @@ export function getAppSearchQuery(app) {
 
 export function setAppSearchQuery(app, value) {
     setSearchQueryInFields(app.elements, value);
-}
-
-export function updateAppPopularButtons(app) {
-    syncPopularButtons(app);
 }
 
 export function toggleAppFiltersPanel(app, forceOpen = null) {

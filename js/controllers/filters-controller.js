@@ -1,8 +1,9 @@
 /**
- * Filter checkboxes, popular pills, view toggle, mode toggle buttons.
+ * Filter checkboxes, view toggle, mode toggle buttons.
  */
 import { isYearToggleDisabledMode } from '../app-modes.js';
-import { ALL_FILTER_CHECKBOX_PAIRS, CONTENT_FILTER_STATE_KEYS, POPULAR_FILTERS } from '../constants/filter-config.js';
+import { CONFIG } from '../config.js';
+import { ALL_FILTER_CHECKBOX_PAIRS, CONTENT_FILTER_STATE_KEYS } from '../constants/filter-config.js';
 
 /**
  * @param {*} app - MinecraftUpdatesApp
@@ -26,21 +27,30 @@ export function attachFiltersController(app) {
         target.click();
     });
 
+    app.elements.exploreBtn?.addEventListener('click', () => {
+        app.selectMode('list');
+    });
+
+    // Biome Content has no data yet in some data sets: hide the entry instead of showing an error page.
+    void fetch(`${CONFIG.BASE_URL}/data/biome_content/file_index.json`, { method: 'HEAD' })
+        .then((response) => { if (!response.ok) app.elements.biomeContentBtn?.setAttribute('hidden', ''); })
+        .catch(() => app.elements.biomeContentBtn?.setAttribute('hidden', ''));
+
     if (app.elements.compareBtn) {
         app.elements.compareBtn.addEventListener('click', () => {
-            app.toggleMode('compare');
+            app.selectMode('compare');
         });
     }
 
     if (app.elements.statsBtn) {
         app.elements.statsBtn.addEventListener('click', () => {
-            app.toggleMode('stats');
+            app.selectMode('stats');
         });
     }
 
     if (app.elements.timeSinceBtn) {
         app.elements.timeSinceBtn.addEventListener('click', () => {
-            app.toggleMode('time-since');
+            app.selectMode('time-since');
         });
     } else {
         console.warn('Time Since button not found');
@@ -48,11 +58,15 @@ export function attachFiltersController(app) {
 
     if (app.elements.materialGroupsBtn) {
         app.elements.materialGroupsBtn.addEventListener('click', () => {
-            app.toggleMode('material-groups');
+            app.selectMode('material-groups');
         });
     } else {
         console.warn('Material Groups button not found');
     }
+
+    app.elements.biomeContentBtn?.addEventListener('click', () => {
+        app.selectMode('biome-content');
+    });
 
     ALL_FILTER_CHECKBOX_PAIRS
         .filter(([, stateKey]) => stateKey !== 'showBorders')
@@ -85,16 +99,5 @@ export function attachFiltersController(app) {
             const theme = button.dataset.theme;
             void app.actions.setTheme(theme);
         });
-    });
-
-    const attachPopularToggle = (element, stateKey) => {
-        if (!element) return;
-        element.addEventListener('click', () => {
-            void app.actions.toggleFilter(stateKey);
-        });
-    };
-
-    POPULAR_FILTERS.forEach(({ elementKey, stateKey }) => {
-        attachPopularToggle(app.elements[elementKey], stateKey);
     });
 }

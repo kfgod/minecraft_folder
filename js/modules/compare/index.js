@@ -57,10 +57,11 @@ export class CompareManager {
     }
 
     renderCards() {
-        const { container, summary } = getCompareElements();
+        const { container, summary, screenshotButton } = getCompareElements();
         if (!container) return;
 
         const [version1, version2] = this.ctx.state.compareVersions;
+        if (screenshotButton) screenshotButton.disabled = !version1 || !version2;
         if (!version1 && !version2) {
             renderCompareEmpty(container, summary, { isYearView: isCompareYearView(this.ctx) });
             return;

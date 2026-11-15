@@ -8,8 +8,9 @@ export async function handlePopStateNavigation(app) {
     const p = new URLSearchParams(window.location.search);
     const currentView = p.get('view');
     const currentMode = p.get('mode');
-    const { view: lastView, mode: lastMode } = getLastTrackedUrlParams();
-    if (currentView === lastView && currentMode === lastMode) {
+    const currentItem = p.get('item');
+    const { view: lastView, mode: lastMode, item: lastItem } = getLastTrackedUrlParams();
+    if (currentView === lastView && currentMode === lastMode && currentItem === lastItem) {
         return;
     }
 
@@ -35,8 +36,19 @@ export async function handlePopStateNavigation(app) {
         return;
     }
 
+    app.state.itemDepth = window.history.state?.itemDepth || 0;
     app.restoreCompareVersions();
     await app.renderActiveModeView();
     app.updateLayout();
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    restoreScroll(window.history.state?.scrollY || 0);
+}
+
+/** The list renders in chunks: retry until the saved offset is reachable. */
+function restoreScroll(top) {
+    let attempts = 0;
+    const tryScroll = () => {
+        window.scrollTo({ top, behavior: 'instant' });
+        if (Math.abs(window.scrollY - top) > 2 && attempts++ < 20) setTimeout(tryScroll, 50);
+    };
+    tryScroll();
 }

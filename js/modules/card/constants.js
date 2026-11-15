@@ -33,4 +33,5 @@ export const CARD_DATA = Object.freeze({
     TOOLTIP: 'tooltip',
     IDENTIFIER: 'identifier',
     WIKI: 'wiki',
+    ITEM_INFO: 'itemInfo',
 });

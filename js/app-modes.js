@@ -8,7 +8,9 @@ export const APP_MODES = Object.freeze({
     STATS: 'stats',
     TIME_SINCE: 'time-since',
     MATERIAL_GROUPS: 'material-groups',
+    BIOME_CONTENT: 'biome-content',
     DETAIL: 'detail',
+    ITEM: 'item',
 });
 
 const URL_MODE_TO_ACTIVE = Object.freeze({
@@ -16,7 +18,9 @@ const URL_MODE_TO_ACTIVE = Object.freeze({
     stats: APP_MODES.STATS,
     'time-since': APP_MODES.TIME_SINCE,
     'material-groups': APP_MODES.MATERIAL_GROUPS,
+    'biome-content': APP_MODES.BIOME_CONTENT,
     detail: APP_MODES.DETAIL,
+    item: APP_MODES.ITEM,
 });
 
 const ACTIVE_TO_URL_PARAM = Object.freeze({
@@ -24,7 +28,9 @@ const ACTIVE_TO_URL_PARAM = Object.freeze({
     [APP_MODES.STATS]: 'stats',
     [APP_MODES.TIME_SINCE]: 'time-since',
     [APP_MODES.MATERIAL_GROUPS]: 'material-groups',
+    [APP_MODES.BIOME_CONTENT]: 'biome-content',
     [APP_MODES.DETAIL]: 'detail',
+    [APP_MODES.ITEM]: 'item',
 });
 
 /**
@@ -53,7 +59,9 @@ export function isSearchDisabledMode(activeMode) {
     return (
         activeMode === APP_MODES.STATS ||
         activeMode === APP_MODES.TIME_SINCE ||
-        activeMode === APP_MODES.MATERIAL_GROUPS
+        activeMode === APP_MODES.MATERIAL_GROUPS ||
+        activeMode === APP_MODES.BIOME_CONTENT ||
+        activeMode === APP_MODES.ITEM
     );
 }
 
@@ -62,7 +70,7 @@ export function isSearchDisabledMode(activeMode) {
  * @returns {boolean}
  */
 export function isYearToggleDisabledMode(activeMode) {
-    return activeMode === APP_MODES.TIME_SINCE || activeMode === APP_MODES.MATERIAL_GROUPS;
+    return activeMode === APP_MODES.TIME_SINCE || activeMode === APP_MODES.MATERIAL_GROUPS || activeMode === APP_MODES.BIOME_CONTENT || activeMode === APP_MODES.ITEM;
 }
 
 /**
@@ -72,9 +80,11 @@ export function isYearToggleDisabledMode(activeMode) {
  */
 export function historyModeLabel(activeMode) {
     if (activeMode === APP_MODES.DETAIL) return 'detail';
+    if (activeMode === APP_MODES.ITEM) return 'item';
     if (activeMode === APP_MODES.STATS) return 'stats';
     if (activeMode === APP_MODES.TIME_SINCE) return 'time-since';
     if (activeMode === APP_MODES.MATERIAL_GROUPS) return 'material-groups';
+    if (activeMode === APP_MODES.BIOME_CONTENT) return 'biome-content';
     if (activeMode === APP_MODES.COMPARE) return 'compare';
     return 'list';
 }

@@ -1,6 +1,7 @@
 import { CONFIG } from '../../config.js';
 import { ensureChartJs } from '../../cdn-loaders.js';
-import { CHART_SERIES } from './chart-series.js';
+import { Utils } from '../../utils.js';
+import { CHART_SERIES, SERIES_COLORS } from './chart-series.js';
 
 export async function renderStatisticsChart({
     elements,
@@ -39,7 +40,8 @@ export async function renderStatisticsChart({
     }
 
     const isBarChart = statisticsState.chartType === 'bar' || statisticsState.chartType === 'bar-absolute';
-    const datasets = buildDatasets({ chartData, appState, isBarChart });
+    const logScale = !isBarChart && Boolean(statisticsState.logScale);
+    const datasets = buildDatasets({ chartData, appState, isBarChart, logScale });
 
     if (datasets.length === 0) {
         destroyChart();
@@ -56,7 +58,8 @@ export async function renderStatisticsChart({
                 labels: chartData.labels,
                 datasets,
             },
-            options: buildChartOptions(isBarChart),
+            options: buildChartOptions({ isBarChart, logScale, statsData, isYearView }),
+            plugins: [crosshairPlugin],
         })
     );
     setPlaceholder('', false);
@@ -68,19 +71,12 @@ export function getChartStatsData(stats, isYearView) {
         return source.sort((a, b) => Number(a.year) - Number(b.year));
     }
 
+    // Utils.parseDate puts a bare year at its end, like the update list ("2026" after June 2026).
+    const time = (stat) => Utils.parseDate(stat.release_date)?.getTime() ?? Number.POSITIVE_INFINITY;
     return source.sort((a, b) => {
-        const dateA = Date.parse(a.release_date || '');
-        const dateB = Date.parse(b.release_date || '');
-        const hasDateA = Number.isFinite(dateA);
-        const hasDateB = Number.isFinite(dateB);
-
-        if (hasDateA && hasDateB) {
-            return dateA - dateB;
-        }
-        if (hasDateA !== hasDateB) {
-            return hasDateA ? -1 : 1;
-        }
-        return 0;
+        const timeA = time(a);
+        const timeB = time(b);
+        return timeA === timeB ? 0 : timeA - timeB;
     });
 }
 
@@ -109,67 +105,112 @@ export function calculateChartData(stats, labelKey, cumulative = true) {
     return { labels, ...seriesData };
 }
 
-function buildDatasets({ chartData, appState, isBarChart }) {
-    CHART_SERIES.forEach(({ key }) => {
-        if (!chartData[key]) {
-            chartData[key] = chartData.labels.map(() => 0);
-        }
-    });
-
+function buildDatasets({ chartData, appState, isBarChart, logScale }) {
+    const theme = isLightTheme() ? 'light' : 'dark';
     return CHART_SERIES
-        .map((series) => ({
-            ...series,
-            data: chartData[series.key],
-            enabled: appState[series.stateKey],
-        }))
-        .filter((ds) => ds.enabled)
-        .map((ds) => ({
-            label: ds.label,
-            data: ds.data || [],
-            borderColor: ds.borderColor,
-            backgroundColor: normalizeBackgroundColor(ds.backgroundColor, isBarChart),
-            fill: isBarChart,
-            tension: isBarChart ? 0 : 0.1,
-        }));
+        .filter((series) => appState[series.stateKey])
+        .map((series) => {
+            const color = SERIES_COLORS[series.hue][theme];
+            const data = (chartData[series.key] || chartData.labels.map(() => 0))
+                // A log axis cannot show zero: the line starts at the first non-empty point.
+                .map((value) => (logScale && value === 0 ? null : value));
+            if (isBarChart) {
+                return {
+                    label: series.label,
+                    data,
+                    backgroundColor: series.variant ? `${color}8c` : color,
+                    borderColor: getComputedStyle(document.body).getPropertyValue('--surface-color').trim(),
+                    borderWidth: 1,
+                    borderRadius: 2,
+                };
+            }
+            return {
+                label: series.label,
+                data,
+                borderColor: color,
+                backgroundColor: color,
+                borderWidth: 2,
+                borderDash: series.variant ? [5, 4] : [],
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 12,
+                tension: 0,
+                spanGaps: true,
+            };
+        });
 }
 
-function normalizeBackgroundColor(backgroundColor, isBarChart) {
-    if (!isBarChart || !backgroundColor.includes('rgba')) return backgroundColor;
+/** Thin vertical guide at the hovered version. */
+const crosshairPlugin = {
+    id: 'statsCrosshair',
+    afterDatasetsDraw(chart) {
+        const active = chart.tooltip?.getActiveElements?.() || [];
+        if (!active.length) return;
+        const { ctx, chartArea } = chart;
+        const x = active[0].element.x;
+        ctx.save();
+        ctx.strokeStyle = getChartThemeColors().grid;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x, chartArea.top);
+        ctx.lineTo(x, chartArea.bottom);
+        ctx.stroke();
+        ctx.restore();
+    },
+};
 
-    const rgbaMatch = backgroundColor.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/);
-    if (!rgbaMatch) return backgroundColor;
-
-    return `rgba(${rgbaMatch[1]}, ${rgbaMatch[2]}, ${rgbaMatch[3]}, 0.7)`;
+function getTooltipTitle(stat, isYearView) {
+    if (!stat) return '';
+    if (isYearView) return String(stat.year);
+    const heading = stat.name ? `${stat.version} — ${stat.name}` : stat.version;
+    return stat.release_date ? [heading, stat.release_date] : heading;
 }
 
-function buildChartOptions(isBarChart) {
+function buildChartOptions({ isBarChart, logScale, statsData, isYearView }) {
     const themeColors = getChartThemeColors();
+    const axisFont = { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 11 };
 
     return {
         responsive: true,
         maintainAspectRatio: false,
+        animation: false,
+        interaction: { mode: 'index', intersect: false },
         scales: {
             y: {
-                beginAtZero: true,
+                type: logScale ? 'logarithmic' : 'linear',
+                beginAtZero: !logScale,
                 stacked: isBarChart,
-                ticks: { color: themeColors.text },
+                ticks: { color: themeColors.text, font: axisFont, maxTicksLimit: 8 },
                 grid: { color: themeColors.grid },
+                border: { display: false },
             },
             x: {
                 stacked: isBarChart,
-                ticks: { color: themeColors.text },
-                grid: { color: themeColors.grid },
+                ticks: { color: themeColors.text, font: axisFont, maxRotation: 45, autoSkipPadding: 12 },
+                grid: { display: false },
             },
         },
         plugins: {
             legend: {
-                labels: { color: themeColors.text },
+                position: 'bottom',
+                labels: { color: themeColors.text, font: axisFont, boxWidth: isBarChart ? 10 : 18, boxHeight: isBarChart ? 10 : 2, padding: 12 },
+            },
+            tooltip: {
+                itemSort: (a, b) => b.parsed.y - a.parsed.y,
+                filter: (item) => Boolean(item.parsed.y),
+                callbacks: {
+                    title: (items) => getTooltipTitle(statsData[items[0]?.dataIndex], isYearView),
+                },
             },
         },
     };
 }
 
-function getChartThemeColors() {
+export function isLightTheme() {
+    return document.body.classList.contains('theme-light');
+}
+
+export function getChartThemeColors() {
     const styles = getComputedStyle(document.body);
     return {
         text: styles.getPropertyValue('--chart-text-color').trim() || CONFIG.CHART_COLORS.TEXT,

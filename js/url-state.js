@@ -8,6 +8,7 @@ import { APP_MODES, activeModeFromUrlParam, historyModeLabel } from './app-modes
 /** Last `view` / `mode` query values after our own history updates (for popstate vs hash-only). */
 let lastTrackedView = null;
 let lastTrackedMode = null;
+let lastTrackedItem = null;
 
 /**
  * Sync tracker from the current address bar (call after load and after updateURL).
@@ -16,10 +17,11 @@ export function refreshUrlSessionFromLocation() {
     const p = new URLSearchParams(window.location.search);
     lastTrackedView = p.get('view');
     lastTrackedMode = p.get('mode');
+    lastTrackedItem = p.get('item');
 }
 
 export function getLastTrackedUrlParams() {
-    return { view: lastTrackedView, mode: lastTrackedMode };
+    return { view: lastTrackedView, mode: lastTrackedMode, item: lastTrackedItem };
 }
 
 /**
@@ -43,6 +45,11 @@ export function restoreFromURL(app) {
 
     const modeParam = urlParams.get('mode');
     app.state.activeMode = activeModeFromUrlParam(modeParam);
+
+    if (app.state.activeMode === APP_MODES.ITEM) {
+        app.state.itemTarget = CONFIG.FEATURES.ITEM_PAGE ? urlParams.get('item') : null;
+        if (!app.state.itemTarget) app.state.activeMode = APP_MODES.LIST;
+    }
 
     if (app.state.activeMode === APP_MODES.DETAIL) {
         const detailType = urlParams.get('detailType') || 'version';
@@ -84,7 +91,16 @@ export function updateURL(app, clearHash = false, pushHistory = false) {
         url.searchParams.delete('search');
     }
 
-    if (app.state.activeMode === APP_MODES.DETAIL && app.state.detailTarget) {
+    if (app.state.activeMode === APP_MODES.ITEM && app.state.itemTarget) {
+        url.searchParams.set('item', app.state.itemTarget);
+    } else {
+        url.searchParams.delete('item');
+    }
+
+    if (app.state.activeMode === APP_MODES.ITEM && app.state.itemTarget) {
+        url.searchParams.set('mode', 'item');
+        ['compare1', 'compare2', 'detailType', 'detailId'].forEach((key) => url.searchParams.delete(key));
+    } else if (app.state.activeMode === APP_MODES.DETAIL && app.state.detailTarget) {
         url.searchParams.set('mode', 'detail');
         url.searchParams.set('detailType', app.state.detailTarget.type);
         url.searchParams.set('detailId', app.state.detailTarget.id);
@@ -98,6 +114,12 @@ export function updateURL(app, clearHash = false, pushHistory = false) {
         url.searchParams.delete('detailId');
     } else if (app.state.activeMode === APP_MODES.TIME_SINCE) {
         url.searchParams.set('mode', 'time-since');
+        url.searchParams.delete('compare1');
+        url.searchParams.delete('compare2');
+        url.searchParams.delete('detailType');
+        url.searchParams.delete('detailId');
+    } else if (app.state.activeMode === APP_MODES.BIOME_CONTENT) {
+        url.searchParams.set('mode', 'biome-content');
         url.searchParams.delete('compare1');
         url.searchParams.delete('compare2');
         url.searchParams.delete('detailType');
@@ -139,6 +161,8 @@ export function updateURL(app, clearHash = false, pushHistory = false) {
     const historyState = {
         view: app.state.currentView,
         mode: historyModeLabel(app.state.activeMode),
+        // Item pages opened from item pages: the in-page Back button can use history.back().
+        itemDepth: app.state.activeMode === APP_MODES.ITEM ? app.state.itemDepth || 0 : 0,
     };
     if (pushHistory) {
         window.history.pushState(historyState, '', url);

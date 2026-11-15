@@ -2,6 +2,9 @@ import { CONFIG } from '../../config.js';
 import { Utils } from '../../utils.js';
 import { CARD_CLASSES, CARD_DATA } from './constants.js';
 
+// Sections whose cells open the recipes/tags dialog instead of going straight to the Wiki.
+const ITEM_INFO_SECTIONS = new Set(['blocks', 'items']);
+
 export function createGridItemElement(item, sectionType) {
     if (sectionType === 'mobs' || sectionType === 'mob_variants') {
         return createMobItem(item, sectionType);
@@ -18,7 +21,7 @@ export function createGridItemElement(item, sectionType) {
     if (sectionType === 'biomes') {
         return createImageCell(item, 'biome-cell', 'biome-cell-image');
     }
-    return createDefaultItem(item);
+    return createDefaultItem(item, ITEM_INFO_SECTIONS.has(sectionType));
 }
 
 export function createPlaceholderGridItem() {
@@ -190,8 +193,11 @@ function createImageCell(item, cellClass, imageClass) {
     return root;
 }
 
-function createDefaultItem(item) {
+function createDefaultItem(item, withItemInfo = false) {
     const root = createGridItem(item);
+    if (withItemInfo && item.identifier) {
+        root.dataset[CARD_DATA.ITEM_INFO] = item.identifier;
+    }
     const image = createImage({
         className: 'inv-img',
         src: Utils.resolveImagePath(item),

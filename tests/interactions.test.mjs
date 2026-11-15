@@ -95,10 +95,10 @@ test('material groups interaction: keeps empty cells without synthetic fill cell
         }],
     }, { isSectionCollapsed: () => false });
 
-    const rows = findAll(root, (node) => node.tagName === 'tr');
+    const rows = findAll(findAll(root, (node) => node.tagName === 'tbody')[0], (node) => node.tagName === 'tr');
     const firstRowCells = rows[0].children.filter((node) => node.tagName === 'td');
 
-    assert.equal(firstRowCells.length, 4);
+    assert.equal(firstRowCells.length, 3);
     assert.equal(findByClass(root, 'material-group-table-cell-fill'), null);
 });
 
@@ -145,14 +145,16 @@ test('material groups interaction: renders generated family headers', () => {
     const familyTypeCells = headerRows[0].children.filter((node) => node.tagName === 'th');
     const formCells = headerRows[1].children.filter((node) => node.tagName === 'th');
 
-    assert.equal(familyTypeCells[0].textContent, 'Initial');
-    assert.equal(familyTypeCells[0].colSpan, 2);
-    assert.equal(familyTypeCells[1].textContent, 'Polished');
+    assert.equal(familyTypeCells[0].textContent, 'Material');
+    assert.equal(familyTypeCells[0].rowSpan, 2);
+    assert.equal(familyTypeCells[1].textContent, 'Initial');
     assert.equal(familyTypeCells[1].colSpan, 2);
-    assert.equal(familyTypeCells[2].textContent, 'Mossy');
+    assert.equal(familyTypeCells[2].textContent, 'Polished');
     assert.equal(familyTypeCells[2].colSpan, 2);
-    assert.equal(familyTypeCells[3].textContent, 'Special');
-    assert.equal(familyTypeCells[3].colSpan, 3);
+    assert.equal(familyTypeCells[3].textContent, 'Mossy');
+    assert.equal(familyTypeCells[3].colSpan, 2);
+    assert.equal(familyTypeCells[4].textContent, 'Special');
+    assert.equal(familyTypeCells[4].colSpan, 3);
     assert.deepEqual(formCells.map((cell) => cell.textContent), ['Stairs', 'Slab', 'Base', 'Stairs', 'Base', 'Stairs', 'Button', 'Chiseled']);
     assert.equal(formCells[7].colSpan, 2);
 });
@@ -178,13 +180,13 @@ test('material groups interaction: renders generated color row headers', () => {
         }],
     }, { isSectionCollapsed: () => false });
 
-    const colorHeader = findByClass(root, 'material-group-table-cell-color-header');
-    assert.equal(colorHeader.textContent, 'Red');
-    assert.equal(colorHeader.style['--material-group-color'], '#b02e26');
+    assert.match(flattenText(findByClass(root, 'material-group-row-label')), /Red/);
+    assert.equal(findByClass(root, 'material-group-row-label-swatch').style['--material-group-color'], '#b02e26');
+    assert.equal(findAll(root, (node) => node.tagName === 'th')[0].textContent, 'Color');
     assert.equal(findAll(root, (node) => node.tagName === 'img')[0].alt, 'Red Dye');
 });
 
-test('material groups interaction: renders generated wood headers without material column', () => {
+test('material groups interaction: renders generated wood headers with a material label', () => {
     installDomStub();
     const root = document.createElement('div');
     renderMaterialGroupsView(root, {
@@ -205,14 +207,13 @@ test('material groups interaction: renders generated wood headers without materi
         }],
     }, { isSectionCollapsed: () => false });
 
-    const headerCells = findAll(root, (node) => node.tagName === 'th');
+    const headerCells = findAll(findAll(root, (node) => node.tagName === 'thead')[0], (node) => node.tagName === 'th');
     const bodyCells = findAll(root, (node) => node.tagName === 'td');
 
-    assert.deepEqual(headerCells.map((cell) => cell.textContent), ['Log', 'Stripped Log', 'Leaves']);
-    assert.equal(headerCells[2].colSpan, 2);
+    assert.deepEqual(headerCells.map((cell) => cell.textContent), ['Material', 'Log', 'Stripped Log', 'Leaves']);
+    assert.equal(headerCells[3].colSpan, 2);
     assert.equal(bodyCells.length, 4);
-    assert.equal(findByClass(root, 'material-group-table-cell-material'), null);
-    assert.equal(findAll(root, (node) => node.tagName === 'img')[0].alt, 'Oak Log');
+    assert.match(flattenText(findByClass(root, 'material-group-row-label')), /Oak/);
 });
 
 test('statistics interaction: header click calls sort handler with column key', () => {

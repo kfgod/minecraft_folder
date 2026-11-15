@@ -21,6 +21,7 @@ export function createDefaultState() {
         compareVersions: [null, null],
         activeMode: APP_MODES.LIST,
         detailTarget: null,
+        itemTarget: null,
         detailReturnContext: 'list',
         scrollPositionBeforeDetail: 0,
     };

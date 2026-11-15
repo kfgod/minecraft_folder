@@ -24,7 +24,7 @@ export function createStatisticsContentTableCard(tableHeading) {
 
     const table = document.createElement('table');
     table.id = STATISTICS_DOM.CONTENT_TABLE_ID;
-    table.append(document.createElement('thead'), document.createElement('tbody'));
+    table.append(document.createElement('thead'), document.createElement('tbody'), document.createElement('tfoot'));
 
     header.appendChild(title);
     wrapper.appendChild(table);

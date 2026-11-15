@@ -1,9 +1,9 @@
 import { Utils } from '../../utils.js';
+import { CARD_CLASSES, CARD_DATA } from '../card/constants.js';
 import { MATERIAL_GROUPS_CLASSES, MATERIAL_GROUPS_DATA } from './constants.js';
 
 const GENERATED_FAMILIES_KIND = 'families';
 const GENERATED_COLORS_KIND = 'colors';
-const GENERATED_WOODSETS_KIND = 'woodsets';
 const GENERATED_FORM_SUFFIXES = [
     'pressure_plate',
     'base',
@@ -55,6 +55,7 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
     ].filter(Boolean).join(' ');
     title.dataset[MATERIAL_GROUPS_DATA.SECTION_ID] = sectionId;
     title.textContent = sectionName;
+    title.appendChild(createSectionCount(groups, itemKeysOrder));
 
     const tableContainer = document.createElement('div');
     tableContainer.className = [
@@ -67,18 +68,13 @@ export function createMaterialGroupSection(item, index, isSectionCollapsed) {
 
     const table = document.createElement('table');
     table.className = MATERIAL_GROUPS_CLASSES.TABLE;
-    if (isGeneratedFamiliesGroup(item)) {
-        table.appendChild(createGeneratedFamiliesHeader(itemKeysOrder));
-    } else if (isGeneratedWoodsetsGroup(item)) {
-        table.appendChild(createGeneratedWoodsetsHeader(itemKeysOrder));
-    }
+    table.appendChild(isGeneratedFamiliesGroup(item)
+        ? createGeneratedFamiliesHeader(itemKeysOrder)
+        : createFormHeader(itemKeysOrder, getCornerLabel(item)));
 
     const tbody = document.createElement('tbody');
     groups.forEach((group) => {
-        tbody.appendChild(createGroupRow(group, itemKeysOrder, {
-            includeMaterialCell: !isGeneratedFamiliesGroup(item) && !isGeneratedWoodsetsGroup(item),
-            useColorHeader: isGeneratedColorsGroup(item),
-        }));
+        tbody.appendChild(createGroupRow(group, itemKeysOrder, { useColorSwatch: isGeneratedColorsGroup(item) }));
     });
 
     table.appendChild(tbody);
@@ -96,8 +92,28 @@ function isGeneratedColorsGroup(item) {
     return item?.generated === GENERATED_COLORS_KIND;
 }
 
-function isGeneratedWoodsetsGroup(item) {
-    return item?.generated === GENERATED_WOODSETS_KIND;
+function getCornerLabel(item) {
+    return isGeneratedColorsGroup(item) ? 'Color' : 'Material';
+}
+
+function createSectionCount(groups, itemKeysOrder) {
+    const count = document.createElement('span');
+    count.className = MATERIAL_GROUPS_CLASSES.SECTION_COUNT;
+    const filled = groups.reduce((sum, group) => sum + Object.values(group.items || {}).filter(Boolean).length, 0);
+    count.textContent = `${filled} of ${groups.length * itemKeysOrder.length} filled`;
+    return count;
+}
+
+function createCornerCell(label, rowSpan = 1) {
+    const cell = document.createElement('th');
+    cell.className = [
+        MATERIAL_GROUPS_CLASSES.HEADER_CELL,
+        MATERIAL_GROUPS_CLASSES.HEADER_CELL_CORNER,
+    ].join(' ');
+    cell.rowSpan = rowSpan;
+    cell.scope = 'col';
+    cell.textContent = label;
+    return cell;
 }
 
 function createGeneratedFamiliesHeader(itemKeysOrder) {
@@ -105,6 +121,7 @@ function createGeneratedFamiliesHeader(itemKeysOrder) {
     const familyTypeRow = document.createElement('tr');
     const formRow = document.createElement('tr');
 
+    familyTypeRow.appendChild(createCornerCell('Material', 2));
     getFamilyTypeSpans(itemKeysOrder).forEach((span) => {
         const cell = document.createElement('th');
         cell.className = [
@@ -131,11 +148,12 @@ function createGeneratedFamiliesHeader(itemKeysOrder) {
     return header;
 }
 
-function createGeneratedWoodsetsHeader(itemKeysOrder) {
+function createFormHeader(itemKeysOrder, cornerLabel) {
     const header = document.createElement('thead');
     const formRow = document.createElement('tr');
 
-    getWoodFormSpans(itemKeysOrder).forEach((span) => {
+    formRow.appendChild(createCornerCell(cornerLabel));
+    getRepeatedFormSpans(itemKeysOrder).forEach((span) => {
         const cell = document.createElement('th');
         cell.className = [
             MATERIAL_GROUPS_CLASSES.HEADER_CELL,
@@ -164,7 +182,7 @@ function getFormSpans(itemKeysOrder) {
     return spans;
 }
 
-function getWoodFormSpans(itemKeysOrder) {
+function getRepeatedFormSpans(itemKeysOrder) {
     const spans = [];
     itemKeysOrder.forEach((itemKey) => {
         const form = stripDuplicateIndex(itemKey);
@@ -251,42 +269,52 @@ function getItemKeysOrder(groups, { columnsOrder = null } = {}) {
     return orderedKeys;
 }
 
-function createGroupRow(group, allItemKeys, { includeMaterialCell = true, useColorHeader = false } = {}) {
+function createGroupRow(group, allItemKeys, { useColorSwatch = false } = {}) {
     const row = document.createElement('tr');
-    if (useColorHeader) {
-        row.appendChild(createColorHeaderCell(group));
-    } else if (includeMaterialCell) {
-        row.appendChild(createTableCell(group.material || {}, true));
-    }
-
     const items = group.items || {};
+    row.appendChild(createRowLabel(group, allItemKeys, useColorSwatch));
     allItemKeys.forEach((itemKey) => {
-        row.appendChild(createTableCell(items[itemKey], false));
+        row.appendChild(createTableCell(items[itemKey]));
     });
-
     return row;
 }
 
-function createColorHeaderCell(group) {
-    const colorKey = group.group || '';
-    const color = COLOR_SWATCHES[colorKey] || '#888';
-    const cell = document.createElement('td');
-    cell.className = [
-        MATERIAL_GROUPS_CLASSES.CELL,
-        MATERIAL_GROUPS_CLASSES.MATERIAL_CELL,
-        MATERIAL_GROUPS_CLASSES.COLOR_HEADER_CELL,
-    ].join(' ');
-    cell.style.setProperty('--material-group-color', color);
-    cell.textContent = group.group_name || formatGeneratedLabel(colorKey);
+/** Sticky first column: which material this row is. */
+function createRowLabel(group, allItemKeys, useColorSwatch) {
+    const cell = document.createElement('th');
+    cell.className = MATERIAL_GROUPS_CLASSES.ROW_LABEL;
+    cell.scope = 'row';
+    const content = document.createElement('div');
+    content.className = MATERIAL_GROUPS_CLASSES.ROW_LABEL_CONTENT;
+    cell.appendChild(content);
+
+    if (useColorSwatch) {
+        const swatch = document.createElement('span');
+        swatch.className = MATERIAL_GROUPS_CLASSES.ROW_LABEL_SWATCH;
+        swatch.style.setProperty('--material-group-color', COLOR_SWATCHES[group.group] || '#888');
+        content.appendChild(swatch);
+    } else {
+        const iconSource = group.material || allItemKeys.map((key) => group.items?.[key]).find(Boolean);
+        const imagePath = Utils.resolveImagePath(iconSource);
+        if (imagePath) {
+            const icon = document.createElement('img');
+            icon.className = MATERIAL_GROUPS_CLASSES.ROW_LABEL_ICON;
+            Utils.setImageWithFallback(icon, imagePath);
+            icon.alt = '';
+            icon.loading = 'lazy';
+            content.appendChild(icon);
+        }
+    }
+
+    const name = document.createElement('span');
+    name.textContent = group.group_name || formatGeneratedLabel(group.group);
+    content.appendChild(name);
     return cell;
 }
 
-function createTableCell(element, isMaterial) {
+function createTableCell(element) {
     const cell = document.createElement('td');
-    cell.className = [
-        MATERIAL_GROUPS_CLASSES.CELL,
-        isMaterial ? MATERIAL_GROUPS_CLASSES.MATERIAL_CELL : '',
-    ].filter(Boolean).join(' ');
+    cell.className = MATERIAL_GROUPS_CLASSES.CELL;
     cell.appendChild(createElementCell(element));
     return cell;
 }
@@ -317,7 +345,10 @@ function createElementCell(element) {
     }
 
     const wrapper = document.createElement('div');
-    wrapper.className = MATERIAL_GROUPS_CLASSES.ELEMENT;
+    wrapper.className = `${MATERIAL_GROUPS_CLASSES.ELEMENT} ${CARD_CLASSES.TOOLTIP_WRAPPER}`;
+    wrapper.dataset[CARD_DATA.TOOLTIP] = element.name || '';
+    // Same click contract as list cells: item page when enabled, otherwise the Wiki link.
+    if (element.identifier) wrapper.dataset[CARD_DATA.ITEM_INFO] = element.identifier;
     wrapper.appendChild(imageWrapper);
     return wrapper;
 }

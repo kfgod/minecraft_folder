@@ -1,5 +1,20 @@
 import { Utils } from '../../utils.js';
 
+const UNITS = ['years', 'months', 'days', 'hours', 'minutes', 'seconds'];
+const FULL_LABELS = {
+    years: ['year', 'years'],
+    months: ['month', 'months'],
+    days: ['day', 'days'],
+    hours: ['hour', 'hours'],
+    minutes: ['minute', 'minutes'],
+    seconds: ['second', 'seconds'],
+};
+const SHORT_LABELS = { years: 'y', months: 'mo', days: 'd', hours: 'h', minutes: 'm', seconds: 's' };
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
+
 export function startTimeSinceTimers(root = document) {
     updateTimers(root);
     return setInterval(() => {
@@ -8,54 +23,83 @@ export function startTimeSinceTimers(root = document) {
 }
 
 export function updateTimers(root = document) {
-    const cards = root.querySelectorAll('.time-since-card-timer');
+    const timers = root.querySelectorAll('.time-since-card-timer');
 
-    cards.forEach((card) => {
-        const releaseDateStr = card.getAttribute('data-release-date');
-        if (!releaseDateStr) return;
-
-        const releaseDate = Utils.parseDate(releaseDateStr);
+    timers.forEach((timer) => {
+        const releaseDate = Utils.parseDate(timer.dataset.releaseDate);
         if (!releaseDate) return;
-        const diff = new Date() - releaseDate;
 
-        if (diff < 0) {
-            const textElement = card.querySelector('.time-since-timer-text');
-            if (textElement) textElement.textContent = 'Not yet released';
+        const now = new Date();
+        if (now < releaseDate) {
+            renderMessage(timer, 'Not yet released');
             return;
         }
-
-        updateTimerCard(card, diff);
+        renderUnits(timer, getElapsedParts(releaseDate, now));
     });
 }
 
-function updateTimerCard(card, diff) {
-    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    const textElement = card.querySelector('.time-since-timer-text');
+/** Calendar difference: whole months first, the remainder as days and time. */
+export function getElapsedParts(from, to) {
+    let totalMonths = (to.getFullYear() - from.getFullYear()) * 12 + to.getMonth() - from.getMonth();
+    if (addMonths(from, totalMonths) > to) totalMonths -= 1;
 
-    if (textElement) {
-        textElement.textContent = formatTimerParts({ years, months, days, hours, minutes, seconds });
+    const rest = to - addMonths(from, totalMonths);
+    return {
+        years: Math.floor(totalMonths / 12),
+        months: totalMonths % 12,
+        days: Math.floor(rest / DAY),
+        hours: Math.floor(rest / HOUR) % 24,
+        minutes: Math.floor(rest / MINUTE) % 60,
+        seconds: Math.floor(rest / SECOND) % 60,
+    };
+}
+
+function addMonths(date, months) {
+    const result = new Date(date);
+    const day = result.getDate();
+    result.setDate(1);
+    result.setMonth(result.getMonth() + months);
+    const lastDay = new Date(result.getFullYear(), result.getMonth() + 1, 0).getDate();
+    result.setDate(Math.min(day, lastDay));
+    return result;
+}
+
+function renderMessage(timer, message) {
+    delete timer.dataset.units;
+    const text = document.createElement('div');
+    text.className = 'time-since-timer-text';
+    text.textContent = message;
+    timer.replaceChildren(text);
+}
+
+function renderUnits(timer, parts) {
+    // Leading empty units are hidden; hours, minutes and seconds always stay.
+    const firstVisible = UNITS.findIndex((unit, index) => parts[unit] > 0 || index >= 3);
+    const visible = UNITS.slice(firstVisible);
+    const key = visible.join(' ');
+    if (timer.dataset.units !== key) {
+        timer.dataset.units = key;
+        timer.replaceChildren(...visible.map(createUnit));
     }
+
+    const compact = 'compact' in timer.dataset;
+    [...timer.children].forEach((element) => {
+        const unit = element.dataset.unit;
+        const value = parts[unit];
+        const [valueElement, labelElement] = element.children;
+        valueElement.textContent = UNITS.indexOf(unit) >= 3 ? String(value).padStart(2, '0') : String(value);
+        labelElement.textContent = compact ? SHORT_LABELS[unit] : FULL_LABELS[unit][value === 1 ? 0 : 1];
+    });
 }
 
-function formatTimerParts(partsByUnit) {
-    const parts = [];
-    ['years', 'months', 'days'].forEach((unit) => {
-        const value = partsByUnit[unit];
-        if (value > 0) parts.push(`${value} ${value === 1 ? unit.slice(0, -1) : unit}`);
-    });
-
-    parts.push(`${partsByUnit.hours} ${partsByUnit.hours === 1 ? 'hour' : 'hours'}`);
-    parts.push(`${partsByUnit.minutes} ${partsByUnit.minutes === 1 ? 'minute' : 'minutes'}`);
-    parts.push(`${partsByUnit.seconds} ${partsByUnit.seconds === 1 ? 'second' : 'seconds'}`);
-
-    if (parts.length === 1) return parts[0];
-    if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
-
-    const lastPart = parts.pop();
-    return `${parts.join(', ')} and ${lastPart}`;
+function createUnit(unit) {
+    const element = document.createElement('div');
+    element.className = 'time-since-unit';
+    element.dataset.unit = unit;
+    const value = document.createElement('span');
+    value.className = 'time-since-unit-value';
+    const label = document.createElement('span');
+    label.className = 'time-since-unit-label';
+    element.append(value, label);
+    return element;
 }

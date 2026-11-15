@@ -1,6 +1,6 @@
 import { APP_MODES, isSearchDisabledMode, isYearToggleDisabledMode } from '../app-modes.js';
 import { CONFIG } from '../config.js';
-import { POPULAR_FILTERS, ALL_FILTER_CHECKBOX_PAIRS } from '../constants/filter-config.js';
+import { ALL_FILTER_CHECKBOX_PAIRS } from '../constants/filter-config.js';
 import { DOMManager } from '../dom-manager.js';
 
 export const MODE_UI_CONFIG = [
@@ -8,7 +8,9 @@ export const MODE_UI_CONFIG = [
     { mode: APP_MODES.STATS, btnKey: 'statsBtn', bodyClass: 'stats-mode' },
     { mode: APP_MODES.TIME_SINCE, btnKey: 'timeSinceBtn', bodyClass: 'time-since-mode' },
     { mode: APP_MODES.MATERIAL_GROUPS, btnKey: 'materialGroupsBtn', bodyClass: 'material-groups-mode' },
+    { mode: APP_MODES.BIOME_CONTENT, btnKey: 'biomeContentBtn', bodyClass: 'biome-content-mode' },
     { mode: APP_MODES.DETAIL, btnKey: null, bodyClass: 'detail-mode' },
+    { mode: APP_MODES.ITEM, btnKey: null, bodyClass: 'item-mode' },
 ];
 
 export function syncModeUi(app) {
@@ -28,6 +30,8 @@ export function syncModeUi(app) {
         app.elements.body.classList.toggle(bodyClass, active);
         if (btnKey) app.elements[btnKey]?.classList.toggle('active', active);
     });
+    // Explore is the update list and the pages opened from it (version detail, item).
+    app.elements.exploreBtn?.classList.toggle('active', [APP_MODES.LIST, APP_MODES.DETAIL, APP_MODES.ITEM].includes(mode));
 
     const searchDisabled = isSearchDisabledMode(mode);
     const searchPlaceholder = searchDisabled ? 'Search disabled' : 'Search across all content...';
@@ -37,7 +41,6 @@ export function syncModeUi(app) {
         bar.placeholder = searchPlaceholder;
     });
 
-    syncPopularButtons(app);
 }
 
 export function syncThemeUi(app) {
@@ -64,10 +67,3 @@ export function syncCheckboxes(app) {
     });
 }
 
-export function syncPopularButtons(app) {
-    POPULAR_FILTERS.forEach(({ elementKey, stateKey }) => {
-        const element = app.elements[elementKey];
-        if (!element) return;
-        element.classList.toggle('active', Boolean(app.state[stateKey]));
-    });
-}
