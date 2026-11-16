@@ -22,9 +22,10 @@ const CONTENT_LABELS = {
     dye: 'Dye',
     seeds: 'Seeds',
     music_disc: 'Music Disc',
+    flower: 'Flower',
 };
 
-const SLOT_TYPES = new Set(['block', 'item', 'food', 'smithing_template', 'weapon', 'tool', 'armor', 'pottery_sherd', 'banner_pattern', 'dye', 'seeds', 'music_disc']);
+const SLOT_TYPES = new Set(['block', 'item', 'food', 'smithing_template', 'weapon', 'tool', 'armor', 'pottery_sherd', 'banner_pattern', 'dye', 'seeds', 'music_disc', 'flower']);
 
 export function createVersionCard(type, versionData) {
     const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
@@ -75,7 +76,12 @@ export function createContentCard(type, data, { onOpen = null } = {}) {
     if (icon) summary.appendChild(icon);
     summary.appendChild(header);
 
-    card.append(summary, createTimer(data.release_date, { compact: true }));
+    const footer = document.createElement('div');
+    footer.className = 'time-since-card-footer';
+    footer.appendChild(createTimer(data.release_date, { compact: true }));
+    if (Number.isInteger(data.versions_since)) footer.appendChild(createVersionsSince(data.versions_since));
+
+    card.append(summary, footer);
     return card;
 }
 
@@ -93,6 +99,18 @@ function createCardIcon(type, element) {
     image.src = src;
     wrapper.appendChild(image);
     return wrapper;
+}
+
+export function formatVersionsSince(count) {
+    if (count === 0) return 'No versions since';
+    return `${count} ${count === 1 ? 'version' : 'versions'} since`;
+}
+
+function createVersionsSince(count) {
+    const element = document.createElement('div');
+    element.className = 'time-since-card-versions';
+    element.textContent = formatVersionsSince(count);
+    return element;
 }
 
 function createTimer(releaseDate, { compact = false } = {}) {

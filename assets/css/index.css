@@ -1789,6 +1789,7 @@ a.time-since-card:hover,
 .time-since-card-dye { --since-color: #f06292; }
 .time-since-card-seeds { --since-color: #7cb342; }
 .time-since-card-music_disc { --since-color: #26a69a; }
+.time-since-card-flower { --since-color: #ec407a; }
 
 .time-since-card-summary {
     display: flex;
@@ -1858,7 +1859,7 @@ a.time-since-card:hover,
     color: var(--muted-text-color);
 }
 
-/* Counter: one tile per unit, so the seconds tick without moving the layout. */
+/* Counter: one tile per unit (years, months, days). */
 .time-since-card-timer {
     display: grid;
     grid-auto-flow: column;
@@ -1891,13 +1892,30 @@ a.time-since-card:hover,
     color: var(--muted-text-color);
 }
 
+.time-since-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2px 12px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--panel-border-color);
+}
+
+.time-since-card-versions {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: var(--muted-text-color);
+    white-space: nowrap;
+}
+
 .time-since-card-timer[data-compact] {
     display: flex;
     flex-wrap: wrap;
     gap: 2px 10px;
     min-height: 0;
-    padding-top: 10px;
-    border-top: 1px solid var(--panel-border-color);
+    margin-top: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-variant-numeric: tabular-nums;
 }

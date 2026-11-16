@@ -28,6 +28,7 @@ const CONTENT_TYPES = [
     { type: 'dye', key: 'last_dye', tag: 'dye', sections: ['blocks', 'items'] },
     { type: 'seeds', key: 'last_seeds', tag: 'seeds', sections: ['blocks', 'items'] },
     { type: 'music_disc', key: 'last_music_disc', tag: 'music_disc', sections: ['blocks', 'items'] },
+    { type: 'flower', key: 'last_flower', tag: 'flower', sections: ['blocks', 'items'] },
 ];
 
 /** List options a card opens: a search query plus the content state keys left visible. */

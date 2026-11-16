@@ -1,6 +1,6 @@
 import { Utils } from '../../utils.js';
 
-const UNITS = ['years', 'months', 'days', 'hours', 'minutes', 'seconds'];
+const UNITS = ['years', 'months', 'days'];
 const FULL_LABELS = {
     years: ['year', 'years'],
     months: ['month', 'months'],
@@ -17,9 +17,10 @@ const DAY = 24 * HOUR;
 
 export function startTimeSinceTimers(root = document) {
     updateTimers(root);
+    // Days are the smallest unit shown, so a minute is plenty to catch midnight.
     return setInterval(() => {
         updateTimers(root);
-    }, 1000);
+    }, MINUTE);
 }
 
 export function updateTimers(root = document) {
@@ -73,8 +74,8 @@ function renderMessage(timer, message) {
 }
 
 function renderUnits(timer, parts) {
-    // Leading empty units are hidden; hours, minutes and seconds always stay.
-    const firstVisible = UNITS.findIndex((unit, index) => parts[unit] > 0 || index >= 3);
+    // Leading empty units are hidden; days always stay.
+    const firstVisible = UNITS.findIndex((unit, index) => parts[unit] > 0 || index === UNITS.length - 1);
     const visible = UNITS.slice(firstVisible);
     const key = visible.join(' ');
     if (timer.dataset.units !== key) {
@@ -87,7 +88,7 @@ function renderUnits(timer, parts) {
         const unit = element.dataset.unit;
         const value = parts[unit];
         const [valueElement, labelElement] = element.children;
-        valueElement.textContent = UNITS.indexOf(unit) >= 3 ? String(value).padStart(2, '0') : String(value);
+        valueElement.textContent = String(value);
         labelElement.textContent = compact ? SHORT_LABELS[unit] : FULL_LABELS[unit][value === 1 ? 0 : 1];
     });
 }

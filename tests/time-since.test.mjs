@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { formatDate } from '../js/modules/time-since/cards.js';
+import { formatDate, formatVersionsSince } from '../js/modules/time-since/cards.js';
 import { getListTarget, renderTimeSinceView } from '../js/modules/time-since/view.js';
 import { getElapsedParts } from '../js/modules/time-since/timers.js';
 import { flattenText, installDomStub } from './helpers/dom-stub.mjs';
@@ -49,6 +49,19 @@ test('time since view: content cards open the list with a tag or a single sectio
         { search: '#smithing_template', sections: ['showBlocks', 'showItems'] },
     );
     assert.deepEqual(getListTarget({ section: 'mobs' }), { search: '', sections: ['showMobs'] });
+});
+
+test('time since view: content cards show how many versions came out since', () => {
+    assert.equal(formatVersionsSince(0), 'No versions since');
+    assert.equal(formatVersionsSince(1), '1 version since');
+    assert.equal(formatVersionsSince(13), '13 versions since');
+
+    installDomStub();
+    const container = document.createElement('div');
+    renderTimeSinceView(container, {
+        last_food: { release_date: '2021-06-08', version: '1.17', element: { name: 'Glow Berries' }, versions_since: 19 },
+    });
+    assert.ok(flattenText(container).includes('19 versions since'));
 });
 
 test('time since timer: elapsed parts follow the calendar', () => {
