@@ -329,6 +329,17 @@ body.show-borders .update-card.year {
     height: 100%;
 }
 
+/* Effect icons are bare 18px textures on the effect frame; 3/24 inset matches the old baked-in icons. */
+.effects-grid .grid-item,
+.effect-slot {
+    background-image: url('../../static/images/effect_background.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    padding: 12.5%;
+    box-sizing: border-box;
+}
+
 /* Mobs Grid Specific Styles */
 .mobs-grid {
     --grid-cols: var(--grid-cols-mobs);

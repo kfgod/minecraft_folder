@@ -84,7 +84,8 @@ function createCardIcon(type, element) {
     if (!src) return null;
     const wrapper = document.createElement('div');
     // Blocks and items sit in the same inventory slot as in the update cards.
-    wrapper.className = `time-since-card-icon${SLOT_TYPES.has(type) ? ' slot-cell' : ''}`;
+    const frame = SLOT_TYPES.has(type) ? ' slot-cell' : type === 'effect' ? ' effect-slot' : '';
+    wrapper.className = `time-since-card-icon${frame}`;
     const image = document.createElement('img');
     image.alt = '';
     image.loading = 'lazy';

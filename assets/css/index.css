@@ -1805,7 +1805,12 @@ a.time-since-card:hover,
     overflow: hidden;
 }
 
-.time-since-card-icon:not(.slot-cell) {
+/* Percent padding would resolve against the summary row, so inset the effect icon in px (3/24). */
+.time-since-card-icon.effect-slot {
+    padding: calc(52px * 3 / 24);
+}
+
+.time-since-card-icon:not(.slot-cell):not(.effect-slot) {
     background-color: var(--surface-secondary);
 }
 
