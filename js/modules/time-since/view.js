@@ -5,7 +5,8 @@ import { createContentCard, createVersionCard } from './cards.js';
 /**
  * Content cards in display order. A tap opens the list:
  * - `section` cards show only that section;
- * - `tag` cards search for `#tag` in the given sections.
+ * - `tag` cards search for `#tag` in the given sections;
+ * - `dataTag` cards search for the tag stored in the card data (`data.tag`).
  */
 const CONTENT_TYPES = [
     { type: 'block', key: 'last_block', section: 'blocks' },
@@ -29,13 +30,18 @@ const CONTENT_TYPES = [
     { type: 'seeds', key: 'last_seeds', tag: 'kind:seed', sections: ['blocks', 'items'] },
     { type: 'music_disc', key: 'last_music_disc', tag: 'kind:music_disc', sections: ['blocks', 'items'] },
     { type: 'flower', key: 'last_flower', tag: 'kind:flower', sections: ['blocks', 'items'] },
+    { type: 'bucket', key: 'last_bucket', tag: 'kind:bucket', sections: ['blocks', 'items'] },
+    { type: 'head', key: 'last_head', tag: 'kind:head', sections: ['blocks', 'items'] },
+    // The tag comes from the data: the newest wood set, e.g. wood:pale_oak.
+    { type: 'wood', key: 'last_wood', dataTag: true, sections: ['blocks', 'items'] },
 ];
 
 /** List options a card opens: a search query plus the content state keys left visible. */
-export function getListTarget(entry) {
-    const sections = entry.tag ? entry.sections : [entry.section];
+export function getListTarget(entry, data) {
+    const tag = entry.dataTag ? data?.tag : entry.tag;
+    const sections = entry.section ? [entry.section] : entry.sections;
     return {
-        search: entry.tag ? `#${entry.tag}` : '',
+        search: tag ? `#${tag}` : '',
         sections: sections.map((section) => SECTION_META[section]?.stateKey).filter(Boolean),
     };
 }
@@ -67,7 +73,7 @@ function createTimeSinceView(data, onOpenList) {
     const contentCards = document.createElement('div');
     contentCards.className = 'time-since-cards time-since-cards-content';
     getSortedContentItems(data).forEach((item) => {
-        const target = getListTarget(item.entry);
+        const target = getListTarget(item.entry, item.data);
         const onOpen = onOpenList ? () => onOpenList(target) : null;
         contentCards.appendChild(createContentCard(item.entry.type, item.data, { onOpen }));
     });

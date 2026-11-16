@@ -49,6 +49,10 @@ test('time since view: content cards open the list with a tag or a single sectio
         { search: '#kind:smithing_template', sections: ['showBlocks', 'showItems'] },
     );
     assert.deepEqual(getListTarget({ section: 'mobs' }), { search: '', sections: ['showMobs'] });
+    assert.deepEqual(
+        getListTarget({ dataTag: true, sections: ['blocks', 'items'] }, { tag: 'wood:pale_oak' }),
+        { search: '#wood:pale_oak', sections: ['showBlocks', 'showItems'] },
+    );
 });
 
 test('time since view: content cards show how many versions came out since', () => {

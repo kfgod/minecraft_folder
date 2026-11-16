@@ -1790,6 +1790,9 @@ a.time-since-card:hover,
 .time-since-card-seeds { --since-color: #7cb342; }
 .time-since-card-music_disc { --since-color: #26a69a; }
 .time-since-card-flower { --since-color: #ec407a; }
+.time-since-card-bucket { --since-color: #42a5f5; }
+.time-since-card-head { --since-color: #a1887f; }
+.time-since-card-wood { --since-color: #a1662f; }
 
 .time-since-card-summary {
     display: flex;

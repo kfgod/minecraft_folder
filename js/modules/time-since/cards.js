@@ -23,9 +23,12 @@ const CONTENT_LABELS = {
     seeds: 'Seeds',
     music_disc: 'Music Disc',
     flower: 'Flower',
+    bucket: 'Bucket',
+    head: 'Head',
+    wood: 'Wood Type',
 };
 
-const SLOT_TYPES = new Set(['block', 'item', 'food', 'smithing_template', 'weapon', 'tool', 'armor', 'pottery_sherd', 'banner_pattern', 'dye', 'seeds', 'music_disc', 'flower']);
+const SLOT_TYPES = new Set(['block', 'item', 'food', 'smithing_template', 'weapon', 'tool', 'armor', 'pottery_sherd', 'banner_pattern', 'dye', 'seeds', 'music_disc', 'flower', 'bucket', 'head', 'wood']);
 
 export function createVersionCard(type, versionData) {
     const typeLabel = type === 'drop' ? 'Drop Update' : 'Major Update';
