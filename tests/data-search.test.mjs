@@ -14,19 +14,19 @@ test('parseSearchQuery: text and tags', () => {
 });
 
 test('parseSearchQuery: keeps namespaced tags', () => {
-    assert.deepEqual(parseSearchQuery('#family:oak').tags, ['family:oak']);
+    assert.deepEqual(parseSearchQuery('#wood:oak').tags, ['wood:oak']);
     assert.deepEqual(parseSearchQuery('#woodset/oak').tags, ['woodset/oak']);
     assert.deepEqual(parseSearchQuery('#Form:Planks!').tags, ['form:planks']);
 });
 
 test('filterItems: namespaced tags and word order', () => {
     const items = [
-        { name: 'Oak Planks', identifier: 'oak_planks', types: ['family:oak', 'form:planks'] },
+        { name: 'Oak Planks', identifier: 'oak_planks', types: ['wood:oak', 'form:planks'] },
         { name: 'Spruce Planks', identifier: 'spruce_planks', types: ['family:spruce', 'form:planks'] },
-        { name: 'Oak Log', identifier: 'oak_log', types: ['family:oak'] },
+        { name: 'Oak Log', identifier: 'oak_log', types: ['wood:oak'] },
     ];
-    assert.deepEqual(filterItems(items, '#family:oak', false).map((i) => i.name), ['Oak Planks', 'Oak Log']);
-    assert.deepEqual(filterItems(items, '#form:planks #family:oak', false).map((i) => i.name), ['Oak Planks']);
+    assert.deepEqual(filterItems(items, '#wood:oak', false).map((i) => i.name), ['Oak Planks', 'Oak Log']);
+    assert.deepEqual(filterItems(items, '#form:planks #wood:oak', false).map((i) => i.name), ['Oak Planks']);
     assert.deepEqual(filterItems(items, 'planks oak', false).map((i) => i.name), ['Oak Planks']);
     assert.deepEqual(filterItems(items, 'OAK planks', false).map((i) => i.name), ['Oak Planks']);
     assert.deepEqual(filterItems(items, 'planks #family:spruce', false).map((i) => i.name), ['Spruce Planks']);
@@ -34,10 +34,10 @@ test('filterItems: namespaced tags and word order', () => {
 
 test('getNameSuggestions: names first, then tags without hidden', () => {
     const updates = [{ added: { blocks: [
-        { name: 'Oak Planks', types: ['family:oak', 'hidden'] },
-        { name: 'Oak Log', types: ['family:oak'] },
+        { name: 'Oak Planks', types: ['wood:oak', 'hidden'] },
+        { name: 'Oak Log', types: ['wood:oak'] },
     ] } }];
-    assert.deepEqual(getNameSuggestions(updates, ['blocks']), ['Oak Log', 'Oak Planks', '#family:oak']);
+    assert.deepEqual(getNameSuggestions(updates, ['blocks']), ['Oak Log', 'Oak Planks', '#wood:oak']);
 });
 
 test('filterItems: text and hidden duplicates', () => {

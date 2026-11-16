@@ -1,4 +1,4 @@
-/** Characters a #tag may contain: namespaced tags such as family:oak or woodset/oak. */
+/** Characters a #tag may contain: namespaced tags such as wood:oak or enchantments/armor. */
 const TAG_INVALID_CHARS = /[^\w\-:/.]/g;
 
 /** Lowercased search fields per item, computed once (items are immutable after load). */

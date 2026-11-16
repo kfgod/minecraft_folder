@@ -45,8 +45,8 @@ test('time since view: renders food card', () => {
 
 test('time since view: content cards open the list with a tag or a single section', () => {
     assert.deepEqual(
-        getListTarget({ tag: 'smithing_template', sections: ['blocks', 'items'] }),
-        { search: '#smithing_template', sections: ['showBlocks', 'showItems'] },
+        getListTarget({ tag: 'kind:smithing_template', sections: ['blocks', 'items'] }),
+        { search: '#kind:smithing_template', sections: ['showBlocks', 'showItems'] },
     );
     assert.deepEqual(getListTarget({ section: 'mobs' }), { search: '', sections: ['showMobs'] });
 });
